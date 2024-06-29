@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/features/home/ui/widgets/home_app_bar.dart';
 import 'package:bulk_app/features/home/ui/widgets/home_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/smart_tools_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/whatsapp_number_text_field.dart';
@@ -16,21 +17,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: ColorsManager.darkAppBarBackGround,
-          centerTitle: true,
-          title: RichText(
-            text: TextSpan(
-              children: <TextSpan>[
-                TextSpan(text: 'META ', style: TextStyles.font26whiteRegular),
-                TextSpan(
-                  style: TextStyles.font26whiteRegular
-                      .copyWith(color: ColorsManager.containerTitleColor),
-                  text: 'B',
-                ),
-              ],
-            ),
-          ),
+        appBar: const MyCustomAppBar(
+          title: 'Home',
+      
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0.w),
@@ -133,3 +122,19 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+// class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+//   const HomeAppBar({
+//     super.key,
+//   })
+
+//   @override
+//   Size get preferredSize {return  const Size.fromHeight(100);}
+//   @override
+//   Widget build(BuildContext context) {
+
+//   }
+
+// }
+
+
