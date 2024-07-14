@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension Navigation on BuildContext {
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
@@ -32,3 +33,24 @@ extension SizedContext on BuildContext {
 
   double get height => MediaQuery.of(this).size.height;
 }
+
+extension IntExtensions on int {
+  int validate({int value = 0}) {
+    return this;
+  }
+
+  Widget get sizedBoxHeight => SizedBox(height: toDouble().h);
+
+  Widget get sizedWidth => SizedBox(width: toDouble().w);
+
+  Duration get seconds => Duration(seconds: validate());
+
+  Duration get milliseconds => Duration(milliseconds: validate());
+
+  Duration get days => Duration(days: validate());
+
+  
+
+  Size get size => Size(toDouble(), toDouble());
+
+  }

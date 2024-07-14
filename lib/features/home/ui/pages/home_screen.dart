@@ -126,18 +126,4 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-//   const HomeAppBar({
-//     super.key,
-//   })
-
-//   @override
-//   Size get preferredSize {return  const Size.fromHeight(100);}
-//   @override
-//   Widget build(BuildContext context) {
-
-//   }
-
-// }
-
 
