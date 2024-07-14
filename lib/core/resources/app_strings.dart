@@ -10,7 +10,7 @@ class AppStrings {
   static const tellaFriend = "Tell a Friend";
   static const feedback = "Feedback";
   static const termsOfUse = "Terms of Use";
-
+  static const searchAudiences = "Search Auadiences";
 
 
   // error handler

@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/resources/app_strings.dart';
+import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class HomeDrawer extends StatelessWidget {
       child: ListView( 
         padding: EdgeInsets.zero,
         children: [
-          ...buildMetabListTiles(),
+          ...buildMetabListTiles(context),
           ...buildsuperToolsListTiles(),
           ...buildsupportListTiles()
         ],
@@ -25,7 +26,7 @@ class HomeDrawer extends StatelessWidget {
     );
   }
 
-  buildMetabListTiles() {
+  buildMetabListTiles(BuildContext context) {
     List<Widget> metabList = [
       Container(
         height: 200,
@@ -47,7 +48,7 @@ class HomeDrawer extends StatelessWidget {
         title: AppStrings.startCampaign.tr(),
       ),
       DrawerListTile(
-        onTap: () {},
+        onTap: ()=>Navigator.of(context).pushNamed(Routes.manageAudiances),
         iconPath: 'assets/images/asset 4.svg',
         title: AppStrings.manageAudiences.tr(),
       ),
