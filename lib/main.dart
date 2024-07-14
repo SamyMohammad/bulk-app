@@ -23,8 +23,8 @@ class BulkApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Bulk App',
           theme: ThemeData(
-            scaffoldBackgroundColor: ColorsManager.darkBackGround,
-          ),
+              scaffoldBackgroundColor: ColorsManager.darkBackGround,
+              ),
           debugShowCheckedModeBanner: false,
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
           initialRoute: Routes.homeScreen,

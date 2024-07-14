@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
 import 'package:bulk_app/features/home/ui/widgets/home_app_bar.dart';
 import 'package:bulk_app/features/home/ui/widgets/home_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/smart_tools_container.dart';
@@ -17,9 +18,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: const HomeDrawer(),
+        
+        
         appBar: const MyCustomAppBar(
           title: 'Home',
-      
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0.w),

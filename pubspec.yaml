@@ -45,6 +45,7 @@ dependencies:
   flutter:
     sdk: flutter
   bloc: ^8.1.4
+  injectable: ^2.4.2
   
 dev_dependencies:
   flutter_test:
