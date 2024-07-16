@@ -1,12 +1,15 @@
 {
-  "welcome": "",
-  "projects": "",
-  "your_tasks": "",
-  "today": "",
-  "week": "",
-  "month": "",
-  "profile": "",
-  "about": "",
-  "login": "",
-  "logout": ""
+  "start_campaign": "ابدأ الحملة",
+  "manage_audiences": "إدارة الجماهير",
+  "templates": "القوالب",
+  "campaigns_history": "تاريخ الحملات",
+  "whatsBot": "واتس بوت",
+  "groups_grabber": "مجموعة الماسك",
+  "contact_grabber": "ماسك جهات الاتصال",
+  "support": "الدعم",
+  "tell_a_friend": "أخبر صديق",
+  "feedback": "ملاحظات",
+  "terms_of_use": "شروط الاستخدام",
+  "search_audiences": "بحث الجماهير",
+  "search_templates": "بحث القوالب"
 }

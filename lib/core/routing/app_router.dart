@@ -2,11 +2,13 @@ import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
+import 'package:bulk_app/features/templates/presentation/cubit/cubit/templates_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 import '../../features/home/logic/cubit/home_cubit.dart';
+import '../../features/templates/presentation/pages/templates_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -39,6 +41,13 @@ class AppRouter {
             child: const HomeScreen(),
           ),
         );
+              case Routes.templatesScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => TemplatesCubit(),
+            child: const TemplatesScreen(),
+          ),
+        );
              case Routes.manageAudiances:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -46,6 +55,7 @@ class AppRouter {
             child: const ManageAudiancesScreen(),
           ),
         );
+
       default:
         return null;
     }
