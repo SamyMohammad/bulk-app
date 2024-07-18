@@ -4,58 +4,48 @@ import 'package:flutter/material.dart';
 //
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppTextField extends StatelessWidget {
+class AppSearchField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
-  final String? hintText;
+  final String hintText;
   final bool? isObscureText;
   final Widget? suffixIcon;
-  final Widget? prefixIcon;
-final double? borderRadius;
   final Color? backgroundColor;
   final TextEditingController? controller;
-  final String? label;
-  final int? maxLine;
-  const AppTextField({
+
+  const AppSearchField({
     super.key,
-    this.borderRadius,
     this.contentPadding,
-    this.maxLine = 1,
     this.focusedBorder,
     this.enabledBorder,
     this.inputTextStyle,
     this.hintStyle,
-    this.hintText,
+    required this.hintText,
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
     this.controller,
-    this.prefixIcon,
-    this.label,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
-      maxLines: maxLine,
       decoration: InputDecoration(
         isDense: false,
-        label: label != null ? Text(label!) : null,
-        labelStyle: TextStyles.font15whiteMedium.copyWith(
-            color: ColorsManager.saerchTextFieldHintColor, fontSize: 17.sp),
+
         contentPadding: contentPadding ??
-            EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
+            EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
                 color: ColorsManager.saerchTextFieldHintColor,
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+              borderRadius: BorderRadius.circular(30.r),
             ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
@@ -63,21 +53,21 @@ final double? borderRadius;
                 color: ColorsManager.saerchTextFieldHintColor,
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+              borderRadius: BorderRadius.circular(30.r),
             ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: Colors.red,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+          borderRadius: BorderRadius.circular(30.r),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: ColorsManager.saerchTextFieldHintColor,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+          borderRadius: BorderRadius.circular(30.r),
         ),
         hintStyle: hintStyle ??
             TextStyles.font15whiteMedium.copyWith(
@@ -87,7 +77,11 @@ final double? borderRadius;
         hintText: hintText,
         suffixIcon: suffixIcon,
         fillColor: ColorsManager.saerchTextFieldColor,
-        prefixIcon: prefixIcon,
+        prefixIcon: Icon(
+          Icons.search,
+          size: 25.sp,
+          color: ColorsManager.saerchTextFieldHintColor,
+        ),
         // ?? ColorsManager.moreLightGray,
         filled: true,
       ),

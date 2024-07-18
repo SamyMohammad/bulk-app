@@ -24,10 +24,6 @@ class TextStyles {
       color: Colors.white,
       fontSize: 28.sp,
       fontWeight: FontWeightHelper.regular);
-  static TextStyle font24limeExtraBold = TextStyle(
-      fontSize: 24.sp,
-      color: ColorsManager.limeColor,
-      fontWeight: FontWeight.w800);
   // static TextStyle font13BlueSemiBold = TextStyle(
   //   fontSize: 13.sp,
   //   fontWeight: FontWeightHelper.semiBold,

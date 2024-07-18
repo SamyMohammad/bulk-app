@@ -1,10 +1,8 @@
 import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
-import 'package:bulk_app/features/templates/presentation/cubit/add_template_cubit/add_template_cubit.dart';
-import 'package:bulk_app/features/templates/presentation/cubit/templates/templates_cubit.dart';
-import 'package:bulk_app/features/templates/presentation/pages/add_template_screen.dart';
+import 'package:bulk_app/features/templates/presentation/cubit/cubit/templates_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,13 +46,6 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => TemplatesCubit(),
             child: const TemplatesScreen(),
-          ),
-        );
-            case Routes.addTemplateScreen:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => AddTemplateCubit(),
-            child: const AddTemplatesScreen(),
           ),
         );
              case Routes.manageAudiances:
