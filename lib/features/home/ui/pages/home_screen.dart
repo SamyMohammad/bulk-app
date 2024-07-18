@@ -1,6 +1,6 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
+import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
 import 'package:bulk_app/features/home/ui/widgets/home_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/smart_tools_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/whatsapp_number_text_field.dart';
@@ -16,11 +16,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isRtl = Directionality.of(context) == TextDirection.rtl;
+
     return SafeArea(
       child: Scaffold(
         drawer: const HomeDrawer(),
-        
-        
         appBar: const MyCustomAppBar(
           isHome: true,
           title: 'Home',
@@ -49,9 +49,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Positioned(
                       bottom: 0,
-                      right: 0,
-                      child: SvgPicture.asset(
-                        'assets/images/asset 1.svg',
+                      right: isRtl ? null : 0,
+                      left: isRtl ? 0 : null,
+                      child: Transform.flip(
+                        flipX: isRtl,
+
+                        // transform: Matrix4.identity()..scale(isRtl ? -1.0 : 1.0, 1.0),
+
+                        child: SvgPicture.asset(
+                          'assets/images/asset 1.svg',
+                        ),
                       ),
                     )
                   ],
@@ -128,5 +135,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

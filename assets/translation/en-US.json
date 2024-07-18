@@ -1,15 +1,16 @@
 {
   "start_campaign": "Start Campaign",
-  "view_all": "Manage Audiences",
+  "manage_audiences": "Manage Audiences",
   "templates": "Templates",
   "campaigns_history": "Campaigns History",
   "whatsBot": "WhatsBot",
   "groups_grabber": "Groups Grabber",
   "contact_grabber": "Contacts Grabber",
   "support": "Support",
-  "tel_a_friend": "Tell a Friend",
+  "tell_a_friend": "Tell a Friend",
   "feedback": "Feedback",
   "terms_of_use": "Terms of Use",
- "search_audiences":"Search Auadiences"
-  
+ "search_audiences":"Search Auadiences",
+ "search_templates":"Search Templates"
+
 }

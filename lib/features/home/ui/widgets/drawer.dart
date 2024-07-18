@@ -53,7 +53,7 @@ class HomeDrawer extends StatelessWidget {
         title: AppStrings.manageAudiences.tr(),
       ),
       DrawerListTile(
-        onTap: () {},
+        onTap: () =>Navigator.of(context).pushNamed(Routes.templatesScreen),
         iconPath: 'assets/images/asset 5.svg',
         title: AppStrings.templates.tr(),
       ),
@@ -111,7 +111,7 @@ class HomeDrawer extends StatelessWidget {
       DrawerListTile(
         onTap: () {},
         iconPath: 'assets/images/asset 11.svg',
-        title: AppStrings.tellaFriend.tr(),
+        title: AppStrings.tellAFriend.tr(),
       ),
       DrawerListTile(
         onTap: () {},
