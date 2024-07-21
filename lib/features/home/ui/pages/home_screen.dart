@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
 import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
@@ -36,6 +37,8 @@ class HomeScreen extends StatelessWidget {
                 Stack(
                   children: [
                     HomeContainer(
+                      fromAnimation: 100,
+                      animationDuration: 1000,
                       title: 'Bulk',
                       body: Text(
                         "Start your campaign \nwith sending \nbulk messages",
@@ -51,13 +54,25 @@ class HomeScreen extends StatelessWidget {
                       bottom: 0,
                       right: isRtl ? null : 0,
                       left: isRtl ? 0 : null,
-                      child: Transform.flip(
-                        flipX: isRtl,
-
-                        // transform: Matrix4.identity()..scale(isRtl ? -1.0 : 1.0, 1.0),
-
-                        child: SvgPicture.asset(
-                          'assets/images/asset 1.svg',
+                      child: FadeInLeft(
+                                  from: 75,
+                          animate: true,
+                          duration: const Duration(milliseconds: 1000),
+                          delay: const Duration(milliseconds: 1600),
+                        child: SlideInLeft(
+                          from: 75,
+                          animate: true,
+                          duration: const Duration(milliseconds: 1000),
+                          delay: const Duration(milliseconds: 1600),
+                          child: Transform.flip(
+                            flipX: isRtl,
+                        
+                            // transform: Matrix4.identity()..scale(isRtl ? -1.0 : 1.0, 1.0),
+                        
+                            child: SvgPicture.asset(
+                              'assets/images/asset 1.svg',
+                            ),
+                          ),
                         ),
                       ),
                     )
@@ -67,6 +82,8 @@ class HomeScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 HomeContainer(
+                  fromAnimation: 200,
+                  animationDuration: 1300,
                   title: 'Direct Chat',
                   heightContainer: context.height * .23,
                   body: Column(
@@ -105,24 +122,41 @@ class HomeScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 HomeContainer(
+                    fromAnimation: 300,
+                    animationDuration: 1600,
                     heightContainer: context.height * .22,
                     title: 'Super Tools',
                     body: Padding(
                       padding: EdgeInsets.only(top: 11.h),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          SmartToolsContainer(
-                            title: 'WhatsBots',
-                            iconName: 'assets/images/asset 7.svg',
+                          BounceInRight(
+                            // from: 50,
+                            animate: true,
+                            delay: const Duration(milliseconds:2000 ),
+                            child: const SmartToolsContainer(
+                              title: 'WhatsBots',
+                              iconName: 'assets/images/asset 7.svg',
+                            ),
                           ),
-                          SmartToolsContainer(
-                            title: 'Groups \nGrabber',
-                            iconName: 'assets/images/asset 8.svg',
+                          BounceInRight(
+                            // from: 100,
+                            delay: const Duration(milliseconds: 2200),
+                            animate: true,
+                            child: const SmartToolsContainer(
+                              title: 'Groups \nGrabber',
+                              iconName: 'assets/images/asset 8.svg',
+                            ),
                           ),
-                          SmartToolsContainer(
-                            title: 'Contacts \nGrabber',
-                            iconName: 'assets/images/asset 9.svg',
+                          BounceInRight(
+                            // from: 150,
+                            delay: const Duration(milliseconds: 2400),
+                            animate: true,
+                            child: const SmartToolsContainer(
+                              title: 'Contacts \nGrabber',
+                              iconName: 'assets/images/asset 9.svg',
+                            ),
                           ),
                         ],
                       ),
