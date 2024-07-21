@@ -11,8 +11,9 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(
-    supportedLocales: const [englishLocale],
+    supportedLocales: const [ englishLocale],
     path: assetPathLocalization,
+
     child: BulkApp(
       appRouter: AppRouter(),
     ),
@@ -23,7 +24,11 @@ class BulkApp extends StatelessWidget {
   final AppRouter appRouter;
 
   const BulkApp({super.key, required this.appRouter});
-
+//  @override
+//   void didChangeDependencies() {
+//     _appPreferences.getLocal().then((local) => {context.setLocale(local)});
+//     super.didChangeDependencies();
+//   }
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
