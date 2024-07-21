@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 Stack(
                   children: [
                     HomeContainer(
-                      fromAnimation: 100,
+                      fromAnimation: 50,
                       animationDuration: 1000,
                       title: 'Bulk',
                       body: Text(
@@ -82,8 +82,8 @@ class HomeScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 HomeContainer(
-                  fromAnimation: 200,
-                  animationDuration: 1300,
+                  fromAnimation: 100,
+                  animationDuration: 1000,
                   title: 'Direct Chat',
                   heightContainer: context.height * .23,
                   body: Column(
@@ -122,8 +122,8 @@ class HomeScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 HomeContainer(
-                    fromAnimation: 300,
-                    animationDuration: 1600,
+                    fromAnimation: 150,
+                    animationDuration: 1000,
                     heightContainer: context.height * .22,
                     title: 'Super Tools',
                     body: Padding(
