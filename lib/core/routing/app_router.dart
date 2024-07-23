@@ -50,28 +50,29 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => HomeCubit(),
+            create: (context) => getIt<HomeCubit>(),
             child: const HomeScreen(),
           ),
         );
       case Routes.templatesScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => TemplatesCubit(),
+            create: (context) => getIt<TemplatesCubit>(),
             child: const TemplatesScreen(),
           ),
         );
       case Routes.addTemplateScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => AddTemplateCubit(),
+            create: (context) => getIt<AddTemplateCubit>(),
+            
             child: const AddTemplatesScreen(),
           ),
         );
       case Routes.manageAudiances:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => ManageAudiancesCubit(),
+            create: (context) => getIt<ManageAudiancesCubit>(),
             child: const ManageAudiancesScreen(),
           ),
         );
