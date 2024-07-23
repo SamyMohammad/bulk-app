@@ -4,6 +4,8 @@ import 'package:dio/dio.dart';
 
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/logic/login_cubit/login_cubit.dart';
+
 
 
 final getIt = GetIt.instance;
@@ -15,7 +17,7 @@ Future<void> setupGetIt() async {
 
   // // login
   // getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  // getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit());
 
   // // signup
   // getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));

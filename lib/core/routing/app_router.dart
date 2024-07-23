@@ -1,4 +1,7 @@
+import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/routing/routes.dart';
+import 'package:bulk_app/features/auth/logic/login_cubit/login_cubit.dart';
+import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
@@ -22,13 +25,13 @@ class AppRouter {
       //   return MaterialPageRoute(
       //     builder: (_) => const OnboardingScreen(),
       //   );
-      // case Routes.loginScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => getIt<LoginCubit>(),
-      //       child: const LoginScreen(),
-      //     ),
-      //   );
+      case Routes.loginScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
+          ),
+        );
       // case Routes.signUpScreen:
       //   return MaterialPageRoute(
       //     builder: (_) => BlocProvider(

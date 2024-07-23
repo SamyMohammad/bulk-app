@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/resources/app_strings.dart';
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/widgets/app_search_field.dart';
+import '../../../../../core/widgets/app_text_field.dart';
 import 'templates_list_view.dart';
 
 class TemplatesBody extends StatelessWidget {

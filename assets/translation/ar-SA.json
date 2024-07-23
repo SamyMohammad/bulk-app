@@ -11,5 +11,9 @@
   "feedback": "ملاحظات",
   "terms_of_use": "شروط الاستخدام",
   "search_audiences": "بحث الجماهير",
-  "search_templates": "بحث القوالب"
+  "search_templates": "بحث القوالب",
+  "login": "تسجيل الدخول",
+  "password": "كلمة المرور",
+  "forgot_password": "نسيت كلمة المرور؟",
+  "email_ID": "البريد الالكتروني"
 }

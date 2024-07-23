@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/theming/colors.dart';
+import 'package:bulk_app/core/theming/font_weight_helper.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 //
@@ -14,33 +15,37 @@ class AppTextField extends StatelessWidget {
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-final double? borderRadius;
+  final double? borderRadius;
   final Color? backgroundColor;
   final TextEditingController? controller;
   final String? label;
   final int? maxLine;
-  const AppTextField({
-    super.key,
-    this.borderRadius,
-    this.contentPadding,
-    this.maxLine = 1,
-    this.focusedBorder,
-    this.enabledBorder,
-    this.inputTextStyle,
-    this.hintStyle,
-    this.hintText,
-    this.isObscureText,
-    this.suffixIcon,
-    this.backgroundColor,
-    this.controller,
-    this.prefixIcon,
-    this.label,
-  });
+  final Validator validator;
+  final Color? hintTextColor;
+  const AppTextField(
+      {super.key,
+      this.borderRadius,
+      this.contentPadding,
+      this.hintTextColor,
+      this.maxLine = 1,
+      this.focusedBorder,
+      this.enabledBorder,
+      this.inputTextStyle,
+      this.hintStyle,
+      this.hintText,
+      this.isObscureText,
+      this.suffixIcon,
+      this.backgroundColor,
+      this.controller,
+      this.prefixIcon,
+      this.label,
+      this.validator});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
+      validator: validator,
       maxLines: maxLine,
       decoration: InputDecoration(
         isDense: false,
@@ -55,7 +60,7 @@ final double? borderRadius;
                 color: ColorsManager.saerchTextFieldHintColor,
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
             ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
@@ -63,25 +68,27 @@ final double? borderRadius;
                 color: ColorsManager.saerchTextFieldHintColor,
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
             ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: Colors.red,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: ColorsManager.saerchTextFieldHintColor,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(borderRadius?? 30.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
         ),
         hintStyle: hintStyle ??
             TextStyles.font15whiteMedium.copyWith(
-                color: ColorsManager.saerchTextFieldHintColor, fontSize: 20.sp),
+                fontWeight: FontWeightHelper.regular,
+                color: hintTextColor ?? ColorsManager.saerchTextFieldHintColor,
+                fontSize: 20.sp),
         // ??
         //  TextStyles.font14LightGrayRegular,
         hintText: hintText,
@@ -99,3 +106,5 @@ final double? borderRadius;
     );
   }
 }
+
+typedef Validator = String? Function(String?)?;

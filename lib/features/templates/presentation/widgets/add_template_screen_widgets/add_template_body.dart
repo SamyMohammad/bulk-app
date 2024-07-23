@@ -3,7 +3,7 @@ import 'package:bulk_app/features/templates/presentation/widgets/add_template_sc
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/widgets/app_search_field.dart';
+import '../../../../../core/widgets/app_text_field.dart';
 import 'message_container_widget.dart';
 
 class AddTemplateBody extends StatelessWidget {
