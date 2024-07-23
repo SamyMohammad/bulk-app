@@ -10,7 +10,10 @@
   "tell_a_friend": "Tell a Friend",
   "feedback": "Feedback",
   "terms_of_use": "Terms of Use",
- "search_audiences":"Search Auadiences",
- "search_templates":"Search Templates"
-
+  "search_audiences": "Search Auadiences",
+  "search_templates": "Search Templates",
+  "login": "Login",
+  "password": "Password",
+  "forgot_password": "Forgot Password?",
+  "email_ID": "Email ID"
 }
