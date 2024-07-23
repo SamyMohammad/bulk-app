@@ -11,9 +11,8 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(
-    supportedLocales: const [ englishLocale],
+    supportedLocales: const [englishLocale],
     path: assetPathLocalization,
-
     child: BulkApp(
       appRouter: AppRouter(),
     ),

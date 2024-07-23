@@ -17,8 +17,8 @@ class AppStrings {
   static const password = "password";
   static const forgotPassword = "forgot_password";
   static const emailID = "email_ID";
-
-
+  static const signUp = "sign_up";
+  static const mobile = "mobile";
 
   // error handler
   static const String badRequestError = "bad_request_error";
