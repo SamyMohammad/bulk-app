@@ -11,9 +11,8 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(
-    supportedLocales: const [ englishLocale],
+    supportedLocales: const [englishLocale],
     path: assetPathLocalization,
-
     child: BulkApp(
       appRouter: AppRouter(),
     ),
@@ -44,7 +43,7 @@ class BulkApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-          initialRoute: Routes.homeScreen,
+          initialRoute: Routes.contactScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }

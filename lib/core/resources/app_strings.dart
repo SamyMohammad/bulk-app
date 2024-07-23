@@ -24,6 +24,7 @@ class AppStrings {
   static const feedback = "feedback";
   static const termsOfUse = "terms_of_use";
   static const searchAudiences = "search_audiences";
+  static const searchContacts = "Search Contacts";
   static const searchTemplates = "search_templates";
 
   // error handler
