@@ -1,5 +1,4 @@
 import 'package:bulk_app/core/resources/app_strings.dart';
-import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
@@ -8,8 +7,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BuildLoginContainer extends StatelessWidget {
-  const BuildLoginContainer({
+class BuildRegisterContainer extends StatelessWidget {
+  const BuildRegisterContainer({
     super.key,
   });
 
@@ -31,7 +30,7 @@ class BuildLoginContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.login.tr(),
+            AppStrings.signUp.tr(),
             style: TextStyles.font16GreenExtraBold,
           ),
           15.verticalSpace,
@@ -47,6 +46,12 @@ class BuildLoginContainer extends StatelessWidget {
             hintTextColor: ColorsManager.containerTitleColor,
           ),
           20.verticalSpace,
+          AppTextField(
+            hintText: AppStrings.mobile.tr(),
+            borderRadius: 15,
+            hintTextColor: ColorsManager.containerTitleColor,
+          ),
+          20.verticalSpace,
           Container(
             alignment: Alignment.centerRight,
             child: InkWell(
@@ -55,42 +60,36 @@ class BuildLoginContainer extends StatelessWidget {
               splashColor: Colors.amber,
               child: Text(
                 AppStrings.forgotPassword.tr(),
-                style: TextStyles.font16GreenExtraBold.copyWith(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.normal,
-                    color: ColorsManager.containerTitleColor.withOpacity(.8)),
+                style:
+                    TextStyles.font16GreenExtraBold.copyWith(fontSize: 15.sp),
               ),
             ),
           ),
           10.verticalSpace,
           CustomButton.withoutIcon(
-            text: AppStrings.login.tr(),
+            text: AppStrings.signUp.tr(),
             onPressed: () {},
             backgroundColor: ColorsManager.containerTitleColor,
             fontSize: 25,
           ),
-          18.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Don't have an account?",
-                  style: TextStyle(
-                      color: ColorsManager.containerTitleColor,
-                      fontSize: 15.sp)),
-              InkWell(
-                onTap: () => Navigator.pushNamed(context,Routes.signUpScreen),
-                child: Text(
-                  "Sign up",
-                  style: TextStyle(
-                    color: ColorsManager.containerTitleColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.sp,
-                    // decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // RichText(
+          //     textAlign: TextAlign.center,
+          //     text: const TextSpan(
+          //       children: [
+          //         TextSpan(
+          //             text: "Don't have an account? ",
+          //             style:
+          //                 TextStyle(color: ColorsManager.containerTitleColor)),
+          //         TextSpan(
+          //           text: 'Sign up',
+          //           style: TextStyle(
+          //             color: ColorsManager.containerTitleColor,
+          //             fontWeight: FontWeight.bold,
+          //             decoration: TextDecoration.underline,
+          //           ),
+          //         ),
+          //       ],
+          //     ))
         ],
       ),
     );
