@@ -52,7 +52,7 @@ class ContactItem extends StatelessWidget {
           ),
           Icon(
             Icons.check_box_outlined,
-            color: ColorsManager.containerTitleColor,
+            color: ColorsManager.limeColor,
             size: 25.h,
           ),
         ],
