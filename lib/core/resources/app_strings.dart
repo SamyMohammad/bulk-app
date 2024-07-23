@@ -1,17 +1,5 @@
 class AppStrings {
-  // static const startCampaign = "Start Campaign";
-  // static const manageAudiences = "Manage Audiences";
-  // static const templates = "Templates";
-  // static const campaignsHistory = "Campaigns History";
-  // static const whatsBot = "WhatsBot";
-  // static const groupsGrabber = "Groups Grabber";
-  // static const contactsGrabber = "Contacts Grabber";
-  // static const support = "Support";
-  // static const tellaFriend = "Tell a Friend";
-  // static const feedback = "Feedback";
-  // static const termsOfUse = "Terms of Use";
-  // static const searchAudiences = "Search Auadiences";
-  // static const searchTemplates = "Search Templates";
+
   static const startCampaign = "start_campaign";
   static const manageAudiences = "manage_audiences";
   static const templates = "templates";
@@ -25,6 +13,12 @@ class AppStrings {
   static const termsOfUse = "terms_of_use";
   static const searchAudiences = "search_audiences";
   static const searchTemplates = "search_templates";
+    static const login = "login";
+  static const password = "password";
+  static const forgotPassword = "forgot_password";
+  static const emailID = "email_ID";
+
+
 
   // error handler
   static const String badRequestError = "bad_request_error";

@@ -48,6 +48,8 @@ dependencies:
   injectable: ^2.4.2
   equatable: ^2.0.5
   animate_do: ^3.3.4
+  vector_graphics: ^1.1.11+1
+  vector_graphics_compiler: ^1.1.11+1
   
 dev_dependencies:
   flutter_test:
@@ -67,3 +69,7 @@ flutter:
     - assets/icons/
     - assets/translation/en-US.json
     - assets/translation/ar-SA.json
+        # Apply transformer to a folder of SVGs
+    - path: assets/images/asset 0.svg
+      transformers:
+        - package: vector_graphics_compiler

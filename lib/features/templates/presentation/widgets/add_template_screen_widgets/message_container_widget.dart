@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-import '../../../../../core/widgets/app_search_field.dart';
+import '../../../../../core/widgets/app_text_field.dart';
 
 class MessageContainerWidget extends StatelessWidget {
   const MessageContainerWidget({
