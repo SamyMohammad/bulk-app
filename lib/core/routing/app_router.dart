@@ -5,7 +5,9 @@ import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart'
 import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
 import 'package:bulk_app/features/auth/ui/screen/register_screen.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/pages/contact_screen.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
 import 'package:bulk_app/features/templates/presentation/cubit/add_template_cubit/add_template_cubit.dart';
 import 'package:bulk_app/features/templates/presentation/cubit/templates/templates_cubit.dart';
@@ -74,6 +76,13 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<ManageAudiancesCubit>(),
             child: const ManageAudiancesScreen(),
+          ),
+        );
+      case "contact_screen":
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => ContactScreenCubit(),
+            child: const ContactScreen(),
           ),
         );
 
