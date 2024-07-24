@@ -1,19 +1,20 @@
-import 'package:bulk_app/core/helpers/bloc_observer.dart';
 import 'package:bulk_app/core/helpers/language.dart';
 import 'package:bulk_app/core/routing/app_router.dart';
 import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
+import 'package:bulk_app/firebase_options.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> main() async {
-    Bloc.observer = CustomBlocObserver();
 
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  // BlocOverrides.runZoned(() {}, blocObserver: CustomBlocObserver());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(EasyLocalization(
     supportedLocales: const [englishLocale],
     path: assetPathLocalization,
@@ -27,11 +28,6 @@ class BulkApp extends StatelessWidget {
   final AppRouter appRouter;
 
   const BulkApp({super.key, required this.appRouter});
-//  @override
-//   void didChangeDependencies() {
-//     _appPreferences.getLocal().then((local) => {context.setLocale(local)});
-//     super.didChangeDependencies();
-//   }
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
