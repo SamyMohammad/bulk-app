@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/language.dart';
 import 'package:bulk_app/core/routing/app_router.dart';
 import 'package:bulk_app/core/routing/routes.dart';
@@ -15,6 +16,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
+  setupGetIt();
+
   runApp(EasyLocalization(
     supportedLocales: const [englishLocale],
     path: assetPathLocalization,
@@ -43,7 +46,7 @@ class BulkApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-          initialRoute: Routes.addTemplateScreen,
+          initialRoute: Routes.loginScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }

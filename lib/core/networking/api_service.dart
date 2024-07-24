@@ -1,6 +1,10 @@
 import 'package:bulk_app/core/networking/api_constants.dart';
+import 'package:bulk_app/core/networking/base_response.dart';
+import 'package:bulk_app/features/auth/data/models/login_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+
+import '../../features/auth/data/models/login_request_body.dart';
 
 
 part 'api_service.g.dart';
@@ -9,10 +13,10 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  // @POST(ApiConstants.login)
-  // Future<LoginResponse> login(
-  //   @Body() LoginRequestBody loginRequestBody,
-  // );
+  @POST(ApiConstants.login)
+  Future<LoginResponse> login(
+    @Body() LoginRequestBody loginRequestBody,
+  );
 
   // @POST(ApiConstants.signup)
   // Future<SignupResponse> signup(

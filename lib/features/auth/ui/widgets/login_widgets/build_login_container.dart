@@ -6,7 +6,10 @@ import 'package:bulk_app/core/widgets/app_text_field.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../logic/login_cubit/login_cubit.dart';
 
 class BuildLoginContainer extends StatelessWidget {
   const BuildLoginContainer({
@@ -65,7 +68,7 @@ class BuildLoginContainer extends StatelessWidget {
           10.verticalSpace,
           CustomButton.withoutIcon(
             text: AppStrings.login.tr(),
-            onPressed: () {},
+            onPressed: () => validateThenDoLogin(context),
             backgroundColor: ColorsManager.containerTitleColor,
             fontSize: 25,
           ),
@@ -94,5 +97,10 @@ class BuildLoginContainer extends StatelessWidget {
         ],
       ),
     );
+  }
+    void validateThenDoLogin(BuildContext context) {
+    // if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    // }
   }
 }
