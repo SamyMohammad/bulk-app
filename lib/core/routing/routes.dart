@@ -6,6 +6,4 @@ class Routes {
   static const String manageAudiances = '/manageAudiances';
   static const String templatesScreen = '/templatesScreen';
   static const String addTemplateScreen = '/addTemplateScreen';
-  static const String contactScreen = '/contactScreen';
-
 }

@@ -65,7 +65,7 @@ class AppRouter {
             child: const ManageAudiancesScreen(),
           ),
         );
-      case Routes.contactScreen:
+      case "contact_screen":
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => ContactScreenCubit(),
