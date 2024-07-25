@@ -50,11 +50,28 @@ class AppRouter {
       //     ),
       //   );
       case Routes.homeScreen:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
+        return PageRouteBuilder(
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(0.0, 1.0);
+            const end = Offset.zero;
+            const curve = Curves.elasticIn;
+
+            var tween = Tween(begin: begin, end: end).chain(
+                CurveTween(curve: const Interval(0.1, 1.0, curve: curve)));
+
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: child,
+            );
+          },
+          pageBuilder: (context, animation, secondaryAnimation) => BlocProvider(
             create: (context) => getIt<HomeCubit>(),
             child: const HomeScreen(),
           ),
+          // builder: (_) => BlocProvider(
+          //   create: (context) => getIt<HomeCubit>(),
+          //   child: const HomeScreen(),
+          // ),
         );
       case Routes.templatesScreen:
         return MaterialPageRoute(
@@ -67,7 +84,6 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<AddTemplateCubit>(),
-            
             child: const AddTemplatesScreen(),
           ),
         );
@@ -78,7 +94,7 @@ class AppRouter {
             child: const ManageAudiancesScreen(),
           ),
         );
-      case "contact_screen":
+      case Routes.conatctScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => ContactScreenCubit(),

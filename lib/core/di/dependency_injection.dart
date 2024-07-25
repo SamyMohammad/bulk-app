@@ -5,6 +5,7 @@ import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/login_cubit/login_cubit.dart';
 import '../../features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
 import '../../features/templates/presentation/cubit/add_template_cubit/add_template_cubit.dart';
@@ -18,8 +19,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   // // login
-  // getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  getIt.registerFactory<LoginCubit>(() => LoginCubit());
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
   getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit());
