@@ -51,6 +51,9 @@ dependencies:
   vector_graphics: ^1.1.11+1
   vector_graphics_compiler: ^1.1.11+1
   synchronized: ^3.1.0+1
+  lottie: ^3.1.2
+  loading_animation_widget: ^1.2.1
+  flutter_spinkit: ^5.2.1
   
 dev_dependencies:
   flutter_test:
@@ -68,6 +71,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/jsons/
     - assets/translation/en-US.json
     - assets/translation/ar-SA.json
         # Apply transformer to a folder of SVGs
