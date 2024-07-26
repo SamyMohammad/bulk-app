@@ -51,7 +51,7 @@ class ContactItem extends StatelessWidget {
             color: ColorsManager.saerchTextFieldHintColor,
           ),
           Icon(
-            Icons.check_box_outlined,
+            Icons.check_box_outline_blank,
             color: ColorsManager.limeColor,
             size: 25.h,
           ),

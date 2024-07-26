@@ -16,7 +16,7 @@ class SelectAllButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: ColorsManager.teal400,
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(50.r),
         ),
         padding: EdgeInsets.symmetric(horizontal: 11.w, vertical: 12.h),
         child: Text(
