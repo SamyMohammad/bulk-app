@@ -4,8 +4,8 @@
   "templates": "القوالب",
   "campaigns_history": "تاريخ الحملات",
   "whatsBot": "واتس بوت",
-  "groups_grabber": "مجموعة الماسك",
-  "contact_grabber": "ماسك جهات الاتصال",
+  "groups_grabber": "مجموعة\nالماسك",
+  "contact_grabber": "ماسك جهات\nالاتصال",
   "support": "الدعم",
   "tell_a_friend": "أخبر صديق",
   "feedback": "ملاحظات",
@@ -17,5 +17,15 @@
   "forgot_password": "نسيت كلمة المرور؟",
   "email_ID": "البريد الالكتروني",
   "sign_up": "انشاء حساب",
-  "mobile": "التليفون"
+  "mobile": "التليفون",
+  "selectAll":"اختيار الكل",
+  "search_contacts" : "بحث عن اتصالات",
+  "direct_chat_description": "أدخل أي رقم على الواتس اب \n حاول باستخدام رقمك",
+  "home_title": "الرئيسية",
+  "bulk_title": "بالك",
+  "bulk_description": "ابدأ حملتك\nبإرسال\nالرسائل بالجملة",
+  "direct_chat_title": "دردشة مباشرة",
+  "send_button_tooltip": "إرسال",
+  "super_tools_title": "أدوات رائعة",
+  "enterWhatssNum":"ادخل رقم الواتساب"
 }
