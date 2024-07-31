@@ -10,7 +10,6 @@ class LoginScreen extends StatelessWidget {
     return const SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-      
         body: SingleChildScrollView(child: LoginScreenBody()),
       ),
     );

@@ -9,14 +9,14 @@ import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_co
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/contact_screen.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
-import 'package:bulk_app/features/templates/presentation/cubit/add_template_cubit/add_template_cubit.dart';
-import 'package:bulk_app/features/templates/presentation/cubit/templates/templates_cubit.dart';
-import 'package:bulk_app/features/templates/presentation/pages/add_template_screen.dart';
+import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
+import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
+import 'package:bulk_app/features/templates/ui/pages/add_template_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/logic/cubit/home_cubit.dart';
-import '../../features/templates/presentation/pages/templates_screen.dart';
+import '../../features/templates/ui/pages/templates_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
