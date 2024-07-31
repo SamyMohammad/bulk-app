@@ -76,7 +76,7 @@ class AppRouter {
       case Routes.templatesScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getIt<TemplatesCubit>(),
+            create: (context) => getIt<TemplatesCubit>()..emitGetAllTemplatesStates(),
             child: const TemplatesScreen(),
           ),
         );

@@ -38,7 +38,7 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
     final String imageToBase64 = pickedFile != null
         ? "data:${ImageBase64Helper.getFileMimeType(pickedFile!.path)};base64,${await ImageBase64Helper.imageToBase64(pickedFile!)}"
         : '';
-    final response = await _templatesRepo.login(AddTemplateRequestBody(
+    final response = await _templatesRepo.addTemplate(AddTemplateRequestBody(
       name: templateNameController.text,
       message: messageController.text,
       file: imageToBase64,

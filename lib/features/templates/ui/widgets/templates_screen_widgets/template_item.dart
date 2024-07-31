@@ -1,11 +1,13 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
+import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TemplateItem extends StatelessWidget {
-  const TemplateItem({super.key});
+  final Templates template;
+  const TemplateItem({super.key, required this.template});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class TemplateItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Template Name',
+                template.name ?? '',
                 style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
               ),
               1.sizedBoxHeight,
