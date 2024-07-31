@@ -1,5 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/features/templates/presentation/widgets/templates_screen_widgets/template_item.dart';
+import 'package:bulk_app/features/templates/ui/widgets/templates_screen_widgets/template_item.dart';
 import 'package:flutter/material.dart';
 
 class TemplatesListView extends StatelessWidget {

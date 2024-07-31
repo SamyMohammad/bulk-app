@@ -1,5 +1,7 @@
 import 'package:bulk_app/core/widgets/custom_button.dart';
+import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/colors.dart';
@@ -13,6 +15,7 @@ class MessageContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AddTemplateCubit>();
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
@@ -41,6 +44,7 @@ class MessageContainerWidget extends StatelessWidget {
             hintText: 'Subject',
             maxLine: 5,
             borderRadius: 18.r,
+            controller: context.read<AddTemplateCubit>().messageController,
           ),
           15.verticalSpace,
 
@@ -78,7 +82,7 @@ class MessageContainerWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: CustomButton.withIcon(
-                  onPressed: () {},
+                  onPressed: () => cubit.addCurrentDateInMessage(),
                   text: 'Date',
                   iconPath: 'assets/icons/calendar_month.svg',
                 ),
@@ -86,7 +90,7 @@ class MessageContainerWidget extends StatelessWidget {
               10.horizontalSpace,
               Expanded(
                 child: CustomButton.withIcon(
-                  onPressed: () {},
+                  onPressed: () => cubit.addCurrentTimeInMessage(),
                   text: 'Time',
                   iconPath: 'assets/icons/avg_pace.svg',
                 ),
@@ -94,7 +98,7 @@ class MessageContainerWidget extends StatelessWidget {
               10.horizontalSpace,
               Expanded(
                 child: CustomButton.withIcon(
-                  onPressed: () {},
+                  onPressed: () => cubit.addMessageIDInMessage(),
                   text: 'Message ID',
                   iconPath: 'assets/icons/tag.svg',
                 ),

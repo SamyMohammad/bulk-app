@@ -1,6 +1,9 @@
 import 'package:bulk_app/core/theming/colors.dart';
-import 'package:bulk_app/features/templates/presentation/widgets/add_template_screen_widgets/add_files_container.dart';
+import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
+import 'package:bulk_app/features/templates/ui/widgets/add_template_screen_widgets/add_files_container.dart';
+import 'package:bulk_app/features/templates/ui/widgets/add_template_screen_widgets/add_template_listener.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/widgets/app_text_field.dart';
@@ -16,15 +19,17 @@ class AddTemplateBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const AppTextField(
-              // hintText: 'Template Name',
+            AppTextField(
               label: 'Template Name',
               backgroundColor: ColorsManager.darkBackGround,
+              controller:
+                  context.read<AddTemplateCubit>().templateNameController,
             ),
             20.verticalSpace,
             const MessageContainerWidget(),
             20.verticalSpace,
-            const AddFilesContainer()
+            const AddFilesContainer(),
+            const AddTemplateListener()
           ],
         ),
       ),

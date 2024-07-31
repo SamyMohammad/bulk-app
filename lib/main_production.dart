@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/bloc_observer.dart';
 import 'package:bulk_app/core/helpers/language.dart';
 import 'package:bulk_app/core/routing/app_router.dart';
@@ -10,9 +11,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> main() async {
     Bloc.observer = CustomBlocObserver();
-
+    
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await setupGetIt();
   runApp(EasyLocalization(
     supportedLocales: const [englishLocale],
     path: assetPathLocalization,
@@ -41,7 +43,7 @@ class BulkApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-          initialRoute: Routes.addTemplateScreen,
+          initialRoute: Routes.templatesScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
