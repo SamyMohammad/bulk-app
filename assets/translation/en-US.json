@@ -4,8 +4,8 @@
   "templates": "Templates",
   "campaigns_history": "Campaigns History",
   "whatsBot": "WhatsBot",
-  "groups_grabber": "Groups Grabber",
-  "contact_grabber": "Contacts Grabber",
+  "groups_grabber": "Groups \nGrabber",
+  "contact_grabber": "Contacts \nGrabber",
   "support": "Support",
   "tell_a_friend": "Tell a Friend",
   "feedback": "Feedback",
@@ -17,5 +17,15 @@
   "forgot_password": "Forgot Password?",
   "email_ID": "Email ID",
   "sign_up": "Sign Up",
-  "mobile": "Mobile"
+  "mobile": "Mobile",
+  "select_all":"Select All",
+  "search_contacts" : "Search Contacts",
+  "direct_chat_description": "Enter any number on Whatsapp  \n           try with your number",
+  "home_title": "Home",
+  "bulk_title": "Bulk",
+  "bulk_description": "Start your campaign \nwith sending \nbulk messages",
+  "direct_chat_title": "Direct Chat",
+  "send_button_tooltip": "Send",
+  "super_tools_title": "Super Tools",
+  "enter_whatss_num":"Enter WhatsApp number"
 }
