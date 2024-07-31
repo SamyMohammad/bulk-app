@@ -63,3 +63,4 @@ Future<void> stopLoading(BuildContext context) async {
       },
     );
   }
+  // this is where you would do your fullscreen loading
