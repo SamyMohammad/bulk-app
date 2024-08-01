@@ -22,8 +22,11 @@ mixin _$AddTemplateState {
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,8 +35,11 @@ mixin _$AddTemplateState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,8 +48,11 @@ mixin _$AddTemplateState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) =>
@@ -53,6 +62,8 @@ mixin _$AddTemplateState {
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -64,6 +75,7 @@ mixin _$AddTemplateState {
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -75,6 +87,7 @@ mixin _$AddTemplateState {
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
@@ -151,8 +164,11 @@ class _$InitialAddTemplateImpl
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return initial();
@@ -164,8 +180,11 @@ class _$InitialAddTemplateImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return initial?.call();
@@ -177,8 +196,11 @@ class _$InitialAddTemplateImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -194,6 +216,8 @@ class _$InitialAddTemplateImpl
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -208,6 +232,7 @@ class _$InitialAddTemplateImpl
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -222,6 +247,7 @@ class _$InitialAddTemplateImpl
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
@@ -288,8 +314,11 @@ class _$LoadingAddTemplateImpl
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return loading();
@@ -301,8 +330,11 @@ class _$LoadingAddTemplateImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return loading?.call();
@@ -314,8 +346,11 @@ class _$LoadingAddTemplateImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -331,6 +366,8 @@ class _$LoadingAddTemplateImpl
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -345,6 +382,7 @@ class _$LoadingAddTemplateImpl
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -359,6 +397,7 @@ class _$LoadingAddTemplateImpl
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
@@ -455,8 +494,11 @@ class _$SuccessAddTemplateImpl
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return success(addtemplateResponse);
@@ -468,8 +510,11 @@ class _$SuccessAddTemplateImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return success?.call(addtemplateResponse);
@@ -481,8 +526,11 @@ class _$SuccessAddTemplateImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -498,6 +546,8 @@ class _$SuccessAddTemplateImpl
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -512,6 +562,7 @@ class _$SuccessAddTemplateImpl
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -526,6 +577,7 @@ class _$SuccessAddTemplateImpl
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
@@ -547,6 +599,198 @@ abstract class _SuccessAddTemplate implements AddTemplateState {
   @JsonKey(ignore: true)
   _$$SuccessAddTemplateImplCopyWith<_$SuccessAddTemplateImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTemplateByIdSuccessImplCopyWith<$Res> {
+  factory _$$GetTemplateByIdSuccessImplCopyWith(
+          _$GetTemplateByIdSuccessImpl value,
+          $Res Function(_$GetTemplateByIdSuccessImpl) then) =
+      __$$GetTemplateByIdSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GetTemplateByIdResponse getTemplateByIdResponse});
+}
+
+/// @nodoc
+class __$$GetTemplateByIdSuccessImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res, _$GetTemplateByIdSuccessImpl>
+    implements _$$GetTemplateByIdSuccessImplCopyWith<$Res> {
+  __$$GetTemplateByIdSuccessImplCopyWithImpl(
+      _$GetTemplateByIdSuccessImpl _value,
+      $Res Function(_$GetTemplateByIdSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getTemplateByIdResponse = null,
+  }) {
+    return _then(_$GetTemplateByIdSuccessImpl(
+      null == getTemplateByIdResponse
+          ? _value.getTemplateByIdResponse
+          : getTemplateByIdResponse // ignore: cast_nullable_to_non_nullable
+              as GetTemplateByIdResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTemplateByIdSuccessImpl
+    with DiagnosticableTreeMixin
+    implements _GetTemplateByIdSuccess {
+  const _$GetTemplateByIdSuccessImpl(this.getTemplateByIdResponse);
+
+  @override
+  final GetTemplateByIdResponse getTemplateByIdResponse;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddTemplateState.getTemplateByIdSuccess(getTemplateByIdResponse: $getTemplateByIdResponse)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AddTemplateState.getTemplateByIdSuccess'))
+      ..add(DiagnosticsProperty(
+          'getTemplateByIdResponse', getTemplateByIdResponse));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTemplateByIdSuccessImpl &&
+            (identical(
+                    other.getTemplateByIdResponse, getTemplateByIdResponse) ||
+                other.getTemplateByIdResponse == getTemplateByIdResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getTemplateByIdResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTemplateByIdSuccessImplCopyWith<_$GetTemplateByIdSuccessImpl>
+      get copyWith => __$$GetTemplateByIdSuccessImplCopyWithImpl<
+          _$GetTemplateByIdSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(BaseResponse<dynamic> addtemplateResponse)
+        success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
+    required TResult Function(List<String> error) error,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+  }) {
+    return getTemplateByIdSuccess(getTemplateByIdResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
+    TResult? Function(List<String> error)? error,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+  }) {
+    return getTemplateByIdSuccess?.call(getTemplateByIdResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
+    TResult Function(List<String> error)? error,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdSuccess != null) {
+      return getTemplateByIdSuccess(getTemplateByIdResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialAddTemplate value) initial,
+    required TResult Function(_LoadingAddTemplate value) loading,
+    required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
+    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+  }) {
+    return getTemplateByIdSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialAddTemplate value)? initial,
+    TResult? Function(_LoadingAddTemplate value)? loading,
+    TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
+    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+  }) {
+    return getTemplateByIdSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialAddTemplate value)? initial,
+    TResult Function(_LoadingAddTemplate value)? loading,
+    TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
+    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdSuccess != null) {
+      return getTemplateByIdSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetTemplateByIdSuccess implements AddTemplateState {
+  const factory _GetTemplateByIdSuccess(
+          final GetTemplateByIdResponse getTemplateByIdResponse) =
+      _$GetTemplateByIdSuccessImpl;
+
+  GetTemplateByIdResponse get getTemplateByIdResponse;
+  @JsonKey(ignore: true)
+  _$$GetTemplateByIdSuccessImplCopyWith<_$GetTemplateByIdSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -635,8 +879,11 @@ class _$ErrorAddTemplateImpl
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return error(this.error);
@@ -648,8 +895,11 @@ class _$ErrorAddTemplateImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return error?.call(this.error);
@@ -661,8 +911,11 @@ class _$ErrorAddTemplateImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -678,6 +931,8 @@ class _$ErrorAddTemplateImpl
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -692,6 +947,7 @@ class _$ErrorAddTemplateImpl
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -706,6 +962,7 @@ class _$ErrorAddTemplateImpl
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
@@ -735,7 +992,7 @@ abstract class _$$PickedMultiMediaAndFilesImplCopyWith<$Res> {
           $Res Function(_$PickedMultiMediaAndFilesImpl) then) =
       __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({XFile? pickedFile});
+  $Res call({XFile? pickedFile, Uint8List? file});
 }
 
 /// @nodoc
@@ -751,12 +1008,17 @@ class __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pickedFile = freezed,
+    Object? file = freezed,
   }) {
     return _then(_$PickedMultiMediaAndFilesImpl(
       pickedFile: freezed == pickedFile
           ? _value.pickedFile
           : pickedFile // ignore: cast_nullable_to_non_nullable
               as XFile?,
+      file: freezed == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
     ));
   }
 }
@@ -766,14 +1028,16 @@ class __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>
 class _$PickedMultiMediaAndFilesImpl
     with DiagnosticableTreeMixin
     implements _PickedMultiMediaAndFiles {
-  const _$PickedMultiMediaAndFilesImpl({required this.pickedFile});
+  const _$PickedMultiMediaAndFilesImpl({this.pickedFile, this.file});
 
   @override
   final XFile? pickedFile;
+  @override
+  final Uint8List? file;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AddTemplateState.pickedMultiMediaAndFiles(pickedFile: $pickedFile)';
+    return 'AddTemplateState.pickedMultiMediaAndFiles(pickedFile: $pickedFile, file: $file)';
   }
 
   @override
@@ -782,7 +1046,8 @@ class _$PickedMultiMediaAndFilesImpl
     properties
       ..add(DiagnosticsProperty(
           'type', 'AddTemplateState.pickedMultiMediaAndFiles'))
-      ..add(DiagnosticsProperty('pickedFile', pickedFile));
+      ..add(DiagnosticsProperty('pickedFile', pickedFile))
+      ..add(DiagnosticsProperty('file', file));
   }
 
   @override
@@ -791,11 +1056,13 @@ class _$PickedMultiMediaAndFilesImpl
         (other.runtimeType == runtimeType &&
             other is _$PickedMultiMediaAndFilesImpl &&
             (identical(other.pickedFile, pickedFile) ||
-                other.pickedFile == pickedFile));
+                other.pickedFile == pickedFile) &&
+            const DeepCollectionEquality().equals(other.file, file));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pickedFile);
+  int get hashCode => Object.hash(
+      runtimeType, pickedFile, const DeepCollectionEquality().hash(file));
 
   @JsonKey(ignore: true)
   @override
@@ -811,11 +1078,14 @@ class _$PickedMultiMediaAndFilesImpl
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
-    return pickedMultiMediaAndFiles(pickedFile);
+    return pickedMultiMediaAndFiles(pickedFile, file);
   }
 
   @override
@@ -824,11 +1094,14 @@ class _$PickedMultiMediaAndFilesImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
-    return pickedMultiMediaAndFiles?.call(pickedFile);
+    return pickedMultiMediaAndFiles?.call(pickedFile, file);
   }
 
   @override
@@ -837,13 +1110,16 @@ class _$PickedMultiMediaAndFilesImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
     if (pickedMultiMediaAndFiles != null) {
-      return pickedMultiMediaAndFiles(pickedFile);
+      return pickedMultiMediaAndFiles(pickedFile, file);
     }
     return orElse();
   }
@@ -854,6 +1130,8 @@ class _$PickedMultiMediaAndFilesImpl
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -868,6 +1146,7 @@ class _$PickedMultiMediaAndFilesImpl
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -882,6 +1161,7 @@ class _$PickedMultiMediaAndFilesImpl
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
@@ -895,10 +1175,12 @@ class _$PickedMultiMediaAndFilesImpl
 }
 
 abstract class _PickedMultiMediaAndFiles implements AddTemplateState {
-  const factory _PickedMultiMediaAndFiles({required final XFile? pickedFile}) =
-      _$PickedMultiMediaAndFilesImpl;
+  const factory _PickedMultiMediaAndFiles(
+      {final XFile? pickedFile,
+      final Uint8List? file}) = _$PickedMultiMediaAndFilesImpl;
 
   XFile? get pickedFile;
+  Uint8List? get file;
   @JsonKey(ignore: true)
   _$$PickedMultiMediaAndFilesImplCopyWith<_$PickedMultiMediaAndFilesImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -982,8 +1264,11 @@ class _$StateOfButtonImpl
     required TResult Function() loading,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
         success,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccess,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return stateOfButton(isValid);
@@ -995,8 +1280,11 @@ class _$StateOfButtonImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return stateOfButton?.call(isValid);
@@ -1008,8 +1296,11 @@ class _$StateOfButtonImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccess,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -1025,6 +1316,8 @@ class _$StateOfButtonImpl
     required TResult Function(_InitialAddTemplate value) initial,
     required TResult Function(_LoadingAddTemplate value) loading,
     required TResult Function(_SuccessAddTemplate value) success,
+    required TResult Function(_GetTemplateByIdSuccess value)
+        getTemplateByIdSuccess,
     required TResult Function(_ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
@@ -1039,6 +1332,7 @@ class _$StateOfButtonImpl
     TResult? Function(_InitialAddTemplate value)? initial,
     TResult? Function(_LoadingAddTemplate value)? loading,
     TResult? Function(_SuccessAddTemplate value)? success,
+    TResult? Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult? Function(_ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
@@ -1053,6 +1347,7 @@ class _$StateOfButtonImpl
     TResult Function(_InitialAddTemplate value)? initial,
     TResult Function(_LoadingAddTemplate value)? loading,
     TResult Function(_SuccessAddTemplate value)? success,
+    TResult Function(_GetTemplateByIdSuccess value)? getTemplateByIdSuccess,
     TResult Function(_ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,

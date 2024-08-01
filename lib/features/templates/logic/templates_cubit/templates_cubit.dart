@@ -32,6 +32,8 @@ class TemplatesCubit extends Cubit<TemplatesState> {
     );
   }
 
+  
+
   void emitDeleteTemplateStates(int id) async {
     emit(const TemplatesState.loading());
 

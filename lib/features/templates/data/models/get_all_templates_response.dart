@@ -26,3 +26,19 @@ class Templates {
 
   Map<String, dynamic> toJson() => _$TemplatesToJson(this);
 }
+@JsonSerializable()
+
+class TemplateForUpdate extends Templates {
+  String? message;
+  String? file;
+  String? createdAt;
+  int? userId;
+
+  TemplateForUpdate({this.message, this.file, this.createdAt, this.userId, super.id, super.name});
+
+  factory TemplateForUpdate.fromJson(Map<String, dynamic> json) =>
+      _$TemplateForUpdateFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$TemplateForUpdateToJson(this);
+}

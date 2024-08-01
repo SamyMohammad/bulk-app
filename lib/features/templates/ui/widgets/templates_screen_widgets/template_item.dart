@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
@@ -44,8 +45,9 @@ class TemplateItem extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-              onPressed: () =>
-                  context.read<TemplatesCubit>().emitDeleteTemplateStates(template.id ?? 0),
+              onPressed: () => context
+                  .read<TemplatesCubit>()
+                  .emitDeleteTemplateStates(template.id ?? 0),
               icon: Icon(
                 Icons.delete_forever,
                 color: Colors.red,
@@ -58,20 +60,30 @@ class TemplateItem extends StatelessWidget {
             color: ColorsManager.saerchTextFieldHintColor,
           ),
           5.sizedWidth,
-          Container(
-            height: 26.h,
-            width: 26.w,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: ColorsManager.containerTitleColor),
-            child: Icon(
-              Icons.edit_rounded,
-              // color: Colors.red,
-              size: 20.r,
+          InkWell(
+            onTap: () => context.pushNamed(Routes.addTemplateScreen,
+                arguments:AddTemplateArgs(id: template.id, isEdit: true)),
+            child: Container(
+              height: 26.h,
+              width: 26.w,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: ColorsManager.containerTitleColor),
+              child: Icon(
+                Icons.edit_rounded,
+                // color: Colors.red,
+                size: 20.r,
+              ),
             ),
           ),
         ],
       ),
     );
   }
+}
+
+class AddTemplateArgs {
+  final int? id;
+  final bool isEdit;
+  AddTemplateArgs({this.id, this.isEdit = true});
 }

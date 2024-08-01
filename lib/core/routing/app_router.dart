@@ -86,7 +86,7 @@ class AppRouter {
             create: (context) => getIt<AddTemplateCubit>(),
             child: const AddTemplatesScreen(),
           ),
-        );
+       settings: RouteSettings(arguments: arguments),);
       case Routes.manageAudiances:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

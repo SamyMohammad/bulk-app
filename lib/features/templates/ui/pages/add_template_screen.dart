@@ -1,5 +1,6 @@
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
+import 'package:bulk_app/features/templates/ui/widgets/templates_screen_widgets/template_item.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,14 +18,29 @@ class AddTemplatesScreen extends StatefulWidget {
 
 class _AddTemplatesScreenState extends State<AddTemplatesScreen> {
   late AddTemplateCubit cubit;
-
+  bool isEdit = false;
   @override
   void initState() {
     super.initState();
+
     cubit = context.read<AddTemplateCubit>();
+    if (isEdit) {
+      cubit.initControllers();
+    }
     cubit.templateNameController.addListener(() {
       cubit.validateTemplate();
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final templateArgs =
+        ModalRoute.of(context)!.settings.arguments as AddTemplateArgs?;
+    isEdit = templateArgs?.isEdit??false;
+    if (isEdit) {
+      cubit.emitGetTemplatesByIdStates(templateArgs?.id??0);
+    }
   }
 
   @override
@@ -47,17 +63,17 @@ class _AddTemplatesScreenState extends State<AddTemplatesScreen> {
                           ));
                     },
                     orElse: () => IconButton(
-                          onPressed:null,
-                          icon: Icon(
-                            Icons.check_circle_rounded,
-                            color:  null,
-                            size: 40.r,
-                          )));
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.check_circle_rounded,
+                          color: null,
+                          size: 40.r,
+                        )));
               },
             )
           ],
           title: AppStrings.manageAudiences.tr(),
         ),
-        body: const SingleChildScrollView(child: AddTemplateBody()));
+        body: const AddTemplateBody());
   }
 }

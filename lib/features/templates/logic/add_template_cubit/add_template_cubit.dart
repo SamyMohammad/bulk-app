@@ -1,13 +1,18 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/date_helper.dart';
+import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/helpers/image_base_64_helper.dart';
 import 'package:bulk_app/core/helpers/media.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
+import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
 import 'package:bulk_app/features/templates/data/repos/templates_repo.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -21,10 +26,34 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
 
   TextEditingController messageController = TextEditingController();
   TextEditingController templateNameController = TextEditingController();
+  initControllers() async {
+    messageController.text = template?.template?.message ?? '';
+    templateNameController.text = template?.template?.name ?? '';
+    if (template?.template?.file.isNotNullAndNotEmpty() ??false) {
+      debugPrint('template?.template?.file: ${template?.template?.file}');
+      Uint8List file =  await ImageBase64Helper.base64ToImage(template?.template?.file ?? '');
+      emit(AddTemplateState.pickedMultiMediaAndFiles(
+          file: file));
+    }
+  }
 
-  // Future<String?> getFileToSend() async {
-  //   return pickedFile != null ? "data:${ImageBase64Helper.getFileMimeType(pickedFile!.path)};base64,${await ImageBase64Helper.imageToBase64(pickedFile!)}":'';
-  // }
+  GetTemplateByIdResponse? template;
+  void emitGetTemplatesByIdStates(int id) async {
+    emit(const AddTemplateState.loading());
+
+    final response = await _templatesRepo.getTemplateById(id);
+    response.when(
+      success: (success) {
+        emit(AddTemplateState.getTemplateByIdSuccess(
+            success.data ?? GetTemplateByIdResponse()));
+            template = success.data;
+        initControllers();
+      },
+      failure: (error) => emit(
+        AddTemplateState.error(error: error.error?.details ?? []),
+      ),
+    );
+  }
 
   void validateTemplate() {
     final isValid = templateNameController.text.isNotEmpty;

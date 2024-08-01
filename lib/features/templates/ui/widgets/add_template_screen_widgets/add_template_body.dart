@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/widgets/app_text_field.dart';
+import '../../../../../core/widgets/overlay_loading_state.dart';
 import 'message_container_widget.dart';
 
 class AddTemplateBody extends StatelessWidget {
@@ -14,9 +15,34 @@ class AddTemplateBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-      child: SingleChildScrollView(
+    return BlocBuilder<AddTemplateCubit, AddTemplateState>(
+      builder: (context, state) {
+        return state.maybeWhen(
+          orElse: () => const BuildAddTemplateBodyWidget(),
+          loading: () => loadingSpinKit(),
+          getTemplateByIdSuccess: (data) {
+            stopLoading(context);
+            return const BuildAddTemplateBodyWidget();
+          },
+          error: (error) {
+            return Text(error[0].toString());
+          },
+        );
+      },
+    );
+  }
+}
+
+class BuildAddTemplateBodyWidget extends StatelessWidget {
+  const BuildAddTemplateBodyWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
             AppTextField(
