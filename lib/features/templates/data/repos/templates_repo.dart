@@ -44,4 +44,22 @@ class TemplatesRepo {
       return ApiResult.failure(ApiErrorModel(error: ErrorData(error: errors.toString())));
     }
   }
+
+Future<ApiResult<BaseResponse>> deleteTemplate(
+      int id) async {
+    try {
+      final response = await _apiService.deleteTemplate(id.toString());
+      if (response.status! >= 200 || response.status! < 300) {
+        return ApiResult.success(response);
+      } else {
+        return ApiResult.failure(
+            ApiErrorModel(status: response.status, error: response.error));
+      }
+
+      // return ApiResult.success(response);
+    } catch (errro) {
+      return ApiResult.failure(ApiErrorModel(error: ErrorData(error: errro.toString())));
+    }
+  }
+
 }

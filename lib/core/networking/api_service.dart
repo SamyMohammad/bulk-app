@@ -24,4 +24,6 @@ abstract class ApiService {
   );
   @GET(ApiConstants.template)
   Future<BaseResponse<TemplatesData>> getAllTemplates();
+  @DELETE("${ApiConstants.template}/{id}")
+  Future<BaseResponse> deleteTemplate(@Path('id') String id);
 }

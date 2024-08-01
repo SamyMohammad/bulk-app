@@ -31,4 +31,20 @@ class TemplatesCubit extends Cubit<TemplatesState> {
       ),
     );
   }
+
+  void emitDeleteTemplateStates(int id) async {
+    emit(const TemplatesState.loading());
+
+    final response = await _templatesRepo.deleteTemplate(id);
+    response.when(
+      success: (success) {
+        emit(const TemplatesState.successDelete());
+
+        emitGetAllTemplatesStates();
+      },
+      failure: (error) => emit(
+        TemplatesState.errorDelete(error: error.error?.details ?? []),
+      ),
+    );
+  }
 }

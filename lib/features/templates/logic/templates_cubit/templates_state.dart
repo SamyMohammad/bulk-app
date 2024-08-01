@@ -10,4 +10,9 @@ class TemplatesState with _$TemplatesState {
   const factory TemplatesState.empty(TemplatesData data) = _Empty;
 
   const factory TemplatesState.error({required List<String> error}) = _Error;
+    const factory TemplatesState.loadingDelete() = _LoadingDelete;
+
+  const factory TemplatesState.successDelete() = _SuccessDelete;
+
+  const factory TemplatesState.errorDelete({required List<String> error}) = _ErrorDelete;
 }

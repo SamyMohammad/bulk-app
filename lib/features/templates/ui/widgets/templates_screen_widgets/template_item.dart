@@ -2,7 +2,9 @@ import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
+import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TemplateItem extends StatelessWidget {
@@ -41,11 +43,14 @@ class TemplateItem extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Icon(
-            Icons.delete_forever,
-            color: Colors.red,
-            size: 37.r,
-          ),
+          IconButton(
+              onPressed: () =>
+                  context.read<TemplatesCubit>().emitDeleteTemplateStates(template.id ?? 0),
+              icon: Icon(
+                Icons.delete_forever,
+                color: Colors.red,
+                size: 37.r,
+              )),
           Container(
             margin: EdgeInsets.symmetric(vertical: 20.h),
             height: double.maxFinite,
