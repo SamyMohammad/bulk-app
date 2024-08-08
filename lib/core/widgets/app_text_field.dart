@@ -51,7 +51,7 @@ class AppTextField extends StatelessWidget {
         controller: controller,
         validator: validator,
         maxLines: maxLine,
-          onChanged: onChanged,
+        onChanged: onChanged,
         decoration: InputDecoration(
           alignLabelWithHint: true,
           labelText: label,
@@ -96,7 +96,7 @@ class AppTextField extends StatelessWidget {
                   fontWeight: FontWeightHelper.regular,
                   color:
                       hintTextColor ?? ColorsManager.saerchTextFieldHintColor,
-                  fontSize: 20.sp),
+                  fontSize: 17.sp),
           // ??
           //  TextStyles.font14LightGrayRegular,
           hintText: hintText,

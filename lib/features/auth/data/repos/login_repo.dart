@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/networking/api_error_handler.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/features/auth/data/models/login_request_body.dart';
 import 'package:bulk_app/features/auth/data/models/login_response.dart';
@@ -14,16 +15,17 @@ class LoginRepo {
       LoginRequestBody loginRequestBody) async {
     try {
       final response = await _apiService.login(loginRequestBody);
-      if (response.status == 200) {
+      // if (response.status == 200) {
         return ApiResult.success(response);
-      } else {
-        return ApiResult.failure(
-            ApiErrorModel(status: response.status, error: response.error));
-      }
+      // } else {
+      //   return ApiResult.failure(
+      //       ApiErrorHandler.handle(response));
+      // }
 
       // return ApiResult.success(response);
-    } catch (errro) {
-      return ApiResult.failure(ApiErrorModel());
+    } catch (error) {
+      
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }

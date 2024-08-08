@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-
 
 class PasswordValidations extends StatelessWidget {
   final bool hasLowerCase;
@@ -42,19 +41,40 @@ class PasswordValidations extends StatelessWidget {
   Widget buildValidationRow(String text, bool hasValidated) {
     return Row(
       children: [
-        const CircleAvatar(
+        CircleAvatar(
           radius: 2.5,
-          backgroundColor: ColorsManager.saerchTextFieldHintColor,
+          backgroundColor: hasValidated
+              ? Colors.green
+              : ColorsManager.saerchTextFieldHintColor,
         ),
         horizontalSpace(6),
-        Text(
-          text,
-          style: TextStyles.font15whiteMedium.copyWith(
-            decoration: hasValidated ? TextDecoration.lineThrough : null,
-            decorationColor: Colors.green,
-            decorationThickness: 2,
-            color: hasValidated ?ColorsManager.saerchTextFieldHintColor : ColorsManager.containerTitleColor,
-          ),
+        Row(
+          children: [
+            Text(
+              text,
+              style: TextStyles.font15whiteMedium.copyWith(
+                decoration: hasValidated ? TextDecoration.lineThrough : null,
+                // decorationStyle: TextDecorationStyle.wavy,
+                decorationColor: Colors.green,
+                decorationThickness: 10,
+                color: !hasValidated
+                    ? ColorsManager.saerchTextFieldHintColor
+                    : ColorsManager.containerTitleColor,
+              ),
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            if (hasValidated)
+              Padding(
+                padding: EdgeInsets.only(bottom: 5.h),
+                child: const Icon(
+                  Icons.check_circle_outline_rounded,
+                  color: Colors.green,
+                  size: 18,
+                ),
+              )
+          ],
         )
       ],
     );

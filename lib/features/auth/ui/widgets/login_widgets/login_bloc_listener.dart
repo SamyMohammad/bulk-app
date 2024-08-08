@@ -1,4 +1,6 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/core/networking/api_error_handler.dart';
+import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,16 +18,16 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is LoginErrorState || current is LoginSuccessState || current is LoginLoadingState,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => startLoading(context),
-          success: (loginResponse) {
+          loginLoadingState: () => startLoading(context),
+          loginSuccessState: (loginResponse) {
             stopLoading(context);
             context.pushNamedAndRemoveUntil(Routes.homeScreen, predicate: (context) => false);
           },
-          error: (error) {
-            setupErrorState(context, error[0]);
+          loginErrorState: (apiErrorModel) {
+            setupErrorState(context,apiErrorModel );
           },
         );
       },
@@ -33,7 +35,7 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -44,8 +46,8 @@ class LoginBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
-          style: TextStyles.font16GreenExtraBold,
+          apiErrorModel.getAllErrorMessages(),
+          style: TextStyles.font15whiteMedium.copyWith(color: Colors.black87),
         ),
         actions: [
           TextButton(

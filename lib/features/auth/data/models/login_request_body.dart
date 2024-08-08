@@ -6,8 +6,9 @@ class LoginRequestBody{
   final String email;
   final String password;
   final String spamCheck ;
+  final String? type;
 
-  LoginRequestBody( {required this.email, required this.password,required this.spamCheck,});
+  LoginRequestBody( {required this.email, required this.password,required this.spamCheck,required this.type});
 
   Map<String, dynamic> toJson() => _$LoginRequestBodyToJson(this);
 }

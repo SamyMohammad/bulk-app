@@ -48,9 +48,8 @@ class BulkApp extends StatelessWidget {
             scaffoldBackgroundColor: ColorsManager.darkBackGround,
           ),
           debugShowCheckedModeBanner: false,
-          // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-          
-          initialRoute: Routes.templatesScreen,
+          // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,      
+          initialRoute: Routes.loginScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
