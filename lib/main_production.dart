@@ -26,7 +26,6 @@ Future<void> main() async {
 
 class BulkApp extends StatelessWidget {
   final AppRouter appRouter;
-
   const BulkApp({super.key, required this.appRouter});
   @override
   Widget build(BuildContext context) {

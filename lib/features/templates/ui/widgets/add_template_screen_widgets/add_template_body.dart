@@ -14,9 +14,20 @@ class AddTemplateBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-      child: SingleChildScrollView(
+    return const BuildAddTemplateBodyWidget();
+  }
+}
+
+class BuildAddTemplateBodyWidget extends StatelessWidget {
+  const BuildAddTemplateBodyWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
             AppTextField(
