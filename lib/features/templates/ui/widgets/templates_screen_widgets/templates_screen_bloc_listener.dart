@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,24 +9,18 @@ import '../../../../../core/theming/styles.dart';
 import '../../../../../core/widgets/overlay_loading_state.dart';
 import '../../../logic/add_template_cubit/add_template_cubit.dart';
 
-class AddTemplateListener extends StatelessWidget {
-  const AddTemplateListener({super.key});
+class TemplatesListener extends StatelessWidget {
+  const TemplatesListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AddTemplateCubit, AddTemplateState>(
+    return BlocListener<TemplatesCubit, TemplatesState>(
       listener: (context, state) {
         state.whenOrNull(
-
-          addTemplateLoadingState: () => startLoading(context),
-          addTemplateSuccessState: (addTemplateResponse) {
+          loading: () => startLoading(context),
+          success: (addTemplateResponse) {
             stopLoading(context);
-            context.pushReplacementNamed(Routes.templatesScreen);
-          },
-          updateTemplateLoadingState: () => startLoading(context),
-          updateTemplateSuccessState: (baseResponse) {
-            stopLoading(context);
-            context.pushReplacementNamed(Routes.templatesScreen);
+            context.pushNamed(Routes.templatesScreen);
           },
           error: (error) {
           },
