@@ -19,7 +19,7 @@ abstract class ApiService {
   Future<LoginResponse> login(
     @Body() LoginRequestBody loginRequestBody,
   );
-  
+
   @POST(ApiConstants.template)
   Future<BaseResponse> addTemplate(
     @Body() AddTemplateRequestBody addTemplateRequestBody,
@@ -34,4 +34,10 @@ abstract class ApiService {
   @GET("${ApiConstants.template}/{id}")
   Future<BaseResponse<GetTemplateByIdResponse>> getTemplate(
       @Path('id') String id);
+
+  @PUT("${ApiConstants.template}/{id}")
+  Future<BaseResponse> updateTemplate(
+    @Path('id') String id,
+    @Body() UpdateTemplateRequestBody updateTemplateRequestBody,
+  );
 }

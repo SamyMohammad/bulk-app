@@ -76,7 +76,8 @@ class AppRouter {
       case Routes.templatesScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getIt<TemplatesCubit>()..emitGetAllTemplatesStates(),
+            create: (context) =>
+                getIt<TemplatesCubit>()..emitGetAllTemplatesStates(),
             child: const TemplatesScreen(),
           ),
         );
@@ -84,9 +85,12 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<AddTemplateCubit>(),
-            child: const AddTemplatesScreen(),
+            child: const AddTemplatesScreen(
+              isEdit: false,
+            ),
           ),
-       settings: RouteSettings(arguments: arguments),);
+          settings: RouteSettings(arguments: arguments),
+        );
       case Routes.manageAudiances:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

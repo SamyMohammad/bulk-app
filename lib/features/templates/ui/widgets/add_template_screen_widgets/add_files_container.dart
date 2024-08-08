@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
-import 'package:flutter/foundation.dart';
+import 'package:bulk_app/features/templates/ui/widgets/add_template_screen_widgets/build_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,71 +65,26 @@ class AddFilesContainer extends StatelessWidget {
           ),
           6.verticalSpace,
           BlocBuilder<AddTemplateCubit, AddTemplateState>(
-            builder: (context, state) {
-              return state.maybeWhen(
-                pickedMultiMediaAndFiles: (pickedfile, pickedFileMemory) {
-                  File? file;
-                  if (pickedfile != null || pickedFileMemory != null) {
-                    if (pickedfile != null) {
-                      file = File(pickedfile.path);
-                    }
-                    return BuildImageWidget(file: file, cubit: cubit,pickedFileMemory: pickedFileMemory,);
-                  } else {
-                    return const SizedBox.shrink();
+              builder: (context, state) {
+            File? fileFromDevice;
+            if (cubit.pickedFilefromDevice != null) {
+              fileFromDevice = File(cubit.pickedFilefromDevice!.path);
+            }
+            return state.maybeWhen(
+                orElse: () => BuildImageWidget(
+                      pickedFileFromApi: cubit.fileFromApi,
+                      pickedFileFromDevice: fileFromDevice,
+                    ),
+                pickedMultiMediaAndFiles: (pickedFile, filefromApi) {
+                  if (pickedFile != null || filefromApi != null) {
+                    return BuildImageWidget(
+                      pickedFileFromApi: filefromApi,
+                      pickedFileFromDevice: fileFromDevice,
+                    );
                   }
-                },
-                orElse: () => const SizedBox.shrink(),
-              );
-            },
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class BuildImageWidget extends StatelessWidget {
-  const BuildImageWidget({
-    super.key,
-    required this.file,
-    required this.cubit,
-    required this.pickedFileMemory
-  });
-final Uint8List? pickedFileMemory;
-
-  final File? file;
-  final AddTemplateCubit cubit;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: context.height * 0.2,
-      child: Stack(
-        alignment: Alignment.topRight,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            child: file == null
-                ? Image.memory(
-                    pickedFileMemory!,
-                    fit: BoxFit.cover,
-                  )
-                : Image.file(
-                    file!,
-                    fit: BoxFit.cover,
-                  ),
-          ),
-          Positioned(
-            top: -12.h,
-            right: -12.w,
-            child: IconButton(
-              onPressed: () => cubit.emitRemoveImage(),
-              icon: const Icon(
-                Icons.cancel,
-                color: Colors.red,
-              ),
-            ),
-          ),
+                  return const SizedBox.shrink();
+                });
+          }),
         ],
       ),
     );

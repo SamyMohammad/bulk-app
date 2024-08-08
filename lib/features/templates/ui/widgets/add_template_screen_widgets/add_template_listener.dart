@@ -16,13 +16,18 @@ class AddTemplateListener extends StatelessWidget {
     return BlocListener<AddTemplateCubit, AddTemplateState>(
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => startLoading(context),
-          success: (addTemplateResponse) {
+
+          addTemplateLoadingState: () => startLoading(context),
+          addTemplateSuccessState: (addTemplateResponse) {
             stopLoading(context);
-            context.pushNamed(Routes.templatesScreen);
+            context.pushReplacementNamed(Routes.templatesScreen);
+          },
+          updateTemplateLoadingState: () => startLoading(context),
+          updateTemplateSuccessState: (baseResponse) {
+            stopLoading(context);
+            context.pushReplacementNamed(Routes.templatesScreen);
           },
           error: (error) {
-            // setupErrorState(context, error[0]);
           },
         );
       },

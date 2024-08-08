@@ -23,7 +23,6 @@ class TemplatesListener extends StatelessWidget {
             context.pushNamed(Routes.templatesScreen);
           },
           error: (error) {
-            // setupErrorState(context, error[0]);
           },
         );
       },

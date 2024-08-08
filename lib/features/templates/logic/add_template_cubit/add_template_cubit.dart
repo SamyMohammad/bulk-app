@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:bloc/bloc.dart';
 import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/date_helper.dart';
@@ -26,28 +24,29 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
 
   TextEditingController messageController = TextEditingController();
   TextEditingController templateNameController = TextEditingController();
+  Uint8List? fileFromApi;
   initControllers() async {
     messageController.text = template?.template?.message ?? '';
     templateNameController.text = template?.template?.name ?? '';
-    if (template?.template?.file.isNotNullAndNotEmpty() ??false) {
+    if (template?.template?.file.isNotNullAndNotEmpty() ?? false) {
       debugPrint('template?.template?.file: ${template?.template?.file}');
-      Uint8List file =  await ImageBase64Helper.base64ToImage(template?.template?.file ?? '');
-      emit(AddTemplateState.pickedMultiMediaAndFiles(
-          file: file));
+      Uint8List file =
+          await ImageBase64Helper.base64ToImage(template?.template?.file ?? '');
+      fileFromApi = file;
+      emit(AddTemplateState.pickedMultiMediaAndFiles(file: file));
     }
   }
 
   GetTemplateByIdResponse? template;
   void emitGetTemplatesByIdStates(int id) async {
-    emit(const AddTemplateState.loading());
-
+    emit(const AddTemplateState.getTemplateByIdLoadingState());
     final response = await _templatesRepo.getTemplateById(id);
     response.when(
       success: (success) {
-        emit(AddTemplateState.getTemplateByIdSuccess(
-            success.data ?? GetTemplateByIdResponse()));
-            template = success.data;
+        template = success.data;
         initControllers();
+        emit(AddTemplateState.getTemplateByIdSuccessState(
+            success.data ?? GetTemplateByIdResponse()));
       },
       failure: (error) => emit(
         AddTemplateState.error(error: error.error?.details ?? []),
@@ -55,26 +54,56 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
     );
   }
 
+  bool isValid = false;
   void validateTemplate() {
     final isValid = templateNameController.text.isNotEmpty;
-    // Replace with actual validation logic
     debugPrint('isValid: $isValid');
+    this.isValid = isValid;
     emit(AddTemplateState.stateOfButton(isValid: isValid));
   }
 
+  Future<String> imageToBase64() async {
+    final mimeType =
+        ImageBase64Helper.getFileMimeType(pickedFilefromDevice!.path);
+    final base64String =
+        await ImageBase64Helper.imageToBase64(pickedFilefromDevice!);
+    return "data:$mimeType;base64,$base64String";
+  }
+
   void emitAddTemplateStates() async {
-    emit(const AddTemplateState.loading());
-    final String imageToBase64 = pickedFile != null
-        ? "data:${ImageBase64Helper.getFileMimeType(pickedFile!.path)};base64,${await ImageBase64Helper.imageToBase64(pickedFile!)}"
-        : '';
+    emit(const AddTemplateState.addTemplateLoadingState());
     final response = await _templatesRepo.addTemplate(AddTemplateRequestBody(
       name: templateNameController.text,
       message: messageController.text,
-      file: imageToBase64,
+      file: pickedFilefromDevice != null ? await imageToBase64() : '',
     ));
     response.when(
       success: (success) {
-        emit(AddTemplateState.success(success));
+        emit(AddTemplateState.addTemplateSuccessState(success));
+      },
+      failure: (error) => emit(
+        AddTemplateState.error(error: error.error?.details ?? []),
+      ),
+    );
+  }
+
+  void emitUpdateTemplateStates(int id) async {
+    emit(const AddTemplateState.updateTemplateLoadingState());
+
+    final response =
+        await _templatesRepo.updateTemplate(UpdateTemplateRequestBody(
+      name: templateNameController.text,
+      message: messageController.text,
+      file: fileFromApi == null
+          ? pickedFilefromDevice == null
+              ? ''
+              : await imageToBase64()
+          : await ImageBase64Helper.memoryImageToBase64(fileFromApi) ?? '',
+      id: template?.template?.id ?? 0,
+    ));
+    response.when(
+      success: (success) {
+        emit(AddTemplateState.updateTemplateSuccessState(success));
         debugPrint('file: $imageToBase64');
         debugPrint('success----------$success');
       },
@@ -86,24 +115,27 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
 
   void emitRemoveImage() async {
     // if(pickedFiles != null) {
-    pickedFile = null;
+    pickedFilefromDevice = null;
+    fileFromApi = null;
     // pickedFiles!.removeAt(index);
     emit(const AddTemplateState.pickedMultiMediaAndFiles(pickedFile: null));
   }
 
-  XFile? pickedFile;
+  XFile? pickedFilefromDevice;
   Future<void> pickMultipleMedia(BuildContext context) async {
     final imagePicker = getIt<AppMedia>();
     try {
       final pickedXFile = await imagePicker.pickImage();
       if (pickedXFile != null) {
-        pickedFile = XFile(pickedXFile.path);
-        debugPrint(' file: ${pickedFile!.path}');
+        fileFromApi = null;
+        pickedFilefromDevice = XFile(pickedXFile.path);
+        debugPrint(' file: ${pickedFilefromDevice!.path}');
         if (context.mounted) {
-          AppMedia.pickImageWithSizeLimit(context, pickedFile: pickedFile!);
+          AppMedia.pickImageWithSizeLimit(context,
+              pickedFile: pickedFilefromDevice!);
         }
-        emit(
-            AddTemplateState.pickedMultiMediaAndFiles(pickedFile: pickedFile!));
+        emit(AddTemplateState.pickedMultiMediaAndFiles(
+            pickedFile: pickedFilefromDevice!));
       } else {
         debugPrint('No files picked');
         emit(const AddTemplateState.initial());

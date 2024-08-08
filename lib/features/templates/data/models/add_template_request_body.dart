@@ -11,3 +11,15 @@ class AddTemplateRequestBody{
 
   Map<String, dynamic> toJson() => _$AddTemplateRequestBodyToJson(this);
 }
+
+
+@JsonSerializable()
+class UpdateTemplateRequestBody  extends AddTemplateRequestBody {
+  final int id;
+
+
+  UpdateTemplateRequestBody({required this.id, required super.name, required super.message,required super.file});
+
+  @override
+  Map<String, dynamic> toJson() => _$UpdateTemplateRequestBodyToJson(this);
+}
