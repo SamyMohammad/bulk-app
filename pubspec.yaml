@@ -1,7 +1,7 @@
 name: bulk_app
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.1
+version: 0.1.3
 
 environment:
   sdk: '>=3.4.0 <4.0.0'
@@ -45,6 +45,8 @@ dependencies:
   flutter:
     sdk: flutter
   bloc: ^8.1.4
+
+
   injectable: ^2.4.2
   equatable: ^2.0.5
   animate_do: ^3.3.4
@@ -54,14 +56,30 @@ dependencies:
   lottie: ^3.1.2
   loading_animation_widget: ^1.2.1
   flutter_spinkit: ^5.2.1
-  
+  image_picker: ^1.1.2
+  image: ^4.2.0
+  mime: ^1.0.5
+  awesome_notifications: ^0.9.3+1
+  flutter_local_notifications: ^17.2.1+2
+  bloc_test: ^9.1.7
+  mockito: ^5.4.4
+  image_compress: ^0.0.2
+  flutter_image_compress: ^2.3.0
+  path_provider: ^2.1.4
+  path: ^1.9.0
+  flutter_switch: ^0.3.2
+  shimmer: ^3.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
 
 flutter:
-
+  fonts:
+  - family: Tajawal
+    fonts:
+      - asset: assets/fonts/Tajawal/Tajawal-Medium.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

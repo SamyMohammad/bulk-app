@@ -54,12 +54,16 @@ Future<void> stopLoading(BuildContext context) async {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return const Center(
+        return loadingSpinKit()  ;
+      },
+    );
+  }
+ Widget loadingSpinKit(){
+     return const Center(
           child: SpinKitWaveSpinner(
             color: ColorsManager.containerTitleColor,
             size: 80.0,
           ),
         );
-      },
-    );
   }
+  // this is where you would do your fullscreen loading

@@ -11,12 +11,9 @@ class LoginScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      // mainAxisAlignment: MainAxisAlignment.end,
+      // crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // Spacer(
-        //   flex: 4,
-        // ),
         20.verticalSpace,
         const VectorGraphic(
           loader: AssetBytesLoader('assets/images/asset 0.svg'),

@@ -17,6 +17,12 @@ class ApiErrorModel {
       _$ApiErrorModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ApiErrorModelToJson(this);
+
+
+
+    String getAllErrorMessages() {
+      return error?.details?.map((error) => '• $error').join('\n') ?? "Unknown Error occurred";
+  }
 }
 
 @JsonSerializable()
@@ -32,23 +38,3 @@ class ErrorData {
   /// Connect the generated [_$PersonToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$ErrorDataToJson(this);
 }
-
-
-
-// @JsonSerializable(genericArgumentFactories: true)
-// class BaseResponse<T> {
-//   @JsonKey(name: "status")
-//   int? status;
-//   @JsonKey(name: "error")
-//   Error? error;
-//   @JsonKey(name: "data")
-//   T? data;
-//   BaseResponse({this.error, required this.data});
-//   factory BaseResponse.fromJson(
-//           Map<String, dynamic> json, T Function(Object? json) fromJsonT) =>
-//       _$BaseResponseFromJson(json, fromJsonT);
-
-//   Map<String, dynamic> toJson(
-//           BaseResponse<T> baseResponse, Object Function(T value) toJsonT) =>
-//       _$BaseResponseToJson(this, toJsonT);
-// }

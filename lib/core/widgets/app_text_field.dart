@@ -22,10 +22,12 @@ class AppTextField extends StatelessWidget {
   final int? maxLine;
   final Validator validator;
   final Color? hintTextColor;
+  final Function(String)? onChanged;
   const AppTextField(
       {super.key,
       this.borderRadius,
       this.contentPadding,
+      this.onChanged,
       this.hintTextColor,
       this.maxLine = 1,
       this.focusedBorder,
@@ -43,66 +45,73 @@ class AppTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      validator: validator,
-      maxLines: maxLine,
-      decoration: InputDecoration(
-        isDense: false,
-        label: label != null ? Text(label!) : null,
-        labelStyle: TextStyles.font15whiteMedium.copyWith(
-            color: ColorsManager.saerchTextFieldHintColor, fontSize: 17.sp),
-        contentPadding: contentPadding ??
-            EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: ColorsManager.saerchTextFieldHintColor,
-                width: 1.3,
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5.h),
+      child: TextFormField(
+        controller: controller,
+        validator: validator,
+        maxLines: maxLine,
+        onChanged: onChanged,
+        decoration: InputDecoration(
+          alignLabelWithHint: true,
+          labelText: label,
+          isDense: false,
+          // label: label != null ? Text(label!) : null,
+          labelStyle: TextStyles.font15whiteMedium.copyWith(
+              color: ColorsManager.saerchTextFieldHintColor, fontSize: 17.sp),
+          contentPadding: contentPadding ??
+              EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+          focusedBorder: focusedBorder ??
+              OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: ColorsManager.saerchTextFieldHintColor,
+                  width: 1.3,
+                ),
+                borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
               ),
-              borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
-            ),
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: ColorsManager.saerchTextFieldHintColor,
-                width: 1.3,
+          enabledBorder: enabledBorder ??
+              OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: ColorsManager.saerchTextFieldHintColor,
+                  width: 1.3,
+                ),
+                borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
               ),
-              borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
+          errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.3,
             ),
-        errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 1.3,
+            borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
           ),
-          borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: ColorsManager.saerchTextFieldHintColor,
-            width: 1.3,
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: ColorsManager.saerchTextFieldHintColor,
+              width: 1.3,
+            ),
+            borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
           ),
-          borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
+          hintStyle: hintStyle ??
+              TextStyles.font15whiteMedium.copyWith(
+                  fontWeight: FontWeightHelper.regular,
+                  color:
+                      hintTextColor ?? ColorsManager.saerchTextFieldHintColor,
+                  fontSize: 17.sp),
+          // ??
+          //  TextStyles.font14LightGrayRegular,
+          hintText: hintText,
+          suffixIcon: suffixIcon,
+          fillColor: ColorsManager.saerchTextFieldColor,
+          prefixIcon: prefixIcon,
+          // ?? ColorsManager.moreLightGray,
+          filled: true,
         ),
-        hintStyle: hintStyle ??
-            TextStyles.font15whiteMedium.copyWith(
-                fontWeight: FontWeightHelper.regular,
-                color: hintTextColor ?? ColorsManager.saerchTextFieldHintColor,
-                fontSize: 20.sp),
-        // ??
-        //  TextStyles.font14LightGrayRegular,
-        hintText: hintText,
-        suffixIcon: suffixIcon,
-        fillColor: ColorsManager.saerchTextFieldColor,
-        prefixIcon: prefixIcon,
-        // ?? ColorsManager.moreLightGray,
-        filled: true,
+        obscureText: isObscureText ?? false,
+        style: TextStyles.font15whiteMedium.copyWith(
+            fontSize: 16.sp,
+            decoration: TextDecoration.none,
+            decorationThickness: 0),
       ),
-      obscureText: isObscureText ?? false,
-      style: TextStyles.font15whiteMedium.copyWith(
-          fontSize: 20.sp,
-          decoration: TextDecoration.none,
-          decorationThickness: 0),
     );
   }
 }
