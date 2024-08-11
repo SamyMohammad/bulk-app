@@ -15,7 +15,7 @@ class ContactScreen extends StatelessWidget {
         floatingActionButton:
             const AddContactsButton(path: 'assets/icons/person_add.svg'),
         appBar: MyCustomAppBar(
-          title: AppStrings.manageAudiences.tr(),
+          title: AppStrings.manageAudiences.tr(),     
         ),
         body: const ContactScreenBody());
   }
