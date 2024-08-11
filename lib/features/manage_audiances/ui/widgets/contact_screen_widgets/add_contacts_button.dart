@@ -1,5 +1,5 @@
 import 'package:bulk_app/core/theming/colors.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/message_body.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/message_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,7 +27,7 @@ class AddContactsButton extends StatelessWidget {
           showDialog(
               context: context,
               builder: (BuildContext context) {
-                return MessageBody();
+                return const MessageBody();
               });
         },
       ),
