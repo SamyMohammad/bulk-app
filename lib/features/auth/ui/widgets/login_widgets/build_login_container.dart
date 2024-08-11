@@ -96,7 +96,6 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
               borderRadius: 15,
               hintTextColor: ColorsManager.containerTitleColor,
               isObscureText: isObscureText,
-              
               suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -151,13 +150,13 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have an account?",
+                Text("Don't have an account? ",
                     style: TextStyle(
                         color: ColorsManager.containerTitleColor,
                         fontSize: 15.sp)),
                 InkWell(
                   onTap: () =>
-                      Navigator.pushNamed(context, Routes.signUpScreen),
+                      Navigator.pushNamed(context, Routes.registerScreen),
                   child: Text(
                     "Sign up",
                     style: TextStyle(
@@ -177,7 +176,8 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
   }
 
   void validateThenDoLogin(BuildContext context) {
-    if (context.read<LoginCubit>().formKey.currentState!.validate() && AppRegex.isPasswordValid(passwordController.text)) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate() &&
+        AppRegex.isPasswordValid(passwordController.text)) {
       context.read<LoginCubit>().emitLoginStates();
     }
   }
