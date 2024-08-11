@@ -1,12 +1,12 @@
 import 'package:bulk_app/core/networking/api_constants.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/auth/data/models/login_response.dart';
+import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
 import '../../features/auth/data/models/login_request_body.dart';
-
 
 part 'api_service.g.dart';
 
@@ -22,6 +22,9 @@ abstract class ApiService {
   Future<BaseResponse> addTemplate(
     @Body() AddTemplateRequestBody addTemplateRequestBody,
   );
+
+  @GET(ApiConstants.audience)
+  Future<BaseResponse<AudienceResponseData>> getAudiance();
 
   // @POST(ApiConstants.signup)
   // Future<SignupResponse> signup(

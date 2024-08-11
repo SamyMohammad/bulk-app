@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../helpers/shared_pref_helper.dart';
 
-
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class
   DioFactory._();
@@ -30,7 +29,7 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXlAbS51cyIsImlkIjoxMiwidHlwZSI6MSwiaWF0IjoxNzIyNDI3MTM0LCJleHAiOjE3MjUwMTkxMzR9.Qap7fcPTzTLes2olEIIeIA76MsELwJshbtwXY3VOuzo',
     };
   }
 
