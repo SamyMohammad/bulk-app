@@ -27,10 +27,10 @@ class HomeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideInLeft(
       animate: true,
-      delay:  Duration(milliseconds: animationDuration ?? 2000
-      ),
+      // delay:  Duration(milliseconds: animationDuration ?? 2000
+      // ),
       // duration:  Duration(milliseconds: animationDuration ?? 1500),
-      // from: fromAnimation ?? 75,
+      from: fromAnimation ?? 75,
       child: Container(
         height: heightContainer ?? context.height * .2,
         width: double.infinity,

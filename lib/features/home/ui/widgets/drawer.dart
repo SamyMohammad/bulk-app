@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 import '../../../../core/theming/styles.dart';
 
@@ -15,7 +16,7 @@ class HomeDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: ColorsManager.darkBackGround,
-      child: ListView( 
+      child: ListView(
         padding: EdgeInsets.zero,
         children: [
           ...buildMetabListTiles(context),
@@ -31,8 +32,10 @@ class HomeDrawer extends StatelessWidget {
       Container(
         height: 200,
         padding: const EdgeInsets.only(top: 25),
-        child: Center(
-          child: SvgPicture.asset('assets/images/asset 0.svg'),
+        child: const Center(
+          child: VectorGraphic(
+            loader: AssetBytesLoader('assets/images/asset 0.svg'),
+          ),
         ),
       ),
       Padding(
@@ -48,12 +51,12 @@ class HomeDrawer extends StatelessWidget {
         title: AppStrings.startCampaign.tr(),
       ),
       DrawerListTile(
-        onTap: ()=>Navigator.of(context).pushNamed(Routes.manageAudiances),
+        onTap: () => Navigator.of(context).pushNamed(Routes.manageAudiances),
         iconPath: 'assets/images/asset 4.svg',
         title: AppStrings.manageAudiences.tr(),
       ),
       DrawerListTile(
-        onTap: () =>Navigator.of(context).pushNamed(Routes.templatesScreen),
+        onTap: () => Navigator.of(context).pushNamed(Routes.templatesScreen),
         iconPath: 'assets/images/asset 5.svg',
         title: AppStrings.templates.tr(),
       ),

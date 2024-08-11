@@ -1,17 +1,4 @@
 class AppStrings {
-  // static const startCampaign = "Start Campaign";
-  // static const manageAudiences = "Manage Audiences";
-  // static const templates = "Templates";
-  // static const campaignsHistory = "Campaigns History";
-  // static const whatsBot = "WhatsBot";
-  // static const groupsGrabber = "Groups Grabber";
-  // static const contactsGrabber = "Contacts Grabber";
-  // static const support = "Support";
-  // static const tellaFriend = "Tell a Friend";
-  // static const feedback = "Feedback";
-  // static const termsOfUse = "Terms of Use";
-  // static const searchAudiences = "Search Auadiences";
-  // static const searchTemplates = "Search Templates";
   static const startCampaign = "start_campaign";
   static const manageAudiences = "manage_audiences";
   static const templates = "templates";
@@ -24,9 +11,23 @@ class AppStrings {
   static const feedback = "feedback";
   static const termsOfUse = "terms_of_use";
   static const searchAudiences = "search_audiences";
-  static const searchContacts = "Search Contacts";
+  static const searchContacts = "search_contacts";
   static const searchTemplates = "search_templates";
-
+  static const login = "login";
+  static const password = "password";
+  static const forgotPassword = "forgot_password";
+  static const emailID = "email_ID";
+  static const signUp = "sign_up";
+  static const mobile = "mobile";
+  static const selectAll = "select_all";
+  static const homeDirectChatDescription = "direct_chat_description";
+  static const enterWhatssNum = "enter_whatss_num";
+  static const homeTitle = 'home_title';
+  static const bulkTitle = 'bulk_title';
+  static const bulkDescription = 'bulk_description';
+  static const directChatTitle = 'direct_chat_title';
+  static const sendButtonTooltip = 'send_button_tooltip';
+  static const superToolsTitle = 'super_tools_title';
   // error handler
   static const String badRequestError = "bad_request_error";
   static const String noContent = "no_content";
