@@ -1,9 +1,9 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/features/manage_audiances/ui/widgets/manage_audiances_widgets/audiance_item.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/contact_item.dart';
 import 'package:flutter/material.dart';
 
-class AudiancesListView extends StatelessWidget {
-  const AudiancesListView({super.key});
+class ContactsListView extends StatelessWidget {
+  const ContactsListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class AudiancesListView extends StatelessWidget {
         itemCount: 20,
         separatorBuilder: (context, index) => 20.sizedBoxHeight,
         itemBuilder: (context, index) {
-          return const AudianceItem();
+          return const ContactItem();
         });
   }
 }
