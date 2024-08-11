@@ -19,31 +19,54 @@ mixin _$AddTemplateState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) =>
@@ -51,9 +74,19 @@ mixin _$AddTemplateState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -62,9 +95,17 @@ mixin _$AddTemplateState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -73,9 +114,17 @@ mixin _$AddTemplateState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),
@@ -148,11 +197,18 @@ class _$InitialAddTemplateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return initial();
@@ -162,10 +218,18 @@ class _$InitialAddTemplateImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return initial?.call();
@@ -175,10 +239,18 @@ class _$InitialAddTemplateImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -192,9 +264,19 @@ class _$InitialAddTemplateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -206,9 +288,17 @@ class _$InitialAddTemplateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -220,9 +310,17 @@ class _$InitialAddTemplateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),
@@ -239,43 +337,47 @@ abstract class _InitialAddTemplate implements AddTemplateState {
 }
 
 /// @nodoc
-abstract class _$$LoadingAddTemplateImplCopyWith<$Res> {
-  factory _$$LoadingAddTemplateImplCopyWith(_$LoadingAddTemplateImpl value,
-          $Res Function(_$LoadingAddTemplateImpl) then) =
-      __$$LoadingAddTemplateImplCopyWithImpl<$Res>;
+abstract class _$$AddTemplateLoadingStateImplCopyWith<$Res> {
+  factory _$$AddTemplateLoadingStateImplCopyWith(
+          _$AddTemplateLoadingStateImpl value,
+          $Res Function(_$AddTemplateLoadingStateImpl) then) =
+      __$$AddTemplateLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingAddTemplateImplCopyWithImpl<$Res>
-    extends _$AddTemplateStateCopyWithImpl<$Res, _$LoadingAddTemplateImpl>
-    implements _$$LoadingAddTemplateImplCopyWith<$Res> {
-  __$$LoadingAddTemplateImplCopyWithImpl(_$LoadingAddTemplateImpl _value,
-      $Res Function(_$LoadingAddTemplateImpl) _then)
+class __$$AddTemplateLoadingStateImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res, _$AddTemplateLoadingStateImpl>
+    implements _$$AddTemplateLoadingStateImplCopyWith<$Res> {
+  __$$AddTemplateLoadingStateImplCopyWithImpl(
+      _$AddTemplateLoadingStateImpl _value,
+      $Res Function(_$AddTemplateLoadingStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingAddTemplateImpl
+class _$AddTemplateLoadingStateImpl
     with DiagnosticableTreeMixin
-    implements _LoadingAddTemplate {
-  const _$LoadingAddTemplateImpl();
+    implements _AddTemplateLoadingState {
+  const _$AddTemplateLoadingStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AddTemplateState.loading()';
+    return 'AddTemplateState.addTemplateLoadingState()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AddTemplateState.loading'));
+    properties.add(DiagnosticsProperty(
+        'type', 'AddTemplateState.addTemplateLoadingState'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingAddTemplateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$AddTemplateLoadingStateImpl);
   }
 
   @override
@@ -285,42 +387,65 @@ class _$LoadingAddTemplateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
-    return loading();
+    return addTemplateLoadingState();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
-    return loading?.call();
+    return addTemplateLoadingState?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (addTemplateLoadingState != null) {
+      return addTemplateLoadingState();
     }
     return orElse();
   }
@@ -329,67 +454,95 @@ class _$LoadingAddTemplateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
   }) {
-    return loading(this);
+    return addTemplateLoadingState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
   }) {
-    return loading?.call(this);
+    return addTemplateLoadingState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (addTemplateLoadingState != null) {
+      return addTemplateLoadingState(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadingAddTemplate implements AddTemplateState {
-  const factory _LoadingAddTemplate() = _$LoadingAddTemplateImpl;
+abstract class _AddTemplateLoadingState implements AddTemplateState {
+  const factory _AddTemplateLoadingState() = _$AddTemplateLoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$SuccessAddTemplateImplCopyWith<$Res> {
-  factory _$$SuccessAddTemplateImplCopyWith(_$SuccessAddTemplateImpl value,
-          $Res Function(_$SuccessAddTemplateImpl) then) =
-      __$$SuccessAddTemplateImplCopyWithImpl<$Res>;
+abstract class _$$AddTemplateSuccessStateImplCopyWith<$Res> {
+  factory _$$AddTemplateSuccessStateImplCopyWith(
+          _$AddTemplateSuccessStateImpl value,
+          $Res Function(_$AddTemplateSuccessStateImpl) then) =
+      __$$AddTemplateSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BaseResponse<dynamic> addtemplateResponse});
 }
 
 /// @nodoc
-class __$$SuccessAddTemplateImplCopyWithImpl<$Res>
-    extends _$AddTemplateStateCopyWithImpl<$Res, _$SuccessAddTemplateImpl>
-    implements _$$SuccessAddTemplateImplCopyWith<$Res> {
-  __$$SuccessAddTemplateImplCopyWithImpl(_$SuccessAddTemplateImpl _value,
-      $Res Function(_$SuccessAddTemplateImpl) _then)
+class __$$AddTemplateSuccessStateImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res, _$AddTemplateSuccessStateImpl>
+    implements _$$AddTemplateSuccessStateImplCopyWith<$Res> {
+  __$$AddTemplateSuccessStateImplCopyWithImpl(
+      _$AddTemplateSuccessStateImpl _value,
+      $Res Function(_$AddTemplateSuccessStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -397,7 +550,7 @@ class __$$SuccessAddTemplateImplCopyWithImpl<$Res>
   $Res call({
     Object? addtemplateResponse = null,
   }) {
-    return _then(_$SuccessAddTemplateImpl(
+    return _then(_$AddTemplateSuccessStateImpl(
       null == addtemplateResponse
           ? _value.addtemplateResponse
           : addtemplateResponse // ignore: cast_nullable_to_non_nullable
@@ -408,24 +561,25 @@ class __$$SuccessAddTemplateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessAddTemplateImpl
+class _$AddTemplateSuccessStateImpl
     with DiagnosticableTreeMixin
-    implements _SuccessAddTemplate {
-  const _$SuccessAddTemplateImpl(this.addtemplateResponse);
+    implements _AddTemplateSuccessState {
+  const _$AddTemplateSuccessStateImpl(this.addtemplateResponse);
 
   @override
   final BaseResponse<dynamic> addtemplateResponse;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AddTemplateState.success(addtemplateResponse: $addtemplateResponse)';
+    return 'AddTemplateState.addTemplateSuccessState(addtemplateResponse: $addtemplateResponse)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'AddTemplateState.success'))
+      ..add(DiagnosticsProperty(
+          'type', 'AddTemplateState.addTemplateSuccessState'))
       ..add(DiagnosticsProperty('addtemplateResponse', addtemplateResponse));
   }
 
@@ -433,7 +587,7 @@ class _$SuccessAddTemplateImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessAddTemplateImpl &&
+            other is _$AddTemplateSuccessStateImpl &&
             (identical(other.addtemplateResponse, addtemplateResponse) ||
                 other.addtemplateResponse == addtemplateResponse));
   }
@@ -444,50 +598,73 @@ class _$SuccessAddTemplateImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessAddTemplateImplCopyWith<_$SuccessAddTemplateImpl> get copyWith =>
-      __$$SuccessAddTemplateImplCopyWithImpl<_$SuccessAddTemplateImpl>(
-          this, _$identity);
+  _$$AddTemplateSuccessStateImplCopyWith<_$AddTemplateSuccessStateImpl>
+      get copyWith => __$$AddTemplateSuccessStateImplCopyWithImpl<
+          _$AddTemplateSuccessStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
-    return success(addtemplateResponse);
+    return addTemplateSuccessState(addtemplateResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
-    return success?.call(addtemplateResponse);
+    return addTemplateSuccessState?.call(addtemplateResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(addtemplateResponse);
+    if (addTemplateSuccessState != null) {
+      return addTemplateSuccessState(addtemplateResponse);
     }
     return orElse();
   }
@@ -496,57 +673,923 @@ class _$SuccessAddTemplateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
   }) {
-    return success(this);
+    return addTemplateSuccessState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
   }) {
-    return success?.call(this);
+    return addTemplateSuccessState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (addTemplateSuccessState != null) {
+      return addTemplateSuccessState(this);
     }
     return orElse();
   }
 }
 
-abstract class _SuccessAddTemplate implements AddTemplateState {
-  const factory _SuccessAddTemplate(
+abstract class _AddTemplateSuccessState implements AddTemplateState {
+  const factory _AddTemplateSuccessState(
           final BaseResponse<dynamic> addtemplateResponse) =
-      _$SuccessAddTemplateImpl;
+      _$AddTemplateSuccessStateImpl;
 
   BaseResponse<dynamic> get addtemplateResponse;
   @JsonKey(ignore: true)
-  _$$SuccessAddTemplateImplCopyWith<_$SuccessAddTemplateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddTemplateSuccessStateImplCopyWith<_$AddTemplateSuccessStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTemplateByIdLoadingStateImplCopyWith<$Res> {
+  factory _$$GetTemplateByIdLoadingStateImplCopyWith(
+          _$GetTemplateByIdLoadingStateImpl value,
+          $Res Function(_$GetTemplateByIdLoadingStateImpl) then) =
+      __$$GetTemplateByIdLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetTemplateByIdLoadingStateImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res,
+        _$GetTemplateByIdLoadingStateImpl>
+    implements _$$GetTemplateByIdLoadingStateImplCopyWith<$Res> {
+  __$$GetTemplateByIdLoadingStateImplCopyWithImpl(
+      _$GetTemplateByIdLoadingStateImpl _value,
+      $Res Function(_$GetTemplateByIdLoadingStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetTemplateByIdLoadingStateImpl
+    with DiagnosticableTreeMixin
+    implements GetTemplateByIdLoadingState {
+  const _$GetTemplateByIdLoadingStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddTemplateState.getTemplateByIdLoadingState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'AddTemplateState.getTemplateByIdLoadingState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTemplateByIdLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> addtemplateResponse)
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
+    required TResult Function(List<String> error) error,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+  }) {
+    return getTemplateByIdLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult? Function(List<String> error)? error,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+  }) {
+    return getTemplateByIdLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult Function(List<String> error)? error,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdLoadingState != null) {
+      return getTemplateByIdLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialAddTemplate value) initial,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+  }) {
+    return getTemplateByIdLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialAddTemplate value)? initial,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+  }) {
+    return getTemplateByIdLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialAddTemplate value)? initial,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdLoadingState != null) {
+      return getTemplateByIdLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTemplateByIdLoadingState implements AddTemplateState {
+  const factory GetTemplateByIdLoadingState() =
+      _$GetTemplateByIdLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$GetTemplateByIdSuccessStateImplCopyWith<$Res> {
+  factory _$$GetTemplateByIdSuccessStateImplCopyWith(
+          _$GetTemplateByIdSuccessStateImpl value,
+          $Res Function(_$GetTemplateByIdSuccessStateImpl) then) =
+      __$$GetTemplateByIdSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GetTemplateByIdResponse getTemplateByIdResponse});
+}
+
+/// @nodoc
+class __$$GetTemplateByIdSuccessStateImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res,
+        _$GetTemplateByIdSuccessStateImpl>
+    implements _$$GetTemplateByIdSuccessStateImplCopyWith<$Res> {
+  __$$GetTemplateByIdSuccessStateImplCopyWithImpl(
+      _$GetTemplateByIdSuccessStateImpl _value,
+      $Res Function(_$GetTemplateByIdSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getTemplateByIdResponse = null,
+  }) {
+    return _then(_$GetTemplateByIdSuccessStateImpl(
+      null == getTemplateByIdResponse
+          ? _value.getTemplateByIdResponse
+          : getTemplateByIdResponse // ignore: cast_nullable_to_non_nullable
+              as GetTemplateByIdResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTemplateByIdSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements GetTemplateByIdSuccessState {
+  const _$GetTemplateByIdSuccessStateImpl(this.getTemplateByIdResponse);
+
+  @override
+  final GetTemplateByIdResponse getTemplateByIdResponse;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddTemplateState.getTemplateByIdSuccessState(getTemplateByIdResponse: $getTemplateByIdResponse)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AddTemplateState.getTemplateByIdSuccessState'))
+      ..add(DiagnosticsProperty(
+          'getTemplateByIdResponse', getTemplateByIdResponse));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTemplateByIdSuccessStateImpl &&
+            (identical(
+                    other.getTemplateByIdResponse, getTemplateByIdResponse) ||
+                other.getTemplateByIdResponse == getTemplateByIdResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getTemplateByIdResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTemplateByIdSuccessStateImplCopyWith<_$GetTemplateByIdSuccessStateImpl>
+      get copyWith => __$$GetTemplateByIdSuccessStateImplCopyWithImpl<
+          _$GetTemplateByIdSuccessStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> addtemplateResponse)
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
+    required TResult Function(List<String> error) error,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+  }) {
+    return getTemplateByIdSuccessState(getTemplateByIdResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult? Function(List<String> error)? error,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+  }) {
+    return getTemplateByIdSuccessState?.call(getTemplateByIdResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult Function(List<String> error)? error,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdSuccessState != null) {
+      return getTemplateByIdSuccessState(getTemplateByIdResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialAddTemplate value) initial,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+  }) {
+    return getTemplateByIdSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialAddTemplate value)? initial,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+  }) {
+    return getTemplateByIdSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialAddTemplate value)? initial,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdSuccessState != null) {
+      return getTemplateByIdSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTemplateByIdSuccessState implements AddTemplateState {
+  const factory GetTemplateByIdSuccessState(
+          final GetTemplateByIdResponse getTemplateByIdResponse) =
+      _$GetTemplateByIdSuccessStateImpl;
+
+  GetTemplateByIdResponse get getTemplateByIdResponse;
+  @JsonKey(ignore: true)
+  _$$GetTemplateByIdSuccessStateImplCopyWith<_$GetTemplateByIdSuccessStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateTemplateLoadingStateImplCopyWith<$Res> {
+  factory _$$UpdateTemplateLoadingStateImplCopyWith(
+          _$UpdateTemplateLoadingStateImpl value,
+          $Res Function(_$UpdateTemplateLoadingStateImpl) then) =
+      __$$UpdateTemplateLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateTemplateLoadingStateImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res,
+        _$UpdateTemplateLoadingStateImpl>
+    implements _$$UpdateTemplateLoadingStateImplCopyWith<$Res> {
+  __$$UpdateTemplateLoadingStateImplCopyWithImpl(
+      _$UpdateTemplateLoadingStateImpl _value,
+      $Res Function(_$UpdateTemplateLoadingStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateTemplateLoadingStateImpl
+    with DiagnosticableTreeMixin
+    implements _UpdateTemplateLoadingState {
+  const _$UpdateTemplateLoadingStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddTemplateState.updateTemplateLoadingState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'AddTemplateState.updateTemplateLoadingState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateTemplateLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> addtemplateResponse)
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
+    required TResult Function(List<String> error) error,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+  }) {
+    return updateTemplateLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult? Function(List<String> error)? error,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+  }) {
+    return updateTemplateLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult Function(List<String> error)? error,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (updateTemplateLoadingState != null) {
+      return updateTemplateLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialAddTemplate value) initial,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+  }) {
+    return updateTemplateLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialAddTemplate value)? initial,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+  }) {
+    return updateTemplateLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialAddTemplate value)? initial,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (updateTemplateLoadingState != null) {
+      return updateTemplateLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateTemplateLoadingState implements AddTemplateState {
+  const factory _UpdateTemplateLoadingState() =
+      _$UpdateTemplateLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateTemplateSuccessStateImplCopyWith<$Res> {
+  factory _$$UpdateTemplateSuccessStateImplCopyWith(
+          _$UpdateTemplateSuccessStateImpl value,
+          $Res Function(_$UpdateTemplateSuccessStateImpl) then) =
+      __$$UpdateTemplateSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BaseResponse<dynamic> baseResponse});
+}
+
+/// @nodoc
+class __$$UpdateTemplateSuccessStateImplCopyWithImpl<$Res>
+    extends _$AddTemplateStateCopyWithImpl<$Res,
+        _$UpdateTemplateSuccessStateImpl>
+    implements _$$UpdateTemplateSuccessStateImplCopyWith<$Res> {
+  __$$UpdateTemplateSuccessStateImplCopyWithImpl(
+      _$UpdateTemplateSuccessStateImpl _value,
+      $Res Function(_$UpdateTemplateSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? baseResponse = null,
+  }) {
+    return _then(_$UpdateTemplateSuccessStateImpl(
+      null == baseResponse
+          ? _value.baseResponse
+          : baseResponse // ignore: cast_nullable_to_non_nullable
+              as BaseResponse<dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateTemplateSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements _UpdateTemplateSuccessState {
+  const _$UpdateTemplateSuccessStateImpl(this.baseResponse);
+
+  @override
+  final BaseResponse<dynamic> baseResponse;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddTemplateState.updateTemplateSuccessState(baseResponse: $baseResponse)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AddTemplateState.updateTemplateSuccessState'))
+      ..add(DiagnosticsProperty('baseResponse', baseResponse));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateTemplateSuccessStateImpl &&
+            (identical(other.baseResponse, baseResponse) ||
+                other.baseResponse == baseResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, baseResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateTemplateSuccessStateImplCopyWith<_$UpdateTemplateSuccessStateImpl>
+      get copyWith => __$$UpdateTemplateSuccessStateImplCopyWithImpl<
+          _$UpdateTemplateSuccessStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> addtemplateResponse)
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
+    required TResult Function(List<String> error) error,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+  }) {
+    return updateTemplateSuccessState(baseResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult? Function(List<String> error)? error,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+  }) {
+    return updateTemplateSuccessState?.call(baseResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
+    TResult Function(List<String> error)? error,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (updateTemplateSuccessState != null) {
+      return updateTemplateSuccessState(baseResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialAddTemplate value) initial,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+  }) {
+    return updateTemplateSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialAddTemplate value)? initial,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+  }) {
+    return updateTemplateSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialAddTemplate value)? initial,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    required TResult orElse(),
+  }) {
+    if (updateTemplateSuccessState != null) {
+      return updateTemplateSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateTemplateSuccessState implements AddTemplateState {
+  const factory _UpdateTemplateSuccessState(
+          final BaseResponse<dynamic> baseResponse) =
+      _$UpdateTemplateSuccessStateImpl;
+
+  BaseResponse<dynamic> get baseResponse;
+  @JsonKey(ignore: true)
+  _$$UpdateTemplateSuccessStateImplCopyWith<_$UpdateTemplateSuccessStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -584,7 +1627,7 @@ class __$$ErrorAddTemplateImplCopyWithImpl<$Res>
 
 class _$ErrorAddTemplateImpl
     with DiagnosticableTreeMixin
-    implements _ErrorAddTemplate {
+    implements ErrorAddTemplate {
   const _$ErrorAddTemplateImpl({required final List<String> error})
       : _error = error;
 
@@ -632,11 +1675,18 @@ class _$ErrorAddTemplateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return error(this.error);
@@ -646,10 +1696,18 @@ class _$ErrorAddTemplateImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return error?.call(this.error);
@@ -659,10 +1717,18 @@ class _$ErrorAddTemplateImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -676,9 +1742,19 @@ class _$ErrorAddTemplateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -690,9 +1766,17 @@ class _$ErrorAddTemplateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -704,9 +1788,17 @@ class _$ErrorAddTemplateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),
@@ -718,8 +1810,8 @@ class _$ErrorAddTemplateImpl
   }
 }
 
-abstract class _ErrorAddTemplate implements AddTemplateState {
-  const factory _ErrorAddTemplate({required final List<String> error}) =
+abstract class ErrorAddTemplate implements AddTemplateState {
+  const factory ErrorAddTemplate({required final List<String> error}) =
       _$ErrorAddTemplateImpl;
 
   List<String> get error;
@@ -735,7 +1827,7 @@ abstract class _$$PickedMultiMediaAndFilesImplCopyWith<$Res> {
           $Res Function(_$PickedMultiMediaAndFilesImpl) then) =
       __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({XFile? pickedFile});
+  $Res call({XFile? pickedFile, Uint8List? file});
 }
 
 /// @nodoc
@@ -751,12 +1843,17 @@ class __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pickedFile = freezed,
+    Object? file = freezed,
   }) {
     return _then(_$PickedMultiMediaAndFilesImpl(
       pickedFile: freezed == pickedFile
           ? _value.pickedFile
           : pickedFile // ignore: cast_nullable_to_non_nullable
               as XFile?,
+      file: freezed == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
     ));
   }
 }
@@ -766,14 +1863,16 @@ class __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>
 class _$PickedMultiMediaAndFilesImpl
     with DiagnosticableTreeMixin
     implements _PickedMultiMediaAndFiles {
-  const _$PickedMultiMediaAndFilesImpl({required this.pickedFile});
+  const _$PickedMultiMediaAndFilesImpl({this.pickedFile, this.file});
 
   @override
   final XFile? pickedFile;
+  @override
+  final Uint8List? file;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AddTemplateState.pickedMultiMediaAndFiles(pickedFile: $pickedFile)';
+    return 'AddTemplateState.pickedMultiMediaAndFiles(pickedFile: $pickedFile, file: $file)';
   }
 
   @override
@@ -782,7 +1881,8 @@ class _$PickedMultiMediaAndFilesImpl
     properties
       ..add(DiagnosticsProperty(
           'type', 'AddTemplateState.pickedMultiMediaAndFiles'))
-      ..add(DiagnosticsProperty('pickedFile', pickedFile));
+      ..add(DiagnosticsProperty('pickedFile', pickedFile))
+      ..add(DiagnosticsProperty('file', file));
   }
 
   @override
@@ -791,11 +1891,13 @@ class _$PickedMultiMediaAndFilesImpl
         (other.runtimeType == runtimeType &&
             other is _$PickedMultiMediaAndFilesImpl &&
             (identical(other.pickedFile, pickedFile) ||
-                other.pickedFile == pickedFile));
+                other.pickedFile == pickedFile) &&
+            const DeepCollectionEquality().equals(other.file, file));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pickedFile);
+  int get hashCode => Object.hash(
+      runtimeType, pickedFile, const DeepCollectionEquality().hash(file));
 
   @JsonKey(ignore: true)
   @override
@@ -808,42 +1910,65 @@ class _$PickedMultiMediaAndFilesImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
-    return pickedMultiMediaAndFiles(pickedFile);
+    return pickedMultiMediaAndFiles(pickedFile, file);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
-    return pickedMultiMediaAndFiles?.call(pickedFile);
+    return pickedMultiMediaAndFiles?.call(pickedFile, file);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
     if (pickedMultiMediaAndFiles != null) {
-      return pickedMultiMediaAndFiles(pickedFile);
+      return pickedMultiMediaAndFiles(pickedFile, file);
     }
     return orElse();
   }
@@ -852,9 +1977,19 @@ class _$PickedMultiMediaAndFilesImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -866,9 +2001,17 @@ class _$PickedMultiMediaAndFilesImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -880,9 +2023,17 @@ class _$PickedMultiMediaAndFilesImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),
@@ -895,10 +2046,12 @@ class _$PickedMultiMediaAndFilesImpl
 }
 
 abstract class _PickedMultiMediaAndFiles implements AddTemplateState {
-  const factory _PickedMultiMediaAndFiles({required final XFile? pickedFile}) =
-      _$PickedMultiMediaAndFilesImpl;
+  const factory _PickedMultiMediaAndFiles(
+      {final XFile? pickedFile,
+      final Uint8List? file}) = _$PickedMultiMediaAndFilesImpl;
 
   XFile? get pickedFile;
+  Uint8List? get file;
   @JsonKey(ignore: true)
   _$$PickedMultiMediaAndFilesImplCopyWith<_$PickedMultiMediaAndFilesImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -979,11 +2132,18 @@ class _$StateOfButtonImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() addTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> addtemplateResponse)
-        success,
+        addTemplateSuccessState,
+    required TResult Function() getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)
+        getTemplateByIdSuccessState,
+    required TResult Function() updateTemplateLoadingState,
+    required TResult Function(BaseResponse<dynamic> baseResponse)
+        updateTemplateSuccessState,
     required TResult Function(List<String> error) error,
-    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(XFile? pickedFile, Uint8List? file)
+        pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
   }) {
     return stateOfButton(isValid);
@@ -993,10 +2153,18 @@ class _$StateOfButtonImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult? Function()? addTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult? Function()? getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult? Function()? updateTemplateLoadingState,
+    TResult? Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult? Function(List<String> error)? error,
-    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
   }) {
     return stateOfButton?.call(isValid);
@@ -1006,10 +2174,18 @@ class _$StateOfButtonImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(BaseResponse<dynamic> addtemplateResponse)? success,
+    TResult Function()? addTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> addtemplateResponse)?
+        addTemplateSuccessState,
+    TResult Function()? getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdResponse getTemplateByIdResponse)?
+        getTemplateByIdSuccessState,
+    TResult Function()? updateTemplateLoadingState,
+    TResult Function(BaseResponse<dynamic> baseResponse)?
+        updateTemplateSuccessState,
     TResult Function(List<String> error)? error,
-    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(XFile? pickedFile, Uint8List? file)?
+        pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     required TResult orElse(),
   }) {
@@ -1023,9 +2199,19 @@ class _$StateOfButtonImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialAddTemplate value) initial,
-    required TResult Function(_LoadingAddTemplate value) loading,
-    required TResult Function(_SuccessAddTemplate value) success,
-    required TResult Function(_ErrorAddTemplate value) error,
+    required TResult Function(_AddTemplateLoadingState value)
+        addTemplateLoadingState,
+    required TResult Function(_AddTemplateSuccessState value)
+        addTemplateSuccessState,
+    required TResult Function(GetTemplateByIdLoadingState value)
+        getTemplateByIdLoadingState,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(_UpdateTemplateLoadingState value)
+        updateTemplateLoadingState,
+    required TResult Function(_UpdateTemplateSuccessState value)
+        updateTemplateSuccessState,
+    required TResult Function(ErrorAddTemplate value) error,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -1037,9 +2223,17 @@ class _$StateOfButtonImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialAddTemplate value)? initial,
-    TResult? Function(_LoadingAddTemplate value)? loading,
-    TResult? Function(_SuccessAddTemplate value)? success,
-    TResult? Function(_ErrorAddTemplate value)? error,
+    TResult? Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult? Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult? Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult? Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult? Function(ErrorAddTemplate value)? error,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -1051,9 +2245,17 @@ class _$StateOfButtonImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialAddTemplate value)? initial,
-    TResult Function(_LoadingAddTemplate value)? loading,
-    TResult Function(_SuccessAddTemplate value)? success,
-    TResult Function(_ErrorAddTemplate value)? error,
+    TResult Function(_AddTemplateLoadingState value)? addTemplateLoadingState,
+    TResult Function(_AddTemplateSuccessState value)? addTemplateSuccessState,
+    TResult Function(GetTemplateByIdLoadingState value)?
+        getTemplateByIdLoadingState,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(_UpdateTemplateLoadingState value)?
+        updateTemplateLoadingState,
+    TResult Function(_UpdateTemplateSuccessState value)?
+        updateTemplateSuccessState,
+    TResult Function(ErrorAddTemplate value)? error,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     required TResult orElse(),

@@ -52,29 +52,13 @@ class AppMedia {
       double sizeInMB = sizeInBytes / (1024 * 1024);
 
       if (sizeInMB <= maxSizeInMB) {
-        //  file=await  compressAndGetFile(file: file as XFile );
         final compressedfile = await compressAndGetFile(file: file);
-        return  File(compressedfile!.path);
-      } else {
-        // Show an error message
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-                content: Text(
-                    'Image size should be less than $maxSizeInMB MB. Selected image is ${sizeInMB.toStringAsFixed(2)} MB.')),
-          );
-        }
-        return null;
+        return File(compressedfile!.path);
       }
+      return null;
     } catch (e) {
       if (kDebugMode) {
         print('Error picking image: $e');
-      }
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Error picking image. Please try again.')),
-        );
       }
       return null;
     }

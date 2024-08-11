@@ -22,15 +22,19 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   // // login
+
+  // Repos
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerLazySingleton<TemplatesRepo>(() => TemplatesRepo(getIt()));
+
+  // Cubits
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
-  getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit());
+  getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit(getIt()));
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));
   getIt.registerFactory<ManageAudiancesCubit>(() => ManageAudiancesCubit());
-  // * App Media
+  //App Media
   getIt.registerLazySingleton<AppMedia>(
       () => AppMedia(imagePicker: ImagePicker()));
   // // signup

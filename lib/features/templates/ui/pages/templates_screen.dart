@@ -18,7 +18,6 @@ class TemplatesScreen extends StatelessWidget {
       
         floatingActionButton: FloatingActionButton(
           onPressed: () =>context.pushNamed(Routes.addTemplateScreen),
-
           backgroundColor: ColorsManager.containerTitleColor,
           child: SvgPicture.asset('assets/icons/comment_bank_floating.svg'),
         ),
