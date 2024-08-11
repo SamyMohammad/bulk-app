@@ -42,13 +42,7 @@ class AppRouter {
             child: const RegisterScreen(),
           ),
         );
-      // case Routes.signUpScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => getIt<SignupCubit>(),
-      //       child: const SignupScreen(),
-      //     ),
-      //   );
+
       case Routes.homeScreen:
         return PageRouteBuilder(
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
