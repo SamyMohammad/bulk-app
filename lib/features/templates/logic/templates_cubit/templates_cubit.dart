@@ -13,10 +13,14 @@ part 'templates_state.dart';
 class TemplatesCubit extends Cubit<TemplatesState> {
   TemplatesCubit(this._templatesRepo) : super(const TemplatesState.initial());
   late final TemplatesRepo _templatesRepo;
-
+  List<Templates>? templates = [];
   void emitGetAllTemplatesStates() async {
+<<<<<<< HEAD
+    emit(const TemplatesState.loading());
+=======
     emit(const TemplatesState.getAllTemplatesLoadingState());
 
+>>>>>>> development
     final response = await _templatesRepo.getAllTemplates();
     response.when(
       success: (success) {
@@ -26,6 +30,7 @@ class TemplatesCubit extends Cubit<TemplatesState> {
         } else {
           emit(TemplatesState.getAllTemplatesSuccessState(
               success.data ?? TemplatesData(templates: [])));
+          templates = success.data?.templates;
         }
       },
       failure: (error) => emit(
@@ -33,8 +38,6 @@ class TemplatesCubit extends Cubit<TemplatesState> {
       ),
     );
   }
-
-  
 
   void emitDeleteTemplateStates(int id) async {
     emit(const TemplatesState.loadingDelete());
@@ -50,5 +53,23 @@ class TemplatesCubit extends Cubit<TemplatesState> {
         TemplatesState.errorDelete(error: error),
       ),
     );
+  }
+
+  void getFilteredTemplatesListFrom({required String? query}) {
+    List<Templates>? templates = filterTemplates(query);
+
+    if (templates?.isNotEmpty ?? false) {
+      emit(TemplatesState.success(TemplatesData(templates: templates)));
+    } else {
+      emit(TemplatesState.empty(TemplatesData(templates: [])));
+    }
+  }
+
+  filterTemplates(String? query) {
+    final filteredItems = templates
+        ?.where((template) =>
+            template.name!.toLowerCase().contains(query?.toLowerCase() ?? ''))
+        .toList();
+    return filteredItems;
   }
 }

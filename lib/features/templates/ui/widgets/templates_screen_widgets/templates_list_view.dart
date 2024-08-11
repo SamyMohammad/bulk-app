@@ -25,7 +25,9 @@ class TemplatesListView extends StatelessWidget {
                 itemCount: templates.length,
                 separatorBuilder: (context, index) => 20.sizedBoxHeight,
                 itemBuilder: (context, index) {
-                  return  TemplateItem(template: templates[index],);
+                  return TemplateItem(
+                    template: templates[index],
+                  );
                 });
           },
           getAllTemplatesErrorState: (error) => Text(

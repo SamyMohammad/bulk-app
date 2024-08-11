@@ -1,12 +1,13 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/resources/app_strings.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/app_text_field.dart';
-import '../add_template_screen_widgets/add_template_listener.dart';
 import 'templates_list_view.dart';
 
 class TemplatesBody extends StatelessWidget {
@@ -20,6 +21,11 @@ class TemplatesBody extends StatelessWidget {
         children: [
           AppTextField(
             hintText: AppStrings.searchTemplates.tr(),
+            onChanged: (query) {
+              context.read<TemplatesCubit>().getFilteredTemplatesListFrom(
+                    query: query,
+                  );
+            },
             prefixIcon: Icon(
               Icons.search,
               size: 25.sp,
