@@ -1,11 +1,13 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
+import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AudianceItem extends StatelessWidget {
-  const AudianceItem({super.key});
+  const AudianceItem({super.key, required this.audiences});
+  final Audiences audiences;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +28,12 @@ class AudianceItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Audiance Name',
+                audiences.name ?? 'name',
                 style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
               ),
               1.sizedBoxHeight,
               Text(
-                '26/07/2023',
+                audiences.createdAt ?? 'date',
                 style: TextStyle(
                     color: ColorsManager.saerchTextFieldHintColor,
                     fontSize: 12.sp),
