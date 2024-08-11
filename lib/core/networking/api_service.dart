@@ -29,9 +29,6 @@ abstract class ApiService {
   @GET(ApiConstants.audience)
   Future<BaseResponse<AudienceResponseData>> getAudiance();
 
-  @GET(ApiConstants.audience)
-  Future<BaseResponse<AudienceResponseData>> getAudiance();
-
   @GET(ApiConstants.template)
   Future<BaseResponse<TemplatesData>> getAllTemplates();
 
