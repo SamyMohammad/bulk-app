@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/networking/dio_factory.dart';
-import '../../data/repos/login_repo.dart';
+import '../../data/repos/auth_repo.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  final LoginRepo _loginRepo;
+  final AuthRepo _authRepo;
 
-  LoginCubit(this._loginRepo) : super(const LoginState.initial());
+  LoginCubit(this._authRepo) : super(const LoginState.initial());
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -40,7 +40,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   void emitLoginStates() async {
     emit(const LoginState.loginLoadingState());
-    final response = await _loginRepo
+    final response = await _authRepo
         .login(LoginRequestBody(
           email: emailController.text,
           type: 'user',

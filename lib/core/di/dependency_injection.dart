@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../features/auth/data/repos/login_repo.dart';
+import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/auth/logic/login_cubit/login_cubit.dart';
 import '../../features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
 import '../../features/templates/data/repos/templates_repo.dart';
@@ -24,7 +24,7 @@ Future<void> setupGetIt() async {
   // // login
 
   // Repos
-  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
   getIt.registerLazySingleton<TemplatesRepo>(() => TemplatesRepo(getIt()));
 
   // Cubits
