@@ -10,8 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> main() async {
-    Bloc.observer = CustomBlocObserver();
-    
+  Bloc.observer = CustomBlocObserver();
+
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await setupGetIt();
