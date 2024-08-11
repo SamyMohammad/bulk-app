@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,9 @@ class AddTemplateListener extends StatelessWidget {
             stopLoading(context);
             context.pushReplacementNamed(Routes.templatesScreen);
           },
-          error: (error) {
+          error: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
+
           },
         );
       },
@@ -35,7 +38,7 @@ class AddTemplateListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -46,8 +49,8 @@ class AddTemplateListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
-          style: TextStyles.font16GreenExtraBold,
+          apiErrorModel.getAllErrorMessages(),
+          style: TextStyles.font15whiteMedium.copyWith(color: Colors.black87),
         ),
         actions: [
           TextButton(

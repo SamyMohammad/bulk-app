@@ -9,6 +9,7 @@ class ColorsManager {
   static const Color saerchTextFieldHintColor = Color(0xFF94A3B8);
   static const Color limeColor = Color(0xFF84CC16);
   static const Color buttonColor = Color(0xFFEAB308);
+  static const Color expansionTileButtonColor = Color(0xFF22C55E);
   static Color? teal400 = const Color(0xff2DD4BF);
 
   // static const Color darkBlue = Color(0xFF242424);

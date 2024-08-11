@@ -19,47 +19,51 @@ mixin _$TemplatesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
@@ -68,10 +72,14 @@ mixin _$TemplatesState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
@@ -80,10 +88,14 @@ mixin _$TemplatesState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
@@ -149,13 +161,13 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
     return initial();
   }
@@ -164,13 +176,13 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
     return initial?.call();
   }
@@ -179,13 +191,13 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -198,10 +210,14 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
@@ -213,10 +229,14 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
@@ -228,10 +248,14 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
@@ -249,35 +273,39 @@ abstract class _Initial implements TemplatesState {
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+abstract class _$$GetAllTemplatesLoadingStateImplCopyWith<$Res> {
+  factory _$$GetAllTemplatesLoadingStateImplCopyWith(
+          _$GetAllTemplatesLoadingStateImpl value,
+          $Res Function(_$GetAllTemplatesLoadingStateImpl) then) =
+      __$$GetAllTemplatesLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$TemplatesStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+class __$$GetAllTemplatesLoadingStateImplCopyWithImpl<$Res>
+    extends _$TemplatesStateCopyWithImpl<$Res,
+        _$GetAllTemplatesLoadingStateImpl>
+    implements _$$GetAllTemplatesLoadingStateImplCopyWith<$Res> {
+  __$$GetAllTemplatesLoadingStateImplCopyWithImpl(
+      _$GetAllTemplatesLoadingStateImpl _value,
+      $Res Function(_$GetAllTemplatesLoadingStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
+class _$GetAllTemplatesLoadingStateImpl implements GetAllTemplatesLoadingState {
+  const _$GetAllTemplatesLoadingStateImpl();
 
   @override
   String toString() {
-    return 'TemplatesState.loading()';
+    return 'TemplatesState.getAllTemplatesLoadingState()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllTemplatesLoadingStateImpl);
   }
 
   @override
@@ -287,47 +315,47 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
-    return loading();
+    return getAllTemplatesLoadingState();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
-    return loading?.call();
+    return getAllTemplatesLoadingState?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (getAllTemplatesLoadingState != null) {
+      return getAllTemplatesLoadingState();
     }
     return orElse();
   }
@@ -336,71 +364,87 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
   }) {
-    return loading(this);
+    return getAllTemplatesLoadingState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
   }) {
-    return loading?.call(this);
+    return getAllTemplatesLoadingState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (getAllTemplatesLoadingState != null) {
+      return getAllTemplatesLoadingState(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements TemplatesState {
-  const factory _Loading() = _$LoadingImpl;
+abstract class GetAllTemplatesLoadingState implements TemplatesState {
+  const factory GetAllTemplatesLoadingState() =
+      _$GetAllTemplatesLoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+abstract class _$$GetAllTemplatesSuccessStateImplCopyWith<$Res> {
+  factory _$$GetAllTemplatesSuccessStateImplCopyWith(
+          _$GetAllTemplatesSuccessStateImpl value,
+          $Res Function(_$GetAllTemplatesSuccessStateImpl) then) =
+      __$$GetAllTemplatesSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TemplatesData data});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$TemplatesStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$GetAllTemplatesSuccessStateImplCopyWithImpl<$Res>
+    extends _$TemplatesStateCopyWithImpl<$Res,
+        _$GetAllTemplatesSuccessStateImpl>
+    implements _$$GetAllTemplatesSuccessStateImplCopyWith<$Res> {
+  __$$GetAllTemplatesSuccessStateImplCopyWithImpl(
+      _$GetAllTemplatesSuccessStateImpl _value,
+      $Res Function(_$GetAllTemplatesSuccessStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -408,7 +452,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$SuccessImpl(
+    return _then(_$GetAllTemplatesSuccessStateImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -419,22 +463,22 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.data);
+class _$GetAllTemplatesSuccessStateImpl implements GetAllTemplatesSuccessState {
+  const _$GetAllTemplatesSuccessStateImpl(this.data);
 
   @override
   final TemplatesData data;
 
   @override
   String toString() {
-    return 'TemplatesState.success(data: $data)';
+    return 'TemplatesState.getAllTemplatesSuccessState(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
+            other is _$GetAllTemplatesSuccessStateImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -444,54 +488,55 @@ class _$SuccessImpl implements _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  _$$GetAllTemplatesSuccessStateImplCopyWith<_$GetAllTemplatesSuccessStateImpl>
+      get copyWith => __$$GetAllTemplatesSuccessStateImplCopyWithImpl<
+          _$GetAllTemplatesSuccessStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
-    return success(data);
+    return getAllTemplatesSuccessState(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
-    return success?.call(data);
+    return getAllTemplatesSuccessState?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (getAllTemplatesSuccessState != null) {
+      return getAllTemplatesSuccessState(data);
     }
     return orElse();
   }
@@ -500,76 +545,91 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
   }) {
-    return success(this);
+    return getAllTemplatesSuccessState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
   }) {
-    return success?.call(this);
+    return getAllTemplatesSuccessState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (getAllTemplatesSuccessState != null) {
+      return getAllTemplatesSuccessState(this);
     }
     return orElse();
   }
 }
 
-abstract class _Success implements TemplatesState {
-  const factory _Success(final TemplatesData data) = _$SuccessImpl;
+abstract class GetAllTemplatesSuccessState implements TemplatesState {
+  const factory GetAllTemplatesSuccessState(final TemplatesData data) =
+      _$GetAllTemplatesSuccessStateImpl;
 
   TemplatesData get data;
   @JsonKey(ignore: true)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetAllTemplatesSuccessStateImplCopyWith<_$GetAllTemplatesSuccessStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EmptyImplCopyWith<$Res> {
-  factory _$$EmptyImplCopyWith(
-          _$EmptyImpl value, $Res Function(_$EmptyImpl) then) =
-      __$$EmptyImplCopyWithImpl<$Res>;
+abstract class _$$GetAllTemplatesEmptyStateImplCopyWith<$Res> {
+  factory _$$GetAllTemplatesEmptyStateImplCopyWith(
+          _$GetAllTemplatesEmptyStateImpl value,
+          $Res Function(_$GetAllTemplatesEmptyStateImpl) then) =
+      __$$GetAllTemplatesEmptyStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TemplatesData data});
 }
 
 /// @nodoc
-class __$$EmptyImplCopyWithImpl<$Res>
-    extends _$TemplatesStateCopyWithImpl<$Res, _$EmptyImpl>
-    implements _$$EmptyImplCopyWith<$Res> {
-  __$$EmptyImplCopyWithImpl(
-      _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
+class __$$GetAllTemplatesEmptyStateImplCopyWithImpl<$Res>
+    extends _$TemplatesStateCopyWithImpl<$Res, _$GetAllTemplatesEmptyStateImpl>
+    implements _$$GetAllTemplatesEmptyStateImplCopyWith<$Res> {
+  __$$GetAllTemplatesEmptyStateImplCopyWithImpl(
+      _$GetAllTemplatesEmptyStateImpl _value,
+      $Res Function(_$GetAllTemplatesEmptyStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -577,7 +637,7 @@ class __$$EmptyImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$EmptyImpl(
+    return _then(_$GetAllTemplatesEmptyStateImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -588,22 +648,22 @@ class __$$EmptyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmptyImpl implements _Empty {
-  const _$EmptyImpl(this.data);
+class _$GetAllTemplatesEmptyStateImpl implements GetAllTemplatesEmptyState {
+  const _$GetAllTemplatesEmptyStateImpl(this.data);
 
   @override
   final TemplatesData data;
 
   @override
   String toString() {
-    return 'TemplatesState.empty(data: $data)';
+    return 'TemplatesState.getAllTemplatesEmptyState(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmptyImpl &&
+            other is _$GetAllTemplatesEmptyStateImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -613,54 +673,55 @@ class _$EmptyImpl implements _Empty {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EmptyImplCopyWith<_$EmptyImpl> get copyWith =>
-      __$$EmptyImplCopyWithImpl<_$EmptyImpl>(this, _$identity);
+  _$$GetAllTemplatesEmptyStateImplCopyWith<_$GetAllTemplatesEmptyStateImpl>
+      get copyWith => __$$GetAllTemplatesEmptyStateImplCopyWithImpl<
+          _$GetAllTemplatesEmptyStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
-    return empty(data);
+    return getAllTemplatesEmptyState(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
-    return empty?.call(data);
+    return getAllTemplatesEmptyState?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty(data);
+    if (getAllTemplatesEmptyState != null) {
+      return getAllTemplatesEmptyState(data);
     }
     return orElse();
   }
@@ -669,76 +730,91 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
   }) {
-    return empty(this);
+    return getAllTemplatesEmptyState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
   }) {
-    return empty?.call(this);
+    return getAllTemplatesEmptyState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty(this);
+    if (getAllTemplatesEmptyState != null) {
+      return getAllTemplatesEmptyState(this);
     }
     return orElse();
   }
 }
 
-abstract class _Empty implements TemplatesState {
-  const factory _Empty(final TemplatesData data) = _$EmptyImpl;
+abstract class GetAllTemplatesEmptyState implements TemplatesState {
+  const factory GetAllTemplatesEmptyState(final TemplatesData data) =
+      _$GetAllTemplatesEmptyStateImpl;
 
   TemplatesData get data;
   @JsonKey(ignore: true)
-  _$$EmptyImplCopyWith<_$EmptyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetAllTemplatesEmptyStateImplCopyWith<_$GetAllTemplatesEmptyStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+abstract class _$$GetAllTemplatesErrorStateImplCopyWith<$Res> {
+  factory _$$GetAllTemplatesErrorStateImplCopyWith(
+          _$GetAllTemplatesErrorStateImpl value,
+          $Res Function(_$GetAllTemplatesErrorStateImpl) then) =
+      __$$GetAllTemplatesErrorStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> error});
+  $Res call({ApiErrorModel error});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$TemplatesStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$GetAllTemplatesErrorStateImplCopyWithImpl<$Res>
+    extends _$TemplatesStateCopyWithImpl<$Res, _$GetAllTemplatesErrorStateImpl>
+    implements _$$GetAllTemplatesErrorStateImplCopyWith<$Res> {
+  __$$GetAllTemplatesErrorStateImplCopyWithImpl(
+      _$GetAllTemplatesErrorStateImpl _value,
+      $Res Function(_$GetAllTemplatesErrorStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -746,96 +822,91 @@ class __$$ErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$ErrorImpl(
+    return _then(_$GetAllTemplatesErrorStateImpl(
       error: null == error
-          ? _value._error
+          ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as ApiErrorModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ErrorImpl implements _Error {
-  const _$ErrorImpl({required final List<String> error}) : _error = error;
+class _$GetAllTemplatesErrorStateImpl implements GetAllTemplatesErrorState {
+  const _$GetAllTemplatesErrorStateImpl({required this.error});
 
-  final List<String> _error;
   @override
-  List<String> get error {
-    if (_error is EqualUnmodifiableListView) return _error;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_error);
-  }
+  final ApiErrorModel error;
 
   @override
   String toString() {
-    return 'TemplatesState.error(error: $error)';
+    return 'TemplatesState.getAllTemplatesErrorState(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl &&
-            const DeepCollectionEquality().equals(other._error, _error));
+            other is _$GetAllTemplatesErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  _$$GetAllTemplatesErrorStateImplCopyWith<_$GetAllTemplatesErrorStateImpl>
+      get copyWith => __$$GetAllTemplatesErrorStateImplCopyWithImpl<
+          _$GetAllTemplatesErrorStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
-    return error(this.error);
+    return getAllTemplatesErrorState(error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
-    return error?.call(this.error);
+    return getAllTemplatesErrorState?.call(error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this.error);
+    if (getAllTemplatesErrorState != null) {
+      return getAllTemplatesErrorState(error);
     }
     return orElse();
   }
@@ -844,59 +915,72 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
   }) {
-    return error(this);
+    return getAllTemplatesErrorState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
   }) {
-    return error?.call(this);
+    return getAllTemplatesErrorState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (getAllTemplatesErrorState != null) {
+      return getAllTemplatesErrorState(this);
     }
     return orElse();
   }
 }
 
-abstract class _Error implements TemplatesState {
-  const factory _Error({required final List<String> error}) = _$ErrorImpl;
+abstract class GetAllTemplatesErrorState implements TemplatesState {
+  const factory GetAllTemplatesErrorState(
+      {required final ApiErrorModel error}) = _$GetAllTemplatesErrorStateImpl;
 
-  List<String> get error;
+  ApiErrorModel get error;
   @JsonKey(ignore: true)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetAllTemplatesErrorStateImplCopyWith<_$GetAllTemplatesErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -938,13 +1022,13 @@ class _$LoadingDeleteImpl implements _LoadingDelete {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
     return loadingDelete();
   }
@@ -953,13 +1037,13 @@ class _$LoadingDeleteImpl implements _LoadingDelete {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
     return loadingDelete?.call();
   }
@@ -968,13 +1052,13 @@ class _$LoadingDeleteImpl implements _LoadingDelete {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
     if (loadingDelete != null) {
@@ -987,10 +1071,14 @@ class _$LoadingDeleteImpl implements _LoadingDelete {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
@@ -1002,10 +1090,14 @@ class _$LoadingDeleteImpl implements _LoadingDelete {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
@@ -1017,10 +1109,14 @@ class _$LoadingDeleteImpl implements _LoadingDelete {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
@@ -1076,13 +1172,13 @@ class _$SuccessDeleteImpl implements _SuccessDelete {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
     return successDelete();
   }
@@ -1091,13 +1187,13 @@ class _$SuccessDeleteImpl implements _SuccessDelete {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
     return successDelete?.call();
   }
@@ -1106,13 +1202,13 @@ class _$SuccessDeleteImpl implements _SuccessDelete {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
     if (successDelete != null) {
@@ -1125,10 +1221,14 @@ class _$SuccessDeleteImpl implements _SuccessDelete {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
@@ -1140,10 +1240,14 @@ class _$SuccessDeleteImpl implements _SuccessDelete {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
@@ -1155,10 +1259,14 @@ class _$SuccessDeleteImpl implements _SuccessDelete {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
@@ -1181,7 +1289,7 @@ abstract class _$$ErrorDeleteImplCopyWith<$Res> {
           _$ErrorDeleteImpl value, $Res Function(_$ErrorDeleteImpl) then) =
       __$$ErrorDeleteImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> error});
+  $Res call({ApiErrorModel error});
 }
 
 /// @nodoc
@@ -1199,9 +1307,9 @@ class __$$ErrorDeleteImplCopyWithImpl<$Res>
   }) {
     return _then(_$ErrorDeleteImpl(
       error: null == error
-          ? _value._error
+          ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as ApiErrorModel,
     ));
   }
 }
@@ -1209,15 +1317,10 @@ class __$$ErrorDeleteImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ErrorDeleteImpl implements _ErrorDelete {
-  const _$ErrorDeleteImpl({required final List<String> error}) : _error = error;
+  const _$ErrorDeleteImpl({required this.error});
 
-  final List<String> _error;
   @override
-  List<String> get error {
-    if (_error is EqualUnmodifiableListView) return _error;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_error);
-  }
+  final ApiErrorModel error;
 
   @override
   String toString() {
@@ -1229,12 +1332,11 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorDeleteImpl &&
-            const DeepCollectionEquality().equals(other._error, _error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -1246,47 +1348,47 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(TemplatesData data) success,
-    required TResult Function(TemplatesData data) empty,
-    required TResult Function(List<String> error) error,
+    required TResult Function() getAllTemplatesLoadingState,
+    required TResult Function(TemplatesData data) getAllTemplatesSuccessState,
+    required TResult Function(TemplatesData data) getAllTemplatesEmptyState,
+    required TResult Function(ApiErrorModel error) getAllTemplatesErrorState,
     required TResult Function() loadingDelete,
     required TResult Function() successDelete,
-    required TResult Function(List<String> error) errorDelete,
+    required TResult Function(ApiErrorModel error) errorDelete,
   }) {
-    return errorDelete(this.error);
+    return errorDelete(error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(TemplatesData data)? success,
-    TResult? Function(TemplatesData data)? empty,
-    TResult? Function(List<String> error)? error,
+    TResult? Function()? getAllTemplatesLoadingState,
+    TResult? Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult? Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult? Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult? Function()? loadingDelete,
     TResult? Function()? successDelete,
-    TResult? Function(List<String> error)? errorDelete,
+    TResult? Function(ApiErrorModel error)? errorDelete,
   }) {
-    return errorDelete?.call(this.error);
+    return errorDelete?.call(error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(TemplatesData data)? success,
-    TResult Function(TemplatesData data)? empty,
-    TResult Function(List<String> error)? error,
+    TResult Function()? getAllTemplatesLoadingState,
+    TResult Function(TemplatesData data)? getAllTemplatesSuccessState,
+    TResult Function(TemplatesData data)? getAllTemplatesEmptyState,
+    TResult Function(ApiErrorModel error)? getAllTemplatesErrorState,
     TResult Function()? loadingDelete,
     TResult Function()? successDelete,
-    TResult Function(List<String> error)? errorDelete,
+    TResult Function(ApiErrorModel error)? errorDelete,
     required TResult orElse(),
   }) {
     if (errorDelete != null) {
-      return errorDelete(this.error);
+      return errorDelete(error);
     }
     return orElse();
   }
@@ -1295,10 +1397,14 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Error value) error,
+    required TResult Function(GetAllTemplatesLoadingState value)
+        getAllTemplatesLoadingState,
+    required TResult Function(GetAllTemplatesSuccessState value)
+        getAllTemplatesSuccessState,
+    required TResult Function(GetAllTemplatesEmptyState value)
+        getAllTemplatesEmptyState,
+    required TResult Function(GetAllTemplatesErrorState value)
+        getAllTemplatesErrorState,
     required TResult Function(_LoadingDelete value) loadingDelete,
     required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_ErrorDelete value) errorDelete,
@@ -1310,10 +1416,14 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Error value)? error,
+    TResult? Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult? Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult? Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult? Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult? Function(_LoadingDelete value)? loadingDelete,
     TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_ErrorDelete value)? errorDelete,
@@ -1325,10 +1435,14 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Error value)? error,
+    TResult Function(GetAllTemplatesLoadingState value)?
+        getAllTemplatesLoadingState,
+    TResult Function(GetAllTemplatesSuccessState value)?
+        getAllTemplatesSuccessState,
+    TResult Function(GetAllTemplatesEmptyState value)?
+        getAllTemplatesEmptyState,
+    TResult Function(GetAllTemplatesErrorState value)?
+        getAllTemplatesErrorState,
     TResult Function(_LoadingDelete value)? loadingDelete,
     TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_ErrorDelete value)? errorDelete,
@@ -1342,10 +1456,10 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
 }
 
 abstract class _ErrorDelete implements TemplatesState {
-  const factory _ErrorDelete({required final List<String> error}) =
+  const factory _ErrorDelete({required final ApiErrorModel error}) =
       _$ErrorDeleteImpl;
 
-  List<String> get error;
+  ApiErrorModel get error;
   @JsonKey(ignore: true)
   _$$ErrorDeleteImplCopyWith<_$ErrorDeleteImpl> get copyWith =>
       throw _privateConstructorUsedError;

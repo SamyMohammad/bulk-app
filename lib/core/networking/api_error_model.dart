@@ -17,6 +17,12 @@ class ApiErrorModel {
       _$ApiErrorModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ApiErrorModelToJson(this);
+
+
+
+    String getAllErrorMessages() {
+      return error?.details?.map((error) => '• $error').join('\n') ?? "Unknown Error occurred";
+  }
 }
 
 @JsonSerializable()

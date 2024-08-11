@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/logic/cubit/home_cubit.dart';
+import '../../features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import '../../features/templates/ui/pages/templates_screen.dart';
 
 class AppRouter {
@@ -35,20 +36,14 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
-      case Routes.signUpScreen:
+      case Routes.registerScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<RegisterCubit>(),
             child: const RegisterScreen(),
           ),
         );
-      // case Routes.signUpScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => getIt<SignupCubit>(),
-      //       child: const SignupScreen(),
-      //     ),
-      //   );
+
       case Routes.homeScreen:
         return PageRouteBuilder(
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -104,6 +99,10 @@ class AppRouter {
             create: (context) => ContactScreenCubit(),
             child: const ContactScreen(),
           ),
+        );
+      case Routes.supportScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SupportScreen(),
         );
 
       default:

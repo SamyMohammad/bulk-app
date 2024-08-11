@@ -19,7 +19,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   setupGetIt();
-    Bloc.observer = CustomBlocObserver();
+  Bloc.observer = CustomBlocObserver();
 
   runApp(EasyLocalization(
     supportedLocales: const [englishLocale],
@@ -49,7 +49,13 @@ class BulkApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
+<<<<<<< HEAD
           initialRoute: Routes.manageAudiances,
+=======
+
+          // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,      
+          initialRoute: Routes.registerScreen,
+>>>>>>> development
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
