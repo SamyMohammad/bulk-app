@@ -9,9 +9,11 @@ import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_co
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_templates_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/contact_screen.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
-import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
-import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
-import 'package:bulk_app/features/templates/ui/pages/add_template_screen.dart';
+import 'package:bulk_app/features/support/pages/support_screen.dart';
+import 'package:bulk_app/features/templates/presentation/cubit/add_template_cubit/add_template_cubit.dart';
+import 'package:bulk_app/features/templates/presentation/cubit/templates/templates_cubit.dart';
+import 'package:bulk_app/features/templates/presentation/pages/add_template_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -98,6 +100,10 @@ class AppRouter {
             create: (context) => ContactScreenCubit(),
             child: const ContactScreen(),
           ),
+        );
+      case Routes.supportScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SupportScreen(),
         );
 
       default:

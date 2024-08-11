@@ -20,6 +20,16 @@ class TextStyles {
       color: ColorsManager.darkAppBarBackGround,
       fontFamily: 'Tajawal');
   static TextStyle font15whiteMedium = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.white,
+  );
+
+  static TextStyle font12witeRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.white,
+  );
       fontSize: 15.sp,
       fontWeight: FontWeightHelper.medium,
       color: Colors.white,
