@@ -29,7 +29,7 @@ Future<void> setupGetIt() async {
 
   // Cubits
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
-  getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
+  getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
   getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit(getIt()));
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));

@@ -28,7 +28,7 @@ mixin _$AddTemplateState {
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -46,7 +46,7 @@ mixin _$AddTemplateState {
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -64,7 +64,7 @@ mixin _$AddTemplateState {
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -206,7 +206,7 @@ class _$InitialAddTemplateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -227,7 +227,7 @@ class _$InitialAddTemplateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -248,7 +248,7 @@ class _$InitialAddTemplateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -396,7 +396,7 @@ class _$AddTemplateLoadingStateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -417,7 +417,7 @@ class _$AddTemplateLoadingStateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -438,7 +438,7 @@ class _$AddTemplateLoadingStateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -615,7 +615,7 @@ class _$AddTemplateSuccessStateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -636,7 +636,7 @@ class _$AddTemplateSuccessStateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -657,7 +657,7 @@ class _$AddTemplateSuccessStateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -813,7 +813,7 @@ class _$GetTemplateByIdLoadingStateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -834,7 +834,7 @@ class _$GetTemplateByIdLoadingStateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -855,7 +855,7 @@ class _$GetTemplateByIdLoadingStateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -1036,7 +1036,7 @@ class _$GetTemplateByIdSuccessStateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -1057,7 +1057,7 @@ class _$GetTemplateByIdSuccessStateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -1078,7 +1078,7 @@ class _$GetTemplateByIdSuccessStateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -1234,7 +1234,7 @@ class _$UpdateTemplateLoadingStateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -1255,7 +1255,7 @@ class _$UpdateTemplateLoadingStateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -1276,7 +1276,7 @@ class _$UpdateTemplateLoadingStateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -1455,7 +1455,7 @@ class _$UpdateTemplateSuccessStateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -1476,7 +1476,7 @@ class _$UpdateTemplateSuccessStateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -1497,7 +1497,7 @@ class _$UpdateTemplateSuccessStateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -1598,7 +1598,7 @@ abstract class _$$ErrorAddTemplateImplCopyWith<$Res> {
           $Res Function(_$ErrorAddTemplateImpl) then) =
       __$$ErrorAddTemplateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> error});
+  $Res call({ApiErrorModel error});
 }
 
 /// @nodoc
@@ -1616,9 +1616,9 @@ class __$$ErrorAddTemplateImplCopyWithImpl<$Res>
   }) {
     return _then(_$ErrorAddTemplateImpl(
       error: null == error
-          ? _value._error
+          ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as ApiErrorModel,
     ));
   }
 }
@@ -1628,16 +1628,10 @@ class __$$ErrorAddTemplateImplCopyWithImpl<$Res>
 class _$ErrorAddTemplateImpl
     with DiagnosticableTreeMixin
     implements ErrorAddTemplate {
-  const _$ErrorAddTemplateImpl({required final List<String> error})
-      : _error = error;
+  const _$ErrorAddTemplateImpl({required this.error});
 
-  final List<String> _error;
   @override
-  List<String> get error {
-    if (_error is EqualUnmodifiableListView) return _error;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_error);
-  }
+  final ApiErrorModel error;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1657,12 +1651,11 @@ class _$ErrorAddTemplateImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorAddTemplateImpl &&
-            const DeepCollectionEquality().equals(other._error, _error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -1684,7 +1677,7 @@ class _$ErrorAddTemplateImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -1705,7 +1698,7 @@ class _$ErrorAddTemplateImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -1726,7 +1719,7 @@ class _$ErrorAddTemplateImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -1811,10 +1804,10 @@ class _$ErrorAddTemplateImpl
 }
 
 abstract class ErrorAddTemplate implements AddTemplateState {
-  const factory ErrorAddTemplate({required final List<String> error}) =
+  const factory ErrorAddTemplate({required final ApiErrorModel error}) =
       _$ErrorAddTemplateImpl;
 
-  List<String> get error;
+  ApiErrorModel get error;
   @JsonKey(ignore: true)
   _$$ErrorAddTemplateImplCopyWith<_$ErrorAddTemplateImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1919,7 +1912,7 @@ class _$PickedMultiMediaAndFilesImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -1940,7 +1933,7 @@ class _$PickedMultiMediaAndFilesImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -1961,7 +1954,7 @@ class _$PickedMultiMediaAndFilesImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
@@ -2141,7 +2134,7 @@ class _$StateOfButtonImpl
     required TResult Function() updateTemplateLoadingState,
     required TResult Function(BaseResponse<dynamic> baseResponse)
         updateTemplateSuccessState,
-    required TResult Function(List<String> error) error,
+    required TResult Function(ApiErrorModel error) error,
     required TResult Function(XFile? pickedFile, Uint8List? file)
         pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
@@ -2162,7 +2155,7 @@ class _$StateOfButtonImpl
     TResult? Function()? updateTemplateLoadingState,
     TResult? Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult? Function(List<String> error)? error,
+    TResult? Function(ApiErrorModel error)? error,
     TResult? Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
@@ -2183,7 +2176,7 @@ class _$StateOfButtonImpl
     TResult Function()? updateTemplateLoadingState,
     TResult Function(BaseResponse<dynamic> baseResponse)?
         updateTemplateSuccessState,
-    TResult Function(List<String> error)? error,
+    TResult Function(ApiErrorModel error)? error,
     TResult Function(XFile? pickedFile, Uint8List? file)?
         pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,

@@ -4,6 +4,7 @@ import 'package:bulk_app/core/helpers/date_helper.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/helpers/image_base_64_helper.dart';
 import 'package:bulk_app/core/helpers/media.dart';
+import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
 import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
@@ -49,7 +50,7 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
             success.data ?? GetTemplateByIdResponse()));
       },
       failure: (error) => emit(
-        AddTemplateState.error(error: error.error?.details ?? []),
+        AddTemplateState.error(error: error),
       ),
     );
   }
@@ -82,7 +83,7 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
         emit(AddTemplateState.addTemplateSuccessState(success));
       },
       failure: (error) => emit(
-        AddTemplateState.error(error: error.error?.details ?? []),
+        AddTemplateState.error(error: error),
       ),
     );
   }
@@ -108,7 +109,7 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
         debugPrint('success----------$success');
       },
       failure: (error) => emit(
-        AddTemplateState.error(error: error.error?.details ?? []),
+        AddTemplateState.error(error: error),
       ),
     );
   }
@@ -142,7 +143,8 @@ class AddTemplateCubit extends Cubit<AddTemplateState> {
       }
     } catch (e) {
       debugPrint('Error picking files: $e');
-      emit(AddTemplateState.error(error: ['Error picking files: $e']));
+      emit(AddTemplateState.error(
+          error: ApiErrorModel(error: ErrorData(details: [e.toString()]))));
     }
   }
 

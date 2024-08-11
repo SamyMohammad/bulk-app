@@ -4,7 +4,7 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
-import 'package:bulk_app/features/auth/ui/widgets/login_widgets/password_validation.dart';
+import 'package:bulk_app/core/widgets/password_validation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

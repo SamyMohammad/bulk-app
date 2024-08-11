@@ -49,7 +49,7 @@ class BulkApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,      
-          initialRoute: Routes.loginScreen,
+          initialRoute: Routes.registerScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }

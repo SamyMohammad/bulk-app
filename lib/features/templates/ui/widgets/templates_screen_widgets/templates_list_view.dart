@@ -18,8 +18,8 @@ class TemplatesListView extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () => const SizedBox.shrink(),
-          loading: () => loadingSpinKit(),
-          success: (data) {
+          getAllTemplatesLoadingState: () => loadingSpinKit(),
+          getAllTemplatesSuccessState: (data) {
             final templates = data.templates ?? [];
             return ListView.separated(
                 itemCount: templates.length,
@@ -28,11 +28,11 @@ class TemplatesListView extends StatelessWidget {
                   return  TemplateItem(template: templates[index],);
                 });
           },
-          error: (error) => Text(
+          getAllTemplatesErrorState: (error) => Text(
             'There is an error',
             style: TextStyles.font16GreenExtraBold.copyWith(fontSize: 18.sp),
           ),
-          empty: (data) => const EmptyState(),
+          getAllTemplatesEmptyState: (data) => const EmptyState(),
         );
       },
     );
