@@ -1,4 +1,4 @@
-import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audiances_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/widgets/manage_audiances_widgets/audiance_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
