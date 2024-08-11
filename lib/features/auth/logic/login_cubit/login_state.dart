@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'login_state.freezed.dart';
 
@@ -5,7 +6,7 @@ part 'login_state.freezed.dart';
 class LoginState<T> with _$LoginState<T> {
   const factory LoginState.initial() = _Initial;
   
-  const factory LoginState.loading() = Loading;
-  const factory LoginState.success(T data) = Success<T>;
-  const factory LoginState.error({required List<String> error}) = Error;
+  const factory LoginState.loginLoadingState() = LoginLoadingState;
+  const factory LoginState.loginSuccessState(T data) = LoginSuccessState<T>;
+  const factory LoginState.loginErrorState(ApiErrorModel apiErrorModel) = LoginErrorState;
 }

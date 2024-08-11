@@ -11,6 +11,7 @@ LoginRequestBody _$LoginRequestBodyFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       password: json['password'] as String,
       spamCheck: json['spamCheck'] as String,
+      type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$LoginRequestBodyToJson(LoginRequestBody instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$LoginRequestBodyToJson(LoginRequestBody instance) =>
       'email': instance.email,
       'password': instance.password,
       'spamCheck': instance.spamCheck,
+      'type': instance.type,
     };

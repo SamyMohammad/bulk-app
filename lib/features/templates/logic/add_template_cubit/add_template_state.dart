@@ -3,11 +3,28 @@ part of 'add_template_cubit.dart';
 @freezed
 sealed class AddTemplateState with _$AddTemplateState {
   const factory AddTemplateState.initial() = _InitialAddTemplate;
-  const factory AddTemplateState.loading() = _LoadingAddTemplate;
-  const factory AddTemplateState.success(BaseResponse addtemplateResponse) = _SuccessAddTemplate;
+  const factory AddTemplateState.addTemplateLoadingState() =
+      _AddTemplateLoadingState;
+  const factory AddTemplateState.addTemplateSuccessState(
+      BaseResponse addtemplateResponse) = _AddTemplateSuccessState;
+
+  const factory AddTemplateState.getTemplateByIdLoadingState() =
+      GetTemplateByIdLoadingState;
+
+  const factory AddTemplateState.getTemplateByIdSuccessState(
+          GetTemplateByIdResponse getTemplateByIdResponse) =  
+      GetTemplateByIdSuccessState;
+  const factory AddTemplateState.updateTemplateLoadingState() =
+      _UpdateTemplateLoadingState;
+
+  const factory AddTemplateState.updateTemplateSuccessState(
+      BaseResponse baseResponse) = _UpdateTemplateSuccessState;
+
+
   const factory AddTemplateState.error({required List<String> error}) =
-      _ErrorAddTemplate;
+      ErrorAddTemplate;
   const factory AddTemplateState.pickedMultiMediaAndFiles(
-      {required XFile? pickedFile}) = _PickedMultiMediaAndFiles;
-  factory AddTemplateState.stateOfButton({required bool isValid}) =_StateOfButton;
+      {XFile? pickedFile, Uint8List? file}) = _PickedMultiMediaAndFiles;
+  factory AddTemplateState.stateOfButton({required bool isValid}) =
+      _StateOfButton;
 }

@@ -3,6 +3,8 @@ import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/auth/data/models/login_response.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
+import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
+import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
@@ -18,7 +20,8 @@ abstract class ApiService {
   Future<LoginResponse> login(
     @Body() LoginRequestBody loginRequestBody,
   );
-  @POST(ApiConstants.addTemplate)
+
+  @POST(ApiConstants.template)
   Future<BaseResponse> addTemplate(
     @Body() AddTemplateRequestBody addTemplateRequestBody,
   );
@@ -26,8 +29,22 @@ abstract class ApiService {
   @GET(ApiConstants.audience)
   Future<BaseResponse<AudienceResponseData>> getAudiance();
 
-  // @POST(ApiConstants.signup)
-  // Future<SignupResponse> signup(
-  //   @Body() SignupRequestBody signupRequestBody,
-  // );
+  @GET(ApiConstants.audience)
+  Future<BaseResponse<AudienceResponseData>> getAudiance();
+
+  @GET(ApiConstants.template)
+  Future<BaseResponse<TemplatesData>> getAllTemplates();
+
+  @DELETE("${ApiConstants.template}/{id}")
+  Future<BaseResponse> deleteTemplate(@Path('id') String id);
+
+  @GET("${ApiConstants.template}/{id}")
+  Future<BaseResponse<GetTemplateByIdResponse>> getTemplate(
+      @Path('id') String id);
+
+  @PUT("${ApiConstants.template}/{id}")
+  Future<BaseResponse> updateTemplate(
+    @Path('id') String id,
+    @Body() UpdateTemplateRequestBody updateTemplateRequestBody,
+  );
 }

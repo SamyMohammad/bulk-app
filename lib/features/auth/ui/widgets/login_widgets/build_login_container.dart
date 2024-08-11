@@ -96,6 +96,7 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
               borderRadius: 15,
               hintTextColor: ColorsManager.containerTitleColor,
               isObscureText: isObscureText,
+              
               suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -176,7 +177,7 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
   }
 
   void validateThenDoLogin(BuildContext context) {
-    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate() && AppRegex.isPasswordValid(passwordController.text)) {
       context.read<LoginCubit>().emitLoginStates();
     }
   }

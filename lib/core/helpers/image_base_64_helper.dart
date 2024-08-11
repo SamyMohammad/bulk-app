@@ -13,9 +13,23 @@ class ImageBase64Helper {
     return base64Encode(bytes);
   }
 
-  static Future<File> base64ToImage(String base64String) async {
-    final decodedBytes = base64Decode(base64String);
-    return File(decodedBytes.toString());
+  static Future<Uint8List> base64ToImage(String fileString) async {
+    final decodedBytes = base64Decode(extractBase64Data(fileString) ?? '');
+    return decodedBytes;
+  }
+
+  static String? extractBase64Data(String fileString) {
+    const delimiter = ';base64,';
+    if (fileString.contains(delimiter)) {
+      // Split the string into metadata and base64 content
+      final parts = fileString.split(delimiter);
+      if (parts.length == 2) {
+        // Return the base64 content
+        return parts[1];
+      }
+    }
+    // Return null if the string doesn't match the expected format
+    return null;
   }
 
   static String? getFileMimeType(String filePath) {
@@ -34,6 +48,13 @@ class ImageBase64Helper {
     }
   }
 
+  static Future<String?> memoryImageToBase64(Uint8List? uint8List) async {
+    if (uint8List == null) {
+      return base64Encode(uint8List!);
+    }
+    return null;
+  }
+
   Future<String?> compressImage(XFile image) async {
     final img.Image? imageString =
         img.decodeImage(File(image.path).readAsBytesSync());
@@ -50,5 +71,4 @@ class ImageBase64Helper {
 
     return base64Encode(img.encodeJpg(compressed, quality: 85));
   }
-
-  }
+}
