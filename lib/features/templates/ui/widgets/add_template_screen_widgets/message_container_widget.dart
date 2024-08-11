@@ -48,22 +48,22 @@ class MessageContainerWidget extends StatelessWidget {
           ),
           15.verticalSpace,
 
-          Row(
-            children: [
-              Text('Select Message From  ',
-                  style:
-                      TextStyles.font24limeExtraBold.copyWith(fontSize: 16.sp)),
-              Expanded(
-                child: CustomButton.withIcon(
-                  iconPath: 'assets/icons/comment_bank.svg',
-                  onPressed: () {},
-                  fontSize: 13.sp,
-                  text: 'Templates',
-                  // icon: Icons.tag,
-                ),
-              )
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Text('Select Message From  ',
+          //         style:
+          //             TextStyles.font24limeExtraBold.copyWith(fontSize: 16.sp)),
+          //     Expanded(
+          //       child: CustomButton.withIcon(
+          //         iconPath: 'assets/icons/comment_bank.svg',
+          //         onPressed: () {},
+          //         fontSize: 13.sp,
+          //         text: 'Templates',
+          //         // icon: Icons.tag,
+          //       ),
+          //     )
+          //   ],
+          // ),
           5.verticalSpace,
           Row(
             children: [

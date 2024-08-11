@@ -1,5 +1,5 @@
 import 'package:bulk_app/core/resources/app_strings.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/contact_screen_body.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/contact_screen_body.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 

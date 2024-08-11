@@ -14,7 +14,6 @@ class TemplatesCubit extends Cubit<TemplatesState> {
   List<Templates>? templates = [];
   void emitGetAllTemplatesStates() async {
     emit(const TemplatesState.loading());
-
     final response = await _templatesRepo.getAllTemplates();
     response.when(
       success: (success) {

@@ -68,7 +68,6 @@ class CustomButton extends StatelessWidget {
         minimumSize: Size.zero,
         padding: padding ?? EdgeInsets.symmetric(vertical: 9.h, horizontal: 0),
       ),
-      // iconAlignment: IconAlignment.start,
       label: Text(
         text,
         style: TextStyle(color: Colors.black, fontSize: fontSize ?? 11.sp),
@@ -80,13 +79,6 @@ class CustomButton extends StatelessWidget {
               height: 16.h,
               width: 10.w,
             ),
-      // icon: Icon(
-      //   icon,
-      //   size: 18.r,
-      //   color: Colors.black,
-      // ),
-
-      // child: Text(text),
     );
   }
 }
