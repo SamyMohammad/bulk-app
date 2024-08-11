@@ -71,7 +71,7 @@ class CustomButton extends StatelessWidget {
       // iconAlignment: IconAlignment.start,
       label: Text(
         text,
-        style: TextStyle(color: Colors.black, fontSize: fontSize ?? 11.sp),
+        style: TextStyle(color: Colors.black, fontSize: fontSize?.sp ?? 11.sp),
       ),
       icon: iconPath == null
           ? null

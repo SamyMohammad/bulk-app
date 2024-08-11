@@ -21,7 +21,11 @@ sealed class AddTemplateState with _$AddTemplateState {
       BaseResponse baseResponse) = _UpdateTemplateSuccessState;
 
 
+<<<<<<< HEAD
   const factory AddTemplateState.error({required List<String> error}) =
+=======
+  const factory AddTemplateState.error({required ApiErrorModel error}) =
+>>>>>>> development
       ErrorAddTemplate;
   const factory AddTemplateState.pickedMultiMediaAndFiles(
       {XFile? pickedFile, Uint8List? file}) = _PickedMultiMediaAndFiles;

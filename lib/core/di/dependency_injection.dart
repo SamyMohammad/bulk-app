@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../features/auth/data/repos/login_repo.dart';
+import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/auth/logic/login_cubit/login_cubit.dart';
 import '../../features/templates/data/repos/templates_repo.dart';
 import '../../features/templates/logic/add_template_cubit/add_template_cubit.dart';
@@ -24,12 +24,12 @@ Future<void> setupGetIt() async {
   // // login
 
   // Repos
-  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
   getIt.registerLazySingleton<TemplatesRepo>(() => TemplatesRepo(getIt()));
 
   // Cubits
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
-  getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
+  getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
   getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit(getIt()));
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));

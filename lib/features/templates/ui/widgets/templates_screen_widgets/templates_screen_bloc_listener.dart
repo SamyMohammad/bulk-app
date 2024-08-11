@@ -17,13 +17,12 @@ class TemplatesListener extends StatelessWidget {
     return BlocListener<TemplatesCubit, TemplatesState>(
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => startLoading(context),
-          success: (addTemplateResponse) {
+          getAllTemplatesLoadingState: () => startLoading(context),
+          getAllTemplatesSuccessState: (addTemplateResponse) {
             stopLoading(context);
             context.pushNamed(Routes.templatesScreen);
           },
-          error: (error) {
-          },
+          getAllTemplatesErrorState: (error) {},
         );
       },
       child: const SizedBox.shrink(),

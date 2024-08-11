@@ -4,12 +4,11 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
-import 'package:bulk_app/features/auth/ui/widgets/login_widgets/password_validation.dart';
+import 'package:bulk_app/core/widgets/password_validation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/helpers/app_regex.dart';
 import '../../../logic/login_cubit/login_cubit.dart';
 
@@ -96,7 +95,6 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
               borderRadius: 15,
               hintTextColor: ColorsManager.containerTitleColor,
               isObscureText: isObscureText,
-              
               suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -151,13 +149,13 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have an account?",
+                Text("Don't have an account? ",
                     style: TextStyle(
                         color: ColorsManager.containerTitleColor,
                         fontSize: 15.sp)),
                 InkWell(
                   onTap: () =>
-                      Navigator.pushNamed(context, Routes.signUpScreen),
+                      Navigator.pushNamed(context, Routes.registerScreen),
                   child: Text(
                     "Sign up",
                     style: TextStyle(
@@ -177,7 +175,8 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
   }
 
   void validateThenDoLogin(BuildContext context) {
-    if (context.read<LoginCubit>().formKey.currentState!.validate() && AppRegex.isPasswordValid(passwordController.text)) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate() &&
+        AppRegex.isPasswordValid(passwordController.text)) {
       context.read<LoginCubit>().emitLoginStates();
     }
   }

@@ -61,7 +61,7 @@ class _AddTemplatesScreenState extends State<AddTemplatesScreen> {
             return state.maybeWhen(
               getTemplateByIdLoadingState: () => loadingSpinKit(),
               getTemplateByIdSuccessState: (data) => const AddTemplateBody(),
-              error: (error) => const Text('error[0].toString()'),
+              // error: (error) => const Text('error[0].toString()'),
               orElse: () => loadingSpinKit(),
             );
             // return const AddTemplateBody();

@@ -1,5 +1,7 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
+import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart';
+import 'package:bulk_app/features/auth/logic/register_cubit/register_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,28 +9,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../../../core/widgets/overlay_loading_state.dart';
-import '../../../logic/add_template_cubit/add_template_cubit.dart';
 
-class AddTemplateListener extends StatelessWidget {
-  const AddTemplateListener({super.key});
+class RegisterBlocListener extends StatelessWidget {
+  const RegisterBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AddTemplateCubit, AddTemplateState>(
+    return BlocListener<RegisterCubit, RegisterState>(
+      // listenWhen: (previous, current) =>
+          // current is RegisterErrorState || current is RegisterSuccessState || current is RegisterLoadingState,
       listener: (context, state) {
         state.whenOrNull(
-          addTemplateLoadingState: () => startLoading(context),
-          addTemplateSuccessState: (addTemplateResponse) {
+          registerLoadingState: () => startLoading(context),
+          registerSuccussState: (loginResponse) {
             stopLoading(context);
-            context.pushReplacementNamed(Routes.templatesScreen);
+            context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (context) => false);
           },
-          updateTemplateLoadingState: () => startLoading(context),
-          updateTemplateSuccessState: (baseResponse) {
-            stopLoading(context);
-            context.pushReplacementNamed(Routes.templatesScreen);
-          },
-          error: (apiErrorModel) {
-            setupErrorState(context, apiErrorModel);
+          registerErrorState: (apiErrorModel) {
+            setupErrorState(context,apiErrorModel);
           },
         );
       },

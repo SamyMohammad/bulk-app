@@ -1,7 +1,7 @@
 import 'package:bulk_app/core/networking/api_constants.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/auth/data/models/login_response.dart';
-import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
+import 'package:bulk_app/features/auth/data/models/register_response.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
 import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
@@ -18,16 +18,17 @@ abstract class ApiService {
 
   @POST(ApiConstants.login)
   Future<LoginResponse> login(
-    @Body() LoginRequestBody loginRequestBody,
+    @Body() LoginAndRegisterRequestBody loginRequestBody,
+  );
+  @POST(ApiConstants.register)
+  Future<BaseResponse<RegisterData>> register(
+    @Body() LoginAndRegisterRequestBody registerRequestBody,
   );
 
   @POST(ApiConstants.template)
   Future<BaseResponse> addTemplate(
     @Body() AddTemplateRequestBody addTemplateRequestBody,
   );
-
-  @GET(ApiConstants.audience)
-  Future<BaseResponse<AudienceResponseData>> getAudiance();
 
   @GET(ApiConstants.template)
   Future<BaseResponse<TemplatesData>> getAllTemplates();
