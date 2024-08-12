@@ -33,7 +33,7 @@ class AudianceItem extends StatelessWidget {
               ),
               1.sizedBoxHeight,
               Text(
-                audiences.createdAt ?? 'date',
+                audiences.created_at ?? 'date',
                 style: TextStyle(
                     color: ColorsManager.saerchTextFieldHintColor,
                     fontSize: 12.sp),

@@ -8,17 +8,17 @@ class Audiences {
   int? id;
   String? name;
   List<Contacts>? contacts;
-  String? createdAt;
-  dynamic deletedAt;
-  int? userId;
+  String? created_at;
+  dynamic deleted_at;
+  int? user_id;
 
   Audiences({
     this.id,
     this.name,
     this.contacts,
-    this.createdAt,
-    this.deletedAt,
-    this.userId,
+    this.created_at,
+    this.deleted_at,
+    this.user_id,
   });
 
   factory Audiences.fromJson(Map<String, dynamic> json) =>

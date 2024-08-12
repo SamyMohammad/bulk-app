@@ -2,6 +2,7 @@ import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_au
 import 'package:bulk_app/features/manage_audiances/presentation/widgets/manage_audiances_widgets/audiance_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bulk_app/core/widgets/overlay_loading_state.dart';
 
 class AudiancesListView extends StatelessWidget {
   const AudiancesListView({super.key});
@@ -21,9 +22,9 @@ class AudiancesListView extends StatelessWidget {
           );
         } else if (state is AudienceInitial) {
           BlocProvider.of<ManageAudiancesCubit>(context).init();
-          return const Center(child: Text('Init'));
+          return loadingSpinKit();
         } else if (state is AudienceLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return loadingSpinKit();
         } else if (state is AudienceError) {
           return Center(child: Text(state.message));
         } else {
