@@ -94,5 +94,6 @@ flutter:
     - assets/translation/ar-SA.json
         # Apply transformer to a folder of SVGs
     - path: assets/images/asset 0.svg
+    - path: assets/icons/person_add.svg
       transformers:
         - package: vector_graphics_compiler

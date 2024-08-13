@@ -9,6 +9,7 @@ import 'package:bulk_app/features/manage_audiances/logic/contacts_cubit/contact_
 import 'package:bulk_app/features/manage_audiances/logic/manage_audiences_cubit/manage_audiences_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/pages/contact_screen.dart';
 import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
+import 'package:bulk_app/features/support/pages/support_screen.dart';
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
 import 'package:bulk_app/features/templates/ui/pages/add_template_screen.dart';

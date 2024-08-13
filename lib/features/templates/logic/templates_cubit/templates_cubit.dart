@@ -15,12 +15,8 @@ class TemplatesCubit extends Cubit<TemplatesState> {
   late final TemplatesRepo _templatesRepo;
   List<Templates>? templates = [];
   void emitGetAllTemplatesStates() async {
-<<<<<<< HEAD
-    emit(const TemplatesState.loading());
-=======
     emit(const TemplatesState.getAllTemplatesLoadingState());
 
->>>>>>> development
     final response = await _templatesRepo.getAllTemplates();
     response.when(
       success: (success) {
@@ -59,9 +55,9 @@ class TemplatesCubit extends Cubit<TemplatesState> {
     List<Templates>? templates = filterTemplates(query);
 
     if (templates?.isNotEmpty ?? false) {
-      emit(TemplatesState.success(TemplatesData(templates: templates)));
+      emit(TemplatesState.getAllTemplatesSuccessState(TemplatesData(templates: templates)));
     } else {
-      emit(TemplatesState.empty(TemplatesData(templates: [])));
+      emit(TemplatesState.getAllTemplatesEmptyState(TemplatesData(templates: [])));
     }
   }
 
