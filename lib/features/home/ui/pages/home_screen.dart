@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
+import 'package:bulk_app/features/account_settings/widgets/show_screen_function.dart';
 import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
 import 'package:bulk_app/features/home/ui/widgets/home_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/smart_tools_container.dart';
@@ -25,6 +26,14 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         drawer: const HomeDrawer(),
         appBar: MyCustomAppBar(
+          actions: [
+            IconButton(
+              icon: Icon(Icons.settings, size: 30.r),
+              onPressed: () {
+                showDropdownScreen(context);
+              },
+            ),
+          ],
           isHome: true,
           title: AppStrings.homeTitle.tr(),
         ),

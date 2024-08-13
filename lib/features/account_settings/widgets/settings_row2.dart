@@ -27,33 +27,27 @@ class SettingsRow2 extends StatelessWidget {
             border: Border.all(color: ColorsManager.saerchTextFieldHintColor),
           ),
           child: DropdownButtonHideUnderline(
-            child: BlocBuilder<AccountSettingsCubit, AccountSettingsState>(
-              builder: (context, state) {
-                return DropdownButton<String>(
-                  value:
-                      BlocProvider.of<AccountSettingsCubit>(context).language,
-                  icon: const Icon(Icons.keyboard_arrow_down_sharp,
-                      color: ColorsManager.limeColor),
-                  iconSize: 24,
-                  elevation: 16,
-                  style: const TextStyle(color: Colors.white),
-                  dropdownColor: Colors.black,
-                  onChanged: (String? newValue) {
-                    BlocProvider.of<AccountSettingsCubit>(context)
-                        .updateLanguage(newValue!);
-                  },
-                  items: BlocProvider.of<AccountSettingsCubit>(context)
-                      .languages
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                );
-              },
-            ),
-          ),
+              child: DropdownButton<String>(
+            value: context.watch<AccountSettingsCubit>().language,
+            icon: const Icon(Icons.keyboard_arrow_down_sharp,
+                color: ColorsManager.limeColor),
+            iconSize: 24,
+            elevation: 16,
+            style: const TextStyle(color: Colors.white),
+            dropdownColor: Colors.black,
+            onChanged: (String? newValue) {
+              BlocProvider.of<AccountSettingsCubit>(context)
+                  .updateLanguage(newValue!);
+            },
+            items: BlocProvider.of<AccountSettingsCubit>(context)
+                .languages
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+          )),
         ),
       ],
     );

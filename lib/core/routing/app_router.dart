@@ -5,11 +5,20 @@ import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart'
 import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
 import 'package:bulk_app/features/auth/ui/screen/register_screen.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
+<<<<<<< HEAD
 import 'package:bulk_app/features/manage_audiances/logic/contacts_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audiences_cubit/manage_audiences_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/pages/contact_screen.dart';
 import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
 import 'package:bulk_app/features/support/pages/support_screen.dart';
+=======
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/pages/contact_screen.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/pages/manage_audiances_screen.dart';
+import 'package:bulk_app/features/support/pages/support_screen.dart';
+
+>>>>>>> 05113ddb205662f6bbe70a8ebfb0eae4f684e5e8
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
 import 'package:bulk_app/features/templates/ui/pages/add_template_screen.dart';
@@ -90,7 +99,7 @@ class AppRouter {
       case Routes.manageAudiances:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getIt<ManageAudiencesCubit>(),
+            create: (context) => getIt<ManageAudiancesCubit>(),
             child: const ManageAudiancesScreen(),
           ),
         );
