@@ -14,6 +14,8 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
 
   ManageAudiancesCubit() : super(AudienceInitial());
 
+  List<Audiences>? audiences;
+
   void init() {
     emit(AudienceLoading());
     final ApiService client = getIt<ApiService>();
@@ -27,21 +29,30 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
       final response = await repository.getAllAudiences();
       response.when(
         success: (BaseResponse<AudienceResponseData> data) {
-          final audiences = data.data?.audiences;
-          if (audiences != null && audiences.isNotEmpty) {
-            emit(AudienceLoaded(audiences));
+          audiences = data.data?.audiences;
+          if (audiences != null && audiences!.isNotEmpty) {
+            emit(AudienceLoaded(audiences!));
           } else {
-            emit(AudienceError('No audiences available.'));
+            emit(const AudienceError('No audiences available.'));
           }
         },
         failure: (error) {
-          emit(AudienceError('Failed to fetch audiences.'));
-          print("Failure: $error");
+          emit(const AudienceError('Failed to fetch audiences.'));
         },
       );
     } catch (e) {
-      emit(AudienceError('An unknown error occurred.'));
-      print("Error: $e");
+      emit(const AudienceError('An unknown error occurred.'));
+    }
+  }
+
+  Future<void> delete(int id) async {
+    emit(AudienceLoading());
+    audiences?.removeWhere((audience) => audience.id == id);
+    try {
+      await repository.deleteAudienceByid(id.toString());
+      emit(AudienceLoaded(audiences!));
+    } catch (e) {
+      emit(AudienceError('Failed to delete audience.'));
     }
   }
 }

@@ -2,7 +2,9 @@ import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AudianceItem extends StatelessWidget {
@@ -41,10 +43,15 @@ class AudianceItem extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Icon(
-            Icons.delete_forever,
-            color: Colors.red,
-            size: 37.r,
+          GestureDetector(
+            onTap: () {
+              context.read<ManageAudiancesCubit>().delete(audiences.id!);
+            },
+            child: Icon(
+              Icons.delete_forever,
+              color: Colors.red,
+              size: 37.r,
+            ),
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: 20.h),

@@ -13,6 +13,8 @@ class AudienceInitial extends ManageAudiancesState {}
 
 class AudienceLoading extends ManageAudiancesState {}
 
+class AudienceDeletion extends ManageAudiancesState {}
+
 class AudienceLoaded extends ManageAudiancesState {
   final List<Audiences> audiences;
 

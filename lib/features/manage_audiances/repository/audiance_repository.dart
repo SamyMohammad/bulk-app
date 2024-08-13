@@ -27,4 +27,20 @@ class AudienceRepository {
           ApiErrorModel(error: ErrorData(error: errors.toString())));
     }
   }
+
+  Future<ApiResult> deleteAudienceByid(String id) async {
+    try {
+      final response = await _apiService.deleteAudience(id);
+      if (response.status! >= 200 || response.status! < 300) {
+        return ApiResult.success(response);
+      } else {
+        return ApiResult.failure(
+            ApiErrorModel(status: response.status, error: response.error));
+      }
+    } catch (errors) {
+      debugPrint('$errors');
+      return ApiResult.failure(
+          ApiErrorModel(error: ErrorData(error: errors.toString())));
+    }
+  }
 }

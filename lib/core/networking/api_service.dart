@@ -48,4 +48,8 @@ abstract class ApiService {
   );
   @GET(ApiConstants.audience)
   Future<BaseResponse<AudienceResponseData>> getAllAudience();
+
+  @DELETE("${ApiConstants.audience}/{id}")
+  Future<BaseResponse<AudienceResponseData>> deleteAudience(
+      @Path("id") String id);
 }
