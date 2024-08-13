@@ -13,7 +13,6 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
   late final AudienceRepository repository;
 
   ManageAudiancesCubit() : super(AudienceInitial());
-
   List<Audiences>? audiences;
 
   void init() {
@@ -52,7 +51,7 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
       await repository.deleteAudienceByid(id.toString());
       emit(AudienceLoaded(audiences!));
     } catch (e) {
-      emit(AudienceError('Failed to delete audience.'));
+      emit(const AudienceError('Failed to delete audience.'));
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
+import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/networking/api_result.dart';
@@ -43,4 +44,21 @@ class AudienceRepository {
           ApiErrorModel(error: ErrorData(error: errors.toString())));
     }
   }
+
+  // Future<void> updateAudience(int id) async {
+  //   try {
+  //     final response =
+  //         await _apiService.updateAudience(id.toString());
+
+  //     if (response.status == 'success') {
+  //       debugPrint('Audience updated successfully: ${response.data}');
+  //     } else {
+  //       // Handle failure (e.g., show error message)
+  //       debugPrint('Failed to update audience: ${response.error}');
+  //     }
+  //   } catch (error) {
+  //     // Handle unexpected errors
+  //     debugPrint('Error updating audience: $error');
+  //   }
+  // }
 }

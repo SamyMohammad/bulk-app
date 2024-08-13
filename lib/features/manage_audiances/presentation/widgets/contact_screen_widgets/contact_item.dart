@@ -1,12 +1,13 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
+import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContactItem extends StatelessWidget {
-  const ContactItem({super.key});
-
+  const ContactItem({super.key, required this.contact});
+  final Contacts contact;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,33 +28,34 @@ class ContactItem extends StatelessWidget {
             backgroundColor: Colors.white,
             radius: 30.h,
           ),
+          const Spacer(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Contact Name',
+                contact.name ?? 'Name',
                 style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
               ),
               1.sizedBoxHeight,
               Text(
-                '###number###',
+                contact.phone ?? 'Phone',
                 style: TextStyle(
                     color: ColorsManager.saerchTextFieldHintColor,
                     fontSize: 12.sp),
               ),
             ],
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 20.h),
-            height: double.maxFinite,
-            width: 1.w,
-            color: ColorsManager.saerchTextFieldHintColor,
-          ),
-          Icon(
-            Icons.check_box_outline_blank,
-            color: ColorsManager.limeColor,
-            size: 25.h,
+          const Spacer(),
+          GestureDetector(
+            onTap: () {
+              // context.read<ContactScreenCubit>().deleteContact(contact.phone)
+            },
+            child: Icon(
+              Icons.delete_forever,
+              color: Colors.red,
+              size: 37.r,
+            ),
           ),
         ],
       ),

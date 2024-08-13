@@ -4,6 +4,7 @@ import 'package:bulk_app/core/networking/dio_factory.dart';
 import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart';
 import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
@@ -34,6 +35,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit(getIt()));
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));
   getIt.registerFactory<ManageAudiancesCubit>(() => ManageAudiancesCubit());
+  getIt.registerFactory<ContactScreenCubit>(() => ContactScreenCubit());
   //App Media
   getIt.registerLazySingleton<AppMedia>(
       () => AppMedia(imagePicker: ImagePicker()));

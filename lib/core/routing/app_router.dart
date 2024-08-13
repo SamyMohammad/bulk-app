@@ -5,6 +5,7 @@ import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart'
 import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
 import 'package:bulk_app/features/auth/ui/screen/register_screen.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
+import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/contact_screen.dart';
@@ -95,13 +96,23 @@ class AppRouter {
             child: const ManageAudiancesScreen(),
           ),
         );
-      case Routes.conatctScreen:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => ContactScreenCubit(),
-            child: const ContactScreen(),
-          ),
-        );
+      // case Routes.conatctScreen:
+      //   return MaterialPageRoute(
+      //     builder: (context) {
+      //       final contactsList =
+      //           ModalRoute.of(context)!.settings.arguments as List<Contacts>?;
+      //       return BlocProvider(
+      //         create: (context) {
+      //           final cubit = getIt<ContactScreenCubit>();
+      //           if (contactsList != null) {
+      //             cubit.init(contactsList);
+      //           }
+      //           return cubit;
+      //         },
+      //         child: const ContactScreen(),
+      //       );
+      //     },
+      //   );
       case Routes.supportScreen:
         return MaterialPageRoute(
           builder: (_) => const SupportScreen(),

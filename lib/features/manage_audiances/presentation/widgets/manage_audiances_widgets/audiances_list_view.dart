@@ -17,7 +17,10 @@ class AudiancesListView extends StatelessWidget {
             separatorBuilder: (context, index) => const SizedBox(height: 20),
             itemBuilder: (context, index) {
               final audience = state.audiences[index];
-              return AudianceItem(audiences: audience);
+              return BlocProvider.value(
+                value: context.read<ManageAudiancesCubit>(),
+                child: AudianceItem(audiences: audience),
+              );
             },
           );
         } else if (state is AudienceInitial) {
