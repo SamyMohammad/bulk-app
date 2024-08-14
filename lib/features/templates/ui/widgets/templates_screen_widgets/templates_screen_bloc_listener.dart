@@ -7,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../../../core/widgets/overlay_loading_state.dart';
-import '../../../logic/add_template_cubit/add_template_cubit.dart';
 
 class TemplatesListener extends StatelessWidget {
   const TemplatesListener({super.key});

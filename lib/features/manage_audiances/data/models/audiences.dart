@@ -1,4 +1,4 @@
-import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'audiences.g.dart';
@@ -8,11 +8,8 @@ class Audiences {
   int? id;
   String? name;
   List<Contacts>? contacts;
-  @JsonKey(name: 'created_at') 
   String? createdAt;
-  @JsonKey(name: 'deleted_at') 
   dynamic deletedAt;
-  @JsonKey(name: 'user_id') 
   int? userId;
 
   Audiences({

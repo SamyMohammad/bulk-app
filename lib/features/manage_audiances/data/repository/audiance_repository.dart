@@ -1,7 +1,7 @@
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
-import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
-import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/networking/api_result.dart';

@@ -12,16 +12,16 @@ Audiences _$AudiencesFromJson(Map<String, dynamic> json) => Audiences(
       contacts: (json['contacts'] as List<dynamic>?)
           ?.map((e) => Contacts.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['created_at'] as String?,
-      deletedAt: json['deleted_at'],
-      userId: (json['user_id'] as num?)?.toInt(),
+      createdAt: json['createdAt'] as String?,
+      deletedAt: json['deletedAt'],
+      userId: (json['userId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$AudiencesToJson(Audiences instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'contacts': instance.contacts,
-      'created_at': instance.createdAt,
-      'deleted_at': instance.deletedAt,
-      'user_id': instance.userId,
+      'createdAt': instance.createdAt,
+      'deletedAt': instance.deletedAt,
+      'userId': instance.userId,
     };

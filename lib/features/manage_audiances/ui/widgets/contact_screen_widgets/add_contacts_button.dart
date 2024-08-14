@@ -1,10 +1,10 @@
 import 'package:bulk_app/core/theming/colors.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/message_body.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/message_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 
 class AddContactsButton extends StatelessWidget {
   const AddContactsButton({super.key, required this.path});

@@ -1,4 +1,4 @@
-import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'audiance_response_data.g.dart';

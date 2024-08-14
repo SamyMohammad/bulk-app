@@ -28,24 +28,18 @@ class SettingsRow1 extends StatelessWidget {
             SvgPicture.asset("assets/icons/edit_square.svg",
                 width: 20.w, height: 20.h),
             SizedBox(width: 8.w),
-            BlocBuilder<AccountSettingsCubit, AccountSettingsState>(
-              builder: (context, state) {
-                return FlutterSwitch(
-                  width: 50.w,
-                  height: 25.h,
-                  toggleSize: 18.r,
-                  value:
-                      BlocProvider.of<AccountSettingsCubit>(context).signature,
-                  borderRadius: 30.r,
-                  activeColor: ColorsManager.limeColor,
-                  inactiveColor: ColorsManager.saerchTextFieldHintColor,
-                  onToggle: (val) {
-                    BlocProvider.of<AccountSettingsCubit>(context)
-                        .switchSignature();
-                  },
-                );
+            FlutterSwitch(
+              width: 50.w,
+              height: 25.h,
+              toggleSize: 18.r,
+              value: context.watch<AccountSettingsCubit>().signature,
+              borderRadius: 30.r,
+              activeColor: ColorsManager.limeColor,
+              inactiveColor: ColorsManager.saerchTextFieldHintColor,
+              onToggle: (val) {
+                context.read<AccountSettingsCubit>().switchSignature();
               },
-            ),
+            )
           ],
         ),
       ],

@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/networking/api_service.dart';
-import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
-import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
-import 'package:bulk_app/features/manage_audiances/repository/audiance_repository.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
+import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'contact_screen_state.dart';
