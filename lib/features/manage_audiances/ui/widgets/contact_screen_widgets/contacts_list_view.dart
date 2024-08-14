@@ -1,5 +1,5 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/contact_item.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/contact_item.dart';
 import 'package:flutter/material.dart';
 
 class ContactsListView extends StatelessWidget {

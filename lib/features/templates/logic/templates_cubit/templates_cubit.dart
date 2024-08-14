@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/core/networking/api_error_handler.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

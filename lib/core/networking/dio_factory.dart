@@ -1,7 +1,5 @@
-import 'package:bulk_app/core/helpers/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import '../helpers/shared_pref_helper.dart';
 
 
 class DioFactory {
@@ -30,7 +28,7 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXlAbS51cyIsImlkIjoxMiwidHlwZSI6MSwiaWF0IjoxNzIyNDI3MTM0LCJleHAiOjE3MjUwMTkxMzR9.Qap7fcPTzTLes2olEIIeIA76MsELwJshbtwXY3VOuzo',
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXkxMEBnbWFpbC5jb20iLCJpZCI6MjUsInR5cGUiOjEsImlhdCI6MTcyMzU0NzU4OCwiZXhwIjoxNzI2MTM5NTg4fQ.yr0xANyKjGO-BTkR8vG48r4P9VAWwOHGqJlxuqt6jfs',
           
     };
   }
@@ -42,13 +40,13 @@ class DioFactory {
   }
 
   static void addDioInterceptor() {
-    // dio?.interceptors.add(
-    //   PrettyDioLogger(
-    //     // requestBody: true,
-    //     // requestHeader: true,
-    //     // responseHeader: true,
-    //     // responseBody: true,
-    //   ),
-    // );
+    dio?.interceptors.add(
+      PrettyDioLogger(
+        requestBody: true,
+        requestHeader: true,
+        responseHeader: true,
+        responseBody: true,
+      ),
+    );
   }
 }

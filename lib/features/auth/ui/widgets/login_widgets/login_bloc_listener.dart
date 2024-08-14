@@ -1,5 +1,4 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/core/networking/api_error_handler.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

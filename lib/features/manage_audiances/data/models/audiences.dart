@@ -1,4 +1,4 @@
-import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'audiences.g.dart';
@@ -8,17 +8,17 @@ class Audiences {
   int? id;
   String? name;
   List<Contacts>? contacts;
-  String? created_at;
-  dynamic deleted_at;
-  int? user_id;
+  String? createdAt;
+  dynamic deletedAt;
+  int? userId;
 
   Audiences({
     this.id,
     this.name,
     this.contacts,
-    this.created_at,
-    this.deleted_at,
-    this.user_id,
+    this.createdAt,
+    this.deletedAt,
+    this.userId,
   });
 
   factory Audiences.fromJson(Map<String, dynamic> json) =>
