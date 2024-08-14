@@ -35,4 +35,13 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
       repository.updateAudience(currentAudience!);
     }
   }
+
+  void addContact(String contactName, String contactNumber) {
+    emit(const ContactScreenState.loading());
+    Contacts newContact = Contacts(name: contactName, phone: contactNumber);
+    currentAudienceContacts?.add(newContact);
+    currentAudience?.contacts = currentAudienceContacts;
+    emit(ContactScreenState.loaded(currentAudienceContacts!));
+    repository.updateAudience(currentAudience!);
+  }
 }

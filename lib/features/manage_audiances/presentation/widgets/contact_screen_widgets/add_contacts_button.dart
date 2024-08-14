@@ -3,10 +3,13 @@ import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 
 class AddContactsButton extends StatelessWidget {
   const AddContactsButton({super.key, required this.path});
   final String path;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,11 +27,16 @@ class AddContactsButton extends StatelessWidget {
         ),
         color: ColorsManager.darkBackGround,
         onPressed: () {
+          // Access the cubit instance
+          final cubit = context.read<ContactScreenCubit>();
+
+          // Example action: Show a dialog
           showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return MessageBody();
-              });
+            context: context,
+            builder: (BuildContext context) {
+              return MessageBody(cubit: cubit); // Pass cubit if needed
+            },
+          );
         },
       ),
     );

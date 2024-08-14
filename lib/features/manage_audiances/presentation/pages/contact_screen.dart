@@ -14,14 +14,12 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton:
-            const AddContactsButton(path: 'assets/icons/person_add.svg'),
-        appBar: MyCustomAppBar(
-          title: AppStrings.manageAudiences.tr(),
-        ),
-        body: BlocProvider(
-          create: (context) => context.read<ManageAudiancesCubit>(),
-          child: const ContactScreenBody(),
-        ));
+      floatingActionButton:
+          const AddContactsButton(path: 'assets/icons/person_add.svg'),
+      appBar: MyCustomAppBar(
+        title: AppStrings.manageAudiences.tr(),
+      ),
+      body: const ContactScreenBody(),
+    );
   }
 }
