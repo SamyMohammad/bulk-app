@@ -1,7 +1,7 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
-import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +33,7 @@ class AudianceItem extends StatelessWidget {
               ),
               1.sizedBoxHeight,
               Text(
-                audiences.created_at ?? 'date',
+                audiences.createdAt ?? 'date',
                 style: TextStyle(
                     color: ColorsManager.saerchTextFieldHintColor,
                     fontSize: 12.sp),

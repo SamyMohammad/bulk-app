@@ -3,7 +3,8 @@ import 'package:bulk_app/core/networking/api_service.dart';
 import 'package:bulk_app/core/networking/dio_factory.dart';
 import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart';
 import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audience_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
@@ -26,6 +27,8 @@ Future<void> setupGetIt() async {
   // Repos
   getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
   getIt.registerLazySingleton<TemplatesRepo>(() => TemplatesRepo(getIt()));
+  getIt.registerLazySingleton<AudienceRepository>(
+      () => AudienceRepository(getIt()));
 
   // Cubits
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
@@ -33,7 +36,8 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
   getIt.registerFactory<TemplatesCubit>(() => TemplatesCubit(getIt()));
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));
-  getIt.registerFactory<ManageAudiancesCubit>(() => ManageAudiancesCubit());
+  getIt.registerFactory<ManageAudiancesCubit>(
+      () => ManageAudiancesCubit(getIt()));
   //App Media
   getIt.registerLazySingleton<AppMedia>(
       () => AppMedia(imagePicker: ImagePicker()));

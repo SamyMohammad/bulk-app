@@ -1,6 +1,6 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/contacts_list_view.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/widgets/contact_screen_widgets/select_all_button.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/contacts_list_view.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/select_all_button.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
