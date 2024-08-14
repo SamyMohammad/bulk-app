@@ -1,7 +1,6 @@
 import 'package:bulk_app/core/widgets/empty_state.dart';
 import 'package:bulk_app/core/widgets/overlay_loading_state.dart';
-import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audience_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audience_state.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/manage_audiances_widgets/audiance_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

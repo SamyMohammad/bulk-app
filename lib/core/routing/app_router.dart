@@ -5,12 +5,9 @@ import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart'
 import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
 import 'package:bulk_app/features/auth/ui/screen/register_screen.dart';
 import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
-import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audience_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/contact_screen.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
 import 'package:bulk_app/features/support/pages/support_screen.dart';
-
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
 import 'package:bulk_app/features/templates/ui/pages/add_template_screen.dart';
@@ -25,7 +22,6 @@ class AppRouter {
     final arguments = settings.arguments;
 
     switch (settings.name) {
-
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -60,7 +56,6 @@ class AppRouter {
             create: (context) => getIt<HomeCubit>(),
             child: const HomeScreen(),
           ),
-
         );
       case Routes.templatesScreen:
         return MaterialPageRoute(
@@ -83,17 +78,12 @@ class AppRouter {
       case Routes.manageAudiances:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getIt<ManageAudiancesCubit>()..fetchAudienceList(),
+            create: (context) =>
+                getIt<ManageAudiancesCubit>()..fetchAudienceList(),
             child: const ManageAudiancesScreen(),
           ),
         );
-      case Routes.conatctScreen:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => ContactScreenCubit(),
-            child: const ContactScreen(),
-          ),
-        );
+
       case Routes.supportScreen:
         return MaterialPageRoute(
           builder: (_) => const SupportScreen(),

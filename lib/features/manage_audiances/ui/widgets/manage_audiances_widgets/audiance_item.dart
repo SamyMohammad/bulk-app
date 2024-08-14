@@ -1,8 +1,13 @@
+import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/ui/pages/contact_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AudianceItem extends StatelessWidget {
@@ -16,11 +21,10 @@ class AudianceItem extends StatelessWidget {
       alignment: Alignment.center,
       height: context.height * 0.11,
       decoration: BoxDecoration(
-          color: ColorsManager.darkAppBarBackGround,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(21),
-          ),
-          border: Border.all(color: ColorsManager.saerchTextFieldHintColor)),
+        color: ColorsManager.darkAppBarBackGround,
+        borderRadius: const BorderRadius.all(Radius.circular(21)),
+        border: Border.all(color: ColorsManager.saerchTextFieldHintColor),
+      ),
       child: Row(
         children: [
           Column(
@@ -35,16 +39,22 @@ class AudianceItem extends StatelessWidget {
               Text(
                 audiences.createdAt ?? 'date',
                 style: TextStyle(
-                    color: ColorsManager.saerchTextFieldHintColor,
-                    fontSize: 12.sp),
+                  color: ColorsManager.saerchTextFieldHintColor,
+                  fontSize: 12.sp,
+                ),
               ),
             ],
           ),
           const Spacer(),
-          Icon(
-            Icons.delete_forever,
-            color: Colors.red,
-            size: 37.r,
+          GestureDetector(
+            onTap: () {
+              context.read<ManageAudiancesCubit>().delete(audiences.id!);
+            },
+            child: Icon(
+              Icons.delete_forever,
+              color: Colors.red,
+              size: 37.r,
+            ),
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: 20.h),
@@ -57,12 +67,30 @@ class AudianceItem extends StatelessWidget {
             height: 26.h,
             width: 26.w,
             decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: ColorsManager.containerTitleColor),
-            child: Icon(
-              Icons.edit_rounded,
-              // color: Colors.red,
-              size: 20.r,
+              shape: BoxShape.circle,
+              color: ColorsManager.containerTitleColor,
+            ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return BlocProvider(
+                        create: (context) {
+                          final cubit = getIt<ContactScreenCubit>();
+                          cubit.init(audiences);
+                          return cubit;
+                        },
+                        child: const ContactScreen(),
+                      );
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.edit_rounded,
+                size: 20.r,
+              ),
             ),
           ),
         ],

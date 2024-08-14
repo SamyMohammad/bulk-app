@@ -1,9 +1,4 @@
-// manage_audiances_cubit.dart
-import 'package:bulk_app/core/networking/api_error_model.dart';
-import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'manage_audience_state.freezed.dart';
+part of 'manage_audiances_cubit.dart';
 
 @freezed
 class ManageAudiancesState<T> with _$ManageAudiancesState<T> {
@@ -13,8 +8,8 @@ class ManageAudiancesState<T> with _$ManageAudiancesState<T> {
       AudienceLoadingState;
   const factory ManageAudiancesState.audienceEmptyState() = AudienceEmptyState;
 
-  const factory ManageAudiancesState.audienceSuccessState(List<Audiences>? audiences) =
-      AudienceSuccessState<T>;
+  const factory ManageAudiancesState.audienceSuccessState(
+      List<Audiences>? audiences) = AudienceSuccessState<T>;
   const factory ManageAudiancesState.audienceErrorState(
       ApiErrorModel apiErrorModel) = AudienceErrorState;
 }

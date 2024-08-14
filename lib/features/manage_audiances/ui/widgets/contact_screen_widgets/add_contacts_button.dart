@@ -1,12 +1,15 @@
 import 'package:bulk_app/core/theming/colors.dart';
+import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/message_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vector_graphics/vector_graphics_compat.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddContactsButton extends StatelessWidget {
   const AddContactsButton({super.key, required this.path});
   final String path;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,18 +20,23 @@ class AddContactsButton extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
       child: IconButton(
-        icon: VectorGraphic(
-          loader: const AssetBytesLoader('assets/icons/person_add.svg'),
+        icon: SvgPicture.asset(
+          path,
           width: 40.r,
           height: 40.r,
         ),
         color: ColorsManager.darkBackGround,
         onPressed: () {
+          // Access the cubit instance
+          final cubit = context.read<ContactScreenCubit>();
+
+          // Example action: Show a dialog
           showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MessageBody();
-              });
+            context: context,
+            builder: (BuildContext context) {
+              return MessageBody(cubit: cubit); // Pass cubit if needed
+            },
+          );
         },
       ),
     );
