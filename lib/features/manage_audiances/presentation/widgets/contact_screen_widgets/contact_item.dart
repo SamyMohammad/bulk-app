@@ -2,7 +2,9 @@ import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContactItem extends StatelessWidget {
@@ -49,7 +51,7 @@ class ContactItem extends StatelessWidget {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              // context.read<ContactScreenCubit>().deleteContact(contact.phone)
+              context.read<ContactScreenCubit>().removeContact(contact);
             },
             child: Icon(
               Icons.delete_forever,

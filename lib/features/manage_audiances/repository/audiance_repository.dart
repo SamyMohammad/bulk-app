@@ -45,20 +45,20 @@ class AudienceRepository {
     }
   }
 
-  // Future<void> updateAudience(int id) async {
-  //   try {
-  //     final response =
-  //         await _apiService.updateAudience(id.toString());
+  Future<void> updateAudience(Audiences audience) async {
+    try {
+      final response =
+          await _apiService.updateAudience(audience.id.toString(), audience);
 
-  //     if (response.status == 'success') {
-  //       debugPrint('Audience updated successfully: ${response.data}');
-  //     } else {
-  //       // Handle failure (e.g., show error message)
-  //       debugPrint('Failed to update audience: ${response.error}');
-  //     }
-  //   } catch (error) {
-  //     // Handle unexpected errors
-  //     debugPrint('Error updating audience: $error');
-  //   }
-  // }
+      if (response.status == 200) {
+        debugPrint('Audience updated successfully: ${response.data}');
+      } else {
+        // Handle failure (e.g., show error message)
+        debugPrint('Failed to update audience: ${response.error}');
+      }
+    } catch (error) {
+      // Handle unexpected errors
+      debugPrint('Error updating audience: $error');
+    }
+  }
 }

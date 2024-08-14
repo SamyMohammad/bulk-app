@@ -3,7 +3,7 @@ import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
-import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audience_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/cubits/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/presentation/pages/contact_screen.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class AudianceItem extends StatelessWidget {
               ),
               1.sizedBoxHeight,
               Text(
-                audiences.created_at ?? 'date',
+                audiences.createdAt ?? 'date',
                 style: TextStyle(
                   color: ColorsManager.saerchTextFieldHintColor,
                   fontSize: 12.sp,
@@ -78,7 +78,7 @@ class AudianceItem extends StatelessWidget {
                       return BlocProvider(
                         create: (context) {
                           final cubit = getIt<ContactScreenCubit>();
-                          cubit.init(audiences.contacts!);
+                          cubit.init(audiences);
                           return cubit;
                         },
                         child: const ContactScreen(),

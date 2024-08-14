@@ -4,40 +4,35 @@ import 'package:bulk_app/core/networking/api_service.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
 import 'package:bulk_app/features/manage_audiances/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/repository/audiance_repository.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'contact_screen_state.dart';
+part 'contact_screen_cubit.freezed.dart';
 
 class ContactScreenCubit extends Cubit<ContactScreenState> {
-  ContactScreenCubit() : super(ContactScreenInitial());
-  late final List<Contacts> contacts;
-  late final AudienceRepository repository;
-  // late final int audienceId;
+  ContactScreenCubit() : super(const ContactScreenState.initial());
 
-  void init(List<Contacts> currentcontacts) {
-    emit(ContactsLoading());
-    contacts = currentcontacts;
-    // audienceId = id;
+  List<Contacts>? currentAudienceContacts;
+  Audiences? currentAudience;
+  late final AudienceRepository repository;
+
+  void init(Audiences audience) {
+    emit(const ContactScreenState.loading());
+    currentAudience = audience;
+    currentAudienceContacts = audience.contacts;
+    emit(ContactScreenState.loaded(currentAudienceContacts ?? []));
     final ApiService client = getIt<ApiService>();
     repository = AudienceRepository(client);
-    emit(ContactsLoaded(contacts));
   }
 
-  // Future<void> deleteContact(String phone, Audiences audience) async {
-  //   emit(ContactsLoading());
-
-  //   // Remove the contact from the audience's contacts list
-  //   contacts.removeWhere((contact) => contact.phone == phone);
-  //   audience.contacts = contacts;
-
-  //   try {
-  //     // Assuming you pass the audience id directly or update the audience instance
-  //     await repository.updateAudience(audienceId, audience);
-
-  //     // Emit the updated state
-  //     emit(ContactsLoaded(contacts));
-  //   } catch (e) {
-  //     emit(const ContactsError('Failed to update audience.'));
-  //   }
-  // }
+  void removeContact(Contacts contact) {
+    if (currentAudienceContacts != null) {
+      final updatedContacts = List<Contacts>.from(currentAudienceContacts!)
+        ..remove(contact);
+      currentAudienceContacts = updatedContacts;
+      currentAudience?.contacts = currentAudienceContacts;
+      emit(ContactScreenState.loaded(updatedContacts));
+      repository.updateAudience(currentAudience!);
+    }
+  }
 }

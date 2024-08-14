@@ -8,17 +8,20 @@ class Audiences {
   int? id;
   String? name;
   List<Contacts>? contacts;
-  String? created_at;
-  dynamic deleted_at;
-  int? user_id;
+  @JsonKey(name: 'created_at') 
+  String? createdAt;
+  @JsonKey(name: 'deleted_at') 
+  dynamic deletedAt;
+  @JsonKey(name: 'user_id') 
+  int? userId;
 
   Audiences({
     this.id,
     this.name,
     this.contacts,
-    this.created_at,
-    this.deleted_at,
-    this.user_id,
+    this.createdAt,
+    this.deletedAt,
+    this.userId,
   });
 
   factory Audiences.fromJson(Map<String, dynamic> json) =>

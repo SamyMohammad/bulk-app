@@ -3,6 +3,7 @@ import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/auth/data/models/login_response.dart';
 import 'package:bulk_app/features/auth/data/models/register_response.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
+import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
 import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
@@ -52,4 +53,8 @@ abstract class ApiService {
   @DELETE("${ApiConstants.audience}/{id}")
   Future<BaseResponse<AudienceResponseData>> deleteAudience(
       @Path("id") String id);
+
+  @PUT("${ApiConstants.audience}/{id}")
+  Future<BaseResponse<AudienceResponseData>> updateAudience(
+      @Path("id") String id, @Body() Audiences audience);
 }

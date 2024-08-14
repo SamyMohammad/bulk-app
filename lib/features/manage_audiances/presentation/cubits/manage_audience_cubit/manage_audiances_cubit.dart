@@ -5,53 +5,53 @@ import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiance_response_data.dart';
 import 'package:bulk_app/features/manage_audiances/models/audiences.dart';
 import 'package:bulk_app/features/manage_audiances/repository/audiance_repository.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'manage_audience_state.dart';
+part 'manage_audiances_state.dart';
+part 'manage_audiances_cubit.freezed.dart';
 
 class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
+  ManageAudiancesCubit() : super(ManageAudiancesState.initial());
+  List<Audiences>? audiences;
   late final AudienceRepository repository;
 
-  ManageAudiancesCubit() : super(AudienceInitial());
-  List<Audiences>? audiences;
-
   void init() {
-    emit(AudienceLoading());
+    emit(const ManageAudiancesState.loading());
     final ApiService client = getIt<ApiService>();
     repository = AudienceRepository(client);
     fetchAudienceList();
   }
 
   Future<void> fetchAudienceList() async {
-    emit(AudienceLoading());
+    emit(const ManageAudiancesState.loading());
     try {
       final response = await repository.getAllAudiences();
       response.when(
         success: (BaseResponse<AudienceResponseData> data) {
           audiences = data.data?.audiences;
           if (audiences != null && audiences!.isNotEmpty) {
-            emit(AudienceLoaded(audiences!));
+            emit(ManageAudiancesState.loaded(audiences!));
           } else {
-            emit(const AudienceError('No audiences available.'));
+            emit(const ManageAudiancesState.error('No audiences available.'));
           }
         },
         failure: (error) {
-          emit(const AudienceError('Failed to fetch audiences.'));
+          emit(const ManageAudiancesState.error('Failed to fetch audiences.'));
         },
       );
     } catch (e) {
-      emit(const AudienceError('An unknown error occurred.'));
+      emit(const ManageAudiancesState.error('An unknown error occurred.'));
     }
   }
 
   Future<void> delete(int id) async {
-    emit(AudienceLoading());
+    emit(const ManageAudiancesState.loading());
     audiences?.removeWhere((audience) => audience.id == id);
     try {
       await repository.deleteAudienceByid(id.toString());
-      emit(AudienceLoaded(audiences!));
+      emit(ManageAudiancesState.loaded(audiences!));
     } catch (e) {
-      emit(const AudienceError('Failed to delete audience.'));
+      emit(const ManageAudiancesState.error('Failed to delete audience.'));
     }
   }
 }
