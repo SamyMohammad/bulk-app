@@ -2,9 +2,9 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/message_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 class AddContactsButton extends StatelessWidget {
   const AddContactsButton({super.key, required this.path});
@@ -20,10 +20,12 @@ class AddContactsButton extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
       child: IconButton(
-        icon: SvgPicture.asset(
-          path,
+        icon: VectorGraphic(
           width: 40.r,
           height: 40.r,
+          loader: AssetBytesLoader(
+            path,
+          ),
         ),
         color: ColorsManager.darkBackGround,
         onPressed: () {
