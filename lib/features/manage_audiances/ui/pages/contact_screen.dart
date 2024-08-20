@@ -12,6 +12,7 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton:
+        
             const AddContactsButton(path: 'assets/icons/person_add.svg'),
         appBar: MyCustomAppBar(
           title: AppStrings.manageAudiences.tr(),
