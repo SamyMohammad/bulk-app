@@ -1,12 +1,14 @@
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/show_add_contact_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageBody extends StatelessWidget {
-  const MessageBody({super.key, required this.cubit});
+  final Arguments args;
+  const MessageBody({super.key, required this.cubit,required this.args});
   final ContactScreenCubit cubit;
   @override
   Widget build(BuildContext context) {

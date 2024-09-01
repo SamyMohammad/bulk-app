@@ -39,7 +39,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));
   getIt.registerFactory<ManageAudiancesCubit>(
       () => ManageAudiancesCubit(getIt()));
-  getIt.registerFactory<ContactScreenCubit>(() => ContactScreenCubit());
+  getIt.registerFactory<ContactScreenCubit>(() => ContactScreenCubit(getIt()));
   //App Media
   getIt.registerLazySingleton<AppMedia>(
       () => AppMedia(imagePicker: ImagePicker()));

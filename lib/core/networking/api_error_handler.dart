@@ -15,7 +15,7 @@ class ApiErrorHandler {
         case DioExceptionType.connectionTimeout:
           return ApiErrorModel(
               error: ErrorData(message: "Connection timeout with the server"));
-        case DioExceptionType.unknown:
+        case DioExceptionType.:
           return ApiErrorModel(
               error: ErrorData(
                   message:

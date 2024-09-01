@@ -21,7 +21,7 @@ mixin _$ContactScreenState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Contacts> contacts) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(ApiErrorModel error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$ContactScreenState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Contacts> contacts)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(ApiErrorModel error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$ContactScreenState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Contacts> contacts)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,12 +104,20 @@ class __$$ContactScreenInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ContactScreenInitialImpl implements ContactScreenInitial {
+class _$ContactScreenInitialImpl
+    with DiagnosticableTreeMixin
+    implements ContactScreenInitial {
   const _$ContactScreenInitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ContactScreenState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ContactScreenState.initial'));
   }
 
   @override
@@ -128,7 +136,7 @@ class _$ContactScreenInitialImpl implements ContactScreenInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Contacts> contacts) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(ApiErrorModel error) error,
   }) {
     return initial();
   }
@@ -139,7 +147,7 @@ class _$ContactScreenInitialImpl implements ContactScreenInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Contacts> contacts)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(ApiErrorModel error)? error,
   }) {
     return initial?.call();
   }
@@ -150,7 +158,7 @@ class _$ContactScreenInitialImpl implements ContactScreenInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Contacts> contacts)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -219,12 +227,20 @@ class __$$ContactsLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ContactsLoadingImpl implements ContactsLoading {
+class _$ContactsLoadingImpl
+    with DiagnosticableTreeMixin
+    implements ContactsLoading {
   const _$ContactsLoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ContactScreenState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'ContactScreenState.loading'));
   }
 
   @override
@@ -242,7 +258,7 @@ class _$ContactsLoadingImpl implements ContactsLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Contacts> contacts) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(ApiErrorModel error) error,
   }) {
     return loading();
   }
@@ -253,7 +269,7 @@ class _$ContactsLoadingImpl implements ContactsLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Contacts> contacts)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(ApiErrorModel error)? error,
   }) {
     return loading?.call();
   }
@@ -264,7 +280,7 @@ class _$ContactsLoadingImpl implements ContactsLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Contacts> contacts)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -348,7 +364,9 @@ class __$$ContactsLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ContactsLoadedImpl implements ContactsLoaded {
+class _$ContactsLoadedImpl
+    with DiagnosticableTreeMixin
+    implements ContactsLoaded {
   const _$ContactsLoadedImpl(final List<Contacts> contacts)
       : _contacts = contacts;
 
@@ -361,8 +379,16 @@ class _$ContactsLoadedImpl implements ContactsLoaded {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ContactScreenState.loaded(contacts: $contacts)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ContactScreenState.loaded'))
+      ..add(DiagnosticsProperty('contacts', contacts));
   }
 
   @override
@@ -390,7 +416,7 @@ class _$ContactsLoadedImpl implements ContactsLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Contacts> contacts) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(ApiErrorModel error) error,
   }) {
     return loaded(contacts);
   }
@@ -401,7 +427,7 @@ class _$ContactsLoadedImpl implements ContactsLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Contacts> contacts)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(ApiErrorModel error)? error,
   }) {
     return loaded?.call(contacts);
   }
@@ -412,7 +438,7 @@ class _$ContactsLoadedImpl implements ContactsLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Contacts> contacts)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -475,7 +501,7 @@ abstract class _$$ContactsErrorImplCopyWith<$Res> {
           _$ContactsErrorImpl value, $Res Function(_$ContactsErrorImpl) then) =
       __$$ContactsErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message});
+  $Res call({ApiErrorModel error});
 }
 
 /// @nodoc
@@ -489,28 +515,38 @@ class __$$ContactsErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? error = null,
   }) {
     return _then(_$ContactsErrorImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ContactsErrorImpl implements ContactsError {
-  const _$ContactsErrorImpl(this.message);
+class _$ContactsErrorImpl
+    with DiagnosticableTreeMixin
+    implements ContactsError {
+  const _$ContactsErrorImpl(this.error);
 
   @override
-  final String message;
+  final ApiErrorModel error;
 
   @override
-  String toString() {
-    return 'ContactScreenState.error(message: $message)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactScreenState.error(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ContactScreenState.error'))
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -518,11 +554,11 @@ class _$ContactsErrorImpl implements ContactsError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ContactsErrorImpl &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -536,9 +572,9 @@ class _$ContactsErrorImpl implements ContactsError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Contacts> contacts) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(ApiErrorModel error) error,
   }) {
-    return error(message);
+    return error(this.error);
   }
 
   @override
@@ -547,9 +583,9 @@ class _$ContactsErrorImpl implements ContactsError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Contacts> contacts)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(ApiErrorModel error)? error,
   }) {
-    return error?.call(message);
+    return error?.call(this.error);
   }
 
   @override
@@ -558,11 +594,11 @@ class _$ContactsErrorImpl implements ContactsError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Contacts> contacts)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(this.error);
     }
     return orElse();
   }
@@ -606,9 +642,9 @@ class _$ContactsErrorImpl implements ContactsError {
 }
 
 abstract class ContactsError implements ContactScreenState {
-  const factory ContactsError(final String message) = _$ContactsErrorImpl;
+  const factory ContactsError(final ApiErrorModel error) = _$ContactsErrorImpl;
 
-  String get message;
+  ApiErrorModel get error;
   @JsonKey(ignore: true)
   _$$ContactsErrorImplCopyWith<_$ContactsErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
