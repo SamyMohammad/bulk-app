@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/networking/api_error_handler.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
@@ -45,20 +46,28 @@ class AudienceRepository {
     }
   }
 
-  Future<void> updateAudience(Audiences audience) async {
+  Future<ApiResult> updateAudience(Audiences audience) async {
     try {
       final response =
-          await _apiService.updateAudience(audience.id.toString(), audience);
-
-      if (response.status == 200) {
-        debugPrint('Audience updated successfully: ${response.data}');
-      } else {
-        // Handle failure (e.g., show error message)
-        debugPrint('Failed to update audience: ${response.error}');
-      }
+          await _apiService.updateAudience('${audience.id}', audience);
+      return ApiResult.success(response);
     } catch (error) {
-      // Handle unexpected errors
-      debugPrint('Error updating audience: $error');
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
+
+    // try {
+    //   final response =
+    //       await _apiService.updateAudience(audience.id.toString(), audience);
+
+    //   if (response.status == 200) {
+    //     debugPrint('Audience updated successfully: ${response.data}');
+    //   } else {
+    //     // Handle failure (e.g., show error message)
+    //     debugPrint('Failed to update audience: ${response.error}');
+    //   }
+    // } catch (error) {
+    //   // Handle unexpected errors
+    //   debugPrint('Error updating audience: $error');
+    // }
   }
 }

@@ -6,5 +6,5 @@ class ContactScreenState with _$ContactScreenState {
   const factory ContactScreenState.loading() = ContactsLoading;
   const factory ContactScreenState.loaded(List<Contacts> contacts) =
       ContactsLoaded;
-  const factory ContactScreenState.error(String message) = ContactsError;
+  const factory ContactScreenState.error(ApiErrorModel error) = ContactsError;
 }

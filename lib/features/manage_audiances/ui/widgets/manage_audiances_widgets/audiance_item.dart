@@ -1,5 +1,6 @@
 import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
@@ -72,20 +73,7 @@ class AudianceItem extends StatelessWidget {
             ),
             child: GestureDetector(
               onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return BlocProvider(
-                        create: (context) {
-                          final cubit = getIt<ContactScreenCubit>();
-                          cubit.init(audiences);
-                          return cubit;
-                        },
-                        child: const ContactScreen(),
-                      );
-                    },
-                  ),
-                );
+                Navigator.of(context).pushNamed(Routes.conatctScreen);
               },
               child: Icon(
                 Icons.edit_rounded,

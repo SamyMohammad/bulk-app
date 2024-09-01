@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContactsListView extends StatelessWidget {
-  const ContactsListView({super.key});
+  const ContactsListView({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ContactsListView extends StatelessWidget {
             );
           },
           loading: () => loadingSpinKit(),
-          error: (message) => Center(child: Text(message)),
+          error: (message) => Center(child: Text(message.getAllErrorMessages())),
           orElse: () => const Center(child: Text('No data available')),
         );
       },

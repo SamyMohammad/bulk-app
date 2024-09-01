@@ -58,7 +58,9 @@ void showAddContactForm(BuildContext context, ContactScreenCubit cubit) {
                       final contactNumber = contactNumberController.text;
 
                       // Use the text values as needed, e.g., call a method in the cubit
-                      cubit.addContact(contactName, contactNumber);
+                      cubit.emitAddContactStates(
+                          contactName: contactName,
+                          contactNumber: contactNumber);
 
                       // Close the dialog
                       Navigator.of(context).pop();

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:bulk_app/core/di/dependency_injection.dart';
+import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/api_service.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
@@ -17,12 +18,6 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
   List<Audiences>? audiences;
   late final AudienceRepository _repository;
 
-  void init() {
-    emit(const ManageAudiancesState.audienceLoadingState());
-    final ApiService client = getIt<ApiService>();
-    _repository = AudienceRepository(client);
-    fetchAudienceList();
-  }
 
   Future<void> fetchAudienceList() async {
     emit(const ManageAudiancesState.audienceLoadingState());
@@ -31,14 +26,14 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
       response.when(
         success: (BaseResponse<AudienceResponseData> data) {
           audiences = data.data?.audiences;
-          if (audiences != null && audiences!.isNotEmpty) {
+          if (audiences.isNotNullAndNotEmpty()) {
             emit(ManageAudiancesState.audienceSuccessState(audiences!));
           } else {
             emit(const ManageAudiancesState.audienceEmptyState());
           }
         },
         failure: (error) {
-          emit(const ManageAudiancesState.audienceEmptyState());
+          emit( ManageAudiancesState.audienceErrorState(error));
         },
       );
     } catch (e) {
