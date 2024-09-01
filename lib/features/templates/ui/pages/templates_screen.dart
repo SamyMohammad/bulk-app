@@ -11,11 +11,10 @@ import '../widgets/templates_screen_widgets/templates_screen_body.dart';
 
 class TemplatesScreen extends StatelessWidget {
   const TemplatesScreen({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
         floatingActionButton: FloatingActionButton(
           onPressed: () =>context.pushNamed(Routes.addTemplateScreen),
           backgroundColor: ColorsManager.containerTitleColor,
