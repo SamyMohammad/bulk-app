@@ -56,7 +56,7 @@ class ContactScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return MessageBody(cubit: cubit,args:args); // Pass cubit if needed
+        return MessageBody(cubit: cubit); // Pass cubit if needed
       },
     );
   }
