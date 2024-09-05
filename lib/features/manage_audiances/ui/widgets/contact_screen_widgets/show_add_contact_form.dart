@@ -2,6 +2,7 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_button.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +10,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void showAddContactForm(BuildContext context, ContactScreenCubit cubit) {
   // Create text controllers
-  final contactNameController = TextEditingController();
-  final contactNumberController = TextEditingController();
 
   showDialog(
     context: context,
@@ -41,27 +40,25 @@ void showAddContactForm(BuildContext context, ContactScreenCubit cubit) {
                   AppTextField(
                     hintText: "Contact Name",
                     controller:
-                        contactNameController, // Pass the controller here
+                        cubit.contactNameController, // Pass the controller here
                   ),
                   SizedBox(height: 10.h),
                   AppTextField(
                     hintText: "Contact Number",
-                    controller:
-                        contactNumberController, // Pass the controller here
+                    controller: cubit
+                        .contactNumberController, // Pass the controller here
                   ),
                   SizedBox(height: 10.h),
                   AppTextButton(
                     buttonText: "Add to List",
                     onPressed: () {
-                      // Access the text from the controllers
-                      final contactName = contactNameController.text;
-                      final contactNumber = contactNumberController.text;
-
                       // Use the text values as needed, e.g., call a method in the cubit
-                      cubit.emitAddContactStates(
-                          contactName: contactName,
-                          contactNumber: contactNumber);
-
+                      // cubit.emitAddContactStates(
+                      //     contactName: cubit.contactNameController.text,
+                      //     contactNumber: cubit.contactNumberController.text);
+                      cubit.addContact(Contact(
+                          name: cubit.contactNameController.text,
+                          phone: cubit.contactNumberController.text));
                       // Close the dialog
                       Navigator.of(context).pop();
                     },

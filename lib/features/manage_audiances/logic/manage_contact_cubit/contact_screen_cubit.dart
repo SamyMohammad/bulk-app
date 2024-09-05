@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
-import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
-import 'package:bulk_app/core/networking/api_service.dart';
-import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../../core/networking/base_response.dart';
 
 part 'contact_screen_cubit.freezed.dart';
 part 'contact_screen_state.dart';
@@ -17,57 +19,68 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
   ContactScreenCubit(this._audienceRepository)
       : super(const ContactScreenState.initial());
 
-  List<Contacts>? currentAudienceContacts;
-  Audiences? currentAudience;
+  List<Contact>? currentAudienceContacts;
+  Audience? currentAudience;
+  final audienceNameController = TextEditingController();
+  final contactNameController = TextEditingController();
+  final contactNumberController = TextEditingController();
+  // void init(Audiences audience) {
+  //   emit(const ContactScreenState.loading());
+  //   currentAudience = audience;
+  //   currentAudienceContacts = audience.contacts;
+  //   emit(ContactScreenState.loaded(currentAudienceContacts ?? []));
+  // }
 
-  void init(Audiences audience) {
-    emit(const ContactScreenState.loading());
-    currentAudience = audience;
-    currentAudienceContacts = audience.contacts;
-    emit(ContactScreenState.loaded(currentAudienceContacts ?? []));
-    final ApiService client = getIt<ApiService>();
-    _audienceRepository = AudienceRepository(client);
+// get audience by id
+
+  void getAudienceById(String id) async {
+    emit(const ContactScreenState.getContactsFromServerLoadingState());
+
+    final response = await _audienceRepository.getAudienceById(id);
+    if (kDebugMode) {
+      print(response);
+    }
+    response.when(success: (response) async {
+      currentAudience = response.data?.audience;
+      currentAudienceContacts = currentAudience?.contacts;
+      emit(ContactScreenState.getContactsFromServerSuccessState(
+          currentAudienceContacts ?? []));
+    }, failure: (error) {
+      emit(ContactScreenState.getContactsFromServerErrorsState(error));
+    });
   }
 
-  void removeContact(Contacts contact) {
+  void removeContact(Contact contact) {
     if (currentAudienceContacts != null) {
-      final updatedContacts = List<Contacts>.from(currentAudienceContacts!)
+      final updatedContacts = List<Contact>.from(currentAudienceContacts!)
         ..remove(contact);
       currentAudienceContacts = updatedContacts;
       currentAudience?.contacts = currentAudienceContacts;
-      emit(ContactScreenState.loaded(updatedContacts));
-      _audienceRepository.updateAudience(currentAudience!);
+      emit(ContactScreenState.contactAdded(currentAudienceContacts ?? []));
+      // emit(ContactScreenState.loaded(updatedContacts));
+      // _audienceRepository.updateAudience(currentAudience!);
     }
   }
 
-  // void addContact(String contactName, String contactNumber) {
-  //   emit(const ContactScreenState.loading());
-  //   Contacts newContact = Contacts(name: contactName, phone: contactNumber);
-  //   currentAudienceContacts?.add(newContact);
-  //   currentAudience?.contacts = currentAudienceContacts;
-  //   emit(ContactScreenState.loaded(currentAudienceContacts!));
-  //   repository.updateAudience(currentAudience!);
-  // }
+  void addContact(Contact contact) {
+    Contact newContact = Contact(name: contact.name, phone: contact.phone);
+    currentAudienceContacts = [...?currentAudienceContacts, newContact];
+    currentAudience?.contacts = currentAudienceContacts;
 
-  void emitAddContactStates({
-    required String contactName,
-    required String contactNumber,
-  }) async {
-    emit(const ContactScreenState.loading());
-    Contacts newContact = Contacts(
-        name: contactName, phone: contactNumber, id: currentAudience?.id);
-    currentAudienceContacts?.add(newContact);
-    // currentAudience?.contacts = currentAudienceContacts;
-    final response = await _audienceRepository.updateAudience(Audiences(
-      contacts: currentAudienceContacts,
-    ));
+    emit(ContactScreenState.contactAdded(currentAudienceContacts ?? []));
+  }
+
+  void emitAddContactsToServerStates() async {
+    emit(const ContactScreenState.addContactsToServerLoadingState());
+    final response = await _audienceRepository.addNewAudience(Audience(
+        contacts: currentAudienceContacts, name: audienceNameController.text));
     if (kDebugMode) {
-      // print('response----------$response');
+      print(response);
     }
-    response.when(success: (loginResponse) async {
-      emit(ContactScreenState.loaded(loginResponse));
+    response.when(success: (response) async {
+      emit(ContactScreenState.addContactsToServerSuccessState(response));
     }, failure: (error) {
-      emit(ContactScreenState.error(error));
+      emit(ContactScreenState.addContactsToServerErrorsState(error));
     });
   }
 }

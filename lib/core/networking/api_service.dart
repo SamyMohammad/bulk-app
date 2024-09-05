@@ -3,7 +3,7 @@ import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/auth/data/models/login_response.dart';
 import 'package:bulk_app/features/auth/data/models/register_response.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
-import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
 import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
@@ -48,13 +48,21 @@ abstract class ApiService {
     @Body() UpdateTemplateRequestBody updateTemplateRequestBody,
   );
   @GET(ApiConstants.audience)
-  Future<BaseResponse<AudienceResponseData>> getAllAudience();
+  Future<BaseResponse<AudiencesListData>> getAllAudience();
+
+  @GET("${ApiConstants.audience}/{id}")
+  Future<BaseResponse<AudienceData>> getAudienceById(
+      @Path("id") String id);
 
   @DELETE("${ApiConstants.audience}/{id}")
-  Future<BaseResponse<AudienceResponseData>> deleteAudience(
+  Future<BaseResponse<AudienceData>> deleteAudience(
       @Path("id") String id);
 
   @PUT("${ApiConstants.audience}/{id}")
-  Future<BaseResponse<AudienceResponseData>> updateAudience(
-      @Path("id") String id, @Body() Audiences audience);
+  Future<BaseResponse<AudienceData>> updateAudience(
+      @Path("id") num id, @Body() Audience audience);
+
+  @POST(ApiConstants.audience)
+  Future<BaseResponse<AudienceData>> addNewAudience(
+      @Body() Audience audience);
 }

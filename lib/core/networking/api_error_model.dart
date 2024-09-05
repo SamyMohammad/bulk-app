@@ -21,7 +21,7 @@ class ApiErrorModel {
 
 
     String getAllErrorMessages() {
-      return error?.details?.map((error) => '• $error').join('\n') ?? "Unknown Error occurred";
+      return error?.details?.map((error) => '• $error').join('\n') ?? error?.message??'';
   }
 }
 

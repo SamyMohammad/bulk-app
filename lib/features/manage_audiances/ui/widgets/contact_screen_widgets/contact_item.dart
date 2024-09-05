@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContactItem extends StatelessWidget {
   const ContactItem({super.key, required this.contact});
-  final Contacts contact;
+  final Contact contact;
   @override
   Widget build(BuildContext context) {
     return Container(

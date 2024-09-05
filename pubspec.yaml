@@ -95,6 +95,5 @@ flutter:
         # Apply transformer to a folder of SVGs
     # - path: assets/images/asset 0.svg
     - path: assets/icons/
-    # - path: assets/icons/
       transformers:
         - package: vector_graphics_compiler

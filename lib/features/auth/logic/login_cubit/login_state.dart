@@ -9,4 +9,4 @@ class LoginState<T> with _$LoginState<T> {
   const factory LoginState.loginLoadingState() = LoginLoadingState;
   const factory LoginState.loginSuccessState(T data) = LoginSuccessState<T>;
   const factory LoginState.loginErrorState(ApiErrorModel apiErrorModel) = LoginErrorState;
-}
+} 

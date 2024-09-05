@@ -6,14 +6,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContactsListView extends StatelessWidget {
-  const ContactsListView({super.key,});
+  const ContactsListView({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ContactScreenCubit, ContactScreenState>(
       builder: (context, state) {
         return state.maybeWhen(
-          loaded: (contacts) {
+          contactAdded: (contacts) {
             return ListView.separated(
               itemCount: contacts.length,
               separatorBuilder: (context, index) => SizedBox(height: 20.h),
@@ -22,8 +24,25 @@ class ContactsListView extends StatelessWidget {
               },
             );
           },
-          loading: () => loadingSpinKit(),
-          error: (message) => Center(child: Text(message.getAllErrorMessages())),
+          getContactsFromServerSuccessState: (response) {
+            for (var element in response) {
+              print(element.name);
+            }
+            print(response.length);
+            return ListView.separated(
+              itemCount: response.length,
+              separatorBuilder: (context, index) => SizedBox(height: 20.h),
+              itemBuilder: (context, index) {
+                return ContactItem(contact: response[index]);
+              },
+            );
+          },
+          getContactsFromServerErrorsState: (error) => Center(
+            child: Text(error.getAllErrorMessages()),
+          ),
+          getContactsFromServerLoadingState: () => loadingSpinKit(),
+          error: (message) =>
+              Center(child: Text(message.getAllErrorMessages())),
           orElse: () => const Center(child: Text('No data available')),
         );
       },

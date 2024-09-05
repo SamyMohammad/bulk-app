@@ -11,16 +11,39 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/widgets/custom_app_bar.dart';
 
-class ContactScreen extends StatelessWidget {
+class ContactScreen extends StatefulWidget {
   const ContactScreen({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
-    Arguments? args =
-        ModalRoute.of(context)!.settings.arguments as Arguments?;
+  State<ContactScreen> createState() => _ContactScreenState();
+}
 
+class _ContactScreenState extends State<ContactScreen> {
+  Arguments? args;
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() {
+      // Access context here
+      if (mounted) {
+        context.read<ContactScreenCubit>().getAudienceById(args!.audienceId);
+      }
+      // Do something with inheritedWidget
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    args = ModalRoute.of(context)!.settings.arguments as Arguments?;
+
+    // Use context here to access inherited widgets
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: AppFloatingActionButton(
           path: 'assets/icons/person_add.svg',
@@ -32,7 +55,9 @@ class ContactScreen extends StatelessWidget {
             BlocBuilder<ContactScreenCubit, ContactScreenState>(
               builder: (context, state) {
                 return IconButton(
-                    onPressed: () {},
+                    onPressed: () => context
+                        .read<ContactScreenCubit>()
+                        .emitAddContactsToServerStates(),
                     icon: Icon(
                       Icons.check_circle_rounded,
                       color:

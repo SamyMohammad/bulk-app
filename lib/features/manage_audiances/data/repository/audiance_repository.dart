@@ -2,7 +2,7 @@ import 'package:bulk_app/core/networking/api_error_handler.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
-import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/networking/api_result.dart';
@@ -13,7 +13,7 @@ class AudienceRepository {
 
   AudienceRepository(this._apiService);
 
-  Future<ApiResult<BaseResponse<AudienceResponseData>>>
+  Future<ApiResult<BaseResponse<AudiencesListData>>>
       getAllAudiences() async {
     try {
       final response = await _apiService.getAllAudience();
@@ -46,28 +46,31 @@ class AudienceRepository {
     }
   }
 
-  Future<ApiResult> updateAudience(Audiences audience) async {
+  Future<ApiResult> updateAudience(Audience audience) async {
     try {
-      final response =
-          await _apiService.updateAudience('${audience.id}', audience);
+      final response = await _apiService.updateAudience(audience.id!, audience);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
+  }
 
-    // try {
-    //   final response =
-    //       await _apiService.updateAudience(audience.id.toString(), audience);
+  Future<ApiResult<BaseResponse<AudienceData>>> getAudienceById(
+      String id) async {
+    try {
+      final response = await _apiService.getAudienceById(id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 
-    //   if (response.status == 200) {
-    //     debugPrint('Audience updated successfully: ${response.data}');
-    //   } else {
-    //     // Handle failure (e.g., show error message)
-    //     debugPrint('Failed to update audience: ${response.error}');
-    //   }
-    // } catch (error) {
-    //   // Handle unexpected errors
-    //   debugPrint('Error updating audience: $error');
-    // }
+  Future<ApiResult<BaseResponse<AudienceData>>> addNewAudience(Audience audience) async {
+    try {
+      final response = await _apiService.addNewAudience(audience);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
   }
 }

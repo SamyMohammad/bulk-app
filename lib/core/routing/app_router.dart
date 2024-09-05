@@ -86,11 +86,14 @@ class AppRouter {
           ),
         );
       case Routes.conatctScreen:
+        final args = settings.arguments as Arguments;
+
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<ContactScreenCubit>(),
             child: const ContactScreen(),
           ),
+          settings: RouteSettings(arguments: args),
         );
       case Routes.supportScreen:
         return MaterialPageRoute(

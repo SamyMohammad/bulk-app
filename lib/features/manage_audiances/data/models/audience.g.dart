@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'audiences.dart';
+part of 'audience.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Audiences _$AudiencesFromJson(Map<String, dynamic> json) => Audiences(
+Audience _$AudienceFromJson(Map<String, dynamic> json) => Audience(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       contacts: (json['contacts'] as List<dynamic>?)
-          ?.map((e) => Contacts.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Contact.fromJson(e as Map<String, dynamic>))
           .toList(),
       createdAt: json['createdAt'] as String?,
       deletedAt: json['deletedAt'],
       userId: (json['userId'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$AudiencesToJson(Audiences instance) => <String, dynamic>{
+Map<String, dynamic> _$AudienceToJson(Audience instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'contacts': instance.contacts,
