@@ -27,7 +27,7 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik9tYXJAbWV0YXMudXMiLCJpZCI6MjQsInR5cGUiOjEsImlhdCI6MTcyMzQ2OTIwMCwiZXhwIjoxNzI2MDYxMjAwfQ.83ssDy09LXJzEQqVQN8UO3TCljPWaAKa4-uS-AJTwrI',
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXkxMEBnbWFpbC5jb20iLCJpZCI6MjUsInR5cGUiOjEsImlhdCI6MTcyNTM3MzkzNSwiZXhwIjoxNzI3OTY1OTM1fQ.lFPRMxZHRv8vJr18NuS3iYxE4FXeJvhzbV9CufMHybE',
     };
   }
 

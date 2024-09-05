@@ -9,7 +9,7 @@ class ManageAudiancesState<T> with _$ManageAudiancesState<T> {
   const factory ManageAudiancesState.audienceEmptyState() = AudienceEmptyState;
 
   const factory ManageAudiancesState.audienceSuccessState(
-      List<Audiences>? audiences) = AudienceSuccessState<T>;
+      List<Audience>? audiences) = AudienceSuccessState<T>;
   const factory ManageAudiancesState.audienceErrorState(
       ApiErrorModel apiErrorModel) = AudienceErrorState;
 }

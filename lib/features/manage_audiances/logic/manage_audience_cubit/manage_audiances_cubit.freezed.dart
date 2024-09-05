@@ -21,7 +21,7 @@ mixin _$ManageAudiancesState<T> {
     required TResult Function() initial,
     required TResult Function() audienceLoadingState,
     required TResult Function() audienceEmptyState,
-    required TResult Function(List<Audiences>? audiences) audienceSuccessState,
+    required TResult Function(List<Audience>? audiences) audienceSuccessState,
     required TResult Function(ApiErrorModel apiErrorModel) audienceErrorState,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$ManageAudiancesState<T> {
     TResult? Function()? initial,
     TResult? Function()? audienceLoadingState,
     TResult? Function()? audienceEmptyState,
-    TResult? Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult? Function(List<Audience>? audiences)? audienceSuccessState,
     TResult? Function(ApiErrorModel apiErrorModel)? audienceErrorState,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$ManageAudiancesState<T> {
     TResult Function()? initial,
     TResult Function()? audienceLoadingState,
     TResult Function()? audienceEmptyState,
-    TResult Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult Function(List<Audience>? audiences)? audienceSuccessState,
     TResult Function(ApiErrorModel apiErrorModel)? audienceErrorState,
     required TResult orElse(),
   }) =>
@@ -136,7 +136,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() audienceLoadingState,
     required TResult Function() audienceEmptyState,
-    required TResult Function(List<Audiences>? audiences) audienceSuccessState,
+    required TResult Function(List<Audience>? audiences) audienceSuccessState,
     required TResult Function(ApiErrorModel apiErrorModel) audienceErrorState,
   }) {
     return initial();
@@ -148,7 +148,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? audienceLoadingState,
     TResult? Function()? audienceEmptyState,
-    TResult? Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult? Function(List<Audience>? audiences)? audienceSuccessState,
     TResult? Function(ApiErrorModel apiErrorModel)? audienceErrorState,
   }) {
     return initial?.call();
@@ -160,7 +160,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? audienceLoadingState,
     TResult Function()? audienceEmptyState,
-    TResult Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult Function(List<Audience>? audiences)? audienceSuccessState,
     TResult Function(ApiErrorModel apiErrorModel)? audienceErrorState,
     required TResult orElse(),
   }) {
@@ -261,7 +261,7 @@ class _$AudienceLoadingStateImpl<T> implements AudienceLoadingState<T> {
     required TResult Function() initial,
     required TResult Function() audienceLoadingState,
     required TResult Function() audienceEmptyState,
-    required TResult Function(List<Audiences>? audiences) audienceSuccessState,
+    required TResult Function(List<Audience>? audiences) audienceSuccessState,
     required TResult Function(ApiErrorModel apiErrorModel) audienceErrorState,
   }) {
     return audienceLoadingState();
@@ -273,7 +273,7 @@ class _$AudienceLoadingStateImpl<T> implements AudienceLoadingState<T> {
     TResult? Function()? initial,
     TResult? Function()? audienceLoadingState,
     TResult? Function()? audienceEmptyState,
-    TResult? Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult? Function(List<Audience>? audiences)? audienceSuccessState,
     TResult? Function(ApiErrorModel apiErrorModel)? audienceErrorState,
   }) {
     return audienceLoadingState?.call();
@@ -285,7 +285,7 @@ class _$AudienceLoadingStateImpl<T> implements AudienceLoadingState<T> {
     TResult Function()? initial,
     TResult Function()? audienceLoadingState,
     TResult Function()? audienceEmptyState,
-    TResult Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult Function(List<Audience>? audiences)? audienceSuccessState,
     TResult Function(ApiErrorModel apiErrorModel)? audienceErrorState,
     required TResult orElse(),
   }) {
@@ -385,7 +385,7 @@ class _$AudienceEmptyStateImpl<T> implements AudienceEmptyState<T> {
     required TResult Function() initial,
     required TResult Function() audienceLoadingState,
     required TResult Function() audienceEmptyState,
-    required TResult Function(List<Audiences>? audiences) audienceSuccessState,
+    required TResult Function(List<Audience>? audiences) audienceSuccessState,
     required TResult Function(ApiErrorModel apiErrorModel) audienceErrorState,
   }) {
     return audienceEmptyState();
@@ -397,7 +397,7 @@ class _$AudienceEmptyStateImpl<T> implements AudienceEmptyState<T> {
     TResult? Function()? initial,
     TResult? Function()? audienceLoadingState,
     TResult? Function()? audienceEmptyState,
-    TResult? Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult? Function(List<Audience>? audiences)? audienceSuccessState,
     TResult? Function(ApiErrorModel apiErrorModel)? audienceErrorState,
   }) {
     return audienceEmptyState?.call();
@@ -409,7 +409,7 @@ class _$AudienceEmptyStateImpl<T> implements AudienceEmptyState<T> {
     TResult Function()? initial,
     TResult Function()? audienceLoadingState,
     TResult Function()? audienceEmptyState,
-    TResult Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult Function(List<Audience>? audiences)? audienceSuccessState,
     TResult Function(ApiErrorModel apiErrorModel)? audienceErrorState,
     required TResult orElse(),
   }) {
@@ -473,7 +473,7 @@ abstract class _$$AudienceSuccessStateImplCopyWith<T, $Res> {
           $Res Function(_$AudienceSuccessStateImpl<T>) then) =
       __$$AudienceSuccessStateImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({List<Audiences>? audiences});
+  $Res call({List<Audience>? audiences});
 }
 
 /// @nodoc
@@ -494,7 +494,7 @@ class __$$AudienceSuccessStateImplCopyWithImpl<T, $Res>
       freezed == audiences
           ? _value._audiences
           : audiences // ignore: cast_nullable_to_non_nullable
-              as List<Audiences>?,
+              as List<Audience>?,
     ));
   }
 }
@@ -502,12 +502,12 @@ class __$$AudienceSuccessStateImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$AudienceSuccessStateImpl<T> implements AudienceSuccessState<T> {
-  const _$AudienceSuccessStateImpl(final List<Audiences>? audiences)
+  const _$AudienceSuccessStateImpl(final List<Audience>? audiences)
       : _audiences = audiences;
 
-  final List<Audiences>? _audiences;
+  final List<Audience>? _audiences;
   @override
-  List<Audiences>? get audiences {
+  List<Audience>? get audiences {
     final value = _audiences;
     if (value == null) return null;
     if (_audiences is EqualUnmodifiableListView) return _audiences;
@@ -546,7 +546,7 @@ class _$AudienceSuccessStateImpl<T> implements AudienceSuccessState<T> {
     required TResult Function() initial,
     required TResult Function() audienceLoadingState,
     required TResult Function() audienceEmptyState,
-    required TResult Function(List<Audiences>? audiences) audienceSuccessState,
+    required TResult Function(List<Audience>? audiences) audienceSuccessState,
     required TResult Function(ApiErrorModel apiErrorModel) audienceErrorState,
   }) {
     return audienceSuccessState(audiences);
@@ -558,7 +558,7 @@ class _$AudienceSuccessStateImpl<T> implements AudienceSuccessState<T> {
     TResult? Function()? initial,
     TResult? Function()? audienceLoadingState,
     TResult? Function()? audienceEmptyState,
-    TResult? Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult? Function(List<Audience>? audiences)? audienceSuccessState,
     TResult? Function(ApiErrorModel apiErrorModel)? audienceErrorState,
   }) {
     return audienceSuccessState?.call(audiences);
@@ -570,7 +570,7 @@ class _$AudienceSuccessStateImpl<T> implements AudienceSuccessState<T> {
     TResult Function()? initial,
     TResult Function()? audienceLoadingState,
     TResult Function()? audienceEmptyState,
-    TResult Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult Function(List<Audience>? audiences)? audienceSuccessState,
     TResult Function(ApiErrorModel apiErrorModel)? audienceErrorState,
     required TResult orElse(),
   }) {
@@ -624,10 +624,10 @@ class _$AudienceSuccessStateImpl<T> implements AudienceSuccessState<T> {
 }
 
 abstract class AudienceSuccessState<T> implements ManageAudiancesState<T> {
-  const factory AudienceSuccessState(final List<Audiences>? audiences) =
+  const factory AudienceSuccessState(final List<Audience>? audiences) =
       _$AudienceSuccessStateImpl<T>;
 
-  List<Audiences>? get audiences;
+  List<Audience>? get audiences;
   @JsonKey(ignore: true)
   _$$AudienceSuccessStateImplCopyWith<T, _$AudienceSuccessStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -703,7 +703,7 @@ class _$AudienceErrorStateImpl<T> implements AudienceErrorState<T> {
     required TResult Function() initial,
     required TResult Function() audienceLoadingState,
     required TResult Function() audienceEmptyState,
-    required TResult Function(List<Audiences>? audiences) audienceSuccessState,
+    required TResult Function(List<Audience>? audiences) audienceSuccessState,
     required TResult Function(ApiErrorModel apiErrorModel) audienceErrorState,
   }) {
     return audienceErrorState(apiErrorModel);
@@ -715,7 +715,7 @@ class _$AudienceErrorStateImpl<T> implements AudienceErrorState<T> {
     TResult? Function()? initial,
     TResult? Function()? audienceLoadingState,
     TResult? Function()? audienceEmptyState,
-    TResult? Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult? Function(List<Audience>? audiences)? audienceSuccessState,
     TResult? Function(ApiErrorModel apiErrorModel)? audienceErrorState,
   }) {
     return audienceErrorState?.call(apiErrorModel);
@@ -727,7 +727,7 @@ class _$AudienceErrorStateImpl<T> implements AudienceErrorState<T> {
     TResult Function()? initial,
     TResult Function()? audienceLoadingState,
     TResult Function()? audienceEmptyState,
-    TResult Function(List<Audiences>? audiences)? audienceSuccessState,
+    TResult Function(List<Audience>? audiences)? audienceSuccessState,
     TResult Function(ApiErrorModel apiErrorModel)? audienceErrorState,
     required TResult orElse(),
   }) {

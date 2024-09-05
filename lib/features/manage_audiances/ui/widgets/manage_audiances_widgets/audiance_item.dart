@@ -1,19 +1,17 @@
-import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
-import 'package:bulk_app/features/manage_audiances/data/models/audiences.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/contact_screen.dart';
+import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AudianceItem extends StatelessWidget {
   const AudianceItem({super.key, required this.audiences});
-  final Audiences audiences;
+  final Audience audiences;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +71,10 @@ class AudianceItem extends StatelessWidget {
             ),
             child: GestureDetector(
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.conatctScreen);
+                Navigator.of(context).pushNamed(Routes.conatctScreen,
+                    arguments: Arguments(
+                        isAddNewAudience: false,
+                        audienceId: audiences.id!.toString()));
               },
               child: Icon(
                 Icons.edit_rounded,

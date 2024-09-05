@@ -1,18 +1,18 @@
 import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'audiences.g.dart';
+part 'audience.g.dart';
 
 @JsonSerializable()
-class Audiences {
+class Audience {
   int? id;
   String? name;
-  List<Contacts>? contacts;
+  List<Contact>? contacts;
   String? createdAt;
   dynamic deletedAt;
   int? userId;
 
-  Audiences({
+  Audience({
     this.id,
     this.name,
     this.contacts,
@@ -21,7 +21,8 @@ class Audiences {
     this.userId,
   });
 
-  factory Audiences.fromJson(Map<String, dynamic> json) =>
-      _$AudiencesFromJson(json);
-  Map<String, dynamic> toJson() => _$AudiencesToJson(this);
+  factory Audience.fromJson(Map<String, dynamic> json) =>
+      _$AudienceFromJson(json);
+  Map<String, dynamic> toJson() => _$AudienceToJson(this);
+  
 }

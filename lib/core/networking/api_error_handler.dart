@@ -37,7 +37,7 @@ class ApiErrorHandler {
               error: ErrorData(message: "Something went wrong"));
       }
     } else {
-      return ApiErrorModel(error: ErrorData(message: "Unknown error occurred"));
+      return ApiErrorModel(error: ErrorData(message: error.toString()));
     }
   }
 }
@@ -46,8 +46,5 @@ ApiErrorModel _handleError(dynamic data) {
   return ApiErrorModel(
     error: ErrorData.fromJson(data['error']),
     status: data['status'],
-    // message: data['message'] ?? "Unknown error occurred",
-    // code: data['code'],
-    // errors: data['data'],
   );
 }

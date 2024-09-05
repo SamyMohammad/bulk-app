@@ -238,13 +238,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<BaseResponse<AudienceResponseData>> getAllAudience() async {
+  Future<BaseResponse<AudiencesListData>> getAllAudience() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<AudienceResponseData>>(Options(
+        _setStreamType<BaseResponse<AudiencesListData>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -260,21 +260,51 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<AudienceResponseData>.fromJson(
+    final value = BaseResponse<AudiencesListData>.fromJson(
       _result.data!,
-      (json) => AudienceResponseData.fromJson(json as Map<String, dynamic>),
+      (json) => AudiencesListData.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<AudienceResponseData>> deleteAudience(String id) async {
+  Future<BaseResponse<AudienceData>> getAudienceById(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<AudienceResponseData>>(Options(
+        _setStreamType<BaseResponse<AudienceData>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'audience/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BaseResponse<AudienceData>.fromJson(
+      _result.data!,
+      (json) => AudienceData.fromJson(json as Map<String, dynamic>),
+    );
+    return value;
+  }
+
+  @override
+  Future<BaseResponse<AudienceData>> deleteAudience(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<BaseResponse<AudienceData>>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
@@ -290,17 +320,17 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<AudienceResponseData>.fromJson(
+    final value = BaseResponse<AudienceData>.fromJson(
       _result.data!,
-      (json) => AudienceResponseData.fromJson(json as Map<String, dynamic>),
+      (json) => AudienceData.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<AudienceResponseData>> updateAudience(
-    String id,
-    Audiences audience,
+  Future<BaseResponse<AudienceData>> updateAudience(
+    num id,
+    Audience audience,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -308,7 +338,7 @@ class _ApiService implements ApiService {
     final _data = <String, dynamic>{};
     _data.addAll(audience.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<AudienceResponseData>>(Options(
+        _setStreamType<BaseResponse<AudienceData>>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -324,9 +354,40 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponse<AudienceResponseData>.fromJson(
+    final value = BaseResponse<AudienceData>.fromJson(
       _result.data!,
-      (json) => AudienceResponseData.fromJson(json as Map<String, dynamic>),
+      (json) => AudienceData.fromJson(json as Map<String, dynamic>),
+    );
+    return value;
+  }
+
+  @override
+  Future<BaseResponse<AudienceData>> addNewAudience(Audience audience) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(audience.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<BaseResponse<AudienceData>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'audience',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BaseResponse<AudienceData>.fromJson(
+      _result.data!,
+      (json) => AudienceData.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
