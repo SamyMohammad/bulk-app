@@ -69,7 +69,7 @@ class _ContactScreenState extends State<ContactScreen> with RestorationMixin {
                   isValid: cubit.isValid,
                   cubit: cubit,
                 );
-              },
+              }, 
             )
           ],
         ),

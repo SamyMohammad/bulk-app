@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:bulk_app/core/di/dependency_injection.dart';
+import 'package:bulk_app/core/helpers/app_preference.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';

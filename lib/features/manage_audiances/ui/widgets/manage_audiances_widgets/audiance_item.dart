@@ -92,44 +92,6 @@ class AudianceItem extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            // GestureDetector(
-            //   onTap: () {
-            //     context.read<ManageAudiancesCubit>().delete(audiences.id!);
-            //   },
-            //   child: Icon(
-            //     Icons.delete_forever,
-            //     color: Colors.red,
-            //     size: 37.r,
-            //   ),
-            // ),
-            // Container(
-            //   margin: EdgeInsets.symmetric(vertical: 20.h),
-            //   height: double.maxFinite,
-            //   width: 1.w,
-            //   color: ColorsManager.saerchTextFieldHintColor,
-            // ),
-            // 5.sizedWidth,
-            // Container(
-            //   height: 26.h,
-            //   width: 26.w,
-            //   decoration: const BoxDecoration(
-            //     shape: BoxShape.circle,
-            //     color: ColorsManager.containerTitleColor,
-            //   ),
-            //   child: GestureDetector(
-            //     onTap: () {
-            //       Navigator.of(context).pushNamed(Routes.conatctScreen,
-            //           arguments: Arguments(
-            //               isAddNewAudience: false,
-            //               audienceId: audiences.id!.toString(),
-            //               audienceName: audiences.name));
-            //     },
-            //     child: Icon(
-            //       Icons.edit_rounded,
-            //       size: 20.r,
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),

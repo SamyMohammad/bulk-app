@@ -9,6 +9,7 @@ import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/co
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/auth/logic/login_cubit/login_cubit.dart';
@@ -21,9 +22,10 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = DioFactory.getDio();
-  getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  final sharedPrefs = await SharedPreferences.getInstance();
+  getIt.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
 
-  // // login
+  getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   // Repos
   getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
@@ -40,14 +42,8 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ManageAudiancesCubit>(
       () => ManageAudiancesCubit(getIt()));
   getIt.registerFactory<ContactScreenCubit>(() => ContactScreenCubit(getIt()));
+  
   //App Media
   getIt.registerLazySingleton<AppMedia>(
       () => AppMedia(imagePicker: ImagePicker()));
-  // // signup
-  // getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));
-  // getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
-
-  // home
-  // getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
-  // getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 }

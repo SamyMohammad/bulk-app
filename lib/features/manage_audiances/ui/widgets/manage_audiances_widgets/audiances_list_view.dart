@@ -8,6 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:showcaseview/showcaseview.dart';
 
+import '../../../../../core/di/dependency_injection.dart';
+import '../../../../../core/helpers/app_preference.dart';
+
 class AudiancesListView extends StatefulWidget {
   const AudiancesListView({super.key});
 
@@ -17,13 +20,28 @@ class AudiancesListView extends StatefulWidget {
 
 class _AudiancesListViewState extends State<AudiancesListView> {
   final GlobalKey _one = GlobalKey();
+  bool? isOpened = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    // AppPreferences(getIt()).removeManageAudienceOpened().then((value) {});
+    AppPreferences(getIt())
+        .isManageAudinceOpened()
+        .then((value) => isOpened = value);
+
     WidgetsBinding.instance.addPostFrameCallback(
-      (_) => ShowCaseWidget.of(context).startShowCase([_one]),
+      (_) {
+        if (isOpened != true) {
+          ShowCaseWidget.of(context).startShowCase([_one]);
+          AppPreferences(getIt()).setManageAudienceOpened().then((value) {});
+        }
+      },
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -41,7 +59,7 @@ class _AudiancesListViewState extends State<AudiancesListView> {
               separatorBuilder: (context, index) => const SizedBox(height: 20),
               itemBuilder: (context, index) {
                 final audience = audiences![index];
-                if (index == 0) {
+                if (index == 0 && isOpened != true) {
                   return Showcase(
                       targetPadding: const EdgeInsets.all(5),
                       key: _one,
