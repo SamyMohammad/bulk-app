@@ -77,7 +77,7 @@ class ContactScreenListener extends StatelessWidget {
           addContactsToServerErrorsState: (apiErrorModel) {
             setupErrorState(context, apiErrorModel);
           },
-        //  updateContactsInServer
+          //  updateContactsInServer
           updateContactsInServerLoadingState: () => startLoading(context),
           updateContactsInServerSuccessState: () {
             stopLoading(context);
@@ -105,7 +105,7 @@ class ContactScreenListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          apiErrorModel.getAllErrorMessages(),
+          apiErrorModel.error!.message!,
           style: TextStyles.font15whiteMedium.copyWith(color: Colors.black87),
         ),
         actions: [

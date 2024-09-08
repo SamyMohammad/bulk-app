@@ -1,6 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:bulk_app/core/di/dependency_injection.dart';
-import 'package:bulk_app/core/helpers/app_preference.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
@@ -45,7 +43,11 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
     audiences?.removeWhere((audience) => audience.id == id);
     try {
       await _repository.deleteAudienceByid(id.toString());
-      emit(ManageAudiancesState.audienceSuccessState(audiences!));
+      if (audiences.isNotNullAndNotEmpty()) {
+        emit(ManageAudiancesState.audienceSuccessState(audiences!));
+      } else {
+        emit(const ManageAudiancesState.audienceEmptyState());
+      }
     } catch (e) {
       emit(const ManageAudiancesState.audienceEmptyState());
     }

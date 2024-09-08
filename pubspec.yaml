@@ -91,6 +91,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/jsons/
     - assets/translation/en-US.json
     - assets/translation/ar-SA.json
     - path: assets/icons/

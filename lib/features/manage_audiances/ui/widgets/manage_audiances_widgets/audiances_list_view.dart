@@ -52,7 +52,7 @@ class _AudiancesListViewState extends State<AudiancesListView> {
           audienceLoadingState: () => loadingSpinKit(),
           audienceEmptyState: () => const EmptyState(),
           audienceErrorState: (error) =>
-              Center(child: Text(error.getAllErrorMessages())),
+              Center(child: Text(error.error?.message ?? '')),
           audienceSuccessState: (audiences) {
             return ListView.separated(
               itemCount: audiences?.length ?? 0,
