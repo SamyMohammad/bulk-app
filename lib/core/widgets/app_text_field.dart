@@ -19,6 +19,7 @@ class AppTextField extends StatelessWidget {
   final Color? backgroundColor;
   final TextEditingController? controller;
   final String? label;
+  final String? restorationId;
   final int? maxLine;
   final Validator validator;
   final Color? hintTextColor;
@@ -26,6 +27,7 @@ class AppTextField extends StatelessWidget {
   const AppTextField(
       {super.key,
       this.borderRadius,
+      this.restorationId,
       this.contentPadding,
       this.onChanged,
       this.hintTextColor,
@@ -48,6 +50,7 @@ class AppTextField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5.h),
       child: TextFormField(
+        restorationId: restorationId,
         controller: controller,
         validator: validator,
         maxLines: maxLine,

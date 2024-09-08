@@ -18,7 +18,7 @@ class AccountSettingsScreen extends StatelessWidget {
         ),
         body: BlocProvider(
           create: (context) => AccountSettingsCubit(),
-          child: AccountSettingsScreenBody(),
+          child: const AccountSettingsScreenBody(),
         ));
   }
 }

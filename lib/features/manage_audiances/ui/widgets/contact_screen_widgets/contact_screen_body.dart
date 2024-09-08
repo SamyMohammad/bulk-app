@@ -17,7 +17,8 @@ import '../../../../../core/widgets/overlay_loading_state.dart';
 
 class ContactScreenBody extends StatelessWidget {
   final Arguments args;
-  const ContactScreenBody({super.key, required this.args});
+  final String? restorationId;
+  const ContactScreenBody({super.key, required this.args, this.restorationId});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,9 @@ class ContactScreenBody extends StatelessWidget {
         children: [
           AppTextField(
             hintText: 'Audience Name',
-            controller: context.read<ContactScreenCubit>().audienceNameController,
+            controller:
+                context.read<ContactScreenCubit>().audienceNameController.value,
+            restorationId: restorationId,
             prefixIcon: Icon(
               Icons.person,
               size: 25.sp,
@@ -58,19 +61,31 @@ class ContactScreenListener extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<ContactScreenCubit, ContactScreenState>(
-      listenWhen: (previous, current) =>
-          current is AddContactsToServerLoadingState ||
-          current is AddContactsToServerSuccessState ||
-          current is AddContactsToServerErrorsState,
+      // listenWhen: (previous, current) =>
+      //     current is AddContactsToServerLoadingState ||
+      //     current is AddContactsToServerSuccessState ||
+      //     current is AddContactsToServerErrorsState,
       listener: (context, state) {
         state.whenOrNull(
-        addContactsToServerLoadingState:   () => startLoading(context),
-          addContactsToServerSuccessState: (loginResponse) {
+          addContactsToServerLoadingState: () => startLoading(context),
+          addContactsToServerSuccessState: (response) {
             stopLoading(context);
-            context.pushNamedAndRemoveUntil(Routes.homeScreen,
-                predicate: (context) => false);
+            context.pushReplacementNamed(
+              Routes.manageAudiances,
+            );
           },
           addContactsToServerErrorsState: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
+          },
+        //  updateContactsInServer
+          updateContactsInServerLoadingState: () => startLoading(context),
+          updateContactsInServerSuccessState: () {
+            stopLoading(context);
+            context.pushReplacementNamed(
+              Routes.manageAudiances,
+            );
+          },
+          updateContactsInServerErrorState: (apiErrorModel) {
             setupErrorState(context, apiErrorModel);
           },
         );

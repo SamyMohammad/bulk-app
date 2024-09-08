@@ -84,6 +84,9 @@ class _$LoginStateCopyWithImpl<T, $Res, $Val extends LoginState<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$InitialImplCopyWithImpl<T, $Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -214,6 +220,9 @@ class __$$LoginLoadingStateImplCopyWithImpl<T, $Res>
   __$$LoginLoadingStateImplCopyWithImpl(_$LoginLoadingStateImpl<T> _value,
       $Res Function(_$LoginLoadingStateImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -332,6 +341,8 @@ class __$$LoginSuccessStateImplCopyWithImpl<T, $Res>
       $Res Function(_$LoginSuccessStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -371,7 +382,9 @@ class _$LoginSuccessStateImpl<T> implements LoginSuccessState<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginSuccessStateImplCopyWith<T, _$LoginSuccessStateImpl<T>>
@@ -458,7 +471,10 @@ abstract class LoginSuccessState<T> implements LoginState<T> {
   const factory LoginSuccessState(final T data) = _$LoginSuccessStateImpl<T>;
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoginSuccessStateImplCopyWith<T, _$LoginSuccessStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -480,6 +496,8 @@ class __$$LoginErrorStateImplCopyWithImpl<T, $Res>
       $Res Function(_$LoginErrorStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -519,7 +537,9 @@ class _$LoginErrorStateImpl<T> implements LoginErrorState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginErrorStateImplCopyWith<T, _$LoginErrorStateImpl<T>> get copyWith =>
@@ -606,7 +626,10 @@ abstract class LoginErrorState<T> implements LoginState<T> {
       _$LoginErrorStateImpl<T>;
 
   ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoginErrorStateImplCopyWith<T, _$LoginErrorStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

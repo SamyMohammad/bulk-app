@@ -16,7 +16,7 @@ class LoginScreenBody extends StatelessWidget {
       children: [
         20.verticalSpace,
         const VectorGraphic(
-          loader: AssetBytesLoader('assets/images/asset 0.svg'),
+          loader: AssetBytesLoader('assets/icons/asset 0.svg'),
         ),
         const BuildLoginContainer(),
         const LoginBlocListener(),

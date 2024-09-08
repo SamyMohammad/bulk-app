@@ -25,7 +25,7 @@ class ManageAudiancesScreen extends StatelessWidget {
   }
 
   _flotingOnClick(BuildContext context) {
-    context.pushNamed(Routes.conatctScreen, arguments: Arguments(isAddNewAudience: true, audienceId: ''));
+    context.pushNamed(Routes.conatctScreen, arguments: Arguments(isAddNewAudience: true, audienceId: '',));
   }
 }
  
@@ -33,6 +33,7 @@ class ManageAudiancesScreen extends StatelessWidget {
  class Arguments{
 
   bool isAddNewAudience;
-  String audienceId;
-  Arguments({required this.isAddNewAudience, required this.audienceId});
+  String? audienceId;
+  String? audienceName;
+  Arguments({required this.isAddNewAudience, required this.audienceId,  this.audienceName});
  }

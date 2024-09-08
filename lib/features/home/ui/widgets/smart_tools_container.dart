@@ -2,7 +2,7 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 import '../../../../core/theming/styles.dart';
 
@@ -25,14 +25,17 @@ class SmartToolsContainer extends StatelessWidget {
           SizedBox(
             height: 5.h,
           ),
-          SvgPicture.asset(iconName),
+          VectorGraphic(
+            loader: AssetBytesLoader(
+              iconName,
+            ),
+          ),
           Center(
             child: Text(
               title,
               style: TextStyles.font15whiteMedium.copyWith(fontSize: 13.sp),
               overflow: TextOverflow.clip,
               softWrap: true,
-              
             ),
           )
         ],

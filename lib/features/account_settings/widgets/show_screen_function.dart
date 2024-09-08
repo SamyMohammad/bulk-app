@@ -12,10 +12,10 @@ void showDropdownScreen(BuildContext context) {
         Animation secondaryAnimation) {
       return Align(
         alignment: Alignment.topCenter,
-        child: Container(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: Material(
+          child: const Material(
             child: AccountSettingsScreen(),
           ),
         ),

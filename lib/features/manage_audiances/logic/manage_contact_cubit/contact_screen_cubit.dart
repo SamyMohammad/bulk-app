@@ -21,19 +21,21 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
 
   List<Contact>? currentAudienceContacts;
   Audience? currentAudience;
-  final audienceNameController = TextEditingController();
+  final audienceNameController = RestorableTextEditingController();
   final contactNameController = TextEditingController();
   final contactNumberController = TextEditingController();
-  // void init(Audiences audience) {
-  //   emit(const ContactScreenState.loading());
-  //   currentAudience = audience;
-  //   currentAudienceContacts = audience.contacts;
-  //   emit(ContactScreenState.loaded(currentAudienceContacts ?? []));
-  // }
-
+  bool isValid = false;
+  changeValidButton() {
+    if (audienceNameController.value.text.isNotEmpty) {
+      isValid = true;
+    } else {
+      isValid = false;
+    }
+    emit(ContactScreenState.isValidButtonState(isValid));
+  }
 // get audience by id
 
-  void getAudienceById(String id) async {
+  void emitGetAudienceByIdStates(String id) async {
     emit(const ContactScreenState.getContactsFromServerLoadingState());
 
     final response = await _audienceRepository.getAudienceById(id);
@@ -73,7 +75,8 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
   void emitAddContactsToServerStates() async {
     emit(const ContactScreenState.addContactsToServerLoadingState());
     final response = await _audienceRepository.addNewAudience(Audience(
-        contacts: currentAudienceContacts, name: audienceNameController.text));
+        contacts: currentAudienceContacts,
+        name: audienceNameController.value.text));
     if (kDebugMode) {
       print(response);
     }
@@ -81,6 +84,23 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
       emit(ContactScreenState.addContactsToServerSuccessState(response));
     }, failure: (error) {
       emit(ContactScreenState.addContactsToServerErrorsState(error));
+    });
+  }
+
+  void emitUpdateContactsToServerStates() async {
+    emit(const ContactScreenState.updateContactsInServerLoadingState());
+    final response = await _audienceRepository.updateAudience(Audience(
+      id: currentAudience?.id,
+      name: audienceNameController.value.text,
+      contacts: currentAudienceContacts,
+    ));
+    if (kDebugMode) {
+      print(response);
+    }
+    response.when(success: (response) async {
+      emit(const ContactScreenState.updateContactsInServerSuccessState());
+    }, failure: (error) {
+      emit(ContactScreenState.updateContactsInServerErrorState(error));
     });
   }
 }

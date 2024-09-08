@@ -20,17 +20,29 @@ class ContactScreen extends StatefulWidget {
   State<ContactScreen> createState() => _ContactScreenState();
 }
 
-class _ContactScreenState extends State<ContactScreen> {
+class _ContactScreenState extends State<ContactScreen> with RestorationMixin {
   Arguments? args;
+  late ContactScreenCubit cubit;
+  @override
+  String get restorationId => 'contact_screen';
+  @override
+  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
+    registerForRestoration(cubit.audienceNameController, 'name_controller');
+  }
+
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      // Access context here
-      if (mounted) {
-        context.read<ContactScreenCubit>().getAudienceById(args!.audienceId);
+    cubit = context.read<ContactScreenCubit>();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      cubit.audienceNameController.value.text = args?.audienceName ?? '';
+      if (args?.isAddNewAudience == false) {
+        cubit.emitGetAudienceByIdStates(args?.audienceId ?? '');
       }
-      // Do something with inheritedWidget
+    });
+    cubit.audienceNameController.addListener(() {
+      cubit.changeValidButton();
     });
   }
 
@@ -38,8 +50,6 @@ class _ContactScreenState extends State<ContactScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     args = ModalRoute.of(context)!.settings.arguments as Arguments?;
-
-    // Use context here to access inherited widgets
   }
 
   @override
@@ -54,23 +64,33 @@ class _ContactScreenState extends State<ContactScreen> {
           actions: [
             BlocBuilder<ContactScreenCubit, ContactScreenState>(
               builder: (context, state) {
-                return IconButton(
-                    onPressed: () => context
-                        .read<ContactScreenCubit>()
-                        .emitAddContactsToServerStates(),
-                    icon: Icon(
-                      Icons.check_circle_rounded,
-                      color:
-                          // cubit.isValid ? Colors.green :
-                          Colors.grey,
-                      size: 40.r,
-                    ));
+                final cubit = context.read<ContactScreenCubit>();
+                return buildValidButton(
+                  isValid: cubit.isValid,
+                  cubit: cubit,
+                );
               },
             )
           ],
         ),
-        body: ContactScreenBody(
-          args: args!,
+        body: ContactScreenBody(args: args!, restorationId: restorationId));
+  }
+
+  IconButton buildValidButton({
+    required bool isValid,
+    required ContactScreenCubit cubit,
+  }) {
+    return IconButton(
+        onPressed: isValid
+            ? () => args?.isAddNewAudience == true
+                ? cubit.emitAddContactsToServerStates()
+                : cubit.emitUpdateContactsToServerStates()
+            : null,
+        icon: Icon(
+          Icons.check_circle_rounded,
+          // color: color,
+          color: cubit.isValid ? Colors.green : Colors.grey,
+          size: 40.r,
         ));
   }
 

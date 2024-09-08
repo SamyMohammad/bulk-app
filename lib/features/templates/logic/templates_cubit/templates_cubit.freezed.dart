@@ -120,6 +120,9 @@ class _$TemplatesStateCopyWithImpl<$Res, $Val extends TemplatesState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -136,6 +139,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -289,6 +295,9 @@ class __$$GetAllTemplatesLoadingStateImplCopyWithImpl<$Res>
       _$GetAllTemplatesLoadingStateImpl _value,
       $Res Function(_$GetAllTemplatesLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -447,6 +456,8 @@ class __$$GetAllTemplatesSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$GetAllTemplatesSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -485,7 +496,9 @@ class _$GetAllTemplatesSuccessStateImpl implements GetAllTemplatesSuccessState {
   @override
   int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAllTemplatesSuccessStateImplCopyWith<_$GetAllTemplatesSuccessStateImpl>
@@ -608,7 +621,10 @@ abstract class GetAllTemplatesSuccessState implements TemplatesState {
       _$GetAllTemplatesSuccessStateImpl;
 
   TemplatesData get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAllTemplatesSuccessStateImplCopyWith<_$GetAllTemplatesSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -632,6 +648,8 @@ class __$$GetAllTemplatesEmptyStateImplCopyWithImpl<$Res>
       $Res Function(_$GetAllTemplatesEmptyStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -670,7 +688,9 @@ class _$GetAllTemplatesEmptyStateImpl implements GetAllTemplatesEmptyState {
   @override
   int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAllTemplatesEmptyStateImplCopyWith<_$GetAllTemplatesEmptyStateImpl>
@@ -793,7 +813,10 @@ abstract class GetAllTemplatesEmptyState implements TemplatesState {
       _$GetAllTemplatesEmptyStateImpl;
 
   TemplatesData get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAllTemplatesEmptyStateImplCopyWith<_$GetAllTemplatesEmptyStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -817,6 +840,8 @@ class __$$GetAllTemplatesErrorStateImplCopyWithImpl<$Res>
       $Res Function(_$GetAllTemplatesErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -855,7 +880,9 @@ class _$GetAllTemplatesErrorStateImpl implements GetAllTemplatesErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAllTemplatesErrorStateImplCopyWith<_$GetAllTemplatesErrorStateImpl>
@@ -978,7 +1005,10 @@ abstract class GetAllTemplatesErrorState implements TemplatesState {
       {required final ApiErrorModel error}) = _$GetAllTemplatesErrorStateImpl;
 
   ApiErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAllTemplatesErrorStateImplCopyWith<_$GetAllTemplatesErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -997,6 +1027,9 @@ class __$$LoadingDeleteImplCopyWithImpl<$Res>
   __$$LoadingDeleteImplCopyWithImpl(
       _$LoadingDeleteImpl _value, $Res Function(_$LoadingDeleteImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1147,6 +1180,9 @@ class __$$SuccessDeleteImplCopyWithImpl<$Res>
   __$$SuccessDeleteImplCopyWithImpl(
       _$SuccessDeleteImpl _value, $Res Function(_$SuccessDeleteImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1300,6 +1336,8 @@ class __$$ErrorDeleteImplCopyWithImpl<$Res>
       _$ErrorDeleteImpl _value, $Res Function(_$ErrorDeleteImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1338,7 +1376,9 @@ class _$ErrorDeleteImpl implements _ErrorDelete {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorDeleteImplCopyWith<_$ErrorDeleteImpl> get copyWith =>
@@ -1460,7 +1500,10 @@ abstract class _ErrorDelete implements TemplatesState {
       _$ErrorDeleteImpl;
 
   ApiErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TemplatesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorDeleteImplCopyWith<_$ErrorDeleteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
