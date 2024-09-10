@@ -4,8 +4,8 @@ import 'package:bulk_app/features/account_settings/logic/cubit/account_settings_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 class SettingsRow1 extends StatelessWidget {
   const SettingsRow1({
@@ -25,8 +25,10 @@ class SettingsRow1 extends StatelessWidget {
         ),
         Row(
           children: [
-            SvgPicture.asset("assets/icons/edit_square.svg",
-                width: 20.w, height: 20.h),
+            VectorGraphic(
+                loader: const AssetBytesLoader('assets/icons/edit_square.svg'),
+                width: 20.w,
+                height: 20.h),
             SizedBox(width: 8.w),
             FlutterSwitch(
               width: 50.w,

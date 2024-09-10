@@ -1,8 +1,12 @@
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/show_add_contact_form.dart';
+import 'package:bulk_app/features/manage_audiances/ui/widgets/select_contacts.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_contacts/flutter_contacts.dart' as flutter_contacts;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MessageBody extends StatelessWidget {
@@ -45,8 +49,37 @@ class MessageBody extends StatelessWidget {
               ),
               SizedBox(height: 6.h),
               GestureDetector(
-                onTap: () {
-                  // Handle "Add from CSV File" action here
+                onTap: () async {
+                  final result =
+                      await Navigator.push<List<flutter_contacts.Contact>>(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DeviceMultiContactSelection(),
+                        settings: RouteSettings(
+                            arguments: cubit.currentAudienceContacts)),
+                  );
+                  if (context.mounted) {
+                    Navigator.of(context).pop();
+                  }
+           
+                  List<Contact>? contacts = result
+                      ?.map((value) => Contact(
+                            name: value.displayName,
+                            phone: value.phones.isNotEmpty ? value.phones[0].number : '****00000',
+                          ))
+                      .toList();
+
+                  cubit.addContactsList(contacts ?? []);
+                  if (kDebugMode) {
+                    print('DeviceMultiContactSelection: $result');
+                  }
+                  // if (result != null) {
+                  //   cubit.addContactsList(contacts ?? []);
+                  //   if (kDebugMode) {
+                  //     print('DeviceMultiContactSelection: $result');
+                  //   }
+                  // }
                 },
                 child: Text(
                   "Add from CSV File",

@@ -5,6 +5,7 @@ import 'package:bulk_app/core/widgets/app_floating_action_button.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/manage_audiances_widgets/manage_audiances_body.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 
 import '../../../../core/widgets/custom_app_bar.dart';
 
@@ -32,8 +33,9 @@ class ManageAudiancesScreen extends StatelessWidget {
 
  class Arguments{
 
-  bool isAddNewAudience;
+  bool? isAddNewAudience;
   String? audienceId;
   String? audienceName;
-  Arguments({required this.isAddNewAudience, required this.audienceId,  this.audienceName});
+  List<Contact>? selctedContacts;
+  Arguments({required this.isAddNewAudience, required this.audienceId,  this.audienceName, this.selctedContacts});
  }

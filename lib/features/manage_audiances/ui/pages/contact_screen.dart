@@ -7,6 +7,7 @@ import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_wid
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/widgets/custom_app_bar.dart';
@@ -23,6 +24,7 @@ class ContactScreen extends StatefulWidget {
 class _ContactScreenState extends State<ContactScreen> with RestorationMixin {
   Arguments? args;
   late ContactScreenCubit cubit;
+  // List<Contact>? selctedContacts;
   @override
   String get restorationId => 'contact_screen';
   @override
@@ -50,6 +52,10 @@ class _ContactScreenState extends State<ContactScreen> with RestorationMixin {
   void didChangeDependencies() {
     super.didChangeDependencies();
     args = ModalRoute.of(context)!.settings.arguments as Arguments?;
+
+    // selctedContacts =
+    //     ModalRoute.of(context)!.settings.arguments as List<Contact>?;
+    // print(selctedContacts);
   }
 
   @override
@@ -69,7 +75,7 @@ class _ContactScreenState extends State<ContactScreen> with RestorationMixin {
                   isValid: cubit.isValid,
                   cubit: cubit,
                 );
-              }, 
+              },
             )
           ],
         ),

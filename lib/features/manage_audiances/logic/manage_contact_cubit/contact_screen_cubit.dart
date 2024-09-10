@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bulk_app/core/helpers/contacts_service.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
@@ -16,7 +17,7 @@ part 'contact_screen_state.dart';
 class ContactScreenCubit extends Cubit<ContactScreenState> {
   late final AudienceRepository _audienceRepository;
 
-  ContactScreenCubit(this._audienceRepository)
+  ContactScreenCubit(this._audienceRepository, this._contactsService)
       : super(const ContactScreenState.initial());
 
   List<Contact>? currentAudienceContacts;
@@ -72,6 +73,23 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
     emit(ContactScreenState.contactAdded(currentAudienceContacts ?? []));
   }
 
+  void addContactsList(List<Contact> contacts) {
+    // Contact newContact = Contact(name: contact.name, phone: contact.phone);
+    // List<String> currentAudienceContactsNames =
+    //     currentAudienceContacts!.map((e) => e.name!).toList();
+    currentAudienceContacts = [
+      ...currentAudienceContacts ?? [],
+      ...contacts.where((item) => !currentAudienceContacts!
+          .map((e) => e.name)
+          .toList()
+          .contains(item.name))
+    ];
+
+    currentAudience?.contacts = currentAudienceContacts;
+
+    emit(ContactScreenState.contactAdded(currentAudienceContacts ?? []));
+  }
+
   void emitAddContactsToServerStates() async {
     emit(const ContactScreenState.addContactsToServerLoadingState());
     final response = await _audienceRepository.addNewAudience(Audience(
@@ -102,5 +120,37 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
     }, failure: (error) {
       emit(ContactScreenState.updateContactsInServerErrorState(error));
     });
+  }
+
+  final ContactsService _contactsService;
+
+  Future<void> syncContacts() async {
+    // emit(
+    //   ContactsLoading(
+    //     contacts: state.contacts,
+    //   ),
+    // );
+    final contacts = await _contactsService.getContacts();
+    print('contactscontacts${contacts?.length}');
+    if (contacts != null) {
+      if (contacts.isNotEmpty) {
+        print(contacts);
+        // emit(ContactsSuccess(contacts: contacts));
+      } else {
+        // emit(
+        // ContactsFailure(
+        //   contacts: state.contacts,
+        //   errorMessage: 'No contacts were found on the device',
+        // ),
+        // );
+      }
+    } else {
+      // emit(
+      //   ContactsFailure(
+      //     contacts: state.contacts,
+      //     errorMessage: 'Unable to fetch contacts',
+      //   ),
+      // );
+    }
   }
 }

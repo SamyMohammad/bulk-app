@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/helpers/contacts_service.dart';
 import 'package:bulk_app/core/helpers/media.dart';
 import 'package:bulk_app/core/networking/api_service.dart';
 import 'package:bulk_app/core/networking/dio_factory.dart';
@@ -24,7 +25,9 @@ Future<void> setupGetIt() async {
   Dio dio = DioFactory.getDio();
   final sharedPrefs = await SharedPreferences.getInstance();
   getIt.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
-
+  // getIt.registerLazySingleton<FlutterContactPickerPlus>(
+  //     () => FlutterContactPickerPlus());
+  getIt.registerLazySingleton<ContactsService>(() => ContactsServiceImpl());
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   // Repos
@@ -41,8 +44,9 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<AddTemplateCubit>(() => AddTemplateCubit(getIt()));
   getIt.registerFactory<ManageAudiancesCubit>(
       () => ManageAudiancesCubit(getIt()));
-  getIt.registerFactory<ContactScreenCubit>(() => ContactScreenCubit(getIt()));
-  
+  getIt.registerFactory<ContactScreenCubit>(
+      () => ContactScreenCubit(getIt(), getIt()));
+
   //App Media
   getIt.registerLazySingleton<AppMedia>(
       () => AppMedia(imagePicker: ImagePicker()));
