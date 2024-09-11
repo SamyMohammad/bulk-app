@@ -4,7 +4,7 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
+import 'package:bulk_app/features/manage_audiances/ui/screens/manage_audiances_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,18 +1,14 @@
-import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
-import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
-import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
-import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
-import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
-import 'package:bulk_app/features/templates/ui/screens/add_template_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TemplateItem extends StatelessWidget {
-  final Templates template;
-  const TemplateItem({super.key, required this.template});
+import '../../../../../core/theming/colors.dart';
+
+class BotTemplateItem extends StatelessWidget {
+  const BotTemplateItem({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +30,7 @@ class TemplateItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  template.name ?? '',
+                  'template.name' ?? '',
                   overflow: TextOverflow.clip,
                   softWrap: true,
                   style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
@@ -50,9 +46,7 @@ class TemplateItem extends StatelessWidget {
             ),
           ),
           IconButton(
-              onPressed: () => context
-                  .read<TemplatesCubit>()
-                  .emitDeleteTemplateStates(template.id ?? 0),
+              onPressed: () {},
               icon: Icon(
                 Icons.delete_forever,
                 color: Colors.red,
@@ -66,7 +60,7 @@ class TemplateItem extends StatelessWidget {
           ),
           5.sizedWidth,
           IconButton(
-            onPressed: () => editButtonOnPressed(context),
+            onPressed: () {},
             icon: Container(
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
@@ -87,25 +81,4 @@ class TemplateItem extends StatelessWidget {
       ),
     );
   }
-
-  editButtonOnPressed(BuildContext context) {
-     Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => BlocProvider(
-                create: (context) => getIt<AddTemplateCubit>()..emitGetTemplatesByIdStates( template.id!),
-                child: AddTemplatesScreen(
-                  isEdit: true,
-                  templateId: template.id,
-                ),
-              ),
-            ),
-          );
-  }
-}
-
-class AddTemplateArgs {
-  final int? id;
-  final bool isEdit;
-  AddTemplateArgs({this.id, this.isEdit = true});
 }

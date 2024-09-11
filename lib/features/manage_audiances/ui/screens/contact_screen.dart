@@ -1,7 +1,7 @@
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/widgets/app_floating_action_button.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
+import 'package:bulk_app/features/manage_audiances/ui/screens/manage_audiances_screen.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/contact_screen_body.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/message_body.dart';
 import 'package:easy_localization/easy_localization.dart';
