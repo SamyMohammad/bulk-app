@@ -1,4 +1,5 @@
 import 'package:bulk_app/core/widgets/overlay_loading_state.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/contact_item.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class ContactsListView extends StatelessWidget {
         return state.maybeWhen(
           contactAdded: (contacts) {
             return ListView.separated(
+              padding: EdgeInsets.only(bottom: 70.h),
               itemCount: contacts.length,
               separatorBuilder: (context, index) => SizedBox(height: 20.h),
               itemBuilder: (context, index) {
@@ -43,7 +45,18 @@ class ContactsListView extends StatelessWidget {
           getContactsFromServerLoadingState: () => loadingSpinKit(),
           error: (message) =>
               Center(child: Text(message.getAllErrorMessages())),
-          orElse: () => const Center(child: Text('No data available')),
+          orElse: () {
+            final cubit = context.read<ContactScreenCubit>();
+            return ListView.separated(
+              itemCount: cubit.currentAudienceContacts?.length ?? 0,
+              separatorBuilder: (context, index) => SizedBox(height: 20.h),
+              itemBuilder: (context, index) {
+                return ContactItem(
+                    contact:
+                        cubit.currentAudienceContacts?[index] ?? Contact());
+              },
+            );
+          },
         );
       },
     );

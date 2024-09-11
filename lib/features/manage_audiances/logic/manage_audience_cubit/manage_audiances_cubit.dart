@@ -43,7 +43,11 @@ class ManageAudiancesCubit extends Cubit<ManageAudiancesState> {
     audiences?.removeWhere((audience) => audience.id == id);
     try {
       await _repository.deleteAudienceByid(id.toString());
-      emit(ManageAudiancesState.audienceSuccessState(audiences!));
+      if (audiences.isNotNullAndNotEmpty()) {
+        emit(ManageAudiancesState.audienceSuccessState(audiences!));
+      } else {
+        emit(const ManageAudiancesState.audienceEmptyState());
+      }
     } catch (e) {
       emit(const ManageAudiancesState.audienceEmptyState());
     }

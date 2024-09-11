@@ -4,7 +4,6 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vector_graphics/vector_graphics_compat.dart';
 
 import '../../../../core/theming/styles.dart';
@@ -34,7 +33,7 @@ class HomeDrawer extends StatelessWidget {
         padding: const EdgeInsets.only(top: 25),
         child: const Center(
           child: VectorGraphic(
-            loader: AssetBytesLoader('assets/images/asset 0.svg'),
+            loader: AssetBytesLoader('assets/icons/asset 0.svg'),
           ),
         ),
       ),
@@ -47,22 +46,22 @@ class HomeDrawer extends StatelessWidget {
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 3.svg',
+        iconPath: 'assets/icons/asset 3.svg',
         title: AppStrings.startCampaign.tr(),
       ),
       DrawerListTile(
         onTap: () => Navigator.of(context).pushNamed(Routes.manageAudiances),
-        iconPath: 'assets/images/asset 4.svg',
+        iconPath: 'assets/icons/asset 4.svg',
         title: AppStrings.manageAudiences.tr(),
       ),
       DrawerListTile(
         onTap: () => Navigator.of(context).pushNamed(Routes.templatesScreen),
-        iconPath: 'assets/images/asset 5.svg',
+        iconPath: 'assets/icons/asset 5.svg',
         title: AppStrings.templates.tr(),
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 6.svg',
+        iconPath: 'assets/icons/asset 6.svg',
         title: AppStrings.campaignsHistory.tr(),
       ),
     ];
@@ -80,17 +79,17 @@ class HomeDrawer extends StatelessWidget {
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 7.svg',
+        iconPath: 'assets/icons/asset 7.svg',
         title: AppStrings.whatsBot.tr(),
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 8.svg',
+        iconPath: 'assets/icons/asset 8.svg',
         title: AppStrings.groupsGrabber.tr(),
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 9.svg',
+        iconPath: 'assets/icons/asset 9.svg',
         title: AppStrings.contactsGrabber.tr(),
       ),
     ];
@@ -108,22 +107,22 @@ class HomeDrawer extends StatelessWidget {
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 10.svg',
+        iconPath: 'assets/icons/asset 10.svg',
         title: AppStrings.support.tr(),
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 11.svg',
+        iconPath: 'assets/icons/asset 11.svg',
         title: AppStrings.tellAFriend.tr(),
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 12.svg',
+        iconPath: 'assets/icons/asset 12.svg',
         title: AppStrings.feedback.tr(),
       ),
       DrawerListTile(
         onTap: () {},
-        iconPath: 'assets/images/asset 13.svg',
+        iconPath: 'assets/icons/asset 13.svg',
         title: AppStrings.termsOfUse.tr(),
       ),
     ];
@@ -145,7 +144,11 @@ class DrawerListTile extends StatelessWidget {
       child: ListTile(
         title: Row(
           children: [
-            SvgPicture.asset(iconPath),
+            VectorGraphic(
+            loader: AssetBytesLoader(
+              iconPath,
+            ),
+          ),
             15.horizontalSpace,
             Text(
               title,

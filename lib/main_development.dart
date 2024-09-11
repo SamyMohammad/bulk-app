@@ -13,8 +13,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   await EasyLocalization.ensureInitialized();
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -48,8 +48,6 @@ class BulkApp extends StatelessWidget {
             scaffoldBackgroundColor: ColorsManager.darkBackGround,
           ),
           debugShowCheckedModeBanner: false,
-          // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-
           // initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
           initialRoute: Routes.manageAudiances,
           onGenerateRoute: appRouter.generateRoute,

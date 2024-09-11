@@ -50,9 +50,9 @@ class AccountSettingsScreenBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 14.w),
             child: Column(children: [
-              SettingsRow1(),
+              const SettingsRow1(),
               SizedBox(height: 25.h),
-              SettingsRow2(),
+              const SettingsRow2(),
             ]),
           ),
           SizedBox(height: 12.h),
@@ -61,7 +61,7 @@ class AccountSettingsScreenBody extends StatelessWidget {
             style: TextStyles.font15whiteMedium.copyWith(fontSize: 20.sp),
           ),
           SizedBox(height: 12.h),
-          SettingsRow3(),
+          const SettingsRow3(),
         ],
       ),
     );

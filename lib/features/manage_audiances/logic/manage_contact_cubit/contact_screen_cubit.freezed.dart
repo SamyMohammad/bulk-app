@@ -31,7 +31,12 @@ mixin _$ContactScreenState {
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,7 +52,11 @@ mixin _$ContactScreenState {
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +71,11 @@ mixin _$ContactScreenState {
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,7 +96,14 @@ mixin _$ContactScreenState {
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,7 +123,14 @@ mixin _$ContactScreenState {
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -123,7 +150,14 @@ mixin _$ContactScreenState {
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,6 +179,9 @@ class _$ContactScreenStateCopyWithImpl<$Res, $Val extends ContactScreenState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -161,6 +198,9 @@ class __$$ContactScreenInitialImplCopyWithImpl<$Res>
   __$$ContactScreenInitialImplCopyWithImpl(_$ContactScreenInitialImpl _value,
       $Res Function(_$ContactScreenInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -207,7 +247,12 @@ class _$ContactScreenInitialImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return initial();
   }
@@ -226,7 +271,11 @@ class _$ContactScreenInitialImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return initial?.call();
   }
@@ -244,7 +293,11 @@ class _$ContactScreenInitialImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -271,7 +324,14 @@ class _$ContactScreenInitialImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return initial(this);
   }
@@ -294,7 +354,14 @@ class _$ContactScreenInitialImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return initial?.call(this);
   }
@@ -317,7 +384,14 @@ class _$ContactScreenInitialImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -345,6 +419,9 @@ class __$$ContactsLoadingImplCopyWithImpl<$Res>
   __$$ContactsLoadingImplCopyWithImpl(
       _$ContactsLoadingImpl _value, $Res Function(_$ContactsLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -390,7 +467,12 @@ class _$ContactsLoadingImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return loading();
   }
@@ -409,7 +491,11 @@ class _$ContactsLoadingImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return loading?.call();
   }
@@ -427,7 +513,11 @@ class _$ContactsLoadingImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -454,7 +544,14 @@ class _$ContactsLoadingImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return loading(this);
   }
@@ -477,7 +574,14 @@ class _$ContactsLoadingImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return loading?.call(this);
   }
@@ -500,7 +604,14 @@ class _$ContactsLoadingImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -531,6 +642,8 @@ class __$$ContactAddedImplCopyWithImpl<$Res>
       _$ContactAddedImpl _value, $Res Function(_$ContactAddedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -583,7 +696,9 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContactAddedImplCopyWith<_$ContactAddedImpl> get copyWith =>
@@ -605,7 +720,12 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return contactAdded(contacts);
   }
@@ -624,7 +744,11 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return contactAdded?.call(contacts);
   }
@@ -642,7 +766,11 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (contactAdded != null) {
@@ -669,7 +797,14 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return contactAdded(this);
   }
@@ -692,7 +827,14 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return contactAdded?.call(this);
   }
@@ -715,7 +857,14 @@ class _$ContactAddedImpl with DiagnosticableTreeMixin implements ContactAdded {
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (contactAdded != null) {
@@ -729,7 +878,10 @@ abstract class ContactAdded implements ContactScreenState {
   const factory ContactAdded(final List<Contact> contacts) = _$ContactAddedImpl;
 
   List<Contact> get contacts;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContactAddedImplCopyWith<_$ContactAddedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -751,6 +903,9 @@ class __$$AddContactsToServerLoadingStateImplCopyWithImpl<$Res>
       _$AddContactsToServerLoadingStateImpl _value,
       $Res Function(_$AddContactsToServerLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -798,7 +953,12 @@ class _$AddContactsToServerLoadingStateImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return addContactsToServerLoadingState();
   }
@@ -817,7 +977,11 @@ class _$AddContactsToServerLoadingStateImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return addContactsToServerLoadingState?.call();
   }
@@ -835,7 +999,11 @@ class _$AddContactsToServerLoadingStateImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (addContactsToServerLoadingState != null) {
@@ -862,7 +1030,14 @@ class _$AddContactsToServerLoadingStateImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return addContactsToServerLoadingState(this);
   }
@@ -885,7 +1060,14 @@ class _$AddContactsToServerLoadingStateImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return addContactsToServerLoadingState?.call(this);
   }
@@ -908,7 +1090,14 @@ class _$AddContactsToServerLoadingStateImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (addContactsToServerLoadingState != null) {
@@ -943,6 +1132,8 @@ class __$$AddContactsToServerSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$AddContactsToServerSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -993,7 +1184,9 @@ class _$AddContactsToServerSuccessStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, audienceData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddContactsToServerSuccessStateImplCopyWith<
@@ -1017,7 +1210,12 @@ class _$AddContactsToServerSuccessStateImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return addContactsToServerSuccessState(audienceData);
   }
@@ -1036,7 +1234,11 @@ class _$AddContactsToServerSuccessStateImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return addContactsToServerSuccessState?.call(audienceData);
   }
@@ -1054,7 +1256,11 @@ class _$AddContactsToServerSuccessStateImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (addContactsToServerSuccessState != null) {
@@ -1081,7 +1287,14 @@ class _$AddContactsToServerSuccessStateImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return addContactsToServerSuccessState(this);
   }
@@ -1104,7 +1317,14 @@ class _$AddContactsToServerSuccessStateImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return addContactsToServerSuccessState?.call(this);
   }
@@ -1127,7 +1347,14 @@ class _$AddContactsToServerSuccessStateImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (addContactsToServerSuccessState != null) {
@@ -1143,7 +1370,10 @@ abstract class AddContactsToServerSuccessState implements ContactScreenState {
       _$AddContactsToServerSuccessStateImpl;
 
   BaseResponse<AudienceData> get audienceData;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddContactsToServerSuccessStateImplCopyWith<
           _$AddContactsToServerSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1169,6 +1399,8 @@ class __$$AddContactsToServerErrorsStateImplCopyWithImpl<$Res>
       $Res Function(_$AddContactsToServerErrorsStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1218,7 +1450,9 @@ class _$AddContactsToServerErrorsStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddContactsToServerErrorsStateImplCopyWith<
@@ -1242,7 +1476,12 @@ class _$AddContactsToServerErrorsStateImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return addContactsToServerErrorsState(this.error);
   }
@@ -1261,7 +1500,11 @@ class _$AddContactsToServerErrorsStateImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return addContactsToServerErrorsState?.call(this.error);
   }
@@ -1279,7 +1522,11 @@ class _$AddContactsToServerErrorsStateImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (addContactsToServerErrorsState != null) {
@@ -1306,7 +1553,14 @@ class _$AddContactsToServerErrorsStateImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return addContactsToServerErrorsState(this);
   }
@@ -1329,7 +1583,14 @@ class _$AddContactsToServerErrorsStateImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return addContactsToServerErrorsState?.call(this);
   }
@@ -1352,7 +1613,14 @@ class _$AddContactsToServerErrorsStateImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (addContactsToServerErrorsState != null) {
@@ -1367,7 +1635,10 @@ abstract class AddContactsToServerErrorsState implements ContactScreenState {
       _$AddContactsToServerErrorsStateImpl;
 
   ApiErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddContactsToServerErrorsStateImplCopyWith<
           _$AddContactsToServerErrorsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1393,6 +1664,8 @@ class __$$GetContactsFromServerSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$GetContactsFromServerSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1449,7 +1722,9 @@ class _$GetContactsFromServerSuccessStateImpl
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_contacts));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetContactsFromServerSuccessStateImplCopyWith<
@@ -1473,7 +1748,12 @@ class _$GetContactsFromServerSuccessStateImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return getContactsFromServerSuccessState(contacts);
   }
@@ -1492,7 +1772,11 @@ class _$GetContactsFromServerSuccessStateImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return getContactsFromServerSuccessState?.call(contacts);
   }
@@ -1510,7 +1794,11 @@ class _$GetContactsFromServerSuccessStateImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (getContactsFromServerSuccessState != null) {
@@ -1537,7 +1825,14 @@ class _$GetContactsFromServerSuccessStateImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return getContactsFromServerSuccessState(this);
   }
@@ -1560,7 +1855,14 @@ class _$GetContactsFromServerSuccessStateImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return getContactsFromServerSuccessState?.call(this);
   }
@@ -1583,7 +1885,14 @@ class _$GetContactsFromServerSuccessStateImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (getContactsFromServerSuccessState != null) {
@@ -1598,7 +1907,10 @@ abstract class GetContactsFromServerSuccessState implements ContactScreenState {
       final List<Contact> contacts) = _$GetContactsFromServerSuccessStateImpl;
 
   List<Contact> get contacts;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetContactsFromServerSuccessStateImplCopyWith<
           _$GetContactsFromServerSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1624,6 +1936,8 @@ class __$$GetContactsFromServerErrorsStateImplCopyWithImpl<$Res>
       $Res Function(_$GetContactsFromServerErrorsStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1673,7 +1987,9 @@ class _$GetContactsFromServerErrorsStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetContactsFromServerErrorsStateImplCopyWith<
@@ -1697,7 +2013,12 @@ class _$GetContactsFromServerErrorsStateImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return getContactsFromServerErrorsState(this.error);
   }
@@ -1716,7 +2037,11 @@ class _$GetContactsFromServerErrorsStateImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return getContactsFromServerErrorsState?.call(this.error);
   }
@@ -1734,7 +2059,11 @@ class _$GetContactsFromServerErrorsStateImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (getContactsFromServerErrorsState != null) {
@@ -1761,7 +2090,14 @@ class _$GetContactsFromServerErrorsStateImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return getContactsFromServerErrorsState(this);
   }
@@ -1784,7 +2120,14 @@ class _$GetContactsFromServerErrorsStateImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return getContactsFromServerErrorsState?.call(this);
   }
@@ -1807,7 +2150,14 @@ class _$GetContactsFromServerErrorsStateImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (getContactsFromServerErrorsState != null) {
@@ -1822,7 +2172,10 @@ abstract class GetContactsFromServerErrorsState implements ContactScreenState {
       _$GetContactsFromServerErrorsStateImpl;
 
   ApiErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetContactsFromServerErrorsStateImplCopyWith<
           _$GetContactsFromServerErrorsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1845,6 +2198,9 @@ class __$$GetContactsFromServerLoadingStateImplCopyWithImpl<$Res>
       _$GetContactsFromServerLoadingStateImpl _value,
       $Res Function(_$GetContactsFromServerLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1892,7 +2248,12 @@ class _$GetContactsFromServerLoadingStateImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return getContactsFromServerLoadingState();
   }
@@ -1911,7 +2272,11 @@ class _$GetContactsFromServerLoadingStateImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return getContactsFromServerLoadingState?.call();
   }
@@ -1929,7 +2294,11 @@ class _$GetContactsFromServerLoadingStateImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (getContactsFromServerLoadingState != null) {
@@ -1956,7 +2325,14 @@ class _$GetContactsFromServerLoadingStateImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return getContactsFromServerLoadingState(this);
   }
@@ -1979,7 +2355,14 @@ class _$GetContactsFromServerLoadingStateImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return getContactsFromServerLoadingState?.call(this);
   }
@@ -2002,7 +2385,14 @@ class _$GetContactsFromServerLoadingStateImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (getContactsFromServerLoadingState != null) {
@@ -2015,6 +2405,725 @@ class _$GetContactsFromServerLoadingStateImpl
 abstract class GetContactsFromServerLoadingState implements ContactScreenState {
   const factory GetContactsFromServerLoadingState() =
       _$GetContactsFromServerLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateContactsInServerLoadingStateImplCopyWith<$Res> {
+  factory _$$UpdateContactsInServerLoadingStateImplCopyWith(
+          _$UpdateContactsInServerLoadingStateImpl value,
+          $Res Function(_$UpdateContactsInServerLoadingStateImpl) then) =
+      __$$UpdateContactsInServerLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateContactsInServerLoadingStateImplCopyWithImpl<$Res>
+    extends _$ContactScreenStateCopyWithImpl<$Res,
+        _$UpdateContactsInServerLoadingStateImpl>
+    implements _$$UpdateContactsInServerLoadingStateImplCopyWith<$Res> {
+  __$$UpdateContactsInServerLoadingStateImplCopyWithImpl(
+      _$UpdateContactsInServerLoadingStateImpl _value,
+      $Res Function(_$UpdateContactsInServerLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateContactsInServerLoadingStateImpl
+    with DiagnosticableTreeMixin
+    implements UpdateContactsInServerLoadingState {
+  const _$UpdateContactsInServerLoadingStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactScreenState.updateContactsInServerLoadingState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'ContactScreenState.updateContactsInServerLoadingState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateContactsInServerLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Contact> contacts) contactAdded,
+    required TResult Function() addContactsToServerLoadingState,
+    required TResult Function(BaseResponse<AudienceData> audienceData)
+        addContactsToServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        addContactsToServerErrorsState,
+    required TResult Function(List<Contact> contacts)
+        getContactsFromServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        getContactsFromServerErrorsState,
+    required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
+    required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
+  }) {
+    return updateContactsInServerLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<Contact> contacts)? contactAdded,
+    TResult? Function()? addContactsToServerLoadingState,
+    TResult? Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult? Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult? Function(List<Contact> contacts)?
+        getContactsFromServerSuccessState,
+    TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
+  }) {
+    return updateContactsInServerLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Contact> contacts)? contactAdded,
+    TResult Function()? addContactsToServerLoadingState,
+    TResult Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
+    TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (updateContactsInServerLoadingState != null) {
+      return updateContactsInServerLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContactScreenInitial value) initial,
+    required TResult Function(ContactsLoading value) loading,
+    required TResult Function(ContactAdded value) contactAdded,
+    required TResult Function(AddContactsToServerLoadingState value)
+        addContactsToServerLoadingState,
+    required TResult Function(AddContactsToServerSuccessState value)
+        addContactsToServerSuccessState,
+    required TResult Function(AddContactsToServerErrorsState value)
+        addContactsToServerErrorsState,
+    required TResult Function(GetContactsFromServerSuccessState value)
+        getContactsFromServerSuccessState,
+    required TResult Function(GetContactsFromServerErrorsState value)
+        getContactsFromServerErrorsState,
+    required TResult Function(GetContactsFromServerLoadingState value)
+        getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
+    required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
+  }) {
+    return updateContactsInServerLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContactScreenInitial value)? initial,
+    TResult? Function(ContactsLoading value)? loading,
+    TResult? Function(ContactAdded value)? contactAdded,
+    TResult? Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult? Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult? Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult? Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult? Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult? Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
+  }) {
+    return updateContactsInServerLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContactScreenInitial value)? initial,
+    TResult Function(ContactsLoading value)? loading,
+    TResult Function(ContactAdded value)? contactAdded,
+    TResult Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (updateContactsInServerLoadingState != null) {
+      return updateContactsInServerLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateContactsInServerLoadingState
+    implements ContactScreenState {
+  const factory UpdateContactsInServerLoadingState() =
+      _$UpdateContactsInServerLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateContactsInServerSuccessStateImplCopyWith<$Res> {
+  factory _$$UpdateContactsInServerSuccessStateImplCopyWith(
+          _$UpdateContactsInServerSuccessStateImpl value,
+          $Res Function(_$UpdateContactsInServerSuccessStateImpl) then) =
+      __$$UpdateContactsInServerSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateContactsInServerSuccessStateImplCopyWithImpl<$Res>
+    extends _$ContactScreenStateCopyWithImpl<$Res,
+        _$UpdateContactsInServerSuccessStateImpl>
+    implements _$$UpdateContactsInServerSuccessStateImplCopyWith<$Res> {
+  __$$UpdateContactsInServerSuccessStateImplCopyWithImpl(
+      _$UpdateContactsInServerSuccessStateImpl _value,
+      $Res Function(_$UpdateContactsInServerSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateContactsInServerSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements UpdateContactsInServerSuccessState {
+  const _$UpdateContactsInServerSuccessStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactScreenState.updateContactsInServerSuccessState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'ContactScreenState.updateContactsInServerSuccessState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateContactsInServerSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Contact> contacts) contactAdded,
+    required TResult Function() addContactsToServerLoadingState,
+    required TResult Function(BaseResponse<AudienceData> audienceData)
+        addContactsToServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        addContactsToServerErrorsState,
+    required TResult Function(List<Contact> contacts)
+        getContactsFromServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        getContactsFromServerErrorsState,
+    required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
+    required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
+  }) {
+    return updateContactsInServerSuccessState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<Contact> contacts)? contactAdded,
+    TResult? Function()? addContactsToServerLoadingState,
+    TResult? Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult? Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult? Function(List<Contact> contacts)?
+        getContactsFromServerSuccessState,
+    TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
+  }) {
+    return updateContactsInServerSuccessState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Contact> contacts)? contactAdded,
+    TResult Function()? addContactsToServerLoadingState,
+    TResult Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
+    TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (updateContactsInServerSuccessState != null) {
+      return updateContactsInServerSuccessState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContactScreenInitial value) initial,
+    required TResult Function(ContactsLoading value) loading,
+    required TResult Function(ContactAdded value) contactAdded,
+    required TResult Function(AddContactsToServerLoadingState value)
+        addContactsToServerLoadingState,
+    required TResult Function(AddContactsToServerSuccessState value)
+        addContactsToServerSuccessState,
+    required TResult Function(AddContactsToServerErrorsState value)
+        addContactsToServerErrorsState,
+    required TResult Function(GetContactsFromServerSuccessState value)
+        getContactsFromServerSuccessState,
+    required TResult Function(GetContactsFromServerErrorsState value)
+        getContactsFromServerErrorsState,
+    required TResult Function(GetContactsFromServerLoadingState value)
+        getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
+    required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
+  }) {
+    return updateContactsInServerSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContactScreenInitial value)? initial,
+    TResult? Function(ContactsLoading value)? loading,
+    TResult? Function(ContactAdded value)? contactAdded,
+    TResult? Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult? Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult? Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult? Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult? Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult? Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
+  }) {
+    return updateContactsInServerSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContactScreenInitial value)? initial,
+    TResult Function(ContactsLoading value)? loading,
+    TResult Function(ContactAdded value)? contactAdded,
+    TResult Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (updateContactsInServerSuccessState != null) {
+      return updateContactsInServerSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateContactsInServerSuccessState
+    implements ContactScreenState {
+  const factory UpdateContactsInServerSuccessState() =
+      _$UpdateContactsInServerSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateContactsInServerErrorStateImplCopyWith<$Res> {
+  factory _$$UpdateContactsInServerErrorStateImplCopyWith(
+          _$UpdateContactsInServerErrorStateImpl value,
+          $Res Function(_$UpdateContactsInServerErrorStateImpl) then) =
+      __$$UpdateContactsInServerErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel error});
+}
+
+/// @nodoc
+class __$$UpdateContactsInServerErrorStateImplCopyWithImpl<$Res>
+    extends _$ContactScreenStateCopyWithImpl<$Res,
+        _$UpdateContactsInServerErrorStateImpl>
+    implements _$$UpdateContactsInServerErrorStateImplCopyWith<$Res> {
+  __$$UpdateContactsInServerErrorStateImplCopyWithImpl(
+      _$UpdateContactsInServerErrorStateImpl _value,
+      $Res Function(_$UpdateContactsInServerErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UpdateContactsInServerErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateContactsInServerErrorStateImpl
+    with DiagnosticableTreeMixin
+    implements UpdateContactsInServerErrorState {
+  const _$UpdateContactsInServerErrorStateImpl(this.error);
+
+  @override
+  final ApiErrorModel error;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactScreenState.updateContactsInServerErrorState(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ContactScreenState.updateContactsInServerErrorState'))
+      ..add(DiagnosticsProperty('error', error));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateContactsInServerErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateContactsInServerErrorStateImplCopyWith<
+          _$UpdateContactsInServerErrorStateImpl>
+      get copyWith => __$$UpdateContactsInServerErrorStateImplCopyWithImpl<
+          _$UpdateContactsInServerErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Contact> contacts) contactAdded,
+    required TResult Function() addContactsToServerLoadingState,
+    required TResult Function(BaseResponse<AudienceData> audienceData)
+        addContactsToServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        addContactsToServerErrorsState,
+    required TResult Function(List<Contact> contacts)
+        getContactsFromServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        getContactsFromServerErrorsState,
+    required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
+    required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
+  }) {
+    return updateContactsInServerErrorState(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<Contact> contacts)? contactAdded,
+    TResult? Function()? addContactsToServerLoadingState,
+    TResult? Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult? Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult? Function(List<Contact> contacts)?
+        getContactsFromServerSuccessState,
+    TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
+  }) {
+    return updateContactsInServerErrorState?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Contact> contacts)? contactAdded,
+    TResult Function()? addContactsToServerLoadingState,
+    TResult Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
+    TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (updateContactsInServerErrorState != null) {
+      return updateContactsInServerErrorState(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContactScreenInitial value) initial,
+    required TResult Function(ContactsLoading value) loading,
+    required TResult Function(ContactAdded value) contactAdded,
+    required TResult Function(AddContactsToServerLoadingState value)
+        addContactsToServerLoadingState,
+    required TResult Function(AddContactsToServerSuccessState value)
+        addContactsToServerSuccessState,
+    required TResult Function(AddContactsToServerErrorsState value)
+        addContactsToServerErrorsState,
+    required TResult Function(GetContactsFromServerSuccessState value)
+        getContactsFromServerSuccessState,
+    required TResult Function(GetContactsFromServerErrorsState value)
+        getContactsFromServerErrorsState,
+    required TResult Function(GetContactsFromServerLoadingState value)
+        getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
+    required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
+  }) {
+    return updateContactsInServerErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContactScreenInitial value)? initial,
+    TResult? Function(ContactsLoading value)? loading,
+    TResult? Function(ContactAdded value)? contactAdded,
+    TResult? Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult? Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult? Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult? Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult? Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult? Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
+  }) {
+    return updateContactsInServerErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContactScreenInitial value)? initial,
+    TResult Function(ContactsLoading value)? loading,
+    TResult Function(ContactAdded value)? contactAdded,
+    TResult Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (updateContactsInServerErrorState != null) {
+      return updateContactsInServerErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateContactsInServerErrorState implements ContactScreenState {
+  const factory UpdateContactsInServerErrorState(final ApiErrorModel error) =
+      _$UpdateContactsInServerErrorStateImpl;
+
+  ApiErrorModel get error;
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateContactsInServerErrorStateImplCopyWith<
+          _$UpdateContactsInServerErrorStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2034,6 +3143,8 @@ class __$$ContactsErrorImplCopyWithImpl<$Res>
       _$ContactsErrorImpl _value, $Res Function(_$ContactsErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2082,7 +3193,9 @@ class _$ContactsErrorImpl
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContactsErrorImplCopyWith<_$ContactsErrorImpl> get copyWith =>
@@ -2104,7 +3217,12 @@ class _$ContactsErrorImpl
     required TResult Function(ApiErrorModel error)
         getContactsFromServerErrorsState,
     required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
     required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
   }) {
     return error(this.error);
   }
@@ -2123,7 +3241,11 @@ class _$ContactsErrorImpl
         getContactsFromServerSuccessState,
     TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
   }) {
     return error?.call(this.error);
   }
@@ -2141,7 +3263,11 @@ class _$ContactsErrorImpl
     TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
     TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
     TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
     TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -2168,7 +3294,14 @@ class _$ContactsErrorImpl
         getContactsFromServerErrorsState,
     required TResult Function(GetContactsFromServerLoadingState value)
         getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
     required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
   }) {
     return error(this);
   }
@@ -2191,7 +3324,14 @@ class _$ContactsErrorImpl
         getContactsFromServerErrorsState,
     TResult? Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
   }) {
     return error?.call(this);
   }
@@ -2214,7 +3354,14 @@ class _$ContactsErrorImpl
         getContactsFromServerErrorsState,
     TResult Function(GetContactsFromServerLoadingState value)?
         getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
     TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -2228,7 +3375,270 @@ abstract class ContactsError implements ContactScreenState {
   const factory ContactsError(final ApiErrorModel error) = _$ContactsErrorImpl;
 
   ApiErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContactsErrorImplCopyWith<_$ContactsErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$IsValidButtonStateImplCopyWith<$Res> {
+  factory _$$IsValidButtonStateImplCopyWith(_$IsValidButtonStateImpl value,
+          $Res Function(_$IsValidButtonStateImpl) then) =
+      __$$IsValidButtonStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isValid});
+}
+
+/// @nodoc
+class __$$IsValidButtonStateImplCopyWithImpl<$Res>
+    extends _$ContactScreenStateCopyWithImpl<$Res, _$IsValidButtonStateImpl>
+    implements _$$IsValidButtonStateImplCopyWith<$Res> {
+  __$$IsValidButtonStateImplCopyWithImpl(_$IsValidButtonStateImpl _value,
+      $Res Function(_$IsValidButtonStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isValid = null,
+  }) {
+    return _then(_$IsValidButtonStateImpl(
+      null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IsValidButtonStateImpl
+    with DiagnosticableTreeMixin
+    implements IsValidButtonState {
+  const _$IsValidButtonStateImpl(this.isValid);
+
+  @override
+  final bool isValid;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ContactScreenState.isValidButtonState(isValid: $isValid)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ContactScreenState.isValidButtonState'))
+      ..add(DiagnosticsProperty('isValid', isValid));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IsValidButtonStateImpl &&
+            (identical(other.isValid, isValid) || other.isValid == isValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isValid);
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IsValidButtonStateImplCopyWith<_$IsValidButtonStateImpl> get copyWith =>
+      __$$IsValidButtonStateImplCopyWithImpl<_$IsValidButtonStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Contact> contacts) contactAdded,
+    required TResult Function() addContactsToServerLoadingState,
+    required TResult Function(BaseResponse<AudienceData> audienceData)
+        addContactsToServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        addContactsToServerErrorsState,
+    required TResult Function(List<Contact> contacts)
+        getContactsFromServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        getContactsFromServerErrorsState,
+    required TResult Function() getContactsFromServerLoadingState,
+    required TResult Function() updateContactsInServerLoadingState,
+    required TResult Function() updateContactsInServerSuccessState,
+    required TResult Function(ApiErrorModel error)
+        updateContactsInServerErrorState,
+    required TResult Function(ApiErrorModel error) error,
+    required TResult Function(bool isValid) isValidButtonState,
+  }) {
+    return isValidButtonState(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<Contact> contacts)? contactAdded,
+    TResult? Function()? addContactsToServerLoadingState,
+    TResult? Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult? Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult? Function(List<Contact> contacts)?
+        getContactsFromServerSuccessState,
+    TResult? Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult? Function()? getContactsFromServerLoadingState,
+    TResult? Function()? updateContactsInServerLoadingState,
+    TResult? Function()? updateContactsInServerSuccessState,
+    TResult? Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult? Function(ApiErrorModel error)? error,
+    TResult? Function(bool isValid)? isValidButtonState,
+  }) {
+    return isValidButtonState?.call(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Contact> contacts)? contactAdded,
+    TResult Function()? addContactsToServerLoadingState,
+    TResult Function(BaseResponse<AudienceData> audienceData)?
+        addContactsToServerSuccessState,
+    TResult Function(ApiErrorModel error)? addContactsToServerErrorsState,
+    TResult Function(List<Contact> contacts)? getContactsFromServerSuccessState,
+    TResult Function(ApiErrorModel error)? getContactsFromServerErrorsState,
+    TResult Function()? getContactsFromServerLoadingState,
+    TResult Function()? updateContactsInServerLoadingState,
+    TResult Function()? updateContactsInServerSuccessState,
+    TResult Function(ApiErrorModel error)? updateContactsInServerErrorState,
+    TResult Function(ApiErrorModel error)? error,
+    TResult Function(bool isValid)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (isValidButtonState != null) {
+      return isValidButtonState(isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContactScreenInitial value) initial,
+    required TResult Function(ContactsLoading value) loading,
+    required TResult Function(ContactAdded value) contactAdded,
+    required TResult Function(AddContactsToServerLoadingState value)
+        addContactsToServerLoadingState,
+    required TResult Function(AddContactsToServerSuccessState value)
+        addContactsToServerSuccessState,
+    required TResult Function(AddContactsToServerErrorsState value)
+        addContactsToServerErrorsState,
+    required TResult Function(GetContactsFromServerSuccessState value)
+        getContactsFromServerSuccessState,
+    required TResult Function(GetContactsFromServerErrorsState value)
+        getContactsFromServerErrorsState,
+    required TResult Function(GetContactsFromServerLoadingState value)
+        getContactsFromServerLoadingState,
+    required TResult Function(UpdateContactsInServerLoadingState value)
+        updateContactsInServerLoadingState,
+    required TResult Function(UpdateContactsInServerSuccessState value)
+        updateContactsInServerSuccessState,
+    required TResult Function(UpdateContactsInServerErrorState value)
+        updateContactsInServerErrorState,
+    required TResult Function(ContactsError value) error,
+    required TResult Function(IsValidButtonState value) isValidButtonState,
+  }) {
+    return isValidButtonState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContactScreenInitial value)? initial,
+    TResult? Function(ContactsLoading value)? loading,
+    TResult? Function(ContactAdded value)? contactAdded,
+    TResult? Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult? Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult? Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult? Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult? Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult? Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult? Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult? Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult? Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult? Function(ContactsError value)? error,
+    TResult? Function(IsValidButtonState value)? isValidButtonState,
+  }) {
+    return isValidButtonState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContactScreenInitial value)? initial,
+    TResult Function(ContactsLoading value)? loading,
+    TResult Function(ContactAdded value)? contactAdded,
+    TResult Function(AddContactsToServerLoadingState value)?
+        addContactsToServerLoadingState,
+    TResult Function(AddContactsToServerSuccessState value)?
+        addContactsToServerSuccessState,
+    TResult Function(AddContactsToServerErrorsState value)?
+        addContactsToServerErrorsState,
+    TResult Function(GetContactsFromServerSuccessState value)?
+        getContactsFromServerSuccessState,
+    TResult Function(GetContactsFromServerErrorsState value)?
+        getContactsFromServerErrorsState,
+    TResult Function(GetContactsFromServerLoadingState value)?
+        getContactsFromServerLoadingState,
+    TResult Function(UpdateContactsInServerLoadingState value)?
+        updateContactsInServerLoadingState,
+    TResult Function(UpdateContactsInServerSuccessState value)?
+        updateContactsInServerSuccessState,
+    TResult Function(UpdateContactsInServerErrorState value)?
+        updateContactsInServerErrorState,
+    TResult Function(ContactsError value)? error,
+    TResult Function(IsValidButtonState value)? isValidButtonState,
+    required TResult orElse(),
+  }) {
+    if (isValidButtonState != null) {
+      return isValidButtonState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsValidButtonState implements ContactScreenState {
+  const factory IsValidButtonState(final bool isValid) =
+      _$IsValidButtonStateImpl;
+
+  bool get isValid;
+
+  /// Create a copy of ContactScreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$IsValidButtonStateImplCopyWith<_$IsValidButtonStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -93,6 +93,9 @@ class _$ManageAudiancesStateCopyWithImpl<T, $Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -109,6 +112,9 @@ class __$$InitialImplCopyWithImpl<T, $Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -233,6 +239,9 @@ class __$$AudienceLoadingStateImplCopyWithImpl<T, $Res>
   __$$AudienceLoadingStateImplCopyWithImpl(_$AudienceLoadingStateImpl<T> _value,
       $Res Function(_$AudienceLoadingStateImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -357,6 +366,9 @@ class __$$AudienceEmptyStateImplCopyWithImpl<T, $Res>
   __$$AudienceEmptyStateImplCopyWithImpl(_$AudienceEmptyStateImpl<T> _value,
       $Res Function(_$AudienceEmptyStateImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -485,6 +497,8 @@ class __$$AudienceSuccessStateImplCopyWithImpl<T, $Res>
       $Res Function(_$AudienceSuccessStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -533,7 +547,9 @@ class _$AudienceSuccessStateImpl<T> implements AudienceSuccessState<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_audiences));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AudienceSuccessStateImplCopyWith<T, _$AudienceSuccessStateImpl<T>>
@@ -628,7 +644,10 @@ abstract class AudienceSuccessState<T> implements ManageAudiancesState<T> {
       _$AudienceSuccessStateImpl<T>;
 
   List<Audience>? get audiences;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AudienceSuccessStateImplCopyWith<T, _$AudienceSuccessStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -651,6 +670,8 @@ class __$$AudienceErrorStateImplCopyWithImpl<T, $Res>
       $Res Function(_$AudienceErrorStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -690,7 +711,9 @@ class _$AudienceErrorStateImpl<T> implements AudienceErrorState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AudienceErrorStateImplCopyWith<T, _$AudienceErrorStateImpl<T>>
@@ -785,7 +808,10 @@ abstract class AudienceErrorState<T> implements ManageAudiancesState<T> {
       _$AudienceErrorStateImpl<T>;
 
   ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ManageAudiancesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AudienceErrorStateImplCopyWith<T, _$AudienceErrorStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

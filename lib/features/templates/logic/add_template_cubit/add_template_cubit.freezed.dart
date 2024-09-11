@@ -148,6 +148,9 @@ class _$AddTemplateStateCopyWithImpl<$Res, $Val extends AddTemplateState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -164,6 +167,9 @@ class __$$InitialAddTemplateImplCopyWithImpl<$Res>
   __$$InitialAddTemplateImplCopyWithImpl(_$InitialAddTemplateImpl _value,
       $Res Function(_$InitialAddTemplateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -352,6 +358,9 @@ class __$$AddTemplateLoadingStateImplCopyWithImpl<$Res>
       _$AddTemplateLoadingStateImpl _value,
       $Res Function(_$AddTemplateLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -545,6 +554,8 @@ class __$$AddTemplateSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$AddTemplateSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -595,7 +606,9 @@ class _$AddTemplateSuccessStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, addtemplateResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddTemplateSuccessStateImplCopyWith<_$AddTemplateSuccessStateImpl>
@@ -747,7 +760,10 @@ abstract class _AddTemplateSuccessState implements AddTemplateState {
       _$AddTemplateSuccessStateImpl;
 
   BaseResponse<dynamic> get addtemplateResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddTemplateSuccessStateImplCopyWith<_$AddTemplateSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -769,6 +785,9 @@ class __$$GetTemplateByIdLoadingStateImplCopyWithImpl<$Res>
       _$GetTemplateByIdLoadingStateImpl _value,
       $Res Function(_$GetTemplateByIdLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -964,6 +983,8 @@ class __$$GetTemplateByIdSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$GetTemplateByIdSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1016,7 +1037,9 @@ class _$GetTemplateByIdSuccessStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, getTemplateByIdResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTemplateByIdSuccessStateImplCopyWith<_$GetTemplateByIdSuccessStateImpl>
@@ -1168,7 +1191,10 @@ abstract class GetTemplateByIdSuccessState implements AddTemplateState {
       _$GetTemplateByIdSuccessStateImpl;
 
   GetTemplateByIdResponse get getTemplateByIdResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetTemplateByIdSuccessStateImplCopyWith<_$GetTemplateByIdSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1190,6 +1216,9 @@ class __$$UpdateTemplateLoadingStateImplCopyWithImpl<$Res>
       _$UpdateTemplateLoadingStateImpl _value,
       $Res Function(_$UpdateTemplateLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1385,6 +1414,8 @@ class __$$UpdateTemplateSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$UpdateTemplateSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1435,7 +1466,9 @@ class _$UpdateTemplateSuccessStateImpl
   @override
   int get hashCode => Object.hash(runtimeType, baseResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateTemplateSuccessStateImplCopyWith<_$UpdateTemplateSuccessStateImpl>
@@ -1587,7 +1620,10 @@ abstract class _UpdateTemplateSuccessState implements AddTemplateState {
       _$UpdateTemplateSuccessStateImpl;
 
   BaseResponse<dynamic> get baseResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateTemplateSuccessStateImplCopyWith<_$UpdateTemplateSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1609,6 +1645,8 @@ class __$$ErrorAddTemplateImplCopyWithImpl<$Res>
       $Res Function(_$ErrorAddTemplateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1657,7 +1695,9 @@ class _$ErrorAddTemplateImpl
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorAddTemplateImplCopyWith<_$ErrorAddTemplateImpl> get copyWith =>
@@ -1808,7 +1848,10 @@ abstract class ErrorAddTemplate implements AddTemplateState {
       _$ErrorAddTemplateImpl;
 
   ApiErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorAddTemplateImplCopyWith<_$ErrorAddTemplateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1832,6 +1875,8 @@ class __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>
       $Res Function(_$PickedMultiMediaAndFilesImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1892,7 +1937,9 @@ class _$PickedMultiMediaAndFilesImpl
   int get hashCode => Object.hash(
       runtimeType, pickedFile, const DeepCollectionEquality().hash(file));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PickedMultiMediaAndFilesImplCopyWith<_$PickedMultiMediaAndFilesImpl>
@@ -2045,7 +2092,10 @@ abstract class _PickedMultiMediaAndFiles implements AddTemplateState {
 
   XFile? get pickedFile;
   Uint8List? get file;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PickedMultiMediaAndFilesImplCopyWith<_$PickedMultiMediaAndFilesImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2067,6 +2117,8 @@ class __$$StateOfButtonImplCopyWithImpl<$Res>
       _$StateOfButtonImpl _value, $Res Function(_$StateOfButtonImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2115,7 +2167,9 @@ class _$StateOfButtonImpl
   @override
   int get hashCode => Object.hash(runtimeType, isValid);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StateOfButtonImplCopyWith<_$StateOfButtonImpl> get copyWith =>
@@ -2264,7 +2318,10 @@ abstract class _StateOfButton implements AddTemplateState {
   factory _StateOfButton({required final bool isValid}) = _$StateOfButtonImpl;
 
   bool get isValid;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddTemplateState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StateOfButtonImplCopyWith<_$StateOfButtonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

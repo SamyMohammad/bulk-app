@@ -8,81 +8,92 @@ import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_scr
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class AudianceItem extends StatelessWidget {
-  const AudianceItem({super.key, required this.audiences});
+  const AudianceItem({super.key, required this.audiences, required this.index});
   final Audience audiences;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 25.w),
-      alignment: Alignment.center,
-      height: context.height * 0.11,
-      decoration: BoxDecoration(
-        color: ColorsManager.darkAppBarBackGround,
-        borderRadius: const BorderRadius.all(Radius.circular(21)),
-        border: Border.all(color: ColorsManager.saerchTextFieldHintColor),
-      ),
-      child: Row(
+    return Slidable(
+      key: const ValueKey(0),
+      startActionPane: ActionPane(
+        dragDismissible: false,
+        motion: const ScrollMotion(),
+        extentRatio: .3,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                audiences.name ?? 'name',
-                style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
-              ),
-              1.sizedBoxHeight,
-              Text(
-                audiences.createdAt ?? 'date',
-                style: TextStyle(
-                  color: ColorsManager.saerchTextFieldHintColor,
-                  fontSize: 12.sp,
-                ),
-              ),
-            ],
-          ),
-          const Spacer(),
-          GestureDetector(
-            onTap: () {
-              context.read<ManageAudiancesCubit>().delete(audiences.id!);
-            },
-            child: Icon(
-              Icons.delete_forever,
-              color: Colors.red,
-              size: 37.r,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 20.h),
-            height: double.maxFinite,
-            width: 1.w,
-            color: ColorsManager.saerchTextFieldHintColor,
-          ),
-          5.sizedWidth,
-          Container(
-            height: 26.h,
-            width: 26.w,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: ColorsManager.containerTitleColor,
-            ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(Routes.conatctScreen,
-                    arguments: Arguments(
-                        isAddNewAudience: false,
-                        audienceId: audiences.id!.toString()));
-              },
-              child: Icon(
-                Icons.edit_rounded,
-                size: 20.r,
-              ),
-            ),
+          SlidableAction(
+            borderRadius: BorderRadius.circular(18.r),
+
+            // An action can be bigger than the others.
+            flex: 1,
+            onPressed: (context) =>
+                context.read<ManageAudiancesCubit>().delete(audiences.id!),
+            backgroundColor: const Color(0xFFFE4A49),
+            foregroundColor: Colors.white,
+            icon: Icons.delete_forever,
+            label: 'Delete',
           ),
         ],
+      ),
+      endActionPane: ActionPane(
+        dragDismissible: false,
+        extentRatio: .3,
+        motion: const BehindMotion(),
+        children: [
+          SlidableAction(
+            // An action can be bigger than the others.
+            flex: 2,
+            borderRadius: BorderRadius.circular(18.r),
+            spacing: 3,
+            onPressed: (context) {
+              Navigator.of(context).pushNamed(Routes.conatctScreen,
+                  arguments: Arguments(
+                      isAddNewAudience: false,
+                      audienceId: audiences.id!.toString(),
+                      audienceName: audiences.name));
+            },
+            backgroundColor: const Color(0xFF7BC043),
+            foregroundColor: Colors.white,
+            icon: Icons.edit,
+            label: 'Edit',
+          ),
+        ],
+      ),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 25.w),
+        alignment: Alignment.center,
+        height: context.height * 0.11,
+        decoration: BoxDecoration(
+          color: ColorsManager.darkAppBarBackGround,
+          borderRadius: const BorderRadius.all(Radius.circular(21)),
+          border: Border.all(color: ColorsManager.saerchTextFieldHintColor),
+        ),
+        child: Row(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  audiences.name ?? 'name',
+                  style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
+                ),
+                1.sizedBoxHeight,
+                Text(
+                  audiences.createdAt ?? 'date',
+                  style: TextStyle(
+                    color: ColorsManager.saerchTextFieldHintColor,
+                    fontSize: 12.sp,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

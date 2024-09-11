@@ -20,7 +20,7 @@ class RegisterScreenBody extends StatelessWidget {
         // ),
         25.verticalSpace,
         const VectorGraphic(
-          loader: AssetBytesLoader('assets/images/asset 0.svg'),
+          loader: AssetBytesLoader('assets/icons/asset 0.svg'),
         ),
         const BuildRegisterContainer(),
         const RegisterBlocListener(),

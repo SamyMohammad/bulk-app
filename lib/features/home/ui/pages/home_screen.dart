@@ -10,7 +10,7 @@ import 'package:bulk_app/features/home/ui/widgets/whatsapp_number_text_field.dar
 import 'package:easy_localization/easy_localization.dart' as local;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
@@ -77,8 +77,10 @@ class HomeScreen extends StatelessWidget {
                           delay: const Duration(milliseconds: 1600),
                           child: Transform.flip(
                             flipX: isRtl,
-                            child: SvgPicture.asset(
-                              'assets/images/asset 1.svg',
+                            child: const VectorGraphic(
+                              loader: AssetBytesLoader(
+                                'assets/icons/asset 1.svg',
+                              ),
                             ),
                           ),
                         ),
@@ -145,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                           delay: const Duration(milliseconds: 2000),
                           child: SmartToolsContainer(
                             title: AppStrings.whatsBot.tr(),
-                            iconName: 'assets/images/asset 7.svg',
+                            iconName: 'assets/icons/asset 7.svg',
                           ),
                         ),
                         BounceInRight(
@@ -153,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                           animate: true,
                           child: SmartToolsContainer(
                             title: AppStrings.groupsGrabber.tr(),
-                            iconName: 'assets/images/asset 8.svg',
+                            iconName: 'assets/icons/asset 8.svg',
                           ),
                         ),
                         BounceInRight(
@@ -161,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                           animate: true,
                           child: SmartToolsContainer(
                             title: AppStrings.contactsGrabber.tr(),
-                            iconName: 'assets/images/asset 9.svg',
+                            iconName: 'assets/icons/asset 9.svg',
                           ),
                         ),
                       ],

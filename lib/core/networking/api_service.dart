@@ -8,7 +8,7 @@ import 'package:bulk_app/features/templates/data/models/add_template_request_bod
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
 import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
 import 'package:dio/dio.dart';
-import 'package:retrofit/http.dart';
+import 'package:retrofit/retrofit.dart';
 
 import '../../features/auth/data/models/login_request_body.dart';
 
