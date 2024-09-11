@@ -1,7 +1,7 @@
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
+import 'package:bulk_app/features/manage_audiances/ui/screens/manage_audiances_screen.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/contacts_list_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

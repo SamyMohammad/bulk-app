@@ -8,4 +8,5 @@ class Routes {
   static const String addTemplateScreen = '/addTemplateScreen';
   static const String conatctScreen = '/conatctScreen';
   static const String supportScreen = '/supportScreen';
+  static const String whatsBotsScreen = '/whatsBotsScreen';
 }

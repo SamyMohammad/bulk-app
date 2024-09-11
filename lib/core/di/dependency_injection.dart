@@ -7,6 +7,7 @@ import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:bulk_app/features/whats_bots/logic/cubit/whatsbots_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
@@ -46,6 +47,8 @@ Future<void> setupGetIt() async {
       () => ManageAudiancesCubit(getIt()));
   getIt.registerFactory<ContactScreenCubit>(
       () => ContactScreenCubit(getIt(), getIt()));
+
+  getIt.registerFactory<WhatsbotsCubit>(() => WhatsbotsCubit());
 
   //App Media
   getIt.registerLazySingleton<AppMedia>(

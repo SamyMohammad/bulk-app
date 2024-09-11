@@ -4,20 +4,22 @@ import 'package:bulk_app/features/auth/logic/login_cubit/login_cubit.dart';
 import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart';
 import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
 import 'package:bulk_app/features/auth/ui/screen/register_screen.dart';
-import 'package:bulk_app/features/home/ui/pages/home_screen.dart';
+import 'package:bulk_app/features/home/ui/screens/home_screen.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/contact_screen.dart';
-import 'package:bulk_app/features/manage_audiances/ui/pages/manage_audiances_screen.dart';
-import 'package:bulk_app/features/support/pages/support_screen.dart';
+import 'package:bulk_app/features/manage_audiances/ui/screens/contact_screen.dart';
+import 'package:bulk_app/features/manage_audiances/ui/screens/manage_audiances_screen.dart';
+import 'package:bulk_app/features/support/screens/support_screen.dart';
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
-import 'package:bulk_app/features/templates/ui/pages/add_template_screen.dart';
+import 'package:bulk_app/features/templates/ui/screens/add_template_screen.dart';
+import 'package:bulk_app/features/whats_bots/logic/cubit/whatsbots_cubit.dart';
+import 'package:bulk_app/features/whats_bots/ui/screens/whats_bots_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/logic/cubit/home_cubit.dart';
-import '../../features/templates/ui/pages/templates_screen.dart';
+import '../../features/templates/ui/screens/templates_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -94,6 +96,13 @@ class AppRouter {
             child: const ContactScreen(),
           ),
           settings: RouteSettings(arguments: args),
+        );
+      case Routes.whatsBotsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<WhatsbotsCubit>(),
+            child: const WhatsBotsScreen(),
+          ),
         );
       case Routes.supportScreen:
         return MaterialPageRoute(
