@@ -1,14 +1,14 @@
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final String? iconPath;
   final double? fontSize;
-  final Color? backgroundColor ;
+  final Color? backgroundColor;
   final EdgeInsetsGeometry? padding;
   const CustomButton._internal(
       {super.key,
@@ -16,7 +16,8 @@ class CustomButton extends StatelessWidget {
       this.padding,
       required this.onPressed,
       this.iconPath,
-      this.fontSize,  this.backgroundColor});
+      this.fontSize,
+      this.backgroundColor});
 
   // Factory constructor for button with an icon
   factory CustomButton.withIcon({
@@ -55,30 +56,31 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       padding: padding,
       backgroundColor: backgroundColor,
-    
     );
   }
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: onPressed,
-
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor?? ColorsManager.buttonColor,
-        minimumSize: Size.zero,
-        padding: padding ?? EdgeInsets.symmetric(vertical: 9.h, horizontal: 0),
-      ),
-      label: Text(
-        text,
-        style: TextStyle(color: Colors.black, fontSize: fontSize?.sp ?? 11.sp),
-      ),
-      icon: iconPath == null
-          ? null
-          : SvgPicture.asset(
-              iconPath!,
-              height: 16.h,
-              width: 10.w,
-            ),
-    );
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor ?? ColorsManager.buttonColor,
+          minimumSize: Size.zero,
+          padding:
+              padding ?? EdgeInsets.symmetric(vertical: 9.h, horizontal: 0),
+        ),
+        label: Text(
+          text,
+          style:
+              TextStyle(color: Colors.black, fontSize: fontSize?.sp ?? 11.sp),
+        ),
+        icon: iconPath == null
+            ? null
+            : VectorGraphic(
+                height: 16.h,
+                width: 10.w,
+                loader: AssetBytesLoader(
+                  iconPath!,
+                ),
+              ));
   }
 }
