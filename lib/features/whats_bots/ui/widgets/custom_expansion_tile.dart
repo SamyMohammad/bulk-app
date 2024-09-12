@@ -25,12 +25,11 @@ class CustomExpansionTile extends StatefulWidget {
 class _CustomExpansionTileState extends State<CustomExpansionTile> {
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<WhatsbotsCubit>();
 
     return Theme(
       data: Theme.of(context).copyWith(
         dividerColor: Colors.transparent,
-      ), // Remove defa
+      ), 
       child: ExpansionTile(
         childrenPadding: EdgeInsets.zero,
         tilePadding: EdgeInsets.zero,
