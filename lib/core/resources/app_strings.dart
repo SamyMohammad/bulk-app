@@ -43,6 +43,20 @@ class AppStrings {
   static const contactName = "contact_name";
   static const contactNumber = "contact_number";
   static const addToList = "add_to_list";
+  static const faq = "faq";
+  static const helpCenter = "helpCenter";
+  static const welcomeMessage = "welcomeMessage";
+  static const messageSubject = "messageSubject";
+  static const subject = "subject";
+  static const delay = "delay";
+  static const selectedDays = "selectedDays";
+  static const sunday = "sunday";
+  static const monday = "monday";
+  static const tuesday = "tuesday";
+  static const wednesday = "wednesday";
+  static const thursday = "thursday";
+  static const friday = "friday";
+  static const saturday = "saturday";
   // error handler
   static const String badRequestError = "bad_request_error";
   static const String noContent = "no_content";

@@ -42,5 +42,19 @@
   "add_to_audience": "Add to Audience",
   "contact_name": "Contact Name",
   "contact_number": "Contact Number",
-  "add_to_list": "Add to List"
+  "add_to_list": "Add to List",
+  "faq": "FAQ",
+  "helpCenter": "Help Center",
+  "welcomeMessage": "Welcome Message",
+  "messageSubject": "Message Subject",
+  "subject": "Subject",
+  "delay": "Delay",
+  "selectedDays": "Selected Days",
+  "sunday": "Sun",
+  "monday": "Mon",
+  "tuesday": "Tue",
+  "wednesday": "Wed",
+  "thursday": "Thu",
+  "friday": "Fri",
+  "saturday": "Sat"
 }

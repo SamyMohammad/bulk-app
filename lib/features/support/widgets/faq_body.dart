@@ -1,7 +1,9 @@
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/support/support_texts.dart';
 import 'package:bulk_app/features/support/widgets/tile_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +27,7 @@ class FAQBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'FAQ',
+              AppStrings.faq.tr(),
               style: TextStyles.font24limeExtraBold,
             ),
             SizedBox(height: 10.h),
