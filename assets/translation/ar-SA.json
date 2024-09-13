@@ -27,5 +27,20 @@
   "direct_chat_title": "دردشة مباشرة",
   "send_button_tooltip": "إرسال",
   "super_tools_title": "أدوات رائعة",
-  "enter_whatss_num":"ادخل رقم الواتساب"
+  "enter_whatss_num":"ادخل رقم الواتساب",
+  "note_title": "ملاحظة!",
+  "note_description": "إذا كنت تريد حذف أو تعديل هذه الجماهير \nيمكنك السحب لليسار أو اليمين",
+  "delete": "حذف",
+  "edit": "تعديل",
+  "name": "الاسم",
+  "date": "التاريخ",
+  "phone": "الهاتف",
+  "got_it": "تم",
+  "audience_name_hint": "اسم الجمهور",
+  "add_contact": "إضافة جهة اتصال",
+  "add_from_csv": "إضافة من ملف CSV",
+  "add_to_audience": "إضافة إلى الجمهور",
+  "contact_name": "اسم جهة الاتصال",
+  "contact_number": "رقم جهة الاتصال",
+  "add_to_list": "إضافة إلى القائمة"
 }

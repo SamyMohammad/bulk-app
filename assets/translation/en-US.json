@@ -27,5 +27,20 @@
   "direct_chat_title": "Direct Chat",
   "send_button_tooltip": "Send",
   "super_tools_title": "Super Tools",
-  "enter_whatss_num":"Enter WhatsApp number"
+  "enter_whatss_num":"Enter WhatsApp number",
+  "note_title": "Note!",
+  "note_description": "If you want to delete or edit this audience\nyou can swipe left or right",
+  "delete": "Delete",
+  "edit": "Edit",
+  "name": "name",
+  "date": "date",
+  "phone": "phone",
+  "got_it": "Got it",
+  "audience_name_hint": "Audience Name",
+  "add_contact": "Add Contact",
+  "add_from_csv": "Add from CSV File",
+  "add_to_audience": "Add to Audience",
+  "contact_name": "Contact Name",
+  "contact_number": "Contact Number",
+  "add_to_list": "Add to List"
 }

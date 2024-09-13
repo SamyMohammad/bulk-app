@@ -28,6 +28,21 @@ class AppStrings {
   static const directChatTitle = 'direct_chat_title';
   static const sendButtonTooltip = 'send_button_tooltip';
   static const superToolsTitle = 'super_tools_title';
+  static const manageAudienceNoteTitle = "note_title";
+  static const manageAudienceNoteDescription = "note_description";
+  static const delete = "delete";
+  static const edit = "edit";
+  static const name = "name";
+  static const date = "date";
+  static const phone = "phone";
+  static const gotIt = "got_it";
+  static const audienceNameHint = "audience_name_hint";
+  static const addContact = "add_contact";
+  static const addFromCsv = "add_from_csv";
+  static const addToAudience = "add_to_audience";
+  static const contactName = "contact_name";
+  static const contactNumber = "contact_number";
+  static const addToList = "add_to_list";
   // error handler
   static const String badRequestError = "bad_request_error";
   static const String noContent = "no_content";

@@ -1,10 +1,13 @@
+import 'package:bulk_app/core/helpers/date_helper.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/screens/manage_audiances_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +37,7 @@ class AudianceItem extends StatelessWidget {
             backgroundColor: const Color(0xFFFE4A49),
             foregroundColor: Colors.white,
             icon: Icons.delete_forever,
-            label: 'Delete',
+            label: AppStrings.delete.tr(),
           ),
         ],
       ),
@@ -58,7 +61,7 @@ class AudianceItem extends StatelessWidget {
             backgroundColor: const Color(0xFF7BC043),
             foregroundColor: Colors.white,
             icon: Icons.edit,
-            label: 'Edit',
+            label: AppStrings.edit.tr(),
           ),
         ],
       ),
@@ -78,12 +81,12 @@ class AudianceItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  audiences.name ?? 'name',
+                  audiences.name ?? AppStrings.name.tr(),
                   style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
                 ),
                 1.sizedBoxHeight,
                 Text(
-                  audiences.createdAt ?? 'date',
+                  audiences.createdAt ?? AppStrings.date.tr(),
                   style: TextStyle(
                     color: ColorsManager.saerchTextFieldHintColor,
                     fontSize: 12.sp,

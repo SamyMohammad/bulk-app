@@ -1,8 +1,11 @@
+import 'package:bulk_app/core/helpers/date_helper.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,12 +39,12 @@ class ContactItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                contact.name ?? 'Name',
+                contact.name ?? AppStrings.name.tr(),
                 style: TextStyles.font15whiteMedium.copyWith(fontSize: 18.sp),
               ),
               1.sizedBoxHeight,
               Text(
-                contact.phone ?? 'Phone',
+                contact.phone ?? AppStrings.phone.tr(),
                 style: TextStyle(
                     color: ColorsManager.saerchTextFieldHintColor,
                     fontSize: 12.sp),
