@@ -8,8 +8,7 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       // resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        child: RegisterScreenBody()),
+      body: SingleChildScrollView(child: RegisterScreenBody()),
     );
   }
 }

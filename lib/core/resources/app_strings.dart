@@ -57,6 +57,15 @@ class AppStrings {
   static const thursday = "thursday";
   static const friday = "friday";
   static const saturday = "saturday";
+  static const invalidEmail = "invalid_email";
+  static const invalidPassword = "invalid_password";
+  static const dontHaveAccount = 'dont_have_account';
+  static const atLeastOneLowercase = 'at_least_one_lowercase';
+  static const atLeastOneUppercase = 'at_least_one_uppercase';
+  static const atLeastOneSpecialCharacter = 'at_least_one_special_character';
+  static const atLeastOneNumber = 'at_least_one_number';
+  static const atLeastEightCharacters = 'at_least_eight_characters';
+
   // error handler
   static const String badRequestError = "bad_request_error";
   static const String noContent = "no_content";

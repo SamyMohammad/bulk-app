@@ -56,5 +56,13 @@
   "wednesday": "Wed",
   "thursday": "Thu",
   "friday": "Fri",
-  "saturday": "Sat"
+  "saturday": "Sat",
+  "invalid_email":"Please enter a valid email",
+  "invalid_password":"Please enter a valid password",
+  "dont_have_account": "Don't have an account?",
+  "at_least_one_lowercase": "At least 1 lowercase letter",
+  "at_least_one_uppercase": "At least 1 uppercase letter",
+  "at_least_one_special_character": "At least 1 special character",
+  "at_least_one_number": "At least 1 number",
+  "at_least_eight_characters": "At least 8 characters long"
 }

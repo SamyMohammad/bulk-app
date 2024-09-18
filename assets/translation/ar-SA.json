@@ -56,5 +56,13 @@
   "wednesday": "الأربعاء",
   "thursday": "الخميس",
   "friday": "الجمعة",
-  "saturday": "السبت"
+  "saturday": "السبت",
+  "invalid_email": "يرجى إدخال بريد إلكتروني صحيح",
+  "invalid_password": "يرجى إدخال كلمة مرور صحيحة",
+  "dont_have_account": "ليس لديك حساب؟",
+  "at_least_one_lowercase": "على الأقل حرف صغير واحد",
+  "at_least_one_uppercase": "على الأقل حرف كبير واحد",
+  "at_least_one_special_character": "على الأقل حرف خاص واحد",
+  "at_least_one_number": "على الأقل رقم واحد",
+  "at_least_eight_characters": "يجب أن يحتوي على 8 أحرف على الأقل"
 }
