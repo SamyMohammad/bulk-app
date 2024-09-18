@@ -1,5 +1,7 @@
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,7 +18,7 @@ class SettingsRow3 extends StatelessWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(
-            "Clear Cached data",
+            AppStrings.clearCachedData.tr(),
             style: TextStyles.font15whiteMedium.copyWith(
               color: ColorsManager.limeColor,
             ),

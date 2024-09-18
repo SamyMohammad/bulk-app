@@ -64,5 +64,14 @@
   "at_least_one_uppercase": "على الأقل حرف كبير واحد",
   "at_least_one_special_character": "على الأقل حرف خاص واحد",
   "at_least_one_number": "على الأقل رقم واحد",
-  "at_least_eight_characters": "يجب أن يحتوي على 8 أحرف على الأقل"
+  "at_least_eight_characters": "يجب أن يحتوي على 8 أحرف على الأقل",
+  "license_days": "أيام الترخيص",
+  "account_information": "معلومات الحساب",
+  "contacts": "جهات الاتصال",
+  "groups": "المجموعات",
+  "general_settings": "الإعدادات العامة",
+  "advanced": "متقدم",
+  "signature": "توقيع",
+  "language": "اللغه",
+  "clear_cached_data": "مسح البيانات المخزنة"
 }

@@ -65,7 +65,15 @@ class AppStrings {
   static const atLeastOneSpecialCharacter = 'at_least_one_special_character';
   static const atLeastOneNumber = 'at_least_one_number';
   static const atLeastEightCharacters = 'at_least_eight_characters';
-
+  static const licenseDays = 'license_days';
+  static const accountInformation = 'account_information';
+  static const contacts = 'contacts';
+  static const groups = 'groups';
+  static const generalSettings = 'general_settings';
+  static const advanced = 'advanced';
+  static const signature = 'signature';
+  static const language = 'language';
+  static const clearCachedData = 'clear_cached_data';
   // error handler
   static const String badRequestError = "bad_request_error";
   static const String noContent = "no_content";

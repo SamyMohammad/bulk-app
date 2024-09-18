@@ -64,5 +64,14 @@
   "at_least_one_uppercase": "At least 1 uppercase letter",
   "at_least_one_special_character": "At least 1 special character",
   "at_least_one_number": "At least 1 number",
-  "at_least_eight_characters": "At least 8 characters long"
+  "at_least_eight_characters": "At least 8 characters long",
+  "license_days": "License days",
+  "account_information": "Account Information",
+  "contacts": "Contacts",
+  "groups": "Groups",
+  "general_settings": "General Settings",
+  "advanced": "Advanced",
+  "signature": "Signature",
+  "language": "Language",
+  "clear_cached_data": "Clear Cached Data"
 }

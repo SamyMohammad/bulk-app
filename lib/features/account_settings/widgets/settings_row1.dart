@@ -1,6 +1,8 @@
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/account_settings/logic/cubit/account_settings_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +20,7 @@ class SettingsRow1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "Signature",
+          AppStrings.signature.tr(),
           style: TextStyles.font15whiteMedium.copyWith(
             color: ColorsManager.limeColor,
           ),
