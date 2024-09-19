@@ -1,8 +1,11 @@
+import 'package:bulk_app/core/helpers/date_helper.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/widgets/empty_state.dart';
 import 'package:bulk_app/core/widgets/overlay_loading_state.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/manage_audiances_widgets/audiance_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,10 +66,10 @@ class _AudiancesListViewState extends State<AudiancesListView> {
                   return Showcase(
                       targetPadding: const EdgeInsets.all(5),
                       key: _one,
-                      title: 'Note!',
+                      title: AppStrings.manageAudienceNoteTitle.tr(),
                       tooltipPadding: const EdgeInsets.all(15),
                       description:
-                          "if you want to delete or edit this audience\nyou can swipe to left or right",
+                          AppStrings.manageAudienceNoteDescription.tr(),
                       tooltipBackgroundColor:
                           ColorsManager.saerchTextFieldHintColor,
                       textColor: Colors.white,

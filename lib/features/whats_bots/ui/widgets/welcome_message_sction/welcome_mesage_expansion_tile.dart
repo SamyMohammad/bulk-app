@@ -1,7 +1,10 @@
+import 'package:bulk_app/core/helpers/date_helper.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/features/whats_bots/logic/cubit/whatsbots_cubit.dart';
 import 'package:bulk_app/features/whats_bots/ui/widgets/custom_container.dart';
 import 'package:bulk_app/features/whats_bots/ui/widgets/custom_expansion_tile.dart';
 import 'package:bulk_app/features/whats_bots/ui/widgets/welcome_message_sction/days_choice_ships.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,16 +26,16 @@ class _WelcomeMesageExpansionTileState
   Widget build(BuildContext context) {
     return CustomContainer(
         widget: CustomExpansionTile(
-      title: 'Welcome Message',
+      title: AppStrings.welcomeMessage.tr(),
       controller: context.read<WhatsbotsCubit>().welcomeMessageController,
       children: <Widget>[
         Text(
-          'Message Subject',
+          AppStrings.messageSubject.tr(),
           style: TextStyles.font15limeExtraBold,
         ),
         5.verticalSpace,
         AppTextField(
-          hintText: 'Subject',
+          hintText: AppStrings.subject.tr(),
           maxLine: 5,
           borderRadius: 18.r,
           // controller:
@@ -40,12 +43,12 @@ class _WelcomeMesageExpansionTileState
         ),
         5.verticalSpace,
         Text(
-          'Delay',
+          AppStrings.delay.tr(),
           style: TextStyles.font15limeExtraBold,
         ),
         5.verticalSpace,
         AppTextField(
-          hintText: 'Subject',
+          hintText: AppStrings.subject.tr(),
           maxLine: 1,
           borderRadius: 18.r,
           // controller:
@@ -53,7 +56,7 @@ class _WelcomeMesageExpansionTileState
         ),
         5.verticalSpace,
         Text(
-          'Selected Days',
+          AppStrings.selectedDays.tr(),
           style: TextStyles.font24limeExtraBold,
         ),
         const DaysChoiceChips()

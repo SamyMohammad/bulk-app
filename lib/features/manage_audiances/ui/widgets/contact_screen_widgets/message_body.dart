@@ -1,9 +1,12 @@
+import 'package:bulk_app/core/helpers/date_helper.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/contact_screen_widgets/show_add_contact_form.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/select_contacts.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/flutter_contacts.dart' as flutter_contacts;
@@ -42,7 +45,7 @@ class MessageBody extends StatelessWidget {
                   showAddContactForm(context, cubit);
                 },
                 child: Text(
-                  "Add Contact",
+                  AppStrings.addContact.tr(),
                   style:
                       TextStyles.font16GreenExtraBold.copyWith(fontSize: 16.sp),
                 ),
@@ -62,11 +65,13 @@ class MessageBody extends StatelessWidget {
                   if (context.mounted) {
                     Navigator.of(context).pop();
                   }
-           
+
                   List<Contact>? contacts = result
                       ?.map((value) => Contact(
                             name: value.displayName,
-                            phone: value.phones.isNotEmpty ? value.phones[0].number : '****00000',
+                            phone: value.phones.isNotEmpty
+                                ? value.phones[0].number
+                                : '****00000',
                           ))
                       .toList();
 
@@ -82,7 +87,7 @@ class MessageBody extends StatelessWidget {
                   // }
                 },
                 child: Text(
-                  "Add from CSV File",
+                  AppStrings.addFromCsv.tr(),
                   style:
                       TextStyles.font16GreenExtraBold.copyWith(fontSize: 16.sp),
                 ),

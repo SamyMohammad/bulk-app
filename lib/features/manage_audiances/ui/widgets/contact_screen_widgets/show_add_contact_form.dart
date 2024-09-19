@@ -1,9 +1,12 @@
+import 'package:bulk_app/core/helpers/date_helper.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_button.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/contacts.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,24 +36,24 @@ void showAddContactForm(BuildContext context, ContactScreenCubit cubit) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Add to Audience',
+                    AppStrings.addToAudience.tr(),
                     style: TextStyles.font16GreenExtraBold,
                   ),
                   SizedBox(height: 10.h),
                   AppTextField(
-                    hintText: "Contact Name",
+                    hintText: AppStrings.contactName.tr(),
                     controller:
                         cubit.contactNameController, // Pass the controller here
                   ),
                   SizedBox(height: 10.h),
                   AppTextField(
-                    hintText: "Contact Number",
+                    hintText: AppStrings.contactNumber.tr(),
                     controller: cubit
                         .contactNumberController, // Pass the controller here
                   ),
                   SizedBox(height: 10.h),
                   AppTextButton(
-                    buttonText: "Add to List",
+                    buttonText: AppStrings.addToList.tr(),
                     onPressed: () {
                       // Use the text values as needed, e.g., call a method in the cubit
                       // cubit.emitAddContactStates(

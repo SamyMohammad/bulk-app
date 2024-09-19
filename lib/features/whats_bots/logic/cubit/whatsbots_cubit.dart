@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:bulk_app/core/resources/app_strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -14,12 +16,12 @@ class WhatsbotsCubit extends Cubit<WhatsbotsState> {
 
   final Set<String> selectedChoices = {};
   final List<String> options = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
+    AppStrings.sunday.tr(),
+    AppStrings.monday.tr(),
+    AppStrings.tuesday.tr(),
+    AppStrings.wednesday.tr(),
+    AppStrings.thursday.tr(),
+    AppStrings.friday.tr(),
+    AppStrings.saturday.tr()
   ];
 }

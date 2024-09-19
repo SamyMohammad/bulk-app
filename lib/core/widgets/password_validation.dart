@@ -1,3 +1,6 @@
+import 'package:bulk_app/core/resources/app_strings.dart';
+import 'package:bulk_app/features/whats_bots/logic/cubit/whatsbots_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,16 +27,17 @@ class PasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildValidationRow('At least 1 lowercase letter', hasLowerCase),
+        buildValidationRow(AppStrings.atLeastOneLowercase.tr(), hasLowerCase),
         verticalSpace(2),
-        buildValidationRow('At least 1 uppercase letter', hasUpperCase),
+        buildValidationRow(AppStrings.atLeastOneUppercase.tr(), hasUpperCase),
         verticalSpace(2),
         buildValidationRow(
-            'At least 1 special character', hasSpecialCharacters),
+            AppStrings.atLeastOneSpecialCharacter.tr(), hasSpecialCharacters),
         verticalSpace(2),
-        buildValidationRow('At least 1 number', hasNumber),
+        buildValidationRow(AppStrings.atLeastOneNumber.tr(), hasNumber),
         verticalSpace(2),
-        buildValidationRow('At least 8 characters long', hasMinLength),
+        buildValidationRow(
+            AppStrings.atLeastEightCharacters.tr(), hasMinLength),
       ],
     );
   }

@@ -73,7 +73,7 @@ class HomeDrawer extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 8.0.w),
         child: Text(
-          'Super Tools',
+          AppStrings.superToolsTitle.tr(),
           style: TextStyle(fontSize: 16.sp, color: Colors.grey),
         ),
       ),
@@ -101,7 +101,7 @@ class HomeDrawer extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 8.0.w),
         child: Text(
-          'Support',
+          AppStrings.support.tr(),
           style: TextStyle(fontSize: 16.sp, color: Colors.grey),
         ),
       ),

@@ -28,7 +28,7 @@ class ContactScreenBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           AppTextField(
-            hintText: 'Audience Name',
+            hintText: AppStrings.audienceNameHint.tr(),
             controller:
                 context.read<ContactScreenCubit>().audienceNameController.value,
             restorationId: restorationId,
@@ -114,7 +114,7 @@ class ContactScreenListener extends StatelessWidget {
               context.pop();
             },
             child: Text(
-              'Got it',
+              AppStrings.gotIt.tr(),
               style: TextStyles.font24BlackBold.copyWith(fontSize: 14.sp),
             ),
           ),

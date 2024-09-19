@@ -83,7 +83,7 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isEmailValid(value)) {
-                  return 'Please enter a valid email';
+                  return AppStrings.invalidEmail.tr();
                 }
                 return null;
               },
@@ -108,7 +108,7 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter a valid password';
+                  return AppStrings.invalidPassword.tr();
                 }
                 return null;
               },
@@ -149,7 +149,7 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have an account? ",
+                Text(AppStrings.dontHaveAccount.tr(),
                     style: TextStyle(
                         color: ColorsManager.containerTitleColor,
                         fontSize: 15.sp)),
@@ -157,7 +157,7 @@ class _BuildLoginContainerState extends State<BuildLoginContainer> {
                   onTap: () =>
                       Navigator.pushNamed(context, Routes.registerScreen),
                   child: Text(
-                    "Sign up",
+                    AppStrings.signUp.tr(),
                     style: TextStyle(
                       color: ColorsManager.containerTitleColor,
                       fontWeight: FontWeight.bold,
