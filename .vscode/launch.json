@@ -6,12 +6,6 @@
     "configurations": [
 
 
-        // {
-        //     "name": "bulk app",
-        //     "request": "launch",
-        //     "type": "dart",
-        //     "args": ["--flavor", "free", "--target", "lib/main_free.dart" ]
-        // },
         {
             "name": "Bulk app (profile mode)",
             "request": "launch",
@@ -20,7 +14,7 @@
             "program": "lib/main_development.dart",
           },
         {
-            "name": "bulk app development",
+            "name": "bulk_app_development",
             "request": "launch",
             "type": "dart",
               "program": "lib/main_development.dart",  
@@ -34,12 +28,5 @@
             "args": ["--flavor", "production", "--target", "lib/main_production.dart" ],
             "flutterMode": "release"
         },
-
-        {
-            "name": "bulk app (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
     ]
 }

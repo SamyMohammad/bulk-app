@@ -45,7 +45,7 @@ class HomeDrawer extends StatelessWidget {
         ),
       ),
       DrawerListTile(
-        onTap: () {},
+        onTap: () =>Navigator.of(context).pushNamed(Routes.startCampaginScreen),
         iconPath: 'assets/icons/asset 3.svg',
         title: AppStrings.startCampaign.tr(),
       ),

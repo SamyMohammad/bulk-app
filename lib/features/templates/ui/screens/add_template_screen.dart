@@ -24,9 +24,12 @@ class _AddTemplatesScreenState extends State<AddTemplatesScreen> {
   late AddTemplateCubit cubit;
   @override
   void initState() {
-    cubit = context.read<AddTemplateCubit>();
     super.initState();
-
+    cubit = context.read<AddTemplateCubit>();
+    // cubit.emitGetTemplatesByIdStates(widget.templateId ?? 0);
+    if (widget.isEdit) {
+      cubit.emitGetTemplatesByIdStates(widget.templateId ?? 0);
+    }
     cubit.validateTemplate();
     cubit.templateNameController.addListener(() {
       cubit.validateTemplate();
@@ -61,8 +64,8 @@ class _AddTemplatesScreenState extends State<AddTemplatesScreen> {
             return state.maybeWhen(
               getTemplateByIdLoadingState: () => loadingSpinKit(),
               getTemplateByIdSuccessState: (data) => const AddTemplateBody(),
-              // error: (error) => const Text('error[0].toString()'),
-              orElse: () => loadingSpinKit(),
+
+              orElse: () => const AddTemplateBody(),
             );
             // return const AddTemplateBody();
           },
