@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/logic/cubit/home_cubit.dart';
+import '../../features/start_campains/logic/start_campagin_cubit.dart';
+import '../../features/start_campains/ui/screens/start_campagin_screen.dart';
 import '../../features/templates/ui/screens/templates_screen.dart';
 
 class AppRouter {
@@ -40,7 +42,13 @@ class AppRouter {
             child: const RegisterScreen(),
           ),
         );
-
+      case Routes.startCampaginScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<StartCampaginCubit>(),
+            child: const StartCampaginScreen(),
+          ),
+        );
       case Routes.homeScreen:
         return PageRouteBuilder(
           transitionsBuilder: (context, animation, secondaryAnimation, child) {

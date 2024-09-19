@@ -2,7 +2,7 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 class CurrentAccount extends StatelessWidget {
   const CurrentAccount({super.key, required this.number});
@@ -19,9 +19,11 @@ class CurrentAccount extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 18.sp),
         child: Row(
           children: [
-            SvgPicture.asset("assets/icons/whatssapp.svg"),
+            const VectorGraphic(
+                loader: AssetBytesLoader("assets/icons/whatssapp.svg")),
             SizedBox(width: 15.w),
-            SvgPicture.asset("assets/icons/line.svg"),
+            const VectorGraphic(
+                loader: AssetBytesLoader("assets/icons/line.svg")),
             SizedBox(width: 25.w),
             Text(
               number,

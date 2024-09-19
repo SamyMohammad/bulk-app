@@ -17,20 +17,22 @@ class AddTemplateListener extends StatelessWidget {
     return BlocListener<AddTemplateCubit, AddTemplateState>(
       listener: (context, state) {
         state.whenOrNull(
-
           addTemplateLoadingState: () => startLoading(context),
           addTemplateSuccessState: (addTemplateResponse) {
             stopLoading(context);
-            context.pushReplacementNamed(Routes.templatesScreen);
+            context.pushReplacementNamed(
+              Routes.templatesScreen,
+            );
           },
           updateTemplateLoadingState: () => startLoading(context),
           updateTemplateSuccessState: (baseResponse) {
             stopLoading(context);
-            context.pushReplacementNamed(Routes.templatesScreen);
+            context.pushReplacementNamed(
+              Routes.templatesScreen,
+            );
           },
           error: (apiErrorModel) {
             setupErrorState(context, apiErrorModel);
-
           },
         );
       },

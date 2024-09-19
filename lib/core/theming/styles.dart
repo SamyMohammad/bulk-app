@@ -28,7 +28,12 @@ class TextStyles {
     color: Colors.white,
     // fontFamily: 'Tajawal'
   );
-
+  static TextStyle font17whiteMedium = TextStyle(
+    fontSize: 17.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.white,
+    // fontFamily: 'Tajawal'
+  );
   static TextStyle font12witeRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,

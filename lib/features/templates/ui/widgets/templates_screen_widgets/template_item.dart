@@ -89,7 +89,7 @@ class TemplateItem extends StatelessWidget {
   }
 
   editButtonOnPressed(BuildContext context) {
-     Navigator.push(
+     Navigator.pushReplacement(
             context,
             MaterialPageRoute(
               builder: (_) => BlocProvider(

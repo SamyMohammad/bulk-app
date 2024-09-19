@@ -19,10 +19,12 @@ class TemplatesListener extends StatelessWidget {
           getAllTemplatesLoadingState: () => startLoading(context),
           getAllTemplatesSuccessState: (addTemplateResponse) {
             stopLoading(context);
-            context.pushNamed(Routes.templatesScreen);
+            context.pushNamedAndRemoveUntil(
+              Routes.templatesScreen,
+              predicate: (route) => false,
+            );
           },
-          getAllTemplatesErrorState: (error) {
-          },
+          getAllTemplatesErrorState: (error) {},
         );
       },
       child: const SizedBox.shrink(),

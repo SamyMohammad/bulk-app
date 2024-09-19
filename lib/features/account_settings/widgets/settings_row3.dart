@@ -2,7 +2,7 @@ import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 class SettingsRow3 extends StatelessWidget {
   const SettingsRow3({
@@ -27,9 +27,12 @@ class SettingsRow3 extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: Padding(
-              padding: EdgeInsets.all(3.r),
-              child: SvgPicture.asset("assets/icons/delete_forever.svg"),
-            ),
+                padding: EdgeInsets.all(3.r),
+                child: const VectorGraphic(
+                  loader: AssetBytesLoader(
+                    'assets/icons/delete_forever.svg',
+                  ),
+                )),
           )
         ]));
   }

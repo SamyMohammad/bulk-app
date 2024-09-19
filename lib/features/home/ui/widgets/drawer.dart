@@ -19,7 +19,7 @@ class HomeDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           ...buildMetabListTiles(context),
-          ...buildsuperToolsListTiles(),
+          ...buildsuperToolsListTiles(context),
           ...buildsupportListTiles()
         ],
       ),
@@ -45,7 +45,7 @@ class HomeDrawer extends StatelessWidget {
         ),
       ),
       DrawerListTile(
-        onTap: () {},
+        onTap: () =>Navigator.of(context).pushNamed(Routes.startCampaginScreen),
         iconPath: 'assets/icons/asset 3.svg',
         title: AppStrings.startCampaign.tr(),
       ),
@@ -68,7 +68,7 @@ class HomeDrawer extends StatelessWidget {
     return metabList;
   }
 
-  buildsuperToolsListTiles() {
+  buildsuperToolsListTiles(BuildContext context) {
     List<Widget> superToolsWidgets = [
       Padding(
         padding: EdgeInsets.only(left: 8.0.w),
@@ -78,7 +78,7 @@ class HomeDrawer extends StatelessWidget {
         ),
       ),
       DrawerListTile(
-        onTap: () {},
+        onTap: () => Navigator.of(context).pushNamed(Routes.whatsBotsScreen),
         iconPath: 'assets/icons/asset 7.svg',
         title: AppStrings.whatsBot.tr(),
       ),
@@ -145,10 +145,10 @@ class DrawerListTile extends StatelessWidget {
         title: Row(
           children: [
             VectorGraphic(
-            loader: AssetBytesLoader(
-              iconPath,
+              loader: AssetBytesLoader(
+                iconPath,
+              ),
             ),
-          ),
             15.horizontalSpace,
             Text(
               title,

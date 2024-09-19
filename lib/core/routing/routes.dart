@@ -9,4 +9,6 @@ class Routes {
   static const String conatctScreen = '/conatctScreen';
   static const String supportScreen = '/supportScreen';
   static const String whatsBotsScreen = '/whatsBotsScreen';
+
+  static const String startCampaginScreen = '/startCampaginScreen';
 }
