@@ -21,6 +21,7 @@ mixin _$StartCampaginState {
     required TResult Function() initial,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$StartCampaginState {
     TResult? Function()? initial,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$StartCampaginState {
     TResult Function()? initial,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$StartCampaginState {
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +56,7 @@ mixin _$StartCampaginState {
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +64,7 @@ mixin _$StartCampaginState {
     TResult Function(_Initial value)? initial,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +135,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
   }) {
     return initial();
   }
@@ -139,6 +146,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
   }) {
     return initial?.call();
   }
@@ -149,6 +157,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -164,6 +173,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
   }) {
     return initial(this);
   }
@@ -175,6 +185,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
   }) {
     return initial?.call(this);
   }
@@ -185,6 +196,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -274,6 +286,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
     required TResult Function() initial,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
   }) {
     return pickedMultiMediaAndFiles(pickedFile);
   }
@@ -284,6 +297,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
     TResult? Function()? initial,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
   }) {
     return pickedMultiMediaAndFiles?.call(pickedFile);
   }
@@ -294,6 +308,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
     TResult Function()? initial,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
     required TResult orElse(),
   }) {
     if (pickedMultiMediaAndFiles != null) {
@@ -309,6 +324,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
   }) {
     return pickedMultiMediaAndFiles(this);
   }
@@ -320,6 +336,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
   }) {
     return pickedMultiMediaAndFiles?.call(this);
   }
@@ -330,6 +347,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
     TResult Function(_Initial value)? initial,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
     required TResult orElse(),
   }) {
     if (pickedMultiMediaAndFiles != null) {
@@ -423,6 +441,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
     required TResult Function() initial,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
   }) {
     return stateOfButton(isValid);
   }
@@ -433,6 +452,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
     TResult? Function()? initial,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
   }) {
     return stateOfButton?.call(isValid);
   }
@@ -443,6 +463,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
     TResult Function()? initial,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
     required TResult orElse(),
   }) {
     if (stateOfButton != null) {
@@ -458,6 +479,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
   }) {
     return stateOfButton(this);
   }
@@ -469,6 +491,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
   }) {
     return stateOfButton?.call(this);
   }
@@ -479,6 +502,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
     TResult Function(_Initial value)? initial,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
     required TResult orElse(),
   }) {
     if (stateOfButton != null) {
@@ -498,4 +522,123 @@ abstract class _StateOfButton implements StartCampaginState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StateOfButtonImplCopyWith<_$StateOfButtonImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectedAudienceImplCopyWith<$Res> {
+  factory _$$SelectedAudienceImplCopyWith(_$SelectedAudienceImpl value,
+          $Res Function(_$SelectedAudienceImpl) then) =
+      __$$SelectedAudienceImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SelectedAudienceImplCopyWithImpl<$Res>
+    extends _$StartCampaginStateCopyWithImpl<$Res, _$SelectedAudienceImpl>
+    implements _$$SelectedAudienceImplCopyWith<$Res> {
+  __$$SelectedAudienceImplCopyWithImpl(_$SelectedAudienceImpl _value,
+      $Res Function(_$SelectedAudienceImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SelectedAudienceImpl implements SelectedAudience {
+  _$SelectedAudienceImpl();
+
+  @override
+  String toString() {
+    return 'StartCampaginState.selectedAudience()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SelectedAudienceImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
+  }) {
+    return selectedAudience();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
+  }) {
+    return selectedAudience?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
+    required TResult orElse(),
+  }) {
+    if (selectedAudience != null) {
+      return selectedAudience();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
+  }) {
+    return selectedAudience(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
+  }) {
+    return selectedAudience?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
+    required TResult orElse(),
+  }) {
+    if (selectedAudience != null) {
+      return selectedAudience(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectedAudience implements StartCampaginState {
+  factory SelectedAudience() = _$SelectedAudienceImpl;
 }

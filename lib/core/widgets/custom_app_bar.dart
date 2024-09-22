@@ -7,9 +7,14 @@ import '../theming/styles.dart';
 class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isHome;
+  final Widget? leadingWidget;
   final List<Widget>? actions;
   const MyCustomAppBar(
-      {super.key, required this.title, this.isHome = false, this.actions});
+      {super.key,
+      this.leadingWidget,
+      required this.title,
+      this.isHome = false,
+      this.actions});
 
   // Here's the magic! Tell Flutter the preferred size
   @override
@@ -24,6 +29,7 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           bottomRight: Radius.circular(19.sp),
         ),
       ),
+      leading: leadingWidget,
       backgroundColor: ColorsManager.darkAppBarBackGround,
       centerTitle: true,
       iconTheme: const IconThemeData(color: Colors.white),

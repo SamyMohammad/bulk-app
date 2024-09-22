@@ -7,4 +7,6 @@ class StartCampaginState with _$StartCampaginState {
       {XFile? pickedFile}) = _PickedMultiMediaAndFiles;
   factory StartCampaginState.stateOfButton({required bool isValid}) =
       _StateOfButton;
+        factory StartCampaginState.selectedAudience() = SelectedAudience;
+
 }

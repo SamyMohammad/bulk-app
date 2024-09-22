@@ -2,17 +2,51 @@ import 'package:bloc/bloc.dart';
 import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/helpers/date_helper.dart';
 import 'package:bulk_app/core/helpers/media.dart';
+import 'package:bulk_app/core/networking/base_response.dart';
+import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
+import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../manage_audiances/data/models/audience.dart';
 
 part 'start_campagin_cubit.freezed.dart';
 part 'start_campagin_state.dart';
 
 class StartCampaginCubit extends Cubit<StartCampaginState> {
-  StartCampaginCubit() : super(const StartCampaginState.initial());
+  StartCampaginCubit(this._repository)
+      : super(const StartCampaginState.initial());
   TextEditingController messageController = TextEditingController();
   TextEditingController templateNameController = TextEditingController();
+  Audience? selectedAudience;
+
+  List<Audience>? audiences;
+  late final AudienceRepository _repository;
+
+  Future<void> fetchAudienceList() async {
+    // emit(const ManageAudiancesState.audienceLoadingState());
+    try {
+      final response = await _repository.getAllAudiences();
+      response.when(
+        success: (BaseResponse<AudiencesListData> data) {
+          audiences = data.data?.audiences;
+          print(audiences);
+          // if (audiences.isNotNullAndNotEmpty()) {
+          //   // emit(ManageAudiancesState.audienceSuccessState(audiences!));
+          // } else {
+          //   // emit(const ManageAudiancesState.audienceEmptyState());
+          // }
+        },
+        failure: (error) {
+          // emit(ManageAudiancesState.audienceErrorState(error));
+        },
+      );
+    } catch (e) {
+      // emit(const ManageAudiancesState.audienceEmptyState());
+    }
+  }
+
   void emitRemoveImage() async {
     // if(pickedFiles != null) {
     pickedFilefromDevice = null;
@@ -55,5 +89,11 @@ class StartCampaginCubit extends Cubit<StartCampaginState> {
 
   addMessageIDInMessage() {
     messageController.text = '${messageController.text} #Message ID ';
+  }
+  // select audience
+
+  void selectAudience(Audience audience) {
+    selectedAudience = audience;
+    emit(StartCampaginState.selectedAudience());
   }
 }

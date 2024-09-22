@@ -1,6 +1,8 @@
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
+import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/colors.dart';
@@ -11,6 +13,7 @@ class MessageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<StartCampaginCubit>();
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
@@ -39,7 +42,7 @@ class MessageContainer extends StatelessWidget {
             hintText: 'Subject',
             maxLine: 5,
             borderRadius: 18.r,
-            // controller: context.read<AddTemplateCubit>().messageController,
+            controller: cubit.messageController,
           ),
           20.verticalSpace,
           Row(
@@ -59,8 +62,7 @@ class MessageContainer extends StatelessWidget {
             children: [
               Expanded(
                 child: CustomButton.withIcon(
-                  // onPressed: () => cubit.addCurrentDateInMessage(),
-                  onPressed: () {},
+                  onPressed: () => cubit.addCurrentDateInMessage(),
                   text: 'Date',
                   iconPath: 'assets/icons/calendar_month.svg',
                 ),
@@ -68,8 +70,7 @@ class MessageContainer extends StatelessWidget {
               10.horizontalSpace,
               Expanded(
                 child: CustomButton.withIcon(
-                  // onPressed: () => cubit.addCurrentTimeInMessage(),
-                  onPressed: () {},
+                  onPressed: () => cubit.addCurrentTimeInMessage(),
                   text: 'Time',
                   iconPath: 'assets/icons/avg_pace.svg',
                 ),
@@ -77,8 +78,7 @@ class MessageContainer extends StatelessWidget {
               10.horizontalSpace,
               Expanded(
                 child: CustomButton.withIcon(
-                  // onPressed: () => cubit.addMessageIDInMessage(),
-                  onPressed: () {},
+                  onPressed: () => cubit.addMessageIDInMessage(),
                   text: 'Message ID',
                   iconPath: 'assets/icons/tag.svg',
                 ),

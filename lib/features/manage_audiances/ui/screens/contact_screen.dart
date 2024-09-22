@@ -51,10 +51,6 @@ class _ContactScreenState extends State<ContactScreen> with RestorationMixin {
   void didChangeDependencies() {
     super.didChangeDependencies();
     args = ModalRoute.of(context)!.settings.arguments as Arguments?;
-
-    // selctedContacts =
-    //     ModalRoute.of(context)!.settings.arguments as List<Contact>?;
-    // print(selctedContacts);
   }
 
   @override
