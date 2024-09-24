@@ -1,12 +1,17 @@
+import 'dart:io';
+
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
 import 'package:bulk_app/features/manage_audiances/ui/widgets/manage_audiances_widgets/audiance_item.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:simple_vcard_parser/simple_vcard_parser.dart';
 
 import '../../../../core/theming/styles.dart';
 
@@ -22,6 +27,8 @@ class ChooseCsvFileOrSelectAudianceContainer extends StatefulWidget {
 
 class _ChooseCsvFileOrSelectAudianceContainerState
     extends State<ChooseCsvFileOrSelectAudianceContainer> {
+  final List<Contact> _contacts = [];
+  String? filePath;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<StartCampaginCubit, StartCampaginState>(
@@ -74,7 +81,10 @@ class _ChooseCsvFileOrSelectAudianceContainerState
                         padding: EdgeInsets.symmetric(vertical: 10.h),
                         fontSize: 14.sp,
                         backgroundColor: ColorsManager.teal400,
-                        onPressed: () {},
+                        onPressed: () {
+                          print('QQQQ ');
+                          pickAndImportVCF();
+                        },
                         iconPath: 'assets/icons/contact_page.svg'),
                   ),
                 ],
@@ -100,6 +110,64 @@ class _ChooseCsvFileOrSelectAudianceContainerState
       },
     );
   }
+
+  Future<void> pickAndImportVCF() async {
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['vcf'],
+      );
+      if (result != null) {
+        String? filePath = result.files.single.path;
+        if (filePath != null) {
+          String vCardString = await File(filePath).readAsString();
+          print("vCardString $vCardString");
+
+          // print("vc $vc");
+          List<VCard> vacards = [];
+          List<String> vCards = vCardString.split(RegExp(r'(?=BEGIN:VCARD)'));
+          for (String vCard in vCards) {
+            VCard vc = VCard(vCardString);
+            vacards.add(vc);
+          }
+          for (VCard vCard in vacards) {
+            Contact contact = Contact(displayName: vCard.nickname ?? '');
+            _contacts.add(contact);
+            print(" vCard.nickname ${vCard.typedTelephone}");
+          }
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Contacts imported successfully!')),
+          );
+        }
+      }
+    } catch (e) {
+      print('Error importing contacts: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Contacts imported $e')),
+        );
+      }
+    }
+  }
+  // void _pickFile() async {
+  //   final result = await FilePicker.platform.pickFiles(allowMultiple: false);
+  //   // Import contact from vCard
+  //   final contact = Contact.fromVCard('BEGIN:VCARD\n'
+  //       'VERSION:3.0\n'
+  //       'N:;Joe;;;\n'
+  //       'TEL;TYPE=HOME:123456\n'
+  //       'END:VCARD');
+  //   if (result == null) return;
+  //   filePath = result.files.single.path!;
+  //   final input = File(filePath!).openRead();
+  //   final fields = await input
+  //       .transform(utf8.decoder)
+  //       .transform(const CsvToListConverter())
+  //       .toList();
+  //   setState(() {
+  //     _data = fields;
+  //   });
+  // }
 
   Future<dynamic> buildBottomSheet(BuildContext context,
       List<Audience>? audiences, StartCampaginCubit cubit) {

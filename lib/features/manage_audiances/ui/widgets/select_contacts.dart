@@ -36,11 +36,19 @@ class DeviceMultiContactSelectionState
   }
 
   Future<void> _loadContacts() async {
-    if (await flutter_contacts.FlutterContacts.requestPermission()) {
-      final contacts = await flutter_contacts.FlutterContacts.getContacts(withProperties: true);
-      isLoading = false;
-      print('contactssss${contacts.length}');
-      setState(() => _contacts = contacts);
+    print('contactssssfirst');
+    try {
+      if (await flutter_contacts.FlutterContacts.requestPermission()) {
+        print('contactsssssecond');
+        final contacts = await flutter_contacts.FlutterContacts.getContacts(
+            withProperties: true);
+
+        isLoading = false;
+        print('contactssss${contacts.length}');
+        setState(() => _contacts = contacts);
+      }
+    } catch (e) {
+      print(e);
     }
   }
 

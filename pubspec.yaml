@@ -70,6 +70,11 @@ dependencies:
   showcaseview: ^3.0.0
   flutter_slidable: ^3.1.1
   flutter_contacts: ^1.1.9+2
+  file_picker: ^8.1.2
+  csv: ^6.0.0
+  open_file: ^3.5.5
+  simple_vcard_parser: ^0.2.0
+
 dev_dependencies:
 
   flutter_test:
