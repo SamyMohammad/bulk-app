@@ -132,25 +132,8 @@ class ContactScreenCubit extends Cubit<ContactScreenState> {
     // );
     final contacts = await _contactsService.getContacts();
     print('contactscontacts${contacts?.length}');
-    if (contacts != null) {
-      if (contacts.isNotEmpty) {
-        print(contacts);
-        // emit(ContactsSuccess(contacts: contacts));
-      } else {
-        // emit(
-        // ContactsFailure(
-        //   contacts: state.contacts,
-        //   errorMessage: 'No contacts were found on the device',
-        // ),
-        // );
-      }
-    } else {
-      // emit(
-      //   ContactsFailure(
-      //     contacts: state.contacts,
-      //     errorMessage: 'Unable to fetch contacts',
-      //   ),
-      // );
+    if (contacts != null && contacts.isNotEmpty) {
+      print(contacts);
     }
   }
 }

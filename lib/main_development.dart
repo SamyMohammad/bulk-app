@@ -3,6 +3,7 @@ import 'package:bulk_app/core/helpers/bloc_observer.dart';
 import 'package:bulk_app/core/helpers/constants.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/helpers/language.dart';
+import 'package:bulk_app/core/helpers/route_observer.dart';
 import 'package:bulk_app/core/helpers/shared_pref_helper.dart';
 import 'package:bulk_app/core/routing/app_router.dart';
 import 'package:bulk_app/core/routing/routes.dart';
@@ -62,6 +63,7 @@ class BulkApp extends StatelessWidget {
             scaffoldBackgroundColor: ColorsManager.darkBackGround,
           ),
           debugShowCheckedModeBanner: false,
+          navigatorObservers: [ObserverUtils.routeObserver],
           initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));

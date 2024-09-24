@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TemplateItem extends StatelessWidget {
-  final Templates template;
+  final Template template;
   const TemplateItem({super.key, required this.template});
 
   @override
@@ -89,18 +89,19 @@ class TemplateItem extends StatelessWidget {
   }
 
   editButtonOnPressed(BuildContext context) {
-     Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (_) => BlocProvider(
-                create: (context) => getIt<AddTemplateCubit>()..emitGetTemplatesByIdStates( template.id!),
-                child: AddTemplatesScreen(
-                  isEdit: true,
-                  templateId: template.id,
-                ),
-              ),
-            ),
-          );
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => BlocProvider(
+          create: (context) => getIt<AddTemplateCubit>()
+            ..emitGetTemplatesByIdStates(template.id!),
+          child: AddTemplatesScreen(
+            isEdit: true,
+            templateId: template.id,
+          ),
+        ),
+      ),
+    );
   }
 }
 

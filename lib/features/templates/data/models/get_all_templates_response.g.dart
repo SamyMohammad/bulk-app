@@ -9,7 +9,7 @@ part of 'get_all_templates_response.dart';
 TemplatesData _$TemplatesDataFromJson(Map<String, dynamic> json) =>
     TemplatesData(
       templates: (json['templates'] as List<dynamic>?)
-          ?.map((e) => Templates.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Template.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -18,12 +18,12 @@ Map<String, dynamic> _$TemplatesDataToJson(TemplatesData instance) =>
       'templates': instance.templates,
     };
 
-Templates _$TemplatesFromJson(Map<String, dynamic> json) => Templates(
+Template _$TemplateFromJson(Map<String, dynamic> json) => Template(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$TemplatesToJson(Templates instance) => <String, dynamic>{
+Map<String, dynamic> _$TemplateToJson(Template instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
     };

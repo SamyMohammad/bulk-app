@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/resources/app_strings.dart';
+import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
 import 'package:bulk_app/features/account_settings/widgets/show_screen_function.dart';
 import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
@@ -92,6 +93,55 @@ class HomeScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 HomeContainer(
+                  fromAnimation: 150,
+                  animationDuration: 1000,
+                  heightContainer: context.height * .22,
+                  title: AppStrings.superToolsTitle.tr(),
+                  body: Padding(
+                    padding: EdgeInsets.only(top: 11.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        BounceInRight(
+                          animate: true,
+                          delay: const Duration(milliseconds: 2000),
+                          child: SmartToolsContainer(
+                            isCampaginHistory: true,
+                            onTap: () {},
+                            title: AppStrings.campaignsHistory.tr(),
+                            iconName: 'assets/icons/asset 6.svg',
+                          ),
+                        ),
+                        BounceInRight(
+                          delay: const Duration(milliseconds: 2200),
+                          animate: true,
+                          child: SmartToolsContainer(
+                            onTap: () =>
+                                context.pushNamed(Routes.templatesScreen),
+                            isCampaginHistory: false,
+                            title: AppStrings.templates.tr(),
+                            iconName: 'assets/icons/asset 5.svg',
+                          ),
+                        ),
+                        BounceInRight(
+                          delay: const Duration(milliseconds: 2400),
+                          animate: true,
+                          child: SmartToolsContainer(
+                            onTap: () =>
+                                context.pushNamed(Routes.manageAudiances),
+                            isCampaginHistory: false,
+                            title: AppStrings.manageAudiences.tr(),
+                            iconName: 'assets/icons/asset 4.svg',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                HomeContainer(
                   fromAnimation: 100,
                   animationDuration: 1000,
                   title: AppStrings.directChatTitle.tr(),
@@ -131,44 +181,6 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 20.h,
-                ),
-                HomeContainer(
-                  fromAnimation: 150,
-                  animationDuration: 1000,
-                  heightContainer: context.height * .22,
-                  title: AppStrings.superToolsTitle.tr(),
-                  body: Padding(
-                    padding: EdgeInsets.only(top: 11.h),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        BounceInRight(
-                          animate: true,
-                          delay: const Duration(milliseconds: 2000),
-                          child: SmartToolsContainer(
-                            title: AppStrings.whatsBot.tr(),
-                            iconName: 'assets/icons/asset 7.svg',
-                          ),
-                        ),
-                        BounceInRight(
-                          delay: const Duration(milliseconds: 2200),
-                          animate: true,
-                          child: SmartToolsContainer(
-                            title: AppStrings.groupsGrabber.tr(),
-                            iconName: 'assets/icons/asset 8.svg',
-                          ),
-                        ),
-                        BounceInRight(
-                          delay: const Duration(milliseconds: 2400),
-                          animate: true,
-                          child: SmartToolsContainer(
-                            title: AppStrings.contactsGrabber.tr(),
-                            iconName: 'assets/icons/asset 9.svg',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ],
             ),

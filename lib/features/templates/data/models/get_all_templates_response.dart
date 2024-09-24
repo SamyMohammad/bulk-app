@@ -4,7 +4,7 @@ part 'get_all_templates_response.g.dart';
 
 @JsonSerializable()
 class TemplatesData {
-  List<Templates>? templates;
+  List<Template>? templates;
 
   TemplatesData({this.templates});
 
@@ -15,26 +15,32 @@ class TemplatesData {
 }
 
 @JsonSerializable()
-class Templates {
+class Template {
   int? id;
   String? name;
 
-  Templates({this.id, this.name});
+  Template({this.id, this.name});
 
-  factory Templates.fromJson(Map<String, dynamic> json) =>
-      _$TemplatesFromJson(json);
+  factory Template.fromJson(Map<String, dynamic> json) =>
+      _$TemplateFromJson(json);
 
-  Map<String, dynamic> toJson() => _$TemplatesToJson(this);
+  Map<String, dynamic> toJson() => _$TemplateToJson(this);
 }
-@JsonSerializable()
 
-class TemplateForUpdate extends Templates {
+@JsonSerializable()
+class TemplateForUpdate extends Template {
   String? message;
   String? file;
   String? createdAt;
   int? userId;
 
-  TemplateForUpdate({this.message, this.file, this.createdAt, this.userId, super.id, super.name});
+  TemplateForUpdate(
+      {this.message,
+      this.file,
+      this.createdAt,
+      this.userId,
+      super.id,
+      super.name});
 
   factory TemplateForUpdate.fromJson(Map<String, dynamic> json) =>
       _$TemplateForUpdateFromJson(json);
