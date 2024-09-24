@@ -47,6 +47,25 @@ class MessageContainerWidget extends StatelessWidget {
             controller: context.read<AddTemplateCubit>().messageController,
           ),
           20.verticalSpace,
+
+          Row(
+            children: [
+              Text('Select Message From  ',
+                  style:
+                      TextStyles.font24limeExtraBold.copyWith(fontSize: 16.sp)),
+              Expanded(
+                child: CustomButton.withIcon(
+                  iconPath: 'assets/icons/comment_bank.svg',
+                  onPressed: () {},
+                  fontSize: 13.sp,
+                  text: 'Templates',
+                  // icon: Icons.tag,
+                ),
+              )
+            ],
+          ),
+          15.verticalSpace,
+
           Row(
             children: [
               Text(
@@ -60,6 +79,7 @@ class MessageContainerWidget extends StatelessWidget {
               )
             ],
           ),
+
           Row(
             children: [
               Expanded(

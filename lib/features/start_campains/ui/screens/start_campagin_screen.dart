@@ -22,7 +22,10 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
   @override
   void initState() {
     super.initState();
-    context.read<StartCampaginCubit>().fetchAudienceList();
+    Future.wait([
+      context.read<StartCampaginCubit>().fetchAudienceList(),
+      context.read<StartCampaginCubit>().emitGetAllTemplatesStates(),
+    ]);
   }
 
   @override
@@ -30,7 +33,10 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
     // TODO: implement didPopNext
     super.didPopNext();
     print('didPopNext--');
-    context.read<StartCampaginCubit>().fetchAudienceList();
+    Future.wait([
+      context.read<StartCampaginCubit>().fetchAudienceList(),
+      context.read<StartCampaginCubit>().emitGetAllTemplatesStates(),
+    ]);
   }
 
   @override

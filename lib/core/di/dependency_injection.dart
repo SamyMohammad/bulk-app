@@ -50,7 +50,8 @@ Future<void> setupGetIt() async {
       () => ContactScreenCubit(getIt(), getIt()));
 
   getIt.registerFactory<WhatsbotsCubit>(() => WhatsbotsCubit());
-  getIt.registerFactory<StartCampaginCubit>(() => StartCampaginCubit(getIt()));
+  getIt.registerFactory<StartCampaginCubit>(
+      () => StartCampaginCubit(getIt(), getIt()));
 
   //App Media
   getIt.registerLazySingleton<AppMedia>(

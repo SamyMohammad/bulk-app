@@ -19,6 +19,7 @@ mixin _$StartCampaginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() selectedTemplate,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
@@ -27,6 +28,7 @@ mixin _$StartCampaginState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
@@ -35,6 +37,7 @@ mixin _$StartCampaginState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? selectedTemplate,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
@@ -44,6 +47,7 @@ mixin _$StartCampaginState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -53,6 +57,7 @@ mixin _$StartCampaginState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -62,6 +67,7 @@ mixin _$StartCampaginState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
@@ -133,6 +139,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() selectedTemplate,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
@@ -144,6 +151,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
@@ -155,6 +163,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? selectedTemplate,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
@@ -170,6 +179,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -182,6 +192,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -194,6 +205,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
@@ -208,6 +220,131 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements StartCampaginState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$SelectedTemplateImplCopyWith<$Res> {
+  factory _$$SelectedTemplateImplCopyWith(_$SelectedTemplateImpl value,
+          $Res Function(_$SelectedTemplateImpl) then) =
+      __$$SelectedTemplateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SelectedTemplateImplCopyWithImpl<$Res>
+    extends _$StartCampaginStateCopyWithImpl<$Res, _$SelectedTemplateImpl>
+    implements _$$SelectedTemplateImplCopyWith<$Res> {
+  __$$SelectedTemplateImplCopyWithImpl(_$SelectedTemplateImpl _value,
+      $Res Function(_$SelectedTemplateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SelectedTemplateImpl implements SelectedTemplate {
+  const _$SelectedTemplateImpl();
+
+  @override
+  String toString() {
+    return 'StartCampaginState.selectedTemplate()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SelectedTemplateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() selectedTemplate,
+    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
+  }) {
+    return selectedTemplate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
+    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
+  }) {
+    return selectedTemplate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? selectedTemplate,
+    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
+    required TResult orElse(),
+  }) {
+    if (selectedTemplate != null) {
+      return selectedTemplate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
+  }) {
+    return selectedTemplate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
+  }) {
+    return selectedTemplate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
+    required TResult orElse(),
+  }) {
+    if (selectedTemplate != null) {
+      return selectedTemplate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectedTemplate implements StartCampaginState {
+  const factory SelectedTemplate() = _$SelectedTemplateImpl;
 }
 
 /// @nodoc
@@ -284,6 +421,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() selectedTemplate,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
@@ -295,6 +433,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
@@ -306,6 +445,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? selectedTemplate,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
@@ -321,6 +461,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -333,6 +474,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -345,6 +487,7 @@ class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
@@ -439,6 +582,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() selectedTemplate,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
@@ -450,6 +594,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
@@ -461,6 +606,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? selectedTemplate,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
@@ -476,6 +622,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -488,6 +635,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -500,6 +648,7 @@ class _$StateOfButtonImpl implements _StateOfButton {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
@@ -566,6 +715,7 @@ class _$SelectedAudienceImpl implements SelectedAudience {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() selectedTemplate,
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
@@ -577,6 +727,7 @@ class _$SelectedAudienceImpl implements SelectedAudience {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
@@ -588,6 +739,7 @@ class _$SelectedAudienceImpl implements SelectedAudience {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? selectedTemplate,
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
@@ -603,6 +755,7 @@ class _$SelectedAudienceImpl implements SelectedAudience {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
     required TResult Function(_PickedMultiMediaAndFiles value)
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
@@ -615,6 +768,7 @@ class _$SelectedAudienceImpl implements SelectedAudience {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
     TResult? Function(_PickedMultiMediaAndFiles value)?
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
@@ -627,6 +781,7 @@ class _$SelectedAudienceImpl implements SelectedAudience {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,

@@ -12,7 +12,7 @@ part 'templates_state.dart';
 class TemplatesCubit extends Cubit<TemplatesState> {
   TemplatesCubit(this._templatesRepo) : super(const TemplatesState.initial());
   late final TemplatesRepo _templatesRepo;
-  List<Templates>? templates = [];
+  List<Template>? templates = [];
   void emitGetAllTemplatesStates() async {
     emit(const TemplatesState.getAllTemplatesLoadingState());
 
@@ -51,12 +51,14 @@ class TemplatesCubit extends Cubit<TemplatesState> {
   }
 
   void getFilteredTemplatesListFrom({required String? query}) {
-    List<Templates>? templates = filterTemplates(query);
+    List<Template>? templates = filterTemplates(query);
 
     if (templates?.isNotEmpty ?? false) {
-      emit(TemplatesState.getAllTemplatesSuccessState(TemplatesData(templates: templates)));
+      emit(TemplatesState.getAllTemplatesSuccessState(
+          TemplatesData(templates: templates)));
     } else {
-      emit(TemplatesState.getAllTemplatesEmptyState(TemplatesData(templates: [])));
+      emit(TemplatesState.getAllTemplatesEmptyState(
+          TemplatesData(templates: [])));
     }
   }
 

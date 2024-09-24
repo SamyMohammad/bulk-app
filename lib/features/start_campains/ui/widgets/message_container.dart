@@ -1,6 +1,9 @@
+import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/theming/styles.dart';
 import 'package:bulk_app/core/widgets/app_text_field.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
+import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
+import 'package:bulk_app/features/templates/ui/widgets/templates_screen_widgets/template_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,9 +11,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/widgets/custom_button.dart';
 
-class MessageContainer extends StatelessWidget {
+class MessageContainer extends StatefulWidget {
   const MessageContainer({super.key});
 
+  @override
+  State<MessageContainer> createState() => _MessageContainerState();
+}
+
+class _MessageContainerState extends State<MessageContainer> {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<StartCampaginCubit>();
@@ -45,6 +53,24 @@ class MessageContainer extends StatelessWidget {
             controller: cubit.messageController,
           ),
           20.verticalSpace,
+          Row(
+            children: [
+              Text('Select Message From  ',
+                  style:
+                      TextStyles.font24limeExtraBold.copyWith(fontSize: 16.sp)),
+              Expanded(
+                child: CustomButton.withIcon(
+                  iconPath: 'assets/icons/comment_bank.svg',
+                  onPressed: () =>
+                      buildBottomSheet(context, cubit.templates, cubit),
+                  fontSize: 13.sp,
+                  text: 'Templates',
+                  // icon: Icons.tag,
+                ),
+              )
+            ],
+          ),
+          15.verticalSpace,
           Row(
             children: [
               Text(
@@ -88,5 +114,44 @@ class MessageContainer extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<dynamic> buildBottomSheet(BuildContext context,
+      List<Template>? templates, StartCampaginCubit cubit) {
+    return showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return BlocProvider.value(
+            value: cubit,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: ColorsManager.darkBackGround,
+                borderRadius:
+                    BorderRadiusDirectional.vertical(top: Radius.circular(18)),
+              ),
+              height: context.height * 0.5,
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      context.read<StartCampaginCubit>().selectTemplate(
+                            templates?[index] ?? Template(),
+                          );
+                      Navigator.pop(context);
+                      setState(() {});
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: TemplateItem(
+                        template: templates?[index] ?? Template(),
+                      ),
+                    ),
+                  );
+                },
+                itemCount: templates?.length ?? 0,
+              ),
+            ),
+          );
+        });
   }
 }
