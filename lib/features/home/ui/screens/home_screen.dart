@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
           ],
-          isHome: true,
+          isHome: false,
           title: AppStrings.homeTitle.tr(),
         ),
         body: Padding(

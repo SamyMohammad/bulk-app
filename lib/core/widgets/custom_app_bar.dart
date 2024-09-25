@@ -18,11 +18,14 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   // Here's the magic! Tell Flutter the preferred size
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(
+        isHome ? 120.sp : 70.sp,
+      );
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      // toolbarHeight: isHome ? 320.sp : 70.sp,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(19.sp),

@@ -62,7 +62,7 @@ class _ChooseCsvFileOrSelectAudianceContainerState
                 children: [
                   Expanded(
                     child: CustomButton.withIcon(
-                        text: 'Select Contacts',
+                        text: 'Select Audiance',
                         padding: EdgeInsets.symmetric(vertical: 10.h),
                         fontSize: 14.sp,
                         onPressed: () {
@@ -74,19 +74,19 @@ class _ChooseCsvFileOrSelectAudianceContainerState
                         backgroundColor: const Color(0xFF10B981),
                         iconPath: 'assets/icons/description.svg'),
                   ),
-                  10.horizontalSpace,
-                  Expanded(
-                    child: CustomButton.withIcon(
-                        text: 'Choose File',
-                        padding: EdgeInsets.symmetric(vertical: 10.h),
-                        fontSize: 14.sp,
-                        backgroundColor: ColorsManager.teal400,
-                        onPressed: () {
-                          print('QQQQ ');
-                          pickAndImportVCF();
-                        },
-                        iconPath: 'assets/icons/contact_page.svg'),
-                  ),
+                  // 10.horizontalSpace,
+                  // Expanded(
+                  //   child: CustomButton.withIcon(
+                  //       text: 'Choose File',
+                  //       padding: EdgeInsets.symmetric(vertical: 10.h),
+                  //       fontSize: 14.sp,
+                  //       backgroundColor: ColorsManager.teal400,
+                  //       onPressed: () {
+                  //         print('QQQQ ');
+                  //         pickAndImportVCF();
+                  //       },
+                  //       iconPath: 'assets/icons/contact_page.svg'),
+                  // ),
                 ],
               ),
               if (cubit.selectedAudience != null) 10.verticalSpace,
