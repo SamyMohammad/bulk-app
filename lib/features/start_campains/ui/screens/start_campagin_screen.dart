@@ -1,7 +1,6 @@
 import 'package:bulk_app/core/helpers/route_observer.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
-import 'package:bulk_app/features/start_campains/ui/widgets/add_files_container.dart';
 import 'package:bulk_app/features/start_campains/ui/widgets/choose_File_or_select_audiance_container.dart';
 import 'package:bulk_app/features/start_campains/ui/widgets/manage_contacts_and_templates_row.dart';
 import 'package:flutter/material.dart';
@@ -62,8 +61,8 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
               15.verticalSpace,
               const MessageContainer(),
               15.verticalSpace,
-              const AddFilesContainer(),
-              15.verticalSpace,
+              // const AddFilesContainer(),
+              // 15.verticalSpace,
             ],
           ),
         ),

@@ -45,7 +45,8 @@ class HomeDrawer extends StatelessWidget {
         ),
       ),
       DrawerListTile(
-        onTap: () =>Navigator.of(context).pushNamed(Routes.startCampaginScreen),
+        onTap: () =>
+            Navigator.of(context).pushNamed(Routes.startCampaginScreen),
         iconPath: 'assets/icons/asset 3.svg',
         title: AppStrings.startCampaign.tr(),
       ),
@@ -62,6 +63,7 @@ class HomeDrawer extends StatelessWidget {
       DrawerListTile(
         onTap: () {},
         iconPath: 'assets/icons/asset 6.svg',
+        
         title: AppStrings.campaignsHistory.tr(),
       ),
     ];
@@ -82,16 +84,16 @@ class HomeDrawer extends StatelessWidget {
         iconPath: 'assets/icons/asset 7.svg',
         title: AppStrings.whatsBot.tr(),
       ),
-      DrawerListTile(
-        onTap: () {},
-        iconPath: 'assets/icons/asset 8.svg',
-        title: AppStrings.groupsGrabber.tr(),
-      ),
-      DrawerListTile(
-        onTap: () {},
-        iconPath: 'assets/icons/asset 9.svg',
-        title: AppStrings.contactsGrabber.tr(),
-      ),
+      // DrawerListTile(
+      //   onTap: () {},
+      //   iconPath: 'assets/icons/asset 8.svg',
+      //   title: AppStrings.groupsGrabber.tr(),
+      // ),
+      // DrawerListTile(
+      //   onTap: () {},
+      //   iconPath: 'assets/icons/asset 9.svg',
+      //   title: AppStrings.contactsGrabber.tr(),
+      // ),
     ];
     return superToolsWidgets;
   }

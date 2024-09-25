@@ -22,12 +22,14 @@ class AppTextField extends StatelessWidget {
   final String? restorationId;
   final int? maxLine;
   final Validator validator;
+  final bool? isEnabled;
   final Color? hintTextColor;
   final Function(String)? onChanged;
   const AppTextField(
       {super.key,
       this.borderRadius,
       this.restorationId,
+      this.isEnabled,
       this.contentPadding,
       this.onChanged,
       this.hintTextColor,
@@ -53,6 +55,7 @@ class AppTextField extends StatelessWidget {
         restorationId: restorationId,
         controller: controller,
         validator: validator,
+        enabled: isEnabled,
         maxLines: maxLine,
         onChanged: onChanged,
         decoration: InputDecoration(
@@ -73,6 +76,14 @@ class AppTextField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
               ),
           enabledBorder: enabledBorder ??
+              OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: ColorsManager.saerchTextFieldHintColor,
+                  width: 1.3,
+                ),
+                borderRadius: BorderRadius.circular(borderRadius ?? 30.r),
+              ),
+          disabledBorder: enabledBorder ??
               OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: ColorsManager.saerchTextFieldHintColor,

@@ -48,6 +48,7 @@ class _MessageContainerState extends State<MessageContainer> {
 
           AppTextField(
             hintText: 'Subject',
+            isEnabled: false,
             maxLine: 5,
             borderRadius: 18.r,
             controller: cubit.messageController,
@@ -71,46 +72,46 @@ class _MessageContainerState extends State<MessageContainer> {
             ],
           ),
           15.verticalSpace,
-          Row(
-            children: [
-              Text(
-                'Smart Tools',
-                style: TextStyles.font24limeExtraBold,
-              ),
-              5.horizontalSpace,
-              const Text(
-                '(Optional)',
-                style: TextStyle(color: Colors.white54),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: CustomButton.withIcon(
-                  onPressed: () => cubit.addCurrentDateInMessage(),
-                  text: 'Date',
-                  iconPath: 'assets/icons/calendar_month.svg',
-                ),
-              ),
-              10.horizontalSpace,
-              Expanded(
-                child: CustomButton.withIcon(
-                  onPressed: () => cubit.addCurrentTimeInMessage(),
-                  text: 'Time',
-                  iconPath: 'assets/icons/avg_pace.svg',
-                ),
-              ),
-              10.horizontalSpace,
-              Expanded(
-                child: CustomButton.withIcon(
-                  onPressed: () => cubit.addMessageIDInMessage(),
-                  text: 'Message ID',
-                  iconPath: 'assets/icons/tag.svg',
-                ),
-              )
-            ],
-          )
+          // Row(
+          //   children: [
+          //     Text(
+          //       'Smart Tools',
+          //       style: TextStyles.font24limeExtraBold,
+          //     ),
+          //     5.horizontalSpace,
+          //     const Text(
+          //       '(Optional)',
+          //       style: TextStyle(color: Colors.white54),
+          //     )
+          //   ],
+          // ),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: CustomButton.withIcon(
+          //         onPressed: () => cubit.addCurrentDateInMessage(),
+          //         text: 'Date',
+          //         iconPath: 'assets/icons/calendar_month.svg',
+          //       ),
+          //     ),
+          //     10.horizontalSpace,
+          //     Expanded(
+          //       child: CustomButton.withIcon(
+          //         onPressed: () => cubit.addCurrentTimeInMessage(),
+          //         text: 'Time',
+          //         iconPath: 'assets/icons/avg_pace.svg',
+          //       ),
+          //     ),
+          //     10.horizontalSpace,
+          //     Expanded(
+          //       child: CustomButton.withIcon(
+          //         onPressed: () => cubit.addMessageIDInMessage(),
+          //         text: 'Message ID',
+          //         iconPath: 'assets/icons/tag.svg',
+          //       ),
+          //     )
+          //   ],
+          // )
         ],
       ),
     );
@@ -119,6 +120,7 @@ class _MessageContainerState extends State<MessageContainer> {
   Future<dynamic> buildBottomSheet(BuildContext context,
       List<Template>? templates, StartCampaginCubit cubit) {
     return showModalBottomSheet(
+      
         context: context,
         builder: (context) {
           return BlocProvider.value(
