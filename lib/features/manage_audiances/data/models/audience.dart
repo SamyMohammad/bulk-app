@@ -24,5 +24,4 @@ class Audience {
   factory Audience.fromJson(Map<String, dynamic> json) =>
       _$AudienceFromJson(json);
   Map<String, dynamic> toJson() => _$AudienceToJson(this);
-  
 }

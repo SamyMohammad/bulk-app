@@ -25,12 +25,13 @@ class ContactScreenState with _$ContactScreenState {
 // update contacts in server
   const factory ContactScreenState.updateContactsInServerLoadingState() =
       UpdateContactsInServerLoadingState;
-        const factory ContactScreenState.updateContactsInServerSuccessState() =
+  const factory ContactScreenState.updateContactsInServerSuccessState() =
       UpdateContactsInServerSuccessState;
-        const factory ContactScreenState.updateContactsInServerErrorState(ApiErrorModel error) =
-      UpdateContactsInServerErrorState;
+  const factory ContactScreenState.updateContactsInServerErrorState(
+      ApiErrorModel error) = UpdateContactsInServerErrorState;
   const factory ContactScreenState.error(ApiErrorModel error) = ContactsError;
 
-  const factory ContactScreenState.isValidButtonState(bool isValid) = IsValidButtonState;
+  const factory ContactScreenState.isValidButtonState(bool isValid) =
+      IsValidButtonState;
   // const factory ContactScreenState.isNotValidButtonState() = IsNotValidButtonState;
 }

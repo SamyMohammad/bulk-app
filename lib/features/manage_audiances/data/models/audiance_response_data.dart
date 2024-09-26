@@ -14,6 +14,7 @@ class AudiencesListData {
 
   Map<String, dynamic> toJson() => _$AudiencesListDataToJson(this);
 }
+
 @JsonSerializable()
 class AudienceData {
   Audience? audience;
@@ -24,5 +25,4 @@ class AudienceData {
       _$AudienceDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$AudienceDataToJson(this);
-
 }

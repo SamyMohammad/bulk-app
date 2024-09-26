@@ -2,22 +2,44 @@ import 'package:animate_do/animate_do.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/routing/routes.dart';
+import 'package:bulk_app/core/test/simulate_campain.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
 import 'package:bulk_app/features/account_settings/widgets/show_screen_function.dart';
 import 'package:bulk_app/features/home/ui/widgets/drawer.dart';
 import 'package:bulk_app/features/home/ui/widgets/home_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/smart_tools_container.dart';
 import 'package:bulk_app/features/home/ui/widgets/whatsapp_number_text_field.dart';
+import 'package:bulk_app/features/shared/logic/cubit/shared_controller_cubit.dart';
 import 'package:easy_localization/easy_localization.dart' as local;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    final cubit = context.read<SharedControllerCubit>();
+    // cubit.emitSubscribeAccountSSEStates("22cf67e5-5322-4dcd-afcc-225c555dba1f");
+    cubit.listenToSSE("dc5d10dc-b11f-46e2-90f3-24cbbe2447c0");
+    cubit.emitgetAllAccountsStates();
+    final campaignMocker = CampaignMocker(const Duration(seconds: 2));
+
+    campaignMocker.campaignStream.listen((status) {
+      print('Campaign status: $status');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +65,18 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                // StreamBuilder<dynamic>(
+                //   stream:
+                //       context.read<SharedControllerCubit>().controller.stream,
+                //   builder: (context, snapshot) {
+                //     if (snapshot.hasData) {
+                //       return Center(child: Text('New event: ${snapshot.data}'));
+                //     } else if (snapshot.hasError) {
+                //       return Center(child: Text('Error: ${snapshot.error}'));
+                //     }
+                //     return const Center(child: CircularProgressIndicator());
+                //   },
+                // ),
                 SizedBox(
                   height: 20.h,
                 ),

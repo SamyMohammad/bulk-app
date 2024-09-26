@@ -74,6 +74,8 @@ dependencies:
   csv: ^6.0.0
   open_file: ^3.5.5
   simple_vcard_parser: ^0.2.0
+  flutter_client_sse: ^2.0.3
+  http: ^1.2.2
 
 dev_dependencies:
 

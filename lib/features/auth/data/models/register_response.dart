@@ -7,8 +7,8 @@ class RegisterData {
   String? email;
 
   RegisterData({this.id, this.email});
-    factory RegisterData.fromJson(Map<String, dynamic> json) =>
+  factory RegisterData.fromJson(Map<String, dynamic> json) =>
       _$RegisterDataFromJson(json);
-      
+
   Map<String, dynamic> toJson() => _$RegisterDataToJson(this);
 }

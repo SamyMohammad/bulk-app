@@ -1,3 +1,5 @@
+import 'package:bulk_app/core/di/dependency_injection.dart';
+import 'package:bulk_app/core/helpers/app_preference.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:flutter/material.dart';
@@ -17,16 +19,21 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is LoginErrorState || current is LoginSuccessState || current is LoginLoadingState,
+          current is LoginErrorState ||
+          current is LoginSuccessState ||
+          current is LoginLoadingState,
       listener: (context, state) {
         state.whenOrNull(
           loginLoadingState: () => startLoading(context),
           loginSuccessState: (loginResponse) {
+            getIt<AppPreferences>()
+                .setUserId(loginResponse.data?.user?.id.toString() ?? "");
             stopLoading(context);
-            context.pushNamedAndRemoveUntil(Routes.homeScreen, predicate: (context) => false);
+            context.pushNamedAndRemoveUntil(Routes.homeScreen,
+                predicate: (context) => false);
           },
           loginErrorState: (apiErrorModel) {
-            setupErrorState(context,apiErrorModel );
+            setupErrorState(context, apiErrorModel);
           },
         );
       },

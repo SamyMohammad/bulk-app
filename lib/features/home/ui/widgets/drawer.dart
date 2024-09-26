@@ -63,7 +63,6 @@ class HomeDrawer extends StatelessWidget {
       DrawerListTile(
         onTap: () {},
         iconPath: 'assets/icons/asset 6.svg',
-        
         title: AppStrings.campaignsHistory.tr(),
       ),
     ];

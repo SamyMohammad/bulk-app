@@ -5,6 +5,8 @@ class ApiConstants {
   static const String register = "auth/register";
   static const String template = "template";
   static const String audience = "audience";
+  static const String campaign = "campaign";
+  static const String account = "account";
 }
 
 class ApiErrors {

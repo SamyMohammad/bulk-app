@@ -25,8 +25,7 @@ class CustomBlocObserver extends BlocObserver {
 
     if (kDebugMode) {
       print(transition);
-            print('onTransition -- ${bloc.runtimeType}, $transition');
-
+      print('onTransition -- ${bloc.runtimeType}, $transition');
     }
   }
 

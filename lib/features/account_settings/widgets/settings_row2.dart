@@ -18,7 +18,7 @@ class SettingsRow2 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-           AppStrings.language.tr(),
+          AppStrings.language.tr(),
           style: TextStyles.font15whiteMedium.copyWith(
             color: ColorsManager.limeColor,
           ),

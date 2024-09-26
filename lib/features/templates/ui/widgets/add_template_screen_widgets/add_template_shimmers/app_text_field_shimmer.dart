@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
-class AppTextFieldShimmer  extends StatelessWidget {
-  const AppTextFieldShimmer ({super.key});
+class AppTextFieldShimmer extends StatelessWidget {
+  const AppTextFieldShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-                baseColor: ColorsManager.saerchTextFieldHintColor,
-                  highlightColor: Colors.white,
+      baseColor: ColorsManager.saerchTextFieldHintColor,
+      highlightColor: Colors.white,
       child: Container(
-           width: double.infinity,
+        width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         decoration: BoxDecoration(
             border: Border.all(

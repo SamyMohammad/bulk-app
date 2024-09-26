@@ -11,7 +11,7 @@ class BaseResponse<T> {
   ErrorData? error;
   @JsonKey(name: "data")
   T? data;
-  BaseResponse({this.error, required this.data,this.status});
+  BaseResponse({this.error, required this.data, this.status});
   factory BaseResponse.fromJson(
           Map<String, dynamic> json, T Function(Object? json) fromJsonT) =>
       _$BaseResponseFromJson(json, fromJsonT);

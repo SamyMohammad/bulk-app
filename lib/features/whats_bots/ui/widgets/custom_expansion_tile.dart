@@ -25,11 +25,10 @@ class CustomExpansionTile extends StatefulWidget {
 class _CustomExpansionTileState extends State<CustomExpansionTile> {
   @override
   Widget build(BuildContext context) {
-
     return Theme(
       data: Theme.of(context).copyWith(
         dividerColor: Colors.transparent,
-      ), 
+      ),
       child: ExpansionTile(
         childrenPadding: EdgeInsets.zero,
         tilePadding: EdgeInsets.zero,

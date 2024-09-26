@@ -79,7 +79,6 @@ class MessageBody extends StatelessWidget {
                   if (kDebugMode) {
                     print('DeviceMultiContactSelection: $result');
                   }
-
                 },
                 child: Text(
                   AppStrings.addFromCsv.tr(),

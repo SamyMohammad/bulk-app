@@ -10,10 +10,10 @@ class AddFileContainerShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-                baseColor: ColorsManager.saerchTextFieldHintColor,
-                  highlightColor: Colors.white,
+      baseColor: ColorsManager.saerchTextFieldHintColor,
+      highlightColor: Colors.white,
       child: Container(
-           width: double.infinity,
+        width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         decoration: BoxDecoration(
             border: Border.all(

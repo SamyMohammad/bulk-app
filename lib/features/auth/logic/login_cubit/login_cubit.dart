@@ -17,16 +17,14 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-
   void emitLoginStates() async {
     emit(const LoginState.loginLoadingState());
-    final response = await _authRepo
-        .login(LoginAndRegisterRequestBody(
-          email: emailController.text,
-          type: 'user',
-          password: passwordController.text,
-          spamCheck: '',
-        ));
+    final response = await _authRepo.login(LoginAndRegisterRequestBody(
+      email: emailController.text,
+      type: 'user',
+      password: passwordController.text,
+      spamCheck: '',
+    ));
     if (kDebugMode) {
       print('response----------$response');
     }
@@ -34,10 +32,9 @@ class LoginCubit extends Cubit<LoginState> {
       await saveUserToken(loginResponse.data?.user?.token ?? '');
       emit(LoginState.loginSuccessState(loginResponse));
     }, failure: (error) {
-      emit( LoginState.loginErrorState(error));
+      emit(LoginState.loginErrorState(error));
     });
   }
-
 
   Future<void> saveUserToken(String token) async {
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);

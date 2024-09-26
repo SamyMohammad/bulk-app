@@ -9,6 +9,7 @@ import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/m
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/ui/screens/contact_screen.dart';
 import 'package:bulk_app/features/manage_audiances/ui/screens/manage_audiances_screen.dart';
+import 'package:bulk_app/features/shared/logic/cubit/shared_controller_cubit.dart';
 import 'package:bulk_app/features/support/screens/support_screen.dart';
 import 'package:bulk_app/features/templates/logic/add_template_cubit/add_template_cubit.dart';
 import 'package:bulk_app/features/templates/logic/templates_cubit/templates_cubit.dart';
@@ -64,8 +65,14 @@ class AppRouter {
               child: child,
             );
           },
-          pageBuilder: (context, animation, secondaryAnimation) => BlocProvider(
-            create: (context) => getIt<HomeCubit>(),
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => getIt<HomeCubit>()),
+              BlocProvider(create: (context) => getIt<SharedControllerCubit>())
+            ],
+
+            // create: (context) => getIt<HomeCubit>(),
             child: const HomeScreen(),
           ),
         );

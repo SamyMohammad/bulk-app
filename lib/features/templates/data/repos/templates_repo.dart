@@ -29,10 +29,12 @@ class TemplatesRepo {
       return ApiResult.failure(ApiErrorModel());
     }
   }
-Future<ApiResult<BaseResponse>> updateTemplate(
-      UpdateTemplateRequestBody updateTemplateRequestBody ) async {
+
+  Future<ApiResult<BaseResponse>> updateTemplate(
+      UpdateTemplateRequestBody updateTemplateRequestBody) async {
     try {
-      final response = await _apiService.updateTemplate( updateTemplateRequestBody.id.toString(), updateTemplateRequestBody);
+      final response = await _apiService.updateTemplate(
+          updateTemplateRequestBody.id.toString(), updateTemplateRequestBody);
       if (response.status! >= 200 || response.status! < 300) {
         return ApiResult.success(response);
       } else {
@@ -55,13 +57,15 @@ Future<ApiResult<BaseResponse>> updateTemplate(
         return ApiResult.failure(
             ApiErrorModel(status: response.status, error: response.error));
       }
-    } catch  (errors) {
+    } catch (errors) {
       debugPrint('$errors');
-      return ApiResult.failure(ApiErrorModel(error: ErrorData(error: errors.toString())));
+      return ApiResult.failure(
+          ApiErrorModel(error: ErrorData(error: errors.toString())));
     }
   }
 
-Future<ApiResult<BaseResponse<GetTemplateByIdResponse>>> getTemplateById(int id) async {
+  Future<ApiResult<BaseResponse<GetTemplateByIdResponse>>> getTemplateById(
+      int id) async {
     try {
       final response = await _apiService.getTemplate(id.toString());
       if (response.status! >= 200 || response.status! < 300) {
@@ -70,14 +74,14 @@ Future<ApiResult<BaseResponse<GetTemplateByIdResponse>>> getTemplateById(int id)
         return ApiResult.failure(
             ApiErrorModel(status: response.status, error: response.error));
       }
-    } catch  (errors) {
+    } catch (errors) {
       debugPrint('$errors');
-      return ApiResult.failure(ApiErrorModel(error: ErrorData(error: errors.toString())));
+      return ApiResult.failure(
+          ApiErrorModel(error: ErrorData(error: errors.toString())));
     }
   }
 
-Future<ApiResult<BaseResponse>> deleteTemplate(
-      int id) async {
+  Future<ApiResult<BaseResponse>> deleteTemplate(int id) async {
     try {
       final response = await _apiService.deleteTemplate(id.toString());
       if (response.status! >= 200 || response.status! < 300) {
@@ -89,8 +93,8 @@ Future<ApiResult<BaseResponse>> deleteTemplate(
 
       // return ApiResult.success(response);
     } catch (errro) {
-      return ApiResult.failure(ApiErrorModel(error: ErrorData(error: errro.toString())));
+      return ApiResult.failure(
+          ApiErrorModel(error: ErrorData(error: errro.toString())));
     }
   }
-
 }

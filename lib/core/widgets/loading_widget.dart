@@ -8,10 +8,11 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return Center(
-    child: SpinKitWaveSpinner(
-      color: ColorsManager.containerTitleColor,
-      size: 80.0.sp,
-    ),
-  );  }
+    return Center(
+      child: SpinKitWaveSpinner(
+        color: ColorsManager.containerTitleColor,
+        size: 80.0.sp,
+      ),
+    );
+  }
 }

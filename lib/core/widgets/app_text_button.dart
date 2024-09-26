@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class AppTextButton extends StatelessWidget {
   final double? borderRadius;
   final Color? backgroundColor;
@@ -34,10 +33,9 @@ class AppTextButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius ?? 16.0),
           ),
         ),
-        backgroundColor: WidgetStatePropertyAll(
-          backgroundColor 
-          // ?? ColorsManager.mainBlue,
-        ),
+        backgroundColor: WidgetStatePropertyAll(backgroundColor
+            // ?? ColorsManager.mainBlue,
+            ),
         padding: WidgetStateProperty.all<EdgeInsets>(
           EdgeInsets.symmetric(
             horizontal: horizontalPadding?.w ?? 12.w,
