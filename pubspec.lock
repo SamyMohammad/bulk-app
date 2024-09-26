@@ -459,6 +459,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.1"
+  flutter_client_sse:
+    dependency: "direct main"
+    description:
+      name: flutter_client_sse
+      sha256: "4ce0297206473dfc064b255fe086713240002e149f52519bd48c21423e4aa5d2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
   flutter_contacts:
     dependency: "direct main"
     description:
@@ -723,7 +731,7 @@ packages:
     source: hosted
     version: "0.15.4"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: b9c29a161230ee03d3ccf545097fccd9b87a5264228c5d348202e0f0c28f9010

@@ -1,3 +1,4 @@
+import 'package:bulk_app/core/helpers/app_preference.dart';
 import 'package:bulk_app/core/helpers/contacts_service.dart';
 import 'package:bulk_app/core/helpers/media.dart';
 import 'package:bulk_app/core/networking/api_service.dart';
@@ -7,6 +8,9 @@ import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
+import 'package:bulk_app/features/shared/data/remote_data_source/shared_api_services.dart';
+import 'package:bulk_app/features/shared/data/repos/shared_repo.dart';
+import 'package:bulk_app/features/shared/logic/cubit/shared_controller_cubit.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
 import 'package:bulk_app/features/whats_bots/logic/cubit/whatsbots_cubit.dart';
 import 'package:dio/dio.dart';
@@ -27,18 +31,23 @@ Future<void> setupGetIt() async {
   Dio dio = DioFactory.getDio();
   final sharedPrefs = await SharedPreferences.getInstance();
   getIt.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
+  getIt.registerLazySingleton<AppPreferences>(() => AppPreferences(getIt()));
   // getIt.registerLazySingleton<FlutterContactPickerPlus>(
   //     () => FlutterContactPickerPlus());
   getIt.registerLazySingleton<ContactsService>(() => ContactsServiceImpl());
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  getIt.registerLazySingleton<SharedApiServices>(() => SharedApiServices(dio));
 
   // Repos
+  getIt.registerLazySingleton<SharedRepo>(() => SharedRepo(getIt()));
   getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
   getIt.registerLazySingleton<TemplatesRepo>(() => TemplatesRepo(getIt()));
   getIt.registerLazySingleton<AudienceRepository>(
       () => AudienceRepository(getIt()));
 
   // Cubits
+  getIt.registerFactory<SharedControllerCubit>(
+      () => SharedControllerCubit(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
   getIt.registerFactory<HomeCubit>(() => HomeCubit());

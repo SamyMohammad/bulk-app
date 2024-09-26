@@ -17,16 +17,17 @@ class RegisterBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<RegisterCubit, RegisterState>(
       // listenWhen: (previous, current) =>
-          // current is RegisterErrorState || current is RegisterSuccessState || current is RegisterLoadingState,
+      // current is RegisterErrorState || current is RegisterSuccessState || current is RegisterLoadingState,
       listener: (context, state) {
         state.whenOrNull(
           registerLoadingState: () => startLoading(context),
           registerSuccussState: (loginResponse) {
             stopLoading(context);
-            context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (context) => false);
+            context.pushNamedAndRemoveUntil(Routes.loginScreen,
+                predicate: (context) => false);
           },
           registerErrorState: (apiErrorModel) {
-            setupErrorState(context,apiErrorModel);
+            setupErrorState(context, apiErrorModel);
           },
         );
       },

@@ -11,17 +11,11 @@ class ShimmerScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Expanded(
-          flex: 2,
-          child: AppTextFieldShimmer()),
+        const Expanded(flex: 2, child: AppTextFieldShimmer()),
         20.sizedBoxHeight,
-        const Expanded(
-          flex: 5,
-          child: AddFileContainerShimmer()),
+        const Expanded(flex: 5, child: AddFileContainerShimmer()),
         20.sizedBoxHeight,
-        const Expanded(
-          flex: 3,
-          child: MessageContainerShimmer()),
+        const Expanded(flex: 3, child: MessageContainerShimmer()),
         20.sizedBoxHeight,
       ],
     );

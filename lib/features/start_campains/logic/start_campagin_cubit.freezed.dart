@@ -118,12 +118,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'StartCampaginState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'StartCampaginState.initial'));
   }
 
   @override
@@ -243,12 +249,21 @@ class __$$SelectedTemplateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectedTemplateImpl implements SelectedTemplate {
+class _$SelectedTemplateImpl
+    with DiagnosticableTreeMixin
+    implements SelectedTemplate {
   const _$SelectedTemplateImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'StartCampaginState.selectedTemplate()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'StartCampaginState.selectedTemplate'));
   }
 
   @override
@@ -385,15 +400,26 @@ class __$$PickedMultiMediaAndFilesImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PickedMultiMediaAndFilesImpl implements _PickedMultiMediaAndFiles {
+class _$PickedMultiMediaAndFilesImpl
+    with DiagnosticableTreeMixin
+    implements _PickedMultiMediaAndFiles {
   const _$PickedMultiMediaAndFilesImpl({this.pickedFile});
 
   @override
   final XFile? pickedFile;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'StartCampaginState.pickedMultiMediaAndFiles(pickedFile: $pickedFile)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'StartCampaginState.pickedMultiMediaAndFiles'))
+      ..add(DiagnosticsProperty('pickedFile', pickedFile));
   }
 
   @override
@@ -548,15 +574,25 @@ class __$$StateOfButtonImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StateOfButtonImpl implements _StateOfButton {
+class _$StateOfButtonImpl
+    with DiagnosticableTreeMixin
+    implements _StateOfButton {
   _$StateOfButtonImpl({required this.isValid});
 
   @override
   final bool isValid;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'StartCampaginState.stateOfButton(isValid: $isValid)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'StartCampaginState.stateOfButton'))
+      ..add(DiagnosticsProperty('isValid', isValid));
   }
 
   @override
@@ -694,12 +730,21 @@ class __$$SelectedAudienceImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectedAudienceImpl implements SelectedAudience {
+class _$SelectedAudienceImpl
+    with DiagnosticableTreeMixin
+    implements SelectedAudience {
   _$SelectedAudienceImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'StartCampaginState.selectedAudience()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'StartCampaginState.selectedAudience'));
   }
 
   @override

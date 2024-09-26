@@ -13,8 +13,7 @@ class AudienceRepository {
 
   AudienceRepository(this._apiService);
 
-  Future<ApiResult<BaseResponse<AudiencesListData>>>
-      getAllAudiences() async {
+  Future<ApiResult<BaseResponse<AudiencesListData>>> getAllAudiences() async {
     try {
       final response = await _apiService.getAllAudience();
       if (response.status! >= 200 || response.status! < 300) {
@@ -65,7 +64,8 @@ class AudienceRepository {
     }
   }
 
-  Future<ApiResult<BaseResponse<AudienceData>>> addNewAudience(Audience audience) async {
+  Future<ApiResult<BaseResponse<AudienceData>>> addNewAudience(
+      Audience audience) async {
     try {
       final response = await _apiService.addNewAudience(audience);
       return ApiResult.success(response);

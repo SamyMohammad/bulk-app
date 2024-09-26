@@ -6,12 +6,14 @@ part 'login_response.g.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
 class LoginResponse extends BaseResponse<Data?> {
-
-  LoginResponse({ super.status,super.data, super.error,});
+  LoginResponse({
+    super.status,
+    super.data,
+    super.error,
+  });
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
 }
-
 
 @JsonSerializable(genericArgumentFactories: true)
 class Data {

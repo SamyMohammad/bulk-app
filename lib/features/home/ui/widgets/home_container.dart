@@ -11,8 +11,8 @@ class HomeContainer extends StatelessWidget {
   final Widget body;
   final AlignmentGeometry? alignment;
   final double? heightContainer;
-  final int? animationDuration ;
-   final double? fromAnimation ; 
+  final int? animationDuration;
+  final double? fromAnimation;
   const HomeContainer({
     required this.title,
     required this.body,

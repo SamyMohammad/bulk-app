@@ -120,7 +120,6 @@ class _MessageContainerState extends State<MessageContainer> {
   Future<dynamic> buildBottomSheet(BuildContext context,
       List<Template>? templates, StartCampaginCubit cubit) {
     return showModalBottomSheet(
-      
         context: context,
         builder: (context) {
           return BlocProvider.value(

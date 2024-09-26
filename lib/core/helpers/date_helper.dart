@@ -20,17 +20,16 @@ class DateHelper {
     );
   }
 
- static String convertToTimeString(DateTime dateTime) {
-
+  static String convertToTimeString(DateTime dateTime) {
 //   DateTime now = DateTime.now();
 // String formattedTime = DateFormat('h:mm a').format(now);
 // print(formattedTime);
-  // Create a DateFormat object for the desired output format
-  DateFormat timeFormat = DateFormat('h:mm a');
-  
-  // Format the DateTime to the desired string
-  String timeString = timeFormat.format(dateTime);
-  
-  return timeString;
-}
+    // Create a DateFormat object for the desired output format
+    DateFormat timeFormat = DateFormat('h:mm a');
+
+    // Format the DateTime to the desired string
+    String timeString = timeFormat.format(dateTime);
+
+    return timeString;
+  }
 }

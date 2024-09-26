@@ -2,6 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 const String prefsKeyIsUserLoggedIn = 'is_user_logged_in';
 const String prefsKeyIsManageAudinceOpened = 'is_manage_audience_opened';
+const String prefsKeyUserId = 'user_id';
 
 class AppPreferences {
   final SharedPreferences _sharedPreferences;
@@ -66,6 +67,15 @@ class AppPreferences {
   // Future<void> logout() async {
   //   _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
   // }
+//  cache userId
+
+  Future<void> setUserId(String userId) async {
+    _sharedPreferences.setString(prefsKeyUserId, userId);
+  }
+
+  Future<String?> getUserId() async {
+    return _sharedPreferences.getString(prefsKeyUserId);
+  }
 
   Future<void> setManageAudienceOpened() async {
     _sharedPreferences.setBool(prefsKeyIsManageAudinceOpened, true);
@@ -74,7 +84,8 @@ class AppPreferences {
   Future<bool> isManageAudinceOpened() async {
     return _sharedPreferences.getBool(prefsKeyIsManageAudinceOpened) ?? false;
   }
-    Future<void> removeManageAudienceOpened() async {
+
+  Future<void> removeManageAudienceOpened() async {
     _sharedPreferences.remove(prefsKeyIsManageAudinceOpened);
   }
 }

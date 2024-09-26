@@ -15,9 +15,9 @@ class TemplatesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         floatingActionButton: FloatingActionButton(
-            onPressed: () => context.pushReplacementNamed(Routes.addTemplateScreen),
+            onPressed: () =>
+                context.pushReplacementNamed(Routes.addTemplateScreen),
             backgroundColor: ColorsManager.containerTitleColor,
             child: const VectorGraphic(
               loader:

@@ -59,5 +59,4 @@ class DefaultFirebaseOptions {
     projectId: 'test-f04df',
     storageBucket: 'test-f04df.appspot.com',
   );
-
 }

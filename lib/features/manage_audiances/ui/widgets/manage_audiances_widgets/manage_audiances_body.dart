@@ -14,26 +14,24 @@ class ManageAudiancesBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShowCaseWidget(
-      builder: (context) {
-        return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-          child: Column(
-            children: [
-              AppTextField(
-                hintText: AppStrings.searchAudiences.tr(),
-                prefixIcon: Icon(
-                  Icons.search,
-                  size: 25.sp,
-                  color: ColorsManager.saerchTextFieldHintColor,
-                ),
+    return ShowCaseWidget(builder: (context) {
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        child: Column(
+          children: [
+            AppTextField(
+              hintText: AppStrings.searchAudiences.tr(),
+              prefixIcon: Icon(
+                Icons.search,
+                size: 25.sp,
+                color: ColorsManager.saerchTextFieldHintColor,
               ),
-              20.sizedBoxHeight,
-              const Expanded(child: AudiancesListView()),
-            ],
-          ),
-        );
-      }
-    );
+            ),
+            20.sizedBoxHeight,
+            const Expanded(child: AudiancesListView()),
+          ],
+        ),
+      );
+    });
   }
 }

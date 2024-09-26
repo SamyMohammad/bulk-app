@@ -12,14 +12,13 @@ sealed class AddTemplateState with _$AddTemplateState {
       GetTemplateByIdLoadingState;
 
   const factory AddTemplateState.getTemplateByIdSuccessState(
-          GetTemplateByIdResponse getTemplateByIdResponse) =  
+          GetTemplateByIdResponse getTemplateByIdResponse) =
       GetTemplateByIdSuccessState;
   const factory AddTemplateState.updateTemplateLoadingState() =
       _UpdateTemplateLoadingState;
 
   const factory AddTemplateState.updateTemplateSuccessState(
       BaseResponse baseResponse) = _UpdateTemplateSuccessState;
-
 
   const factory AddTemplateState.error({required ApiErrorModel error}) =
       ErrorAddTemplate;
