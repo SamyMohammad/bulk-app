@@ -3,7 +3,14 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Define the account statuses
-enum AccountStatus { noAccount, disconnected, connected, connecting, qrcode }
+enum AccountStatus {
+  noAccount,
+  disconnected,
+  connected,
+  connecting,
+  qrcode,
+  offline
+}
 
 class MockAccountCubit extends Cubit<AccountStatus> {
   Timer? _timer;
@@ -19,7 +26,7 @@ class MockAccountCubit extends Cubit<AccountStatus> {
 
   // Simulates a stream of connection states after adding an account
   void startListeningToStream() {
-    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
       _tick++;
 
       // Cycle through connection states

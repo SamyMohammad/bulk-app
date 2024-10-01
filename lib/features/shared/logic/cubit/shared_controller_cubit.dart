@@ -6,6 +6,7 @@ import 'package:bulk_app/features/shared/data/models/add_account_request_body.da
 import 'package:bulk_app/features/shared/data/models/get_account_by_id_rm/get_account_by_id_rm.dart';
 import 'package:bulk_app/features/shared/data/models/get_all_accounts_rm/get_all_accounts_rm.dart';
 import 'package:bulk_app/features/shared/data/repos/shared_repo.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_client_sse/constants/sse_request_type_enum.dart';
 import 'package:flutter_client_sse/flutter_client_sse.dart';
@@ -77,6 +78,38 @@ class SharedControllerCubit extends Cubit<SharedControllerState> {
     }, failure: (error) {
       emit(const SharedControllerState.getAllAccountsFailureState());
     });
+  }
+
+  late StreamSubscription<List<ConnectivityResult>> connectivitySubscription;
+  List<ConnectivityResult> connectionStatus = [ConnectivityResult.none];
+  final Connectivity connectivity = Connectivity();
+  bool isConnected = false; // Track the internet connection state
+  void checkConnectivity() async {
+    _checkConnectivity();
+    // Listening for connectivity changes
+    connectivitySubscription =
+        connectivity.onConnectivityChanged.listen((result) {
+      _updateConnectionStatus(result);
+    });
+  }
+
+  Future<void> _checkConnectivity() async {
+    try {
+      final result = await connectivity.checkConnectivity();
+      _updateConnectionStatus(result);
+    } catch (e) {
+      print("Couldn't check connectivity: $e");
+    }
+  }
+
+  // Update the connection status based on the result
+  void _updateConnectionStatus(List<ConnectivityResult> results) {
+    connectionStatus.addAll(results);
+    isConnected = connectionStatus.contains(ConnectivityResult.mobile) ||
+        connectionStatus
+            .contains(ConnectivityResult.wifi); // Update connectivity state
+
+    emit(SharedControllerState.connectivityState(isConnected));
   }
 
   void _handleGetAllAccountsResponse(GetAllAccountsRm? getAllAccountsRm) {

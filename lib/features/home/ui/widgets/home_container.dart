@@ -1,5 +1,4 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,10 +12,12 @@ class HomeContainer extends StatelessWidget {
   final double? heightContainer;
   final int? animationDuration;
   final double? fromAnimation;
+  final bool? isAccountInfo;
   const HomeContainer({
     required this.title,
     required this.body,
     this.animationDuration,
+    this.isAccountInfo,
     this.heightContainer,
     this.alignment,
     this.fromAnimation,
@@ -32,9 +33,9 @@ class HomeContainer extends StatelessWidget {
       // duration:  Duration(milliseconds: animationDuration ?? 1500),
       from: fromAnimation ?? 75,
       child: Container(
-        height: heightContainer ?? context.height * .2,
+        height: heightContainer,
         width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(15.sp),

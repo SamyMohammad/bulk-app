@@ -3,6 +3,7 @@ import 'package:bulk_app/core/helpers/contacts_service.dart';
 import 'package:bulk_app/core/helpers/media.dart';
 import 'package:bulk_app/core/networking/api_service.dart';
 import 'package:bulk_app/core/networking/dio_factory.dart';
+import 'package:bulk_app/core/test/simulate_account.dart';
 import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart';
 import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
@@ -61,6 +62,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<WhatsbotsCubit>(() => WhatsbotsCubit());
   getIt.registerFactory<StartCampaginCubit>(
       () => StartCampaginCubit(getIt(), getIt()));
+  getIt.registerFactory<MockAccountCubit>(() => MockAccountCubit());
 
   //App Media
   getIt.registerLazySingleton<AppMedia>(
