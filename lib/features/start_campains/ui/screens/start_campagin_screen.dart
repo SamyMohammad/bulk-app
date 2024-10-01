@@ -1,5 +1,7 @@
 import 'package:bulk_app/core/helpers/route_observer.dart';
+import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
+import 'package:bulk_app/core/widgets/custom_button.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
 import 'package:bulk_app/features/start_campains/ui/widgets/choose_File_or_select_audiance_container.dart';
 import 'package:bulk_app/features/start_campains/ui/widgets/manage_contacts_and_templates_row.dart';
@@ -44,8 +46,14 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
     ObserverUtils.routeObserver.subscribe(this, ModalRoute.of(context)!);
   }
 
+  ValueNotifier<bool> isFormValid = ValueNotifier(false);
+
   @override
   Widget build(BuildContext context) {
+    isFormValid.value =
+        context.read<StartCampaginCubit>().selectedAudience != null &&
+            context.read<StartCampaginCubit>().selectedTemplate != null;
+
     return Scaffold(
       appBar: const MyCustomAppBar(title: 'StartCampagin'),
       body: Padding(
@@ -60,7 +68,47 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
               const ChooseCsvFileOrSelectAudianceContainer(),
               15.verticalSpace,
               const MessageContainer(),
-              15.verticalSpace,
+              20.verticalSpace,
+              ValueListenableBuilder<bool>(
+                valueListenable: isFormValid,
+                builder: (context, isValid, child) {
+                  return Align(
+                    alignment: Alignment.centerRight,
+                    child: CustomButton.withIcon(
+                      iconPath: null,
+                      icon: Icons.send,
+                      isDisabled: !isValid,
+                      text: 'Start',
+                      textColor: Colors.black87,
+                      fontSize: 22.sp,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15.h, vertical: 2),
+                      onPressed: () => context.read<StartCampaginCubit>(),
+                      backgroundColor: !isValid
+                          ? Colors.white70
+                          : ColorsManager.containerTitleColor,
+                      textDirection: TextDirection.rtl,
+                    ),
+                  );
+                },
+              ),
+              // Align(
+              //   alignment: Alignment.centerRight,
+              //   child: CustomButton.withIcon(
+              //     iconPath: null,
+              //     icon: Icons.send,
+              //     isDisabled: false,
+              //     text: 'Start',
+              //     textColor: Colors.black87,
+              //     fontSize: 22.sp,
+              //     padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 2),
+              //     onPressed: () => context.read<StartCampaginCubit>(),
+              //     backgroundColor: false
+              //         ? Colors.white60
+              //         : ColorsManager.containerTitleColor,
+              //     textDirection: TextDirection.rtl,
+              //   ),
+              // )
               // const AddFilesContainer(),
               // 15.verticalSpace,
             ],

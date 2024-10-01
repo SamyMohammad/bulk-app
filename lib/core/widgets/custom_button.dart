@@ -10,12 +10,18 @@ class CustomButton extends StatelessWidget {
   final double? fontSize;
   final Color? backgroundColor;
   final Color? textColor;
+  final bool? isDisabled;
   final EdgeInsetsGeometry? padding;
+  final IconData? icon;
+  final TextDirection textDirection;
   const CustomButton._internal(
       {super.key,
       required this.text,
+      this.icon,
       this.padding,
       this.textColor,
+      this.isDisabled = false,
+      this.textDirection = TextDirection.ltr,
       required this.onPressed,
       this.iconPath,
       this.fontSize,
@@ -25,8 +31,11 @@ class CustomButton extends StatelessWidget {
   factory CustomButton.withIcon({
     required String text,
     required VoidCallback onPressed,
-    required String iconPath,
+    required String? iconPath,
+    TextDirection textDirection = TextDirection.ltr,
     double? fontSize,
+    bool? isDisabled = false,
+    IconData? icon,
     EdgeInsetsGeometry? padding,
     Color? textColor,
     Color? backgroundColor,
@@ -38,6 +47,9 @@ class CustomButton extends StatelessWidget {
       padding: padding,
       fontSize: fontSize,
       onPressed: onPressed,
+      isDisabled: isDisabled,
+      textDirection: textDirection,
+      icon: icon,
       iconPath: iconPath,
       backgroundColor: backgroundColor,
       textColor: textColor,
@@ -48,6 +60,7 @@ class CustomButton extends StatelessWidget {
   factory CustomButton.withoutIcon({
     required String text,
     required VoidCallback onPressed,
+    bool isDisabled = false,
     double? fontSize,
     EdgeInsetsGeometry? padding,
     Color? backgroundColor,
@@ -59,6 +72,7 @@ class CustomButton extends StatelessWidget {
       text: text,
       fontSize: fontSize,
       onPressed: onPressed,
+      isDisabled: isDisabled,
       textColor: textColor,
       padding: padding,
       backgroundColor: backgroundColor,
@@ -67,9 +81,13 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-        onPressed: onPressed,
+        onPressed: isDisabled == true ? null : onPressed,
+        iconAlignment: textDirection == TextDirection.ltr
+            ? IconAlignment.start
+            : IconAlignment.end,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ?? ColorsManager.buttonColor,
+          disabledBackgroundColor: backgroundColor ?? ColorsManager.buttonColor,
           minimumSize: Size.zero,
           padding:
               padding ?? EdgeInsets.symmetric(vertical: 9.h, horizontal: 0),
@@ -80,14 +98,19 @@ class CustomButton extends StatelessWidget {
               color: textColor ?? Colors.black,
               fontSize: fontSize?.sp ?? 11.sp),
         ),
-        icon: iconPath == null
-            ? null
-            : VectorGraphic(
+        icon: iconPath != null
+            ? VectorGraphic(
                 height: 16.h,
                 width: 10.w,
                 loader: AssetBytesLoader(
                   iconPath!,
                 ),
-              ));
+              )
+            : icon != null
+                ? Icon(
+                    icon,
+                    color: Colors.black87,
+                  )
+                : null);
   }
 }
