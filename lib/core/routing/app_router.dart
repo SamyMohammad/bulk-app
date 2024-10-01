@@ -1,5 +1,6 @@
 import 'package:bulk_app/core/di/dependency_injection.dart';
 import 'package:bulk_app/core/routing/routes.dart';
+import 'package:bulk_app/core/test/simulate_account.dart';
 import 'package:bulk_app/features/auth/logic/login_cubit/login_cubit.dart';
 import 'package:bulk_app/features/auth/logic/register_cubit/register_cubit.dart';
 import 'package:bulk_app/features/auth/ui/screen/login_screen.dart';
@@ -69,7 +70,8 @@ class AppRouter {
               MultiBlocProvider(
             providers: [
               BlocProvider(create: (context) => getIt<HomeCubit>()),
-              BlocProvider(create: (context) => getIt<SharedControllerCubit>())
+              BlocProvider(create: (context) => getIt<SharedControllerCubit>()),
+              BlocProvider(create: (context) => getIt<MockAccountCubit>()),
             ],
 
             // create: (context) => getIt<HomeCubit>(),

@@ -24,6 +24,8 @@ class SharedControllerState with _$SharedControllerState {
       GetAccountByIdSuccessState;
   const factory SharedControllerState.getAccountByIdFailureState() =
       GetAccountByIdFailureState;
+  const factory SharedControllerState.connectivityState(bool isConnected) =
+      ConnectivityState;
 
   //       const factory SharedControllerState.AddAccountLoadingState() =
   //     AddAccountLoadingState;

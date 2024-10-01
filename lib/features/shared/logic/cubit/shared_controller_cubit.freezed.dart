@@ -28,6 +28,7 @@ mixin _$SharedControllerState {
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$SharedControllerState {
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +58,7 @@ mixin _$SharedControllerState {
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,6 +83,7 @@ mixin _$SharedControllerState {
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,6 +104,7 @@ mixin _$SharedControllerState {
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,6 +125,7 @@ mixin _$SharedControllerState {
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -205,6 +211,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return initial();
   }
@@ -222,6 +229,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return initial?.call();
   }
@@ -239,6 +247,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -269,6 +278,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return initial(this);
   }
@@ -292,6 +302,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return initial?.call(this);
   }
@@ -315,6 +326,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -392,6 +404,7 @@ class _$GetAllAccountsLoadingStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return getAllAccountsLoadingState();
   }
@@ -409,6 +422,7 @@ class _$GetAllAccountsLoadingStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return getAllAccountsLoadingState?.call();
   }
@@ -426,6 +440,7 @@ class _$GetAllAccountsLoadingStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAllAccountsLoadingState != null) {
@@ -456,6 +471,7 @@ class _$GetAllAccountsLoadingStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return getAllAccountsLoadingState(this);
   }
@@ -479,6 +495,7 @@ class _$GetAllAccountsLoadingStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return getAllAccountsLoadingState?.call(this);
   }
@@ -502,6 +519,7 @@ class _$GetAllAccountsLoadingStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAllAccountsLoadingState != null) {
@@ -579,6 +597,7 @@ class _$GetAllAccountsSuccessStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return getAllAccountsSuccessState();
   }
@@ -596,6 +615,7 @@ class _$GetAllAccountsSuccessStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return getAllAccountsSuccessState?.call();
   }
@@ -613,6 +633,7 @@ class _$GetAllAccountsSuccessStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAllAccountsSuccessState != null) {
@@ -643,6 +664,7 @@ class _$GetAllAccountsSuccessStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return getAllAccountsSuccessState(this);
   }
@@ -666,6 +688,7 @@ class _$GetAllAccountsSuccessStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return getAllAccountsSuccessState?.call(this);
   }
@@ -689,6 +712,7 @@ class _$GetAllAccountsSuccessStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAllAccountsSuccessState != null) {
@@ -766,6 +790,7 @@ class _$GetAllAccountsFailureStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return getAllAccountsFailureState();
   }
@@ -783,6 +808,7 @@ class _$GetAllAccountsFailureStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return getAllAccountsFailureState?.call();
   }
@@ -800,6 +826,7 @@ class _$GetAllAccountsFailureStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAllAccountsFailureState != null) {
@@ -830,6 +857,7 @@ class _$GetAllAccountsFailureStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return getAllAccountsFailureState(this);
   }
@@ -853,6 +881,7 @@ class _$GetAllAccountsFailureStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return getAllAccountsFailureState?.call(this);
   }
@@ -876,6 +905,7 @@ class _$GetAllAccountsFailureStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAllAccountsFailureState != null) {
@@ -953,6 +983,7 @@ class _$AddAccountLoadingStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return addAccountLoadingState();
   }
@@ -970,6 +1001,7 @@ class _$AddAccountLoadingStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return addAccountLoadingState?.call();
   }
@@ -987,6 +1019,7 @@ class _$AddAccountLoadingStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (addAccountLoadingState != null) {
@@ -1017,6 +1050,7 @@ class _$AddAccountLoadingStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return addAccountLoadingState(this);
   }
@@ -1040,6 +1074,7 @@ class _$AddAccountLoadingStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return addAccountLoadingState?.call(this);
   }
@@ -1063,6 +1098,7 @@ class _$AddAccountLoadingStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (addAccountLoadingState != null) {
@@ -1140,6 +1176,7 @@ class _$AddAccountSuccessStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return addAccountSuccessState();
   }
@@ -1157,6 +1194,7 @@ class _$AddAccountSuccessStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return addAccountSuccessState?.call();
   }
@@ -1174,6 +1212,7 @@ class _$AddAccountSuccessStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (addAccountSuccessState != null) {
@@ -1204,6 +1243,7 @@ class _$AddAccountSuccessStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return addAccountSuccessState(this);
   }
@@ -1227,6 +1267,7 @@ class _$AddAccountSuccessStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return addAccountSuccessState?.call(this);
   }
@@ -1250,6 +1291,7 @@ class _$AddAccountSuccessStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (addAccountSuccessState != null) {
@@ -1327,6 +1369,7 @@ class _$AddAccountFailureStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return addAccountFailureState();
   }
@@ -1344,6 +1387,7 @@ class _$AddAccountFailureStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return addAccountFailureState?.call();
   }
@@ -1361,6 +1405,7 @@ class _$AddAccountFailureStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (addAccountFailureState != null) {
@@ -1391,6 +1436,7 @@ class _$AddAccountFailureStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return addAccountFailureState(this);
   }
@@ -1414,6 +1460,7 @@ class _$AddAccountFailureStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return addAccountFailureState?.call(this);
   }
@@ -1437,6 +1484,7 @@ class _$AddAccountFailureStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (addAccountFailureState != null) {
@@ -1514,6 +1562,7 @@ class _$GetAccountByIdLoadingStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return getAccountByIdLoadingState();
   }
@@ -1531,6 +1580,7 @@ class _$GetAccountByIdLoadingStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return getAccountByIdLoadingState?.call();
   }
@@ -1548,6 +1598,7 @@ class _$GetAccountByIdLoadingStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAccountByIdLoadingState != null) {
@@ -1578,6 +1629,7 @@ class _$GetAccountByIdLoadingStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return getAccountByIdLoadingState(this);
   }
@@ -1601,6 +1653,7 @@ class _$GetAccountByIdLoadingStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return getAccountByIdLoadingState?.call(this);
   }
@@ -1624,6 +1677,7 @@ class _$GetAccountByIdLoadingStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAccountByIdLoadingState != null) {
@@ -1701,6 +1755,7 @@ class _$GetAccountByIdSuccessStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return getAccountByIdSuccessState();
   }
@@ -1718,6 +1773,7 @@ class _$GetAccountByIdSuccessStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return getAccountByIdSuccessState?.call();
   }
@@ -1735,6 +1791,7 @@ class _$GetAccountByIdSuccessStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAccountByIdSuccessState != null) {
@@ -1765,6 +1822,7 @@ class _$GetAccountByIdSuccessStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return getAccountByIdSuccessState(this);
   }
@@ -1788,6 +1846,7 @@ class _$GetAccountByIdSuccessStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return getAccountByIdSuccessState?.call(this);
   }
@@ -1811,6 +1870,7 @@ class _$GetAccountByIdSuccessStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAccountByIdSuccessState != null) {
@@ -1888,6 +1948,7 @@ class _$GetAccountByIdFailureStateImpl
     required TResult Function() getAccountByIdLoadingState,
     required TResult Function() getAccountByIdSuccessState,
     required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
   }) {
     return getAccountByIdFailureState();
   }
@@ -1905,6 +1966,7 @@ class _$GetAccountByIdFailureStateImpl
     TResult? Function()? getAccountByIdLoadingState,
     TResult? Function()? getAccountByIdSuccessState,
     TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
   }) {
     return getAccountByIdFailureState?.call();
   }
@@ -1922,6 +1984,7 @@ class _$GetAccountByIdFailureStateImpl
     TResult Function()? getAccountByIdLoadingState,
     TResult Function()? getAccountByIdSuccessState,
     TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAccountByIdFailureState != null) {
@@ -1952,6 +2015,7 @@ class _$GetAccountByIdFailureStateImpl
         getAccountByIdSuccessState,
     required TResult Function(GetAccountByIdFailureState value)
         getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
   }) {
     return getAccountByIdFailureState(this);
   }
@@ -1975,6 +2039,7 @@ class _$GetAccountByIdFailureStateImpl
         getAccountByIdSuccessState,
     TResult? Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
   }) {
     return getAccountByIdFailureState?.call(this);
   }
@@ -1998,6 +2063,7 @@ class _$GetAccountByIdFailureStateImpl
         getAccountByIdSuccessState,
     TResult Function(GetAccountByIdFailureState value)?
         getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
     required TResult orElse(),
   }) {
     if (getAccountByIdFailureState != null) {
@@ -2009,4 +2075,233 @@ class _$GetAccountByIdFailureStateImpl
 
 abstract class GetAccountByIdFailureState implements SharedControllerState {
   const factory GetAccountByIdFailureState() = _$GetAccountByIdFailureStateImpl;
+}
+
+/// @nodoc
+abstract class _$$ConnectivityStateImplCopyWith<$Res> {
+  factory _$$ConnectivityStateImplCopyWith(_$ConnectivityStateImpl value,
+          $Res Function(_$ConnectivityStateImpl) then) =
+      __$$ConnectivityStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isConnected});
+}
+
+/// @nodoc
+class __$$ConnectivityStateImplCopyWithImpl<$Res>
+    extends _$SharedControllerStateCopyWithImpl<$Res, _$ConnectivityStateImpl>
+    implements _$$ConnectivityStateImplCopyWith<$Res> {
+  __$$ConnectivityStateImplCopyWithImpl(_$ConnectivityStateImpl _value,
+      $Res Function(_$ConnectivityStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SharedControllerState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isConnected = null,
+  }) {
+    return _then(_$ConnectivityStateImpl(
+      null == isConnected
+          ? _value.isConnected
+          : isConnected // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConnectivityStateImpl
+    with DiagnosticableTreeMixin
+    implements ConnectivityState {
+  const _$ConnectivityStateImpl(this.isConnected);
+
+  @override
+  final bool isConnected;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SharedControllerState.connectivityState(isConnected: $isConnected)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SharedControllerState.connectivityState'))
+      ..add(DiagnosticsProperty('isConnected', isConnected));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConnectivityStateImpl &&
+            (identical(other.isConnected, isConnected) ||
+                other.isConnected == isConnected));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isConnected);
+
+  /// Create a copy of SharedControllerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith =>
+      __$$ConnectivityStateImplCopyWithImpl<_$ConnectivityStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllAccountsLoadingState,
+    required TResult Function() getAllAccountsSuccessState,
+    required TResult Function() getAllAccountsFailureState,
+    required TResult Function() addAccountLoadingState,
+    required TResult Function() addAccountSuccessState,
+    required TResult Function() addAccountFailureState,
+    required TResult Function() getAccountByIdLoadingState,
+    required TResult Function() getAccountByIdSuccessState,
+    required TResult Function() getAccountByIdFailureState,
+    required TResult Function(bool isConnected) connectivityState,
+  }) {
+    return connectivityState(isConnected);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllAccountsLoadingState,
+    TResult? Function()? getAllAccountsSuccessState,
+    TResult? Function()? getAllAccountsFailureState,
+    TResult? Function()? addAccountLoadingState,
+    TResult? Function()? addAccountSuccessState,
+    TResult? Function()? addAccountFailureState,
+    TResult? Function()? getAccountByIdLoadingState,
+    TResult? Function()? getAccountByIdSuccessState,
+    TResult? Function()? getAccountByIdFailureState,
+    TResult? Function(bool isConnected)? connectivityState,
+  }) {
+    return connectivityState?.call(isConnected);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllAccountsLoadingState,
+    TResult Function()? getAllAccountsSuccessState,
+    TResult Function()? getAllAccountsFailureState,
+    TResult Function()? addAccountLoadingState,
+    TResult Function()? addAccountSuccessState,
+    TResult Function()? addAccountFailureState,
+    TResult Function()? getAccountByIdLoadingState,
+    TResult Function()? getAccountByIdSuccessState,
+    TResult Function()? getAccountByIdFailureState,
+    TResult Function(bool isConnected)? connectivityState,
+    required TResult orElse(),
+  }) {
+    if (connectivityState != null) {
+      return connectivityState(isConnected);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetAllAccountsLoadingState value)
+        getAllAccountsLoadingState,
+    required TResult Function(GetAllAccountsSuccessState value)
+        getAllAccountsSuccessState,
+    required TResult Function(GetAllAccountsFailureState value)
+        getAllAccountsFailureState,
+    required TResult Function(AddAccountLoadingState value)
+        addAccountLoadingState,
+    required TResult Function(AddAccountSuccessState value)
+        addAccountSuccessState,
+    required TResult Function(AddAccountFailureState value)
+        addAccountFailureState,
+    required TResult Function(GetAccountByIdLoadingState value)
+        getAccountByIdLoadingState,
+    required TResult Function(GetAccountByIdSuccessState value)
+        getAccountByIdSuccessState,
+    required TResult Function(GetAccountByIdFailureState value)
+        getAccountByIdFailureState,
+    required TResult Function(ConnectivityState value) connectivityState,
+  }) {
+    return connectivityState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetAllAccountsLoadingState value)?
+        getAllAccountsLoadingState,
+    TResult? Function(GetAllAccountsSuccessState value)?
+        getAllAccountsSuccessState,
+    TResult? Function(GetAllAccountsFailureState value)?
+        getAllAccountsFailureState,
+    TResult? Function(AddAccountLoadingState value)? addAccountLoadingState,
+    TResult? Function(AddAccountSuccessState value)? addAccountSuccessState,
+    TResult? Function(AddAccountFailureState value)? addAccountFailureState,
+    TResult? Function(GetAccountByIdLoadingState value)?
+        getAccountByIdLoadingState,
+    TResult? Function(GetAccountByIdSuccessState value)?
+        getAccountByIdSuccessState,
+    TResult? Function(GetAccountByIdFailureState value)?
+        getAccountByIdFailureState,
+    TResult? Function(ConnectivityState value)? connectivityState,
+  }) {
+    return connectivityState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetAllAccountsLoadingState value)?
+        getAllAccountsLoadingState,
+    TResult Function(GetAllAccountsSuccessState value)?
+        getAllAccountsSuccessState,
+    TResult Function(GetAllAccountsFailureState value)?
+        getAllAccountsFailureState,
+    TResult Function(AddAccountLoadingState value)? addAccountLoadingState,
+    TResult Function(AddAccountSuccessState value)? addAccountSuccessState,
+    TResult Function(AddAccountFailureState value)? addAccountFailureState,
+    TResult Function(GetAccountByIdLoadingState value)?
+        getAccountByIdLoadingState,
+    TResult Function(GetAccountByIdSuccessState value)?
+        getAccountByIdSuccessState,
+    TResult Function(GetAccountByIdFailureState value)?
+        getAccountByIdFailureState,
+    TResult Function(ConnectivityState value)? connectivityState,
+    required TResult orElse(),
+  }) {
+    if (connectivityState != null) {
+      return connectivityState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConnectivityState implements SharedControllerState {
+  const factory ConnectivityState(final bool isConnected) =
+      _$ConnectivityStateImpl;
+
+  bool get isConnected;
+
+  /// Create a copy of SharedControllerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectivityStateImplCopyWith<_$ConnectivityStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

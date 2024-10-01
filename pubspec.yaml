@@ -76,6 +76,8 @@ dependencies:
   simple_vcard_parser: ^0.2.0
   flutter_client_sse: ^2.0.3
   http: ^1.2.2
+  percent_indicator: ^4.2.3
+  connectivity_plus: ^6.0.5
 
 dev_dependencies:
 

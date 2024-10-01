@@ -9,11 +9,13 @@ class CustomButton extends StatelessWidget {
   final String? iconPath;
   final double? fontSize;
   final Color? backgroundColor;
+  final Color? textColor;
   final EdgeInsetsGeometry? padding;
   const CustomButton._internal(
       {super.key,
       required this.text,
       this.padding,
+      this.textColor,
       required this.onPressed,
       this.iconPath,
       this.fontSize,
@@ -26,6 +28,7 @@ class CustomButton extends StatelessWidget {
     required String iconPath,
     double? fontSize,
     EdgeInsetsGeometry? padding,
+    Color? textColor,
     Color? backgroundColor,
     Key? key,
   }) {
@@ -37,6 +40,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       iconPath: iconPath,
       backgroundColor: backgroundColor,
+      textColor: textColor,
     );
   }
 
@@ -47,6 +51,7 @@ class CustomButton extends StatelessWidget {
     double? fontSize,
     EdgeInsetsGeometry? padding,
     Color? backgroundColor,
+    Color? textColor,
     Key? key,
   }) {
     return CustomButton._internal(
@@ -54,6 +59,7 @@ class CustomButton extends StatelessWidget {
       text: text,
       fontSize: fontSize,
       onPressed: onPressed,
+      textColor: textColor,
       padding: padding,
       backgroundColor: backgroundColor,
     );
@@ -70,8 +76,9 @@ class CustomButton extends StatelessWidget {
         ),
         label: Text(
           text,
-          style:
-              TextStyle(color: Colors.black, fontSize: fontSize?.sp ?? 11.sp),
+          style: TextStyle(
+              color: textColor ?? Colors.black,
+              fontSize: fontSize?.sp ?? 11.sp),
         ),
         icon: iconPath == null
             ? null
