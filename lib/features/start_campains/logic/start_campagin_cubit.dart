@@ -4,9 +4,12 @@ import 'package:bulk_app/core/helpers/date_helper.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/helpers/image_base_64_helper.dart';
 import 'package:bulk_app/core/helpers/media.dart';
+import 'package:bulk_app/core/networking/api_error_model.dart';
 import 'package:bulk_app/core/networking/base_response.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
 import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
+import 'package:bulk_app/features/start_campains/data/model/create_campain_request_model.dart';
+import 'package:bulk_app/features/start_campains/data/repos/start_campain_repo.dart';
 import 'package:bulk_app/features/templates/data/models/get_template_by_id_response.dart';
 import 'package:bulk_app/features/templates/data/repos/templates_repo.dart';
 import 'package:flutter/foundation.dart';
@@ -23,7 +26,9 @@ part 'start_campagin_state.dart';
 class StartCampaginCubit extends Cubit<StartCampaginState> {
   late final AudienceRepository _repository;
   late final TemplatesRepo _templatesRepo;
-  StartCampaginCubit(this._repository, this._templatesRepo)
+  late final StartCampainRepo startCampainRepo;
+  StartCampaginCubit(
+      this._repository, this._templatesRepo, this.startCampainRepo)
       : super(const StartCampaginState.initial());
   TextEditingController messageController = TextEditingController();
   TextEditingController templateNameController = TextEditingController();
@@ -34,6 +39,37 @@ class StartCampaginCubit extends Cubit<StartCampaginState> {
   List<Audience>? audiences;
 
   List<Template>? templates;
+
+  void emitCreateCampaignStates(int accountId) async {
+    final response = await startCampainRepo.createCampaign(
+        CreateCampainRequestBody(
+            templateId: selectedTemplate?.id,
+            audienceId: selectedAudience?.id,
+            accountId: accountId));
+    response.when(
+      success: (success) {
+        emit(StartCampaginState.createCampaignSuccessState());
+      },
+      failure: (error) {
+        emit(StartCampaginState.createCampaignFailureState(error));
+        debugPrint(error.toString());
+      },
+    );
+  }
+
+  GetTemplateByIdResponse? template;
+
+  void emitGetTemplatesByIdStates(int id) async {
+    final response = await _templatesRepo.getTemplateById(id);
+    response.when(
+      success: (success) {
+        template = success.data;
+        initControllers();
+        emit(StartCampaginState.getTemplateByIdSuccessState());
+      },
+      failure: (error) => debugPrint(error.toString()),
+    );
+  }
 
   Future<void> emitGetAllTemplatesStates() async {
     // emit(const StartCampaginState.getAllTemplatesLoadingState());
@@ -64,11 +100,6 @@ class StartCampaginCubit extends Cubit<StartCampaginState> {
         success: (BaseResponse<AudiencesListData> data) {
           audiences = data.data?.audiences;
           print(audiences);
-          // if (audiences.isNotNullAndNotEmpty()) {
-          //   // emit(ManageAudiancesState.audienceSuccessState(audiences!));
-          // } else {
-          //   // emit(const ManageAudiancesState.audienceEmptyState());
-          // }
         },
         failure: (error) {
           // emit(ManageAudiancesState.audienceErrorState(error));
@@ -136,23 +167,23 @@ class StartCampaginCubit extends Cubit<StartCampaginState> {
   }
 
   // select audience
-  GetTemplateByIdResponse? template;
-  void emitGetTemplatesByIdStates(int id) async {
-    // emit(const AddTemplateState.getTemplateByIdLoadingState());
-    final response = await _templatesRepo.getTemplateById(id);
-    response.when(
-        success: (success) {
-          template = success.data;
-          initControllers();
-          // emit(AddTemplateState.getTemplateByIdSuccessState(
-          //     success.data ?? GetTemplateByIdResponse()));
-        },
-        failure: (error) {}
-        //  emit(
-        //   // AddTemplateState.error(error: error),
-        // ),
-        );
-  }
+  // GetTemplateByIdResponse? template;
+  // void emitGetTemplatesByIdStates(int id) async {
+  //   // emit(const AddTemplateState.getTemplateByIdLoadingState());
+  //   final response = await _templatesRepo.getTemplateById(id);
+  //   response.when(
+  //       success: (success) {
+  //         template = success.data;
+  //         initControllers();
+  //         // emit(AddTemplateState.getTemplateByIdSuccessState(
+  //         //     success.data ?? GetTemplateByIdResponse()));
+  //       },
+  //       failure: (error) {}
+  //       //  emit(
+  //       //   // AddTemplateState.error(error: error),
+  //       // ),
+  //       );
+  // }
 
   void selectAudience(Audience audience) {
     selectedAudience = audience;

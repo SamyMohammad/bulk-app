@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/test/simulate_account.dart';
-import 'package:bulk_app/core/test/simulate_campain.dart';
 import 'package:bulk_app/core/widgets/custom_app_bar.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
 import 'package:bulk_app/features/account_settings/widgets/show_screen_function.dart';
@@ -32,12 +29,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late StreamSubscription<CampaignStatus> campaignStream;
+  // late StreamSubscription<CampaignStatus> campaignStream;
   bool isThereActiveCampaign = false;
 
   @override
   void dispose() {
-    campaignStream.cancel();
+    // campaignStream.cancel();
     super.dispose();
   }
 
@@ -213,6 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       },
       builder: (context, state) {
+        final cubit = context.read<SharedControllerCubit>();
         return SafeArea(
             child: Scaffold(
           drawer: const HomeDrawer(),
@@ -254,11 +252,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              if (state.name == "noAccount")
+                              if (cubit.getAllAccountsRm?.accounts
+                                      .isNullOrEmpty() ??
+                                  true)
                                 const SizedBox(
                                   height: 5,
                                 ),
-                              if (state.name == "noAccount")
+                              if (cubit.getAllAccountsRm?.accounts
+                                      .isNullOrEmpty() ??
+                                  true)
                                 CustomButton.withoutIcon(
                                   textColor: Colors.white,
                                   fontSize: 12.sp,
@@ -268,6 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     context
                                         .read<MockAccountCubit>()
                                         .addAccount();
+                                    cubit.emitAddAccountStates();
                                   },
                                   text: "Add Account",
                                   padding: const EdgeInsets.symmetric(
@@ -285,8 +288,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  if (!isThereActiveCampaign &&
-                                      state.name == "connected")
+                                  if (cubit.getCampainRm?.data?.campaign ==
+                                              null &&
+                                          cubit.getAllAccountsRm != null &&
+                                          cubit.getAllAccountsRm!.accounts
+                                              .isNotNullAndNotEmpty() &&
+                                          state.name == "connected"
+                                      // TODO: add this condition
+                                      //  && cubit.getAllAccountsRm!.accounts?.first.status == "connected"
+                                      )
                                     Expanded(
                                       child: Text(
                                         "No campaigns are live at the moment. Start one now!",
@@ -307,7 +317,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ColorsManager.containerTitleColor,
                                       onPressed: () {
                                         context.pushNamed(
-                                            Routes.startCampaginScreen);
+                                            Routes.startCampaginScreen,
+                                            arguments: context
+                                                .read<SharedControllerCubit>()
+                                                .getAllAccountsRm
+                                                ?.accounts
+                                                ?.first
+                                                .id);
                                       },
                                       text: "Start Campaign",
                                       padding: const EdgeInsets.symmetric(
@@ -487,8 +503,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           delay: const Duration(milliseconds: 2200),
                           animate: true,
                           child: SmartToolsContainer(
-                            onTap: () =>
-                                context.pushNamed(Routes.templatesScreen),
+                            onTap: () => context.pushNamed(
+                              Routes.templatesScreen,
+                            ),
                             isCampaginHistory: false,
                             title: AppStrings.templates.tr(),
                             iconName: 'assets/icons/asset 5.svg',

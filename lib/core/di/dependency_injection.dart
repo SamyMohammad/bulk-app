@@ -9,9 +9,9 @@ import 'package:bulk_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/data/repository/audiance_repository.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_audience_cubit/manage_audiances_cubit.dart';
 import 'package:bulk_app/features/manage_audiances/logic/manage_contact_cubit/contact_screen_cubit.dart';
-import 'package:bulk_app/features/shared/data/remote_data_source/shared_api_services.dart';
 import 'package:bulk_app/features/shared/data/repos/shared_repo.dart';
 import 'package:bulk_app/features/shared/logic/cubit/shared_controller_cubit.dart';
+import 'package:bulk_app/features/start_campains/data/repos/start_campain_repo.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
 import 'package:bulk_app/features/whats_bots/logic/cubit/whatsbots_cubit.dart';
 import 'package:dio/dio.dart';
@@ -37,9 +37,11 @@ Future<void> setupGetIt() async {
   //     () => FlutterContactPickerPlus());
   getIt.registerLazySingleton<ContactsService>(() => ContactsServiceImpl());
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
-  getIt.registerLazySingleton<SharedApiServices>(() => SharedApiServices(dio));
 
   // Repos
+  getIt
+      .registerLazySingleton<StartCampainRepo>(() => StartCampainRepo(getIt()));
+
   getIt.registerLazySingleton<SharedRepo>(() => SharedRepo(getIt()));
   getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
   getIt.registerLazySingleton<TemplatesRepo>(() => TemplatesRepo(getIt()));
@@ -47,6 +49,7 @@ Future<void> setupGetIt() async {
       () => AudienceRepository(getIt()));
 
   // Cubits
+  getIt.registerFactory<MockAccountCubit>(() => MockAccountCubit());
   getIt.registerFactory<SharedControllerCubit>(
       () => SharedControllerCubit(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
@@ -61,8 +64,7 @@ Future<void> setupGetIt() async {
 
   getIt.registerFactory<WhatsbotsCubit>(() => WhatsbotsCubit());
   getIt.registerFactory<StartCampaginCubit>(
-      () => StartCampaginCubit(getIt(), getIt()));
-  getIt.registerFactory<MockAccountCubit>(() => MockAccountCubit());
+      () => StartCampaginCubit(getIt(), getIt(), getIt()));
 
   //App Media
   getIt.registerLazySingleton<AppMedia>(

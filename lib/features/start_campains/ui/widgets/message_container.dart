@@ -138,8 +138,12 @@ class _MessageContainerState extends State<MessageContainer> {
                       context.read<StartCampaginCubit>().selectTemplate(
                             templates?[index] ?? Template(),
                           );
+                      cubit.emitGetTemplatesByIdStates(
+                        templates?[index].id ?? 0,
+                      );
                       Navigator.pop(context);
-                      setState(() {});
+
+                      // setState(() {});
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),

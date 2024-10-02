@@ -23,6 +23,11 @@ mixin _$StartCampaginState {
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +37,10 @@ mixin _$StartCampaginState {
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +50,10 @@ mixin _$StartCampaginState {
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +65,14 @@ mixin _$StartCampaginState {
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
     required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +83,14 @@ mixin _$StartCampaginState {
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
     TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +100,14 @@ mixin _$StartCampaginState {
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,6 +186,11 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
   }) {
     return initial();
   }
@@ -161,6 +203,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
   }) {
     return initial?.call();
   }
@@ -173,6 +219,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -190,6 +240,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
     required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
   }) {
     return initial(this);
   }
@@ -203,6 +261,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
     TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
   }) {
     return initial?.call(this);
   }
@@ -215,6 +281,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -283,6 +357,11 @@ class _$SelectedTemplateImpl
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
   }) {
     return selectedTemplate();
   }
@@ -295,6 +374,10 @@ class _$SelectedTemplateImpl
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
   }) {
     return selectedTemplate?.call();
   }
@@ -307,6 +390,10 @@ class _$SelectedTemplateImpl
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (selectedTemplate != null) {
@@ -324,6 +411,14 @@ class _$SelectedTemplateImpl
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
     required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
   }) {
     return selectedTemplate(this);
   }
@@ -337,6 +432,14 @@ class _$SelectedTemplateImpl
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
     TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
   }) {
     return selectedTemplate?.call(this);
   }
@@ -349,6 +452,14 @@ class _$SelectedTemplateImpl
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (selectedTemplate != null) {
@@ -451,6 +562,11 @@ class _$PickedMultiMediaAndFilesImpl
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
   }) {
     return pickedMultiMediaAndFiles(pickedFile);
   }
@@ -463,6 +579,10 @@ class _$PickedMultiMediaAndFilesImpl
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
   }) {
     return pickedMultiMediaAndFiles?.call(pickedFile);
   }
@@ -475,6 +595,10 @@ class _$PickedMultiMediaAndFilesImpl
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (pickedMultiMediaAndFiles != null) {
@@ -492,6 +616,14 @@ class _$PickedMultiMediaAndFilesImpl
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
     required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
   }) {
     return pickedMultiMediaAndFiles(this);
   }
@@ -505,6 +637,14 @@ class _$PickedMultiMediaAndFilesImpl
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
     TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
   }) {
     return pickedMultiMediaAndFiles?.call(this);
   }
@@ -517,6 +657,14 @@ class _$PickedMultiMediaAndFilesImpl
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (pickedMultiMediaAndFiles != null) {
@@ -622,6 +770,11 @@ class _$StateOfButtonImpl
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
   }) {
     return stateOfButton(isValid);
   }
@@ -634,6 +787,10 @@ class _$StateOfButtonImpl
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
   }) {
     return stateOfButton?.call(isValid);
   }
@@ -646,6 +803,10 @@ class _$StateOfButtonImpl
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (stateOfButton != null) {
@@ -663,6 +824,14 @@ class _$StateOfButtonImpl
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
     required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
   }) {
     return stateOfButton(this);
   }
@@ -676,6 +845,14 @@ class _$StateOfButtonImpl
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
     TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
   }) {
     return stateOfButton?.call(this);
   }
@@ -688,6 +865,14 @@ class _$StateOfButtonImpl
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (stateOfButton != null) {
@@ -764,6 +949,11 @@ class _$SelectedAudienceImpl
     required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
     required TResult Function(bool isValid) stateOfButton,
     required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
   }) {
     return selectedAudience();
   }
@@ -776,6 +966,10 @@ class _$SelectedAudienceImpl
     TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult? Function(bool isValid)? stateOfButton,
     TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
   }) {
     return selectedAudience?.call();
   }
@@ -788,6 +982,10 @@ class _$SelectedAudienceImpl
     TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
     TResult Function(bool isValid)? stateOfButton,
     TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (selectedAudience != null) {
@@ -805,6 +1003,14 @@ class _$SelectedAudienceImpl
         pickedMultiMediaAndFiles,
     required TResult Function(_StateOfButton value) stateOfButton,
     required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
   }) {
     return selectedAudience(this);
   }
@@ -818,6 +1024,14 @@ class _$SelectedAudienceImpl
         pickedMultiMediaAndFiles,
     TResult? Function(_StateOfButton value)? stateOfButton,
     TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
   }) {
     return selectedAudience?.call(this);
   }
@@ -830,6 +1044,14 @@ class _$SelectedAudienceImpl
     TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
     TResult Function(_StateOfButton value)? stateOfButton,
     TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
     required TResult orElse(),
   }) {
     if (selectedAudience != null) {
@@ -841,4 +1063,743 @@ class _$SelectedAudienceImpl
 
 abstract class SelectedAudience implements StartCampaginState {
   factory SelectedAudience() = _$SelectedAudienceImpl;
+}
+
+/// @nodoc
+abstract class _$$GetTemplateByIdSuccessStateImplCopyWith<$Res> {
+  factory _$$GetTemplateByIdSuccessStateImplCopyWith(
+          _$GetTemplateByIdSuccessStateImpl value,
+          $Res Function(_$GetTemplateByIdSuccessStateImpl) then) =
+      __$$GetTemplateByIdSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetTemplateByIdSuccessStateImplCopyWithImpl<$Res>
+    extends _$StartCampaginStateCopyWithImpl<$Res,
+        _$GetTemplateByIdSuccessStateImpl>
+    implements _$$GetTemplateByIdSuccessStateImplCopyWith<$Res> {
+  __$$GetTemplateByIdSuccessStateImplCopyWithImpl(
+      _$GetTemplateByIdSuccessStateImpl _value,
+      $Res Function(_$GetTemplateByIdSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetTemplateByIdSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements GetTemplateByIdSuccessState {
+  _$GetTemplateByIdSuccessStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StartCampaginState.getTemplateByIdSuccessState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'StartCampaginState.getTemplateByIdSuccessState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTemplateByIdSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() selectedTemplate,
+    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
+  }) {
+    return getTemplateByIdSuccessState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
+    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+  }) {
+    return getTemplateByIdSuccessState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? selectedTemplate,
+    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdSuccessState != null) {
+      return getTemplateByIdSuccessState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
+  }) {
+    return getTemplateByIdSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+  }) {
+    return getTemplateByIdSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (getTemplateByIdSuccessState != null) {
+      return getTemplateByIdSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTemplateByIdSuccessState implements StartCampaginState {
+  factory GetTemplateByIdSuccessState() = _$GetTemplateByIdSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateCampaignSuccessStateImplCopyWith<$Res> {
+  factory _$$CreateCampaignSuccessStateImplCopyWith(
+          _$CreateCampaignSuccessStateImpl value,
+          $Res Function(_$CreateCampaignSuccessStateImpl) then) =
+      __$$CreateCampaignSuccessStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreateCampaignSuccessStateImplCopyWithImpl<$Res>
+    extends _$StartCampaginStateCopyWithImpl<$Res,
+        _$CreateCampaignSuccessStateImpl>
+    implements _$$CreateCampaignSuccessStateImplCopyWith<$Res> {
+  __$$CreateCampaignSuccessStateImplCopyWithImpl(
+      _$CreateCampaignSuccessStateImpl _value,
+      $Res Function(_$CreateCampaignSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CreateCampaignSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements CreateCampaignSuccessState {
+  _$CreateCampaignSuccessStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StartCampaginState.createCampaignSuccessState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'StartCampaginState.createCampaignSuccessState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateCampaignSuccessStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() selectedTemplate,
+    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
+  }) {
+    return createCampaignSuccessState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
+    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+  }) {
+    return createCampaignSuccessState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? selectedTemplate,
+    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (createCampaignSuccessState != null) {
+      return createCampaignSuccessState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
+  }) {
+    return createCampaignSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+  }) {
+    return createCampaignSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (createCampaignSuccessState != null) {
+      return createCampaignSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateCampaignSuccessState implements StartCampaginState {
+  factory CreateCampaignSuccessState() = _$CreateCampaignSuccessStateImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateCampaignLoadingStateImplCopyWith<$Res> {
+  factory _$$CreateCampaignLoadingStateImplCopyWith(
+          _$CreateCampaignLoadingStateImpl value,
+          $Res Function(_$CreateCampaignLoadingStateImpl) then) =
+      __$$CreateCampaignLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreateCampaignLoadingStateImplCopyWithImpl<$Res>
+    extends _$StartCampaginStateCopyWithImpl<$Res,
+        _$CreateCampaignLoadingStateImpl>
+    implements _$$CreateCampaignLoadingStateImplCopyWith<$Res> {
+  __$$CreateCampaignLoadingStateImplCopyWithImpl(
+      _$CreateCampaignLoadingStateImpl _value,
+      $Res Function(_$CreateCampaignLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CreateCampaignLoadingStateImpl
+    with DiagnosticableTreeMixin
+    implements CreateCampaignLoadingState {
+  _$CreateCampaignLoadingStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StartCampaginState.createCampaignLoadingState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'StartCampaginState.createCampaignLoadingState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateCampaignLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() selectedTemplate,
+    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
+  }) {
+    return createCampaignLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
+    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+  }) {
+    return createCampaignLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? selectedTemplate,
+    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (createCampaignLoadingState != null) {
+      return createCampaignLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
+  }) {
+    return createCampaignLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+  }) {
+    return createCampaignLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (createCampaignLoadingState != null) {
+      return createCampaignLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateCampaignLoadingState implements StartCampaginState {
+  factory CreateCampaignLoadingState() = _$CreateCampaignLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateCampaignFailureStateImplCopyWith<$Res> {
+  factory _$$CreateCampaignFailureStateImplCopyWith(
+          _$CreateCampaignFailureStateImpl value,
+          $Res Function(_$CreateCampaignFailureStateImpl) then) =
+      __$$CreateCampaignFailureStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$CreateCampaignFailureStateImplCopyWithImpl<$Res>
+    extends _$StartCampaginStateCopyWithImpl<$Res,
+        _$CreateCampaignFailureStateImpl>
+    implements _$$CreateCampaignFailureStateImplCopyWith<$Res> {
+  __$$CreateCampaignFailureStateImplCopyWithImpl(
+      _$CreateCampaignFailureStateImpl _value,
+      $Res Function(_$CreateCampaignFailureStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$CreateCampaignFailureStateImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateCampaignFailureStateImpl
+    with DiagnosticableTreeMixin
+    implements CreateCampaignFailureState {
+  _$CreateCampaignFailureStateImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StartCampaginState.createCampaignFailureState(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'StartCampaginState.createCampaignFailureState'))
+      ..add(DiagnosticsProperty('apiErrorModel', apiErrorModel));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateCampaignFailureStateImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateCampaignFailureStateImplCopyWith<_$CreateCampaignFailureStateImpl>
+      get copyWith => __$$CreateCampaignFailureStateImplCopyWithImpl<
+          _$CreateCampaignFailureStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() selectedTemplate,
+    required TResult Function(XFile? pickedFile) pickedMultiMediaAndFiles,
+    required TResult Function(bool isValid) stateOfButton,
+    required TResult Function() selectedAudience,
+    required TResult Function() getTemplateByIdSuccessState,
+    required TResult Function() createCampaignSuccessState,
+    required TResult Function() createCampaignLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createCampaignFailureState,
+  }) {
+    return createCampaignFailureState(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? selectedTemplate,
+    TResult? Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult? Function(bool isValid)? stateOfButton,
+    TResult? Function()? selectedAudience,
+    TResult? Function()? getTemplateByIdSuccessState,
+    TResult? Function()? createCampaignSuccessState,
+    TResult? Function()? createCampaignLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+  }) {
+    return createCampaignFailureState?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? selectedTemplate,
+    TResult Function(XFile? pickedFile)? pickedMultiMediaAndFiles,
+    TResult Function(bool isValid)? stateOfButton,
+    TResult Function()? selectedAudience,
+    TResult Function()? getTemplateByIdSuccessState,
+    TResult Function()? createCampaignSuccessState,
+    TResult Function()? createCampaignLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (createCampaignFailureState != null) {
+      return createCampaignFailureState(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SelectedTemplate value) selectedTemplate,
+    required TResult Function(_PickedMultiMediaAndFiles value)
+        pickedMultiMediaAndFiles,
+    required TResult Function(_StateOfButton value) stateOfButton,
+    required TResult Function(SelectedAudience value) selectedAudience,
+    required TResult Function(GetTemplateByIdSuccessState value)
+        getTemplateByIdSuccessState,
+    required TResult Function(CreateCampaignSuccessState value)
+        createCampaignSuccessState,
+    required TResult Function(CreateCampaignLoadingState value)
+        createCampaignLoadingState,
+    required TResult Function(CreateCampaignFailureState value)
+        createCampaignFailureState,
+  }) {
+    return createCampaignFailureState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SelectedTemplate value)? selectedTemplate,
+    TResult? Function(_PickedMultiMediaAndFiles value)?
+        pickedMultiMediaAndFiles,
+    TResult? Function(_StateOfButton value)? stateOfButton,
+    TResult? Function(SelectedAudience value)? selectedAudience,
+    TResult? Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult? Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult? Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult? Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+  }) {
+    return createCampaignFailureState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SelectedTemplate value)? selectedTemplate,
+    TResult Function(_PickedMultiMediaAndFiles value)? pickedMultiMediaAndFiles,
+    TResult Function(_StateOfButton value)? stateOfButton,
+    TResult Function(SelectedAudience value)? selectedAudience,
+    TResult Function(GetTemplateByIdSuccessState value)?
+        getTemplateByIdSuccessState,
+    TResult Function(CreateCampaignSuccessState value)?
+        createCampaignSuccessState,
+    TResult Function(CreateCampaignLoadingState value)?
+        createCampaignLoadingState,
+    TResult Function(CreateCampaignFailureState value)?
+        createCampaignFailureState,
+    required TResult orElse(),
+  }) {
+    if (createCampaignFailureState != null) {
+      return createCampaignFailureState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateCampaignFailureState implements StartCampaginState {
+  factory CreateCampaignFailureState(final ApiErrorModel apiErrorModel) =
+      _$CreateCampaignFailureStateImpl;
+
+  ApiErrorModel get apiErrorModel;
+
+  /// Create a copy of StartCampaginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateCampaignFailureStateImplCopyWith<_$CreateCampaignFailureStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

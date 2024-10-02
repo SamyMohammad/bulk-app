@@ -1,8 +1,10 @@
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/routing/routes.dart';
 import 'package:bulk_app/core/theming/colors.dart';
+import 'package:bulk_app/features/shared/logic/cubit/shared_controller_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vector_graphics/vector_graphics_compat.dart';
 
@@ -45,8 +47,13 @@ class HomeDrawer extends StatelessWidget {
         ),
       ),
       DrawerListTile(
-        onTap: () =>
-            Navigator.of(context).pushNamed(Routes.startCampaginScreen),
+        onTap: () => Navigator.of(context).pushNamed(Routes.startCampaginScreen,
+            arguments: context
+                .read<SharedControllerCubit>()
+                .getAllAccountsRm
+                ?.accounts
+                ?.first
+                .id),
         iconPath: 'assets/icons/asset 3.svg',
         title: AppStrings.startCampaign.tr(),
       ),

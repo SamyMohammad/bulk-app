@@ -10,4 +10,13 @@ class StartCampaginState with _$StartCampaginState {
   factory StartCampaginState.stateOfButton({required bool isValid}) =
       _StateOfButton;
   factory StartCampaginState.selectedAudience() = SelectedAudience;
+  factory StartCampaginState.getTemplateByIdSuccessState() =
+      GetTemplateByIdSuccessState;
+
+  factory StartCampaginState.createCampaignSuccessState() =
+      CreateCampaignSuccessState;
+  factory StartCampaginState.createCampaignLoadingState() =
+      CreateCampaignLoadingState;
+  factory StartCampaginState.createCampaignFailureState(
+      ApiErrorModel apiErrorModel) = CreateCampaignFailureState;
 }

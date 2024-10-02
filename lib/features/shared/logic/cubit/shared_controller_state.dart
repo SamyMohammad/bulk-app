@@ -26,11 +26,11 @@ class SharedControllerState with _$SharedControllerState {
       GetAccountByIdFailureState;
   const factory SharedControllerState.connectivityState(bool isConnected) =
       ConnectivityState;
-
-  //       const factory SharedControllerState.AddAccountLoadingState() =
-  //     AddAccountLoadingState;
-  // const factory SharedControllerState.AddAccountSuccessState() =
-  //     AddAccountSuccessState;
-  // const factory SharedControllerState.AddAccountFailureState() =
-  //     AddAccountFailureState;
+// get Active Campain
+  const factory SharedControllerState.getActiveCampainLoadingState() =
+      GetActiveCampainLoadingState;
+  const factory SharedControllerState.getActiveCampainSuccessState() =
+      GetActiveCampainSuccessState;
+  const factory SharedControllerState.getActiveCampainFailureState() =
+      GetActiveCampainFailureState;
 }

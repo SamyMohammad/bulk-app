@@ -4,9 +4,13 @@ import 'package:bulk_app/features/auth/data/models/login_response.dart';
 import 'package:bulk_app/features/auth/data/models/register_response.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audiance_response_data.dart';
 import 'package:bulk_app/features/manage_audiances/data/models/audience.dart';
-import 'package:bulk_app/features/start_campains/data/model/create_campaign_rm/create_campaign_rm.dart';
+import 'package:bulk_app/features/shared/data/models/add_account_request_body.dart';
 import 'package:bulk_app/features/shared/data/models/get_account_by_id_rm/get_account_by_id_rm.dart';
+import 'package:bulk_app/features/shared/data/models/get_all_accounts_rm/account_r_m.dart';
+import 'package:bulk_app/features/shared/data/models/get_all_accounts_rm/get_all_accounts_rm.dart';
 import 'package:bulk_app/features/shared/data/models/get_all_campaigns_rm/get_all_campaigns_rm.dart';
+import 'package:bulk_app/features/start_campains/data/model/create_campaign_rm/create_campaign_rm.dart';
+import 'package:bulk_app/features/start_campains/data/model/create_campain_request_model.dart';
 import 'package:bulk_app/features/start_campains/data/model/toggle_campaign_rm/toggle_campaign_rm.dart';
 import 'package:bulk_app/features/templates/data/models/add_template_request_body.dart';
 import 'package:bulk_app/features/templates/data/models/get_all_templates_response.dart';
@@ -15,6 +19,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../features/auth/data/models/login_request_body.dart';
+import '../../features/shared/data/models/get_campain_rm/get_campain_rm.dart';
 
 part 'api_service.g.dart';
 
@@ -71,20 +76,36 @@ abstract class ApiService {
 
   @POST(ApiConstants.campaign)
   Future<CreateCampaignRm> createCampaign(
-    int? templateId,
-    int? audienceId,
-    int? accountId,
+    @Body() CreateCampainRequestBody createCampaignRequestBody,
   );
 
   @GET("${ApiConstants.campaign}/active/{token}")
-  Future<BaseResponse> getActiveCampaign(@Path("token") int token);
+  Future<GetCampainRm> getActiveCampaign(@Path("token") String token);
 
   @GET("${ApiConstants.campaign}/{id}")
-  Future<GetAccountByIdRm> getCampaignById(@Path("id") int id);
+  Future<GetCampainRm> getCampaignById(@Path("id") int id);
 
   @PATCH("${ApiConstants.campaign}/{id}")
   Future<ToggleCampaignRm> toggleCampaign(@Path("id") int id);
 
   @GET(ApiConstants.campaign)
   Future<GetAllCampaignsRm> getAllCampaigns();
+
+  @GET(ApiConstants.account)
+  Future<BaseResponse<GetAllAccountsRm>> getAllAccounts();
+
+  @POST(ApiConstants.account)
+  Future<BaseResponse<AccountRM>> addAccount(
+      @Body() AddAccountRequestBody addAccountRequestBody);
+
+  @DELETE("${ApiConstants.account}/{id}")
+  Future<BaseResponse<AccountRM>> deleteAccount(@Path('id') String id);
+
+  @GET("${ApiConstants.account}/{id}")
+  Future<GetAccountByIdRm> getAccountById(@Path('id') String id);
+
+  @GET("subscribe/${ApiConstants.account}/{token}")
+  Future<dynamic> subscribeAccount(
+    @Path('token') String token,
+  );
 }

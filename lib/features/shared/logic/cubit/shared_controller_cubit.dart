@@ -2,9 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/features/shared/data/models/add_account_request_body.dart';
 import 'package:bulk_app/features/shared/data/models/get_account_by_id_rm/get_account_by_id_rm.dart';
 import 'package:bulk_app/features/shared/data/models/get_all_accounts_rm/get_all_accounts_rm.dart';
+import 'package:bulk_app/features/shared/data/models/get_campain_rm/get_campain_rm.dart';
 import 'package:bulk_app/features/shared/data/repos/shared_repo.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
@@ -63,6 +65,8 @@ class SharedControllerCubit extends Cubit<SharedControllerState> {
   }
 
   GetAllAccountsRm? getAllAccountsRm;
+  // when getAllAccountsRm has a value, listen to SSE Of account
+
   GetAccountByIdRm? getAccountByIdRm;
   void emitgetAllAccountsStates() async {
     emit(const SharedControllerState.getAllAccountsLoadingState());
@@ -73,6 +77,16 @@ class SharedControllerCubit extends Cubit<SharedControllerState> {
         print('emitgetAllAccountsStatesResponse----------$allAccountsRm');
       }
       getAllAccountsRm = allAccountsRm.data;
+      if (getAllAccountsRm?.accounts.isNotNullAndNotEmpty() ?? false) {
+        getAllAccountsRm?.accounts?.forEach((element) {
+          print('element----------${element.id}}');
+        });
+      } else if (getAllAccountsRm?.accounts == null) {
+        print('getAllAccountsRm is null ');
+      } else if (getAllAccountsRm?.accounts?.isEmpty ?? false) {
+        print('getAllAccountsRm is empty ');
+      }
+
       _handleGetAllAccountsResponse(getAllAccountsRm);
       emit(const SharedControllerState.getAllAccountsSuccessState());
     }, failure: (error) {
@@ -116,8 +130,6 @@ class SharedControllerCubit extends Cubit<SharedControllerState> {
     if (getAllAccountsRm?.accounts?.isNotEmpty ?? false) {
       emitgetAccountByIdStates(
           getAllAccountsRm?.accounts?.first.id.toString() ?? '');
-    } else {
-      emitAddAccountStates();
     }
   }
 
@@ -132,7 +144,7 @@ class SharedControllerCubit extends Cubit<SharedControllerState> {
       if (kDebugMode) {
         print('emitgetAllAccountsStatesResponse----------$addAccountRm');
       }
-
+      emitgetAllAccountsStates();
       emit(const SharedControllerState.addAccountSuccessState());
     }, failure: (error) {
       emit(const SharedControllerState.addAccountFailureState());
@@ -145,10 +157,23 @@ class SharedControllerCubit extends Cubit<SharedControllerState> {
 
     response.when(success: (response) async {
       getAccountByIdRm = response;
-
+      getActiveCampaign(response.data?.accountToken?.token ?? '');
       emit(const SharedControllerState.getAccountByIdSuccessState());
     }, failure: (error) {
       emit(const SharedControllerState.getAccountByIdFailureState());
+    });
+  }
+
+  GetCampainRm? getCampainRm;
+  void getActiveCampaign(String token) async {
+    emit(const SharedControllerState.getActiveCampainLoadingState());
+    final response = await _sharedRepo.getActiveCampain(token);
+
+    response.when(success: (response) async {
+      getCampainRm = response;
+      emit(const SharedControllerState.getActiveCampainSuccessState());
+    }, failure: (error) {
+      emit(const SharedControllerState.getActiveCampainFailureState());
     });
   }
 }

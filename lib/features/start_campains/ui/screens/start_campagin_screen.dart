@@ -4,6 +4,7 @@ import 'package:bulk_app/core/widgets/custom_app_bar.dart';
 import 'package:bulk_app/core/widgets/custom_button.dart';
 import 'package:bulk_app/features/start_campains/logic/start_campagin_cubit.dart';
 import 'package:bulk_app/features/start_campains/ui/widgets/choose_File_or_select_audiance_container.dart';
+import 'package:bulk_app/features/start_campains/ui/widgets/create_campain_listener.dart';
 import 'package:bulk_app/features/start_campains/ui/widgets/manage_contacts_and_templates_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,7 @@ class StartCampaginScreen extends StatefulWidget {
 
 class _StartCampaginScreenState extends State<StartCampaginScreen>
     with RouteAware {
+  late final int? id;
   @override
   void initState() {
     super.initState();
@@ -27,16 +29,21 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
       context.read<StartCampaginCubit>().fetchAudienceList(),
       context.read<StartCampaginCubit>().emitGetAllTemplatesStates(),
     ]);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      id = ModalRoute.of(context)!.settings.arguments as int?;
+      print("id here--$id");
+    });
   }
 
   @override
   void didPopNext() {
     // TODO: implement didPopNext
     super.didPopNext();
+    final cubit = context.read<StartCampaginCubit>();
     print('didPopNext--');
     Future.wait([
-      context.read<StartCampaginCubit>().fetchAudienceList(),
-      context.read<StartCampaginCubit>().emitGetAllTemplatesStates(),
+      cubit.fetchAudienceList(),
+      cubit.emitGetAllTemplatesStates(),
     ]);
   }
 
@@ -83,7 +90,11 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
                       fontSize: 22.sp,
                       padding:
                           EdgeInsets.symmetric(horizontal: 15.h, vertical: 2),
-                      onPressed: () => context.read<StartCampaginCubit>(),
+                      onPressed: () {
+                        context
+                            .read<StartCampaginCubit>()
+                            .emitCreateCampaignStates(id ?? 0);
+                      },
                       backgroundColor: !isValid
                           ? Colors.white70
                           : ColorsManager.containerTitleColor,
@@ -111,6 +122,7 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
               // )
               // const AddFilesContainer(),
               // 15.verticalSpace,
+              const CreateCampainListener(),
             ],
           ),
         ),

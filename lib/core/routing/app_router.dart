@@ -46,11 +46,11 @@ class AppRouter {
         );
       case Routes.startCampaginScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<StartCampaginCubit>(),
-            child: const StartCampaginScreen(),
-          ),
-        );
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<StartCampaginCubit>(),
+                  child: const StartCampaginScreen(),
+                ),
+            settings: settings);
       case Routes.homeScreen:
         return PageRouteBuilder(
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
