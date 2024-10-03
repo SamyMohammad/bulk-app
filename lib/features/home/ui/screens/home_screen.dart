@@ -38,10 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  late SharedControllerCubit cubit;
   @override
   void initState() {
     super.initState();
-    final cubit = context.read<SharedControllerCubit>();
+    cubit = context.read<SharedControllerCubit>();
     // cubit.emitSubscribeAccountSSEStates("22cf67e5-5322-4dcd-afcc-225c555dba1f");
     cubit.listenToSSE("dc5d10dc-b11f-46e2-90f3-24cbbe2447c0");
     cubit.emitgetAllAccountsStates();
@@ -52,12 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
     // });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    bool isRtl = Directionality.of(context) == TextDirection.rtl;
-    Widget getWidgetForState(String stateName) {
-      switch (stateName) {
-        case "noAccount":
+  Widget getWidgetForState(String stateName) {
+    switch (stateName) {
+      case "noAccount":
+        if (cubit.getAllAccountsRm == null ||
+            cubit.getAllAccountsRm!.accounts.isNullOrEmpty()) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,28 +77,31 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           );
-        case "connecting":
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Text(
-                  "Connecting your account... Please wait.",
-                  style: TextStyles.font15whiteMedium,
-                  overflow: TextOverflow.clip,
-                  softWrap: true,
-                ),
+        }
+      case "connecting":
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text(
+                "Connecting your account... Please wait.",
+                style: TextStyles.font15whiteMedium,
+                overflow: TextOverflow.clip,
+                softWrap: true,
               ),
-              Lottie.asset(
-                'assets/jsons/Animation - 1727602117729.json',
-                repeat: true,
-                height: 100,
-                width: 100,
-              )
-            ],
-          );
-        case "disconnected":
+            ),
+            Lottie.asset(
+              'assets/jsons/Animation - 1727602117729.json',
+              repeat: true,
+              height: 100,
+              width: 100,
+            )
+          ],
+        );
+      case "disconnected":
+        if (cubit.getAllAccountsRm != null &&
+            cubit.getAllAccountsRm!.accounts.isNotNullAndNotEmpty()) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,78 +122,84 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           );
+        }
 
-        case "qrcode":
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Text(
-                  "Scan the QR code to connect your account.",
-                  style: TextStyles.font15whiteMedium,
-                  overflow: TextOverflow.clip,
-                  softWrap: true,
-                ),
-              ),
-              const Icon(
-                Icons.qr_code,
-                color: ColorsManager.containerTitleColor,
-                size: 100,
-              )
-            ],
-          );
-        case "connected":
-          return Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // if (!connectedIsLoaded)
-              // Expanded(
-              //   child: Lottie.asset(
-              //     'assets/jsons/connected.json',
-              //     repeat: true,
-              //     height: 70,
-              //     width: 70,
-              //     reverse: false,
-              //   ),
-              // ),
-              Text(
-                "+0020155636985",
-                style: TextStyles.font15limeExtraBold,
+      case "qrcode":
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text(
+                "Scan the QR code to connect your account.",
+                style: TextStyles.font15whiteMedium,
                 overflow: TextOverflow.clip,
-                textAlign: TextAlign.center,
-                // overflow: TextOverflow.clip,
                 softWrap: true,
               ),
-              SizedBox(width: 15.w),
-              Stack(
-                children: [
-                  // Expanded(
-                  Lottie.asset(
-                    'assets/jsons/connected.json',
-                    repeat: true,
-                    height: 50,
-                    width: 50,
-                    reverse: false,
-                  ),
+            ),
+            const Icon(
+              Icons.qr_code,
+              color: ColorsManager.containerTitleColor,
+              size: 100,
+            )
+          ],
+        );
+      case "connected":
+        return Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // if (!connectedIsLoaded)
+            // Expanded(
+            //   child: Lottie.asset(
+            //     'assets/jsons/connected.json',
+            //     repeat: true,
+            //     height: 70,
+            //     width: 70,
+            //     reverse: false,
+            //   ),
+            // ),
+            Text(
+              "+0020155636985",
+              style: TextStyles.font15limeExtraBold,
+              overflow: TextOverflow.clip,
+              textAlign: TextAlign.center,
+              // overflow: TextOverflow.clip,
+              softWrap: true,
+            ),
+            SizedBox(width: 15.w),
+            Stack(
+              children: [
+                // Expanded(
+                Lottie.asset(
+                  'assets/jsons/connected.json',
+                  repeat: true,
+                  height: 50,
+                  width: 50,
+                  reverse: false,
+                ),
 
-                  // Image.asset(
-                  //   "assets/images/icons8-seen-48.png",
-                  //   height: 30,
-                  //   width: 30,
-                  // ),
-                ],
-              ),
-            ],
-          );
+                // Image.asset(
+                //   "assets/images/icons8-seen-48.png",
+                //   height: 30,
+                //   width: 30,
+                // ),
+              ],
+            ),
+          ],
+        );
 
-        default:
-          return const SizedBox
-              .shrink(); // Return an empty widget if no state matches
-      }
+      default:
+        return const SizedBox
+            .shrink(); // Return an empty widget if no state matches
     }
+    return const SizedBox.shrink();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    bool isRtl = Directionality.of(context) == TextDirection.rtl;
 
     return BlocConsumer<SharedControllerCubit, SharedControllerState>(
       listener: (context, state) {

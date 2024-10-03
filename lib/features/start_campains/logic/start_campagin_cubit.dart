@@ -57,6 +57,19 @@ class StartCampaginCubit extends Cubit<StartCampaginState> {
     );
   }
 
+  void emitToggleCampaignStates(int accountId) async {
+    final response = await startCampainRepo.toggleCampaign(accountId);
+    response.when(
+      success: (success) {
+        emit(StartCampaginState.createCampaignSuccessState());
+      },
+      failure: (error) {
+        emit(StartCampaginState.createCampaignFailureState(error));
+        debugPrint(error.toString());
+      },
+    );
+  }
+
   GetTemplateByIdResponse? template;
 
   void emitGetTemplatesByIdStates(int id) async {

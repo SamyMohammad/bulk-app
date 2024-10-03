@@ -91,12 +91,12 @@ class _StartCampaginScreenState extends State<StartCampaginScreen>
                       padding:
                           EdgeInsets.symmetric(horizontal: 15.h, vertical: 2),
                       onPressed: () {
-                        context
-                            .read<StartCampaginCubit>()
-                            .emitCreateCampaignStates(id ?? 0);
+                        context.read<StartCampaginCubit>()
+                          ..emitCreateCampaignStates(id ?? 0)
+                          ..emitToggleCampaignStates(id ?? 0);
                       },
                       backgroundColor: !isValid
-                          ? Colors.white70
+                          ? const Color.fromRGBO(255, 255, 255, 0.702)
                           : ColorsManager.containerTitleColor,
                       textDirection: TextDirection.rtl,
                     ),

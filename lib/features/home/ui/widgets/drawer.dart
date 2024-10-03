@@ -1,5 +1,7 @@
+import 'package:bulk_app/core/helpers/extensions.dart';
 import 'package:bulk_app/core/resources/app_strings.dart';
 import 'package:bulk_app/core/routing/routes.dart';
+import 'package:bulk_app/core/test/simulate_account.dart';
 import 'package:bulk_app/core/theming/colors.dart';
 import 'package:bulk_app/features/shared/logic/cubit/shared_controller_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -29,6 +31,7 @@ class HomeDrawer extends StatelessWidget {
   }
 
   buildMetabListTiles(BuildContext context) {
+    final cubit = context.read<SharedControllerCubit>();
     List<Widget> metabList = [
       Container(
         height: 200,
@@ -39,23 +42,41 @@ class HomeDrawer extends StatelessWidget {
           ),
         ),
       ),
-      Padding(
-        padding: EdgeInsets.only(left: 8.0.w),
-        child: Text(
-          'MetaB',
-          style: TextStyle(fontSize: 16.sp, color: Colors.grey),
-        ),
+      BlocBuilder<SharedControllerCubit, SharedControllerState>(
+        builder: (context, state) {
+          return Padding(
+            padding: EdgeInsets.only(left: 8.0.w),
+            child: Text(
+              'MetaB',
+              style: TextStyle(fontSize: 16.sp, color: Colors.grey),
+            ),
+          );
+        },
       ),
-      DrawerListTile(
-        onTap: () => Navigator.of(context).pushNamed(Routes.startCampaginScreen,
-            arguments: context
-                .read<SharedControllerCubit>()
-                .getAllAccountsRm
-                ?.accounts
-                ?.first
-                .id),
-        iconPath: 'assets/icons/asset 3.svg',
-        title: AppStrings.startCampaign.tr(),
+      BlocBuilder<MockAccountCubit, AccountStatus>(
+        builder: (context, state) {
+          if (cubit.getCampainRm?.data?.campaign == null &&
+                  cubit.getAllAccountsRm != null &&
+                  cubit.getAllAccountsRm!.accounts.isNotNullAndNotEmpty() &&
+                  state.name == "connected"
+              // TODO: add this condition
+              //  && cubit.getAllAccountsRm!.accounts?.first.status == "connected"
+              ) {
+            return DrawerListTile(
+              onTap: () => Navigator.of(context).pushNamed(
+                  Routes.startCampaginScreen,
+                  arguments: context
+                      .read<SharedControllerCubit>()
+                      .getAllAccountsRm
+                      ?.accounts
+                      ?.first
+                      .id),
+              iconPath: 'assets/icons/asset 3.svg',
+              title: AppStrings.startCampaign.tr(),
+            );
+          }
+          return const SizedBox.shrink();
+        },
       ),
       DrawerListTile(
         onTap: () => Navigator.of(context).pushNamed(Routes.manageAudiances),

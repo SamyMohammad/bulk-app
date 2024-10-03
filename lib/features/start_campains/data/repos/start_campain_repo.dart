@@ -4,6 +4,7 @@ import 'package:bulk_app/features/start_campains/data/model/create_campain_reque
 
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
+import '../model/toggle_campaign_rm/toggle_campaign_rm.dart';
 
 class StartCampainRepo {
   final ApiService _apiService;
@@ -15,6 +16,15 @@ class StartCampainRepo {
     try {
       final response =
           await _apiService.createCampaign(createCampaignRequestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  Future<ApiResult<ToggleCampaignRm>> toggleCampaign(int id) async {
+    try {
+      final response = await _apiService.toggleCampaign(id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
